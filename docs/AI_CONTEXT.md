@@ -57,3 +57,21 @@ Repository name:
 
 ```txt
 Autopro
+---
+
+# Latest Major Discovery
+
+The owner explained that Autopro should be more than a simple e-commerce store.
+
+The current platform vision is:
+
+```txt
+Automotive social-commerce marketplace
++ dropshipping vehicle parts
++ vehicle-related services marketplace
++ customer profiles
++ business profiles
++ supplier/service provider modules
++ staff permissions
++ compatibility engine
++ admin monetization dashboard
