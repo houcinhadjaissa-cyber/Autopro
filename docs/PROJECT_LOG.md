@@ -82,3 +82,11 @@ A mistake happened where some folders were accidentally nested inside:
 
 ```txt
 docs/apps/storefront
+---
+
+## Update: First design discovery note saved
+
+The first major design discovery note was saved in:
+
+```txt
+docs/DESIGN_DISCOVERY.md
