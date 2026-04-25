@@ -72,3 +72,13 @@ Autopro/
     api/
   packages/
     shared/
+---
+
+## Update: Repository structure corrected
+
+The initial folder structure was created.
+
+A mistake happened where some folders were accidentally nested inside:
+
+```txt
+docs/apps/storefront
