@@ -519,3 +519,478 @@ A client buying brake pads may also see:
 
 ```txt
 This business also offers brake pad installation.
+---
+
+# 7. Staff Members
+
+Staff members are internal users who help operate, support, manage, and grow the Autopro platform.
+
+Staff accounts should be flexible and controlled by permissions.
+
+Autopro should allow the platform owner to create staff roles, edit permissions, remove permissions, suspend staff access, and assign different access levels at any time.
+
+---
+
+## Main Staff Role Direction
+
+The staff system should support fixed roles at the beginning, but it must be flexible enough to add new roles later.
+
+Possible staff roles include:
+
+- Developer
+- Head of developers
+- Manager
+- Senior manager
+- CEO
+- CFO
+- Full owner
+- Account manager
+- Accountant
+- Communications/call center employee
+- Head of communications
+- Supplier support
+- Service provider support
+- Product approval team
+- Certification/verification approval team
+- Payments support
+- Shipping/logistics support
+- Customer support
+- Trust and safety team
+- Dispute resolution team
+- Content moderation team
+- Ads/promotions manager
+- Marketplace operations manager
+
+More roles can be added later.
+
+---
+
+## Full Owner Role
+
+The full owner should have the highest control level.
+
+The full owner should be able to:
+
+- Access all platform data
+- Manage all staff roles
+- Create new roles
+- Edit role permissions
+- Remove role permissions
+- Add staff members
+- Suspend staff members
+- Delete staff members if needed
+- Control who can hire other staff
+- Control who can approve products
+- Control who can approve certifications
+- Control who can access money/financial data
+- Control who can block/suspend users
+- Control who can manage suppliers
+- Control who can manage service providers
+- Control who can manage ads/plans/packages
+
+Only the full owner should have complete unrestricted access.
+
+---
+
+## Flexible Role-Based Access Control
+
+Autopro should use a flexible permission system.
+
+This means each staff role can have specific permissions.
+
+Examples of permissions:
+
+- View users
+- Edit users
+- Suspend users
+- Delete users
+- View suppliers
+- Approve suppliers
+- Suspend suppliers
+- View products
+- Approve products
+- Reject products
+- Edit products
+- View certifications
+- Approve certifications
+- Reject certifications
+- View orders
+- Manage orders
+- View payments
+- Manage refunds
+- View shipping issues
+- Manage shipping companies
+- View analytics
+- View financial reports
+- Manage ads
+- Manage subscription plans
+- Hire staff
+- Assign roles
+- Manage customer support tickets
+- Manage disputes
+
+Permissions should be editable by the full owner.
+
+---
+
+## Hiring and Staff Creation Permissions
+
+The full owner should be able to give limited hiring abilities to selected roles.
+
+Possible roles that may receive hiring permissions:
+
+- CEO
+- CFO
+- Senior managers
+- Head of developers
+- Managers
+- Head of communications
+
+Hiring permissions should be limited.
+
+Example:
+
+A head of developers may be allowed to hire:
+
+- Developers
+- Junior developers
+- Technical support staff
+
+But they should not automatically be allowed to hire:
+
+- CFO
+- CEO
+- Full owner
+- Financial managers
+
+Another example:
+
+A head of communications may be allowed to hire:
+
+- Call center employees
+- Messaging support employees
+- Customer support agents
+
+The full owner should decide exactly what each role can hire and what access new staff receive.
+
+---
+
+## Call Center / Messaging Center
+
+At the beginning, Autopro may not have a call center.
+
+In the first stage:
+
+- Suppliers deal directly with their clients.
+- Service providers deal directly with their clients.
+- Autopro support may be limited.
+
+Later, Autopro should support a full call/messaging center.
+
+The system should leave room for:
+
+- Head of communications
+- Call center managers
+- Call center employees
+- Messaging support employees
+- Customer support agents
+- Supplier support agents
+- Service provider support agents
+- Dispute support agents
+
+Call center staff may help with:
+
+- Account problems
+- Order problems
+- Service booking problems
+- Supplier communication issues
+- Service provider communication issues
+- Plan/subscription problems
+- Ads/promotions support
+- General customer support
+
+Call center access must be limited based on role.
+
+---
+
+## Accountants and Finance Roles
+
+Autopro should support accounting and finance roles.
+
+Possible finance roles include:
+
+- CFO
+- Account manager
+- Accountant
+- Payments support
+- Refund manager
+- Payout manager
+
+Finance staff may need access to:
+
+- Sales data
+- Platform income
+- Supplier payouts
+- Service provider payouts
+- Shipping costs
+- Refunds
+- Commissions
+- Subscription payments
+- Ads payments
+- Financial reports
+
+Financial access must be carefully controlled.
+
+Not every accountant should automatically see all private business data.
+
+The full owner should be able to add or remove finance permissions at any time.
+
+---
+
+## Managers and Senior Managers
+
+Autopro should support management roles.
+
+Possible manager roles:
+
+- General manager
+- Senior manager
+- Marketplace manager
+- Supplier manager
+- Service provider manager
+- Operations manager
+- Customer support manager
+- Product approval manager
+- Shipping/logistics manager
+- Ads manager
+- Regional manager later
+
+Managers should only access the areas related to their job.
+
+Example:
+
+A supplier manager may access supplier accounts, supplier approvals, and supplier violations, but not full financial owner data unless allowed.
+
+---
+
+## Product Approval Team
+
+Autopro should support product approval roles.
+
+Product approval staff may:
+
+- Review new products
+- Approve products
+- Reject products
+- Request corrections
+- Check product images
+- Check product descriptions
+- Check part numbers
+- Check OEM numbers
+- Check catalog quality
+- Check category placement
+- Check if product data is suitable for compatibility matching
+
+Product approval is important for keeping the marketplace clean and trustworthy.
+
+---
+
+## Certification and Verification Approval
+
+Autopro should support certification and verification approval.
+
+Verification staff may review:
+
+- Business licenses
+- Official distributor documents
+- Brand certificates
+- Manufacturer certificates
+- Service provider licenses
+- Mechanic certifications
+- Insurance documents if relevant
+- Other trust documents
+
+When a certification is approved, it should automatically appear on the business profile as a badge/logo near the profile picture or in the certification section.
+
+Approved certification badges help customers trust suppliers and service providers.
+
+---
+
+## Supplier Support
+
+Supplier support staff may help suppliers with:
+
+- Account setup
+- Profile completion
+- Product upload
+- Bulk catalog upload
+- Product approval
+- Certifications
+- Inventory problems
+- Payments
+- Shipping problems
+- Ads/promotions
+- Subscription plans
+- Violations
+- Suspensions
+- Return-to-business process after suspension
+
+Supplier support may also help manage supplier quality.
+
+---
+
+## Service Provider Support
+
+Service provider support staff may help service providers with:
+
+- Account setup
+- Profile completion
+- Service listings
+- Booking calendar
+- Pricing/add-ons
+- Appointment problems
+- Certifications
+- Reviews/disputes
+- Payments
+- Ads/promotions
+- Subscription plans
+- Violations
+- Suspensions
+- Return-to-business process after suspension
+
+---
+
+## Violations, Suspensions, and Return-To-Business
+
+Autopro should have a system for violations and suspensions.
+
+Suppliers or service providers may be warned, suspended, or blocked for:
+
+- Multiple violations
+- Fake products
+- Fake certifications
+- Fraud
+- Repeated order failures
+- Repeated service failures
+- Poor customer behavior
+- Breach of contract
+- Payment issues
+- Shipping abuse
+- Marketplace rule violations
+
+Staff with permission may be able to:
+
+- Issue warnings
+- Suspend accounts
+- Block accounts
+- Delete accounts if allowed
+- Review appeals
+- Restore accounts
+- Require new documents before return
+- Add notes to the account
+
+Return-to-business should be controlled and documented.
+
+---
+
+## Audit Logs and Action History
+
+Every important staff action should be recorded.
+
+Audit logs should track:
+
+- Staff member name
+- Role
+- Action performed
+- Date/time
+- Affected user/business/product/order
+- Reason if provided
+- Old value and new value if applicable
+
+Examples:
+
+- Product approved
+- Certification approved
+- Supplier suspended
+- User refunded
+- Staff permission changed
+- Shipping company added
+- Plan changed
+
+Audit logs protect the platform and help prevent abuse.
+
+---
+
+## Suggested Additional Staff Roles
+
+Based on marketplace and e-commerce best practices, Autopro may later add:
+
+### Trust and Safety Team
+
+Handles fraud, violations, fake products, fake reviews, and dangerous sellers/services.
+
+### Dispute Resolution Team
+
+Handles problems between clients, suppliers, service providers, and shipping companies.
+
+### Content Moderation Team
+
+Reviews posts, pictures, videos, comments, reviews, and public profile content.
+
+### Ads and Promotions Manager
+
+Manages sponsored listings, paid ads, featured products, featured services, and campaigns.
+
+### Data/Analytics Manager
+
+Studies platform performance, user behavior, searches, sales, profit, and supplier/service provider performance.
+
+### Shipping/Logistics Support
+
+Handles shipping companies, delivery issues, country coverage, and shipment complaints.
+
+### Regional Managers
+
+If Autopro expands to multiple countries, regional managers can manage specific markets.
+
+---
+
+## Staff Dashboard
+
+Staff dashboards should be role-based.
+
+Each staff member should only see tools related to their job.
+
+Possible dashboard sections:
+
+- Assigned tasks
+- Support tickets
+- Pending approvals
+- Supplier issues
+- Service provider issues
+- User issues
+- Product approvals
+- Certification approvals
+- Financial reports if allowed
+- Shipping issues if allowed
+- Staff management if allowed
+- Analytics if allowed
+- Audit logs if allowed
+
+---
+
+## Staff System Goal
+
+The goal of the staff system is to allow Autopro to grow from a small platform into a full company structure.
+
+The staff system should be:
+
+- Flexible
+- Secure
+- Permission-based
+- Owner-controlled
+- Expandable
+- Audited
+- Safe for financial and private data
+
+The platform should start simple but be designed so new staff roles and permissions can be added later.
