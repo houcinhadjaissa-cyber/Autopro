@@ -90,3 +90,17 @@ The first major design discovery note was saved in:
 
 ```txt
 docs/DESIGN_DISCOVERY.md
+---
+
+## Update: Core system files created
+
+Created the main system documentation files:
+
+```txt
+docs/SYSTEMS_INDEX.md
+docs/SHIPPING_AND_LOGISTICS.md
+docs/MONETIZATION_STRATEGY.md
+docs/SUPPLIER_PRODUCT_DATA.md
+docs/INVOICING_AND_BILLING.md
+docs/VEHICLE_ID_AND_HISTORY.md
+docs/USER_ROLES_AND_FLOWS.md
