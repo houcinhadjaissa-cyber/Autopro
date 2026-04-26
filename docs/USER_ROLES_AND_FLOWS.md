@@ -288,3 +288,149 @@ Example:
 Before sale: 10 pieces
 Customer buys: 1 piece
 After sale: 9 pieces
+---
+
+# 5. Service Provider
+
+A service provider is a business account that offers vehicle-related services through Autopro.
+
+A service provider may be:
+
+- Mobile mechanic
+- Mechanic shop
+- Diagnostic/scanner service
+- Software update service
+- Mobile car wash
+- Full shop car wash
+- Car wrapping shop
+- Paint/body shop
+- Mobile tire repair service
+- Full shop tire repair service
+- Towing service
+- Vehicle inspection service
+- Other vehicle-related service provider
+
+Service providers may operate from a physical shop, as a mobile service, or both.
+
+---
+
+## Service Categories
+
+Autopro should allow service providers to choose one or multiple service categories.
+
+Possible service categories include:
+
+### Mechanics
+
+- Mobile mechanic
+- Shop mechanic
+- Engine repair
+- Brake repair
+- Suspension repair
+- Electrical repair
+- Oil change
+- Maintenance service
+- Emergency repair
+- Other mechanic specializations
+
+### Diagnostic / Scanner / Software
+
+- Vehicle scanner/diagnostics
+- Fault code reading
+- ECU software update
+- Key programming if applicable
+- Sensor calibration
+- Electrical diagnostics
+- Other diagnostic specializations
+
+### Car Wash / Detailing
+
+- Mobile car wash
+- Full shop car wash
+- Exterior wash
+- Interior cleaning
+- Wax coating
+- Polishing
+- Deep cleaning
+- Detailing packages
+- Other cleaning services
+
+### Wrapping / Paint / Body
+
+- Full car wrapping
+- Partial wrapping
+- Paint services
+- Body panel painting
+- Paint correction
+- Body part repair
+- Custom styling
+- Some shops may paint/wrap a specific part and ship it to the client
+
+### Tires / Wheels
+
+- Mobile tire repair
+- Shop tire repair
+- Tire changing
+- Wheel balancing
+- Wheel alignment
+- Rim repair
+- Emergency tire service
+
+### Other Services
+
+More service categories can be added later.
+
+---
+
+## Service Listings
+
+A service provider should be able to create service listings.
+
+Each service listing may include:
+
+- Service name
+- Service category
+- Description
+- Price or price range
+- Fixed price if available
+- Add-on services
+- Estimated duration
+- Mobile availability
+- Shop availability
+- Required vehicle type
+- Required vehicle details if needed
+- Pictures/videos
+- Terms and conditions
+- Cancellation rules
+
+---
+
+## Fixed Pricing and Variable Pricing
+
+Service pricing can work in different ways.
+
+### Fixed price services
+
+Some services can have fixed prices.
+
+Examples:
+
+- Basic car wash
+- Standard scanner check
+- Tire change
+- Wax add-on
+- Interior cleaning package
+
+The service provider can set non-negotiable fixed prices.
+
+### Add-on pricing
+
+Clients can add extra services.
+
+Example:
+
+```txt
+Body wash: $10
+Wax cover: +$5
+Interior cleaning: +$8
+Total: $23
