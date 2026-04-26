@@ -75,3 +75,17 @@ Automotive social-commerce marketplace
 + staff permissions
 + compatibility engine
 + admin monetization dashboard
+---
+
+# Latest Documentation Update
+
+The project now includes core system files:
+
+```txt
+docs/SYSTEMS_INDEX.md
+docs/USER_ROLES_AND_FLOWS.md
+docs/VEHICLE_ID_AND_HISTORY.md
+docs/SHIPPING_AND_LOGISTICS.md
+docs/MONETIZATION_STRATEGY.md
+docs/SUPPLIER_PRODUCT_DATA.md
+docs/INVOICING_AND_BILLING.md
