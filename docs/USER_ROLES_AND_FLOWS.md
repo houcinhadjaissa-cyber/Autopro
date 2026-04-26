@@ -96,3 +96,41 @@ The free/default garage limit should start with:
 
 ```txt
 5 vehicles
+---
+
+# 3. Business Account
+
+A business account is the main account type for any company, shop, brand, supplier, reseller, wholesaler, dropshipping seller, e-commerce seller, service provider, or hybrid automotive business.
+
+Businesses should first register as a general business account.
+
+After that, they can choose what modules they want to activate:
+
+- Supplier/seller module
+- Service provider module
+- Both supplier and service provider modules
+
+This structure allows one business to sell products, provide services, or do both under one profile.
+
+---
+
+## Business Profile Completion
+
+Each business should have a profile similar to major platforms and social networks.
+
+The business profile should include a profile completion area where the business is encouraged to add full information.
+
+A more complete profile should make the business:
+
+- More trusted
+- More professional
+- More visible to customers
+- More likely to appear in search and recommendations
+- More accessible to the platform algorithm
+
+Profile completion can later be used as part of the ranking system.
+
+Example:
+
+```txt
+Business Profile Completion: 85%
