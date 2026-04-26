@@ -434,3 +434,88 @@ Body wash: $10
 Wax cover: +$5
 Interior cleaning: +$8
 Total: $23
+---
+
+# 6. Hybrid Business
+
+A hybrid business is a business account that sells vehicle-related products and also provides vehicle-related services.
+
+This is important for the automotive industry because many businesses do both.
+
+Examples:
+
+- Mechanic shop that sells parts and provides repairs
+- Tire shop that sells tires and provides tire fitting
+- Car wash that sells cleaning products and provides washing/detailing
+- Wrapping shop that sells wrapping materials and provides wrapping service
+- Parts shop that also offers diagnostics or installation
+- Garage that sells maintenance packages and provides service appointments
+
+---
+
+## Hybrid Business Profile
+
+A hybrid business should have one public profile that combines both products and services.
+
+The profile should show shared business details at the top, including:
+
+- Business name
+- Logo/profile picture
+- Cover/background picture
+- Certifications
+- Verification badges
+- Years of experience
+- Location if shop-based
+- Contact information
+- Business description
+- Ratings/reviews
+- Follow button
+- Message/contact button if allowed
+- Active plan/badge if public
+- Trust indicators
+
+Under the shared top section, the profile should display everything the business offers.
+
+---
+
+## Profile Tabs
+
+A hybrid business profile may include tabs such as:
+
+- Overview
+- Products
+- Services
+- Packages
+- Deals
+- Bookings
+- Posts
+- Videos
+- Reviews
+- Certifications
+- About
+- Location
+- Contact
+
+This allows the client to understand the full business offer from one profile.
+
+---
+
+## One-Stop Shop Advantage
+
+Hybrid businesses should be presented as a one-stop shop for clients.
+
+This is useful because a client may want to:
+
+- Buy a part
+- Book installation
+- Buy a product bundle
+- Book a maintenance service
+- Contact one trusted business instead of many
+- Repeat previous purchases and services
+
+Example:
+
+A client buying brake pads may also see:
+
+```txt
+This business also offers brake pad installation.
