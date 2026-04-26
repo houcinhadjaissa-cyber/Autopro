@@ -30,3 +30,19 @@ Saved the first major design discovery note in:
 
 ```txt
 docs/DESIGN_DISCOVERY.md
+---
+
+# Latest Completed Step
+
+Created the core system documentation files.
+
+Important files now include:
+
+```txt
+USER_ROLES_AND_FLOWS.md
+VEHICLE_ID_AND_HISTORY.md
+SYSTEMS_INDEX.md
+SHIPPING_AND_LOGISTICS.md
+MONETIZATION_STRATEGY.md
+SUPPLIER_PRODUCT_DATA.md
+INVOICING_AND_BILLING.md
