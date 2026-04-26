@@ -134,3 +134,157 @@ Example:
 
 ```txt
 Business Profile Completion: 85%
+---
+
+# 4. Supplier / Seller
+
+A supplier/seller is a business account that sells vehicle-related products through Autopro.
+
+A supplier may be:
+
+- Manufacturer
+- Brand
+- Official distributor
+- Wholesaler
+- Reseller
+- Dropshipping seller
+- E-commerce seller
+- Physical parts shop
+- Hybrid business that sells products and provides services
+
+---
+
+## Product Scope
+
+Suppliers can sell vehicle-related products.
+
+Product scope may include:
+
+- Car parts
+- Van parts
+- Truck parts
+- Motorcycle/bike parts
+- Bicycle parts
+- Trailer parts
+- Accessories
+- Maintenance items
+- Tools
+- Other vehicle-related products added later
+
+Products should eventually connect to vehicle compatibility data.
+
+Compatibility data may come from:
+
+- Internal Autopro database
+- TecDoc-style data
+- Supplier catalogs
+- Manufacturer part numbers
+- OEM numbers
+- Barcodes/GTIN
+- Other licensed vehicle/product databases later
+
+Important note:
+
+Autopro should be designed for TecDoc-style matching, but real TecDoc data may require official licensed access.
+
+---
+
+## Product Matching Direction
+
+Supplier products should be matched to detailed vehicle/part data when possible.
+
+Matching identifiers may include:
+
+- Manufacturer part number
+- OEM number
+- Barcode/GTIN
+- SKU
+- Brand
+- Product category
+- Vehicle make/model/year
+- Engine
+- Trim
+- Compatibility rules
+
+The goal is to allow customers to find the exact matching part for their vehicle and compare suppliers offering that part.
+
+---
+
+## Product Adding Methods
+
+Suppliers should be able to add products in multiple ways.
+
+### 1. Manual product entry
+
+The supplier can add products one by one.
+
+Manual product fields may include:
+
+- Product name
+- Product category
+- Brand
+- Manufacturer part number
+- OEM numbers
+- SKU
+- Barcode/GTIN
+- Quantity
+- Price
+- Sale price
+- Product images
+- Description
+- Specifications
+- Compatible vehicles if known
+- Shipping details
+- Stock status
+
+### 2. Bulk catalog upload
+
+Suppliers should be able to upload product catalogs using formats such as:
+
+- CSV
+- XML
+- Excel
+
+Bulk upload should support:
+
+- Field mapping
+- Product identifiers
+- Manufacturer part numbers
+- OEM numbers
+- Barcodes/GTIN
+- Prices
+- Stock quantities
+- Categories
+- Brand names
+- Update frequency
+- Automated imports later
+
+This is critical for TecDoc-style matching and supplier catalog synchronization.
+
+### 3. Future product import methods
+
+Later, Autopro may support:
+
+- Supplier API connection
+- ERP/inventory system integration
+- Marketplace feed imports
+- Automated stock and price sync
+
+---
+
+## Inventory / Stock Management
+
+Suppliers should have two main stock management options.
+
+### Option A: Supplier-managed stock
+
+The supplier manually manages their stock.
+
+When a product sells through Autopro, Autopro automatically reduces the stock quantity inside the platform.
+
+Example:
+
+```txt
+Before sale: 10 pieces
+Customer buys: 1 piece
+After sale: 9 pieces
