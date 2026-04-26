@@ -994,3 +994,418 @@ The staff system should be:
 - Safe for financial and private data
 
 The platform should start simple but be designed so new staff roles and permissions can be added later.
+---
+
+# 8. Admin / Owner
+
+The admin/owner is the highest control role in the Autopro platform.
+
+The admin/owner dashboard should be the main control center for the entire business.
+
+The admin should be able to control, monitor, automate, and optimize everything across the platform.
+
+---
+
+## Admin Control Scope
+
+The admin/owner should have control over:
+
+- Users
+- Clients/customers
+- Suppliers
+- Service providers
+- Hybrid businesses
+- Staff members
+- Shipping companies
+- Influencers/media pages
+- Products
+- Services
+- Orders
+- Bookings
+- Payments
+- Refunds
+- Subscriptions
+- Ads
+- Monetization plans
+- Budgets
+- Income targets
+- Expenses
+- Access permissions
+- Staff roles
+- Platform settings
+- Marketplace rules
+- Violations and suspensions
+- Automation rules
+- Business growth recommendations
+
+The admin should be able to control the platform whenever needed.
+
+---
+
+## Automation Direction
+
+The admin system should automate as much as possible.
+
+Automation may include:
+
+- Stock reduction after sales
+- Supplier ranking
+- Service provider ranking
+- Profile completion scoring
+- Certification badge display after approval
+- Shipping option filtering by country
+- User segmentation
+- Best customer detection
+- VIP client detection
+- Top supplier detection
+- Fraud/violation alerts
+- Low-performing supplier alerts
+- Missing product opportunity alerts
+- Trending product suggestions
+- Budget alerts
+- Income target tracking
+- Expense tracking
+- Ads performance tracking
+- Subscription renewal alerts
+- Staff task assignment
+- Report generation
+
+The admin should still be able to manually override controls when needed.
+
+---
+
+## Admin Dashboard Overview
+
+The dashboard should start simple and direct.
+
+It should show a high-level overview first, then allow the admin to click any section to expand into detailed data.
+
+Example dashboard sections:
+
+- Total income
+- Total expenses
+- Net profit
+- Active users
+- Active clients
+- Active suppliers
+- Active service providers
+- Active hybrid businesses
+- Staff count
+- Orders
+- Bookings
+- Ads income
+- Subscription income
+- Commission income
+- Best-selling products
+- Best-performing suppliers
+- Best-performing service providers
+- Platform targets
+- Budget status
+- Alerts and recommendations
+
+---
+
+## Income Analytics
+
+The admin should see income overview and detailed income breakdowns.
+
+Income tracking should include:
+
+- Income per minute
+- Income per hour
+- Income per day
+- Income per week
+- Income per month
+- Income per year
+
+Income sources may include:
+
+- Product sales commission
+- Dropshipping margin
+- Service booking commission
+- Supplier subscriptions
+- Service provider subscriptions
+- Sponsored listings
+- Ads
+- Featured products
+- Featured services
+- Verified badges
+- Premium business profiles
+- B2B accounts
+- Influencer/media deals
+- Affiliate links
+- Shipping-related income
+- Partnerships
+- Other monetization methods
+
+Each income section should be expandable into details.
+
+---
+
+## Expense Analytics
+
+The admin should see expense overview and detailed expense breakdowns.
+
+Expenses may include:
+
+- Employee salaries
+- Developer costs
+- Marketing costs
+- Hosting/platform costs
+- Payment processing fees
+- Refunds
+- Supplier support costs
+- Shipping-related costs
+- Customer support costs
+- Ads spending
+- Tools/software subscriptions
+- Business operations
+- Other spending
+
+Expense analytics should support:
+
+- Total expenses
+- Expenses by category
+- Expenses by time period
+- Expenses by department
+- Budget vs actual spending
+- Expense alerts
+- Cost reduction suggestions
+
+---
+
+## Profit Analytics
+
+The admin should see full profit analytics.
+
+Profit analytics may include:
+
+- Gross revenue
+- Net revenue
+- Total expenses
+- Net profit
+- Profit per product
+- Profit per category
+- Profit per supplier
+- Profit per service provider
+- Profit per country/region
+- Profit per ad campaign
+- Profit per subscription plan
+- Profit per customer segment
+- Profit per vehicle category
+- Profit per time period
+
+The dashboard should identify:
+
+- Top profit sources
+- Lowest profit areas
+- Loss-making areas
+- Opportunities to improve margins
+- Recommended monetization actions
+
+---
+
+## User Analytics
+
+The admin should see user counts and user breakdowns.
+
+User analytics should include:
+
+- Total users
+- Clients/customers
+- Suppliers
+- Service providers
+- Hybrid businesses
+- Staff members
+- Shipping companies
+- Influencers/media pages
+- Active users
+- Inactive users
+- New users
+- Returning users
+- VIP clients
+- Highest spending clients
+- Highest income-generating clients
+- Best suppliers
+- Best service providers
+- Suspended users
+- Users by country
+- Users by region
+- Users by language
+- Users by vehicle ownership
+
+---
+
+## Supplier Analytics
+
+The admin should see full details about each supplier.
+
+Supplier analytics may include:
+
+- Supplier income
+- Supplier spending on platform
+- Subscription plan
+- Ads spending
+- Product sales
+- Best-selling products
+- Least-selling products
+- Stock availability
+- Order completion rate
+- Return/refund rate
+- Customer reviews
+- Response time
+- Shipping performance
+- Certification status
+- Profile completion
+- Violations
+- Ranking/performance score
+
+Suppliers should be ranked from top performers to lowest performers.
+
+---
+
+## Service Provider Analytics
+
+The admin should see full details about each service provider.
+
+Service provider analytics may include:
+
+- Booking income
+- Platform spending
+- Subscription plan
+- Ads spending
+- Number of bookings
+- Completed appointments
+- Cancelled appointments
+- Rescheduled appointments
+- Customer reviews
+- Response time
+- Service categories
+- Best-performing services
+- Least-performing services
+- Location performance
+- VIP clients
+- Violations
+- Ranking/performance score
+
+---
+
+## Client / Customer Analytics
+
+The admin should see client behavior and spending.
+
+Client analytics may include:
+
+- Total spending
+- Spending per vehicle
+- Purchases
+- Bookings
+- Repeat purchases
+- Saved vehicles
+- Followed suppliers
+- Followed service providers
+- Favorite brands
+- Search behavior
+- Abandoned carts
+- Product views
+- Service views
+- Reviews
+- VIP status
+- Customer lifetime value
+
+---
+
+## Influencer / Media Page System
+
+Autopro may support influencers, car media pages, and automotive content creators.
+
+Influencers/media pages may earn through:
+
+- Ads on their profiles
+- Brand promotions
+- Product promotions
+- Service provider promotions
+- Sponsored posts
+- Affiliate links
+- Tagged products
+- Tagged services
+- Percentage from every sale through their link/tag
+- Free products
+- Fixed paid deals
+- Performance-based deals
+
+The system should track each deal in detail.
+
+Influencer deal tracking should include:
+
+- Influencer/media profile
+- Brand/supplier/service provider involved
+- Deal type
+- Payment amount
+- Free product value
+- Commission percentage
+- Affiliate link/tag
+- Sales generated
+- Clicks
+- Views
+- Conversion rate
+- Amount owed
+- Amount paid
+- Deal status
+- Confirmation from both parties
+
+All influencer/brand/service provider deals should be automated and trackable for the admin.
+
+---
+
+## Product Analytics
+
+The admin should see detailed product analytics.
+
+Product analytics should include:
+
+- Best-selling products
+- Least-selling products
+- Trending products
+- Products by brand
+- Products by category
+- Products by supplier
+- Product price history
+- Product sales by time period
+- Product profit margin
+- Product return rate
+- Product stock issues
+- Product demand by country/region
+- Product demand by vehicle
+
+The admin should be able to see performance for:
+
+- Each minute
+- Each hour
+- Each day
+- Each week
+- Each month
+- Custom date ranges
+
+---
+
+## Missing Product Opportunity System
+
+The platform should eventually suggest products that are missing from Autopro but may sell well.
+
+This system may analyze:
+
+- User searches with no results
+- High-demand vehicle parts
+- Trending products outside Autopro
+- Popular products on competitor platforms
+- Supplier catalog gaps
+- Seasonal demand
+- Vehicle garage data
+- Common vehicle problems
+- Service provider repair patterns
+
+The admin should receive suggestions such as:
+
+```txt
+Users searched for this product 1,200 times this month, but no supplier offers it.
