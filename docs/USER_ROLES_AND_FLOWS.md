@@ -1409,3 +1409,85 @@ The admin should receive suggestions such as:
 
 ```txt
 Users searched for this product 1,200 times this month, but no supplier offers it.
+---
+
+# 9. Mechanic / Garage / B2B Buyer
+
+Mechanic, garage, and B2B accounts are professional accounts for businesses that may buy, sell, service, or manage multiple vehicles.
+
+This user type can overlap with:
+
+- Business account
+- Supplier/seller
+- Service provider
+- Hybrid business
+- Fleet buyer
+- Professional buyer
+
+The system should be flexible enough to support different professional automotive use cases.
+
+---
+
+## Garage Special Accounts
+
+Garages should have special account options.
+
+A garage may have:
+
+- Its own brand
+- Its own services
+- Its own products
+- Its own shop location
+- Its own customer base
+- Its own staff
+- Its own vehicle service history
+- Its own pricing
+- Its own bulk deals
+- Its own business profile
+
+A garage account should be modular.
+
+This means the garage can add or remove profile sections depending on what they offer.
+
+Possible sections:
+
+- Overview
+- Products
+- Top-selling products
+- Product categories
+- Services
+- Service bookings
+- Packages
+- Deals
+- Fleet/B2B offers
+- Posts
+- Videos
+- Reviews
+- Certifications
+- Location
+- Contact
+- About
+
+Each section should have its own details and settings.
+
+---
+
+## Garage Product Display
+
+A garage that sells products should be able to display products on its profile.
+
+The profile may include:
+
+- Top-selling products
+- Featured products
+- Product categories
+- Deals
+- Product bundles
+- Related services
+
+Product categories should be easy for clients to browse.
+
+A possible layout:
+
+```txt
+Swipeable horizontal category row
