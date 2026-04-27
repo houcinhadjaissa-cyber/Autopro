@@ -11,3 +11,232 @@ Automotive social-commerce marketplace
 + business profiles
 + vehicle compatibility engine
 + admin monetization system
+```
+
+---
+
+# Core Documentation Files
+
+## AI and Continuity
+
+These files help continue the project if the AI conversation is lost.
+
+- `AI_CONTEXT.md`
+- `CURRENT_STATUS.md`
+- `PROJECT_LOG.md`
+- `PROJECT_PLAN.md`
+- `DECISION_RULES.md`
+
+## Platform Planning
+
+These files define the general platform direction.
+
+- `PLATFORM_BLUEPRINT.md`
+- `WEBSITE_REQUIREMENTS.md`
+- `DESIGN_DISCOVERY.md`
+- `USER_ROLES_AND_FLOWS.md`
+
+---
+
+# Major System Files
+
+## Vehicle ID and History System
+
+File:
+
+```txt
+VEHICLE_ID_AND_HISTORY.md
+```
+
+Purpose:
+
+- Internal vehicle ID
+- Vehicle history
+- Maintenance records
+- Service records
+- Parts replaced
+- Vehicle media storage
+- Future vehicle valuation support
+- Vehicle history connected to client garage
+- Vehicle history connected to service providers
+- Part arrival and installation tracking
+
+---
+
+## Shipping and Logistics System
+
+File:
+
+```txt
+SHIPPING_AND_LOGISTICS.md
+```
+
+Purpose:
+
+- Supplier-controlled shipping
+- Platform-controlled shipping
+- Shipping company private accounts
+- Country-based shipping rules
+- Delivery pricing
+- Delivery duration
+- Pickup/warehouse options
+- Shipment tracking
+- Shipping company dashboards
+- Shipping company performance analytics
+
+---
+
+## Monetization Strategy
+
+File:
+
+```txt
+MONETIZATION_STRATEGY.md
+```
+
+Purpose:
+
+- Free/Silver/Pro plans
+- Supplier plans
+- Service provider plans
+- Hybrid business plans
+- Ads
+- Sponsored listings
+- Featured profiles
+- Commissions
+- Booking fees
+- B2B fees
+- Influencer/media deals
+- Verification badges
+- Analytics packages
+
+---
+
+## Supplier Product Data System
+
+File:
+
+```txt
+SUPPLIER_PRODUCT_DATA.md
+```
+
+Purpose:
+
+- Manual product entry
+- Bulk product upload
+- CSV/XML/Excel imports
+- Field mapping
+- Manufacturer part numbers
+- OEM numbers
+- Barcodes/GTIN
+- SKU
+- TecDoc-style matching
+- Stock synchronization
+- Supplier catalog updates
+
+---
+
+## Invoicing and Billing System
+
+File:
+
+```txt
+INVOICING_AND_BILLING.md
+```
+
+Purpose:
+
+- Customer invoices
+- Supplier invoices
+- Service provider invoices
+- Hybrid business invoices
+- B2B invoices
+- Bulk deal invoices
+- Service appointment bills
+- Platform fees
+- Commissions
+- Payment records
+- Receipts
+- Refunds
+- Payouts
+- Tax/VAT support later
+- Billing history
+- Cancellation and dispute fee rules
+
+---
+
+## Payments, Refunds, and Returns
+
+File:
+
+```txt
+PAYMENTS_REFUNDS_RETURNS.md
+```
+
+Purpose:
+
+- Online payments
+- Cash payments
+- Supplier payouts
+- Service provider payouts
+- Shipping company settlements
+- Refunds
+- Returns
+- Disputes
+- Held balances
+- Pending balances
+- Available balances
+- Country-specific payment rules
+- Algeria/Nigeria-style cash-heavy payment flows
+- International supplier payment flows
+- Local delivery/payment collection
+
+---
+
+# Systems To Design Later
+
+Additional systems that need detailed planning later:
+
+- `ADMIN_DASHBOARD_REQUIREMENTS.md`
+- `HOMEPAGE_REQUIREMENTS.md`
+- `COMPATIBILITY_ENGINE.md`
+- `SEARCH_AND_RECOMMENDATION_SYSTEM.md`
+- `ADS_AND_PROMOTIONS.md`
+- `STAFF_PERMISSIONS_AND_ROLES.md`
+- `BUSINESS_PROFILES.md`
+- `SERVICE_BOOKING_SYSTEM.md`
+- `CUSTOMER_GARAGE_SYSTEM.md`
+- `B2B_AND_FLEET_SYSTEM.md`
+- `INFLUENCER_AND_MEDIA_SYSTEM.md`
+- `DATA_MODEL_NOTES.md`
+- `MVP_SCOPE.md`
+
+---
+
+# Current Priority
+
+The current priority is to finish documenting the foundation before coding.
+
+Current detailed work is focused on:
+
+```txt
+PAYMENTS_REFUNDS_RETURNS.md
+```
+
+Next detailed section:
+
+```txt
+Product payment flow
+```
+
+After that, continue with:
+
+1. Service payment flow
+2. Cash payment countries
+3. Supplier payout timing
+4. Service provider payout timing
+5. Shipping company settlement
+6. Refund rules
+7. Return rules
+8. Dispute rules
+9. Admin money dashboard
