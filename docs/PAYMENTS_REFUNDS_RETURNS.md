@@ -403,3 +403,37 @@ Status:
 
 ```txt
 Keep
+---
+
+# Algeria Realistic DZD Pricing and Admin Shop Markup
+
+Autopro must support realistic, legal, and transparent local pricing for countries where official bank exchange rates do not reflect real procurement cost.
+
+This is especially important for Algeria.
+
+---
+
+## Algeria DZD Pricing Rule
+
+For Algeria, Autopro must show client-facing prices in DZD.
+
+The client should see simple, clear prices such as:
+
+- Product price in DZD
+- Shipping price in DZD
+- Discounts in DZD
+- Final total in DZD
+
+The client should not need to calculate foreign currency conversion.
+
+---
+
+## Real Market Pricing Direction
+
+Autopro must not blindly price Algerian orders using the official bank conversion rate if that rate does not reflect real procurement cost.
+
+Example:
+
+```txt
+Official bank rate: 1€ = 150 DZD
+Real market/procurement cost may be closer to 1€ = 280 DZD or more
