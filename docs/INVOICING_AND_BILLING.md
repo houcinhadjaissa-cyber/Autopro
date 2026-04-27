@@ -105,3 +105,49 @@ Example:
 
 ```txt
 Use code NEXT10 for your next order from this supplier.
+---
+
+# 2. Service Booking Billing
+
+Service booking billing defines how invoices, bills, estimates, payments, confirmations, and service records work for service providers.
+
+This applies to:
+
+- Mechanics
+- Mobile mechanics
+- Diagnostic/scanner services
+- Software update services
+- Car washes
+- Mobile car washes
+- Tire services
+- Car wrapping
+- Paint/body shops
+- Detailing services
+- Other vehicle-related services
+
+Autopro must support both fixed-price services and inspection-based services.
+
+---
+
+## Fixed-Price Services
+
+Some services have fixed prices.
+
+Examples:
+
+- Car wash
+- Basic scanner/diagnostic check
+- Tire change
+- Wax add-on
+- Detailing package
+- Basic software check
+- Mobile wash package
+
+The fixed price must depend on vehicle type when needed.
+
+Example:
+
+```txt
+Bike wash price is not the same as car wash.
+Car wash price is not the same as van wash.
+Van wash price is not the same as truck wash.
