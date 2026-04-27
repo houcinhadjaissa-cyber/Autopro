@@ -104,3 +104,11 @@ docs/SUPPLIER_PRODUCT_DATA.md
 docs/INVOICING_AND_BILLING.md
 docs/VEHICLE_ID_AND_HISTORY.md
 docs/USER_ROLES_AND_FLOWS.md
+---
+
+## Update: Product and service billing requirements added
+
+Added detailed billing requirements to:
+
+```txt
+docs/INVOICING_AND_BILLING.md
