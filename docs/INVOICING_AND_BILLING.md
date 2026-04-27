@@ -151,3 +151,58 @@ Example:
 Bike wash price is not the same as car wash.
 Car wash price is not the same as van wash.
 Van wash price is not the same as truck wash.
+---
+
+# Update: Part Arrival Tracking for Service Billing
+
+Autopro must track the arrival date and time of parts ordered for a service.
+
+When parts are ordered for a client vehicle, the part arrival information must be added to:
+
+- Autopro owner/admin database
+- Client dashboard
+- Vehicle ID/history system
+- Service provider dashboard
+- Final service invoice
+- Final service report
+
+If the parts are ordered through Autopro, the system must automatically connect the part order to:
+
+- Client
+- Vehicle ID
+- Service provider
+- Service appointment
+- Supplier
+- Product ID
+- Product invoice
+- Service invoice
+- Vehicle history record
+
+When the part arrives, the system must record:
+
+- Part arrival date
+- Part arrival time
+- Who received the part
+- Where the part was received
+- Supplier name
+- Shipping company if used
+- Product condition
+- Quantity received
+- Whether the part was checked
+- Whether the part was accepted or rejected
+- Notes if there is a problem
+
+If the part is ordered from Autopro, the receiving and checking step must be automatically added to the service workflow once the part is received.
+
+Example workflow:
+
+```txt
+Part ordered through Autopro
+Part shipped
+Part arrived
+Part received
+Part checked
+Part accepted
+Part installed
+Vehicle history updated
+Final invoice updated
