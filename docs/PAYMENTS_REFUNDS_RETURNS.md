@@ -383,3 +383,23 @@ The next sections to detail are:
 8. Return rules
 9. Dispute rules
 10. Admin money dashboard
+---
+
+# Payment and Dropshipping Models
+
+Autopro must support multiple payment and dropshipping models.
+
+Each country or region can have different active methods.
+
+One country can support multiple methods at the same time.
+
+The system must be flexible from day one so the admin/full owner can add, remove, activate, deactivate, or modify payment and logistics methods before or after launch.
+
+---
+
+## 1. Local Stock / Local Warehouse
+
+Status:
+
+```txt
+Keep
