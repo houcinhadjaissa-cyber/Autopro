@@ -206,3 +206,30 @@ Part accepted
 Part installed
 Vehicle history updated
 Final invoice updated
+---
+
+# 3. Platform Fees and Commissions
+
+This section defines how Autopro earns from product sales, services, shipping, B2B deals, bulk orders, and platform activity.
+
+Autopro fees and commissions must be automated from day one.
+
+The system must protect:
+
+- Autopro profit
+- Client experience
+- Supplier profit
+- Service provider profit
+- Shipping company repeat usage
+- Platform trust and fairness
+
+---
+
+## Main Fee Rule
+
+The standard rule is:
+
+```txt
+Supplier/service provider pays Autopro fees.
+Client does not see Autopro fee separately.
+Client sees the final combined product/service price.
