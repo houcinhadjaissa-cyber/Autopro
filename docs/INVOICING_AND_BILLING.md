@@ -233,3 +233,136 @@ The standard rule is:
 Supplier/service provider pays Autopro fees.
 Client does not see Autopro fee separately.
 Client sees the final combined product/service price.
+---
+
+# 4. Cancellation, Responsibility, Fee Transfer, and Dispute Rules
+
+Autopro must define exact rules for cancellations, no-shows, service disputes, damaged parts, wrong parts, shipping delays, rescheduling, and emergency cases.
+
+These rules are required to protect:
+
+- Autopro
+- Clients
+- Suppliers
+- Service providers
+- Shipping companies
+- Future legal/accounting records
+
+All important events must be tracked with timestamps, confirmations, messages, invoices, receipts, order status, service status, shipping status, and proof files.
+
+---
+
+## Client No-Show
+
+If the client does not show up for a service appointment, Autopro fee is cancelled.
+
+The service provider can still record the no-show in the client/service history if platform rules allow it.
+
+Repeated client no-shows can affect the client’s trust score, VIP status, booking privileges, and service provider willingness to accept future bookings.
+
+---
+
+## Provider No-Show
+
+If the service provider does not show up for the appointment, Autopro fee is cancelled.
+
+The client can report the provider.
+
+Repeated provider no-shows can affect:
+
+- Provider ranking
+- Provider reach
+- Provider trust score
+- Plan privileges
+- Booking availability
+- Suspension risk
+
+---
+
+## Client Cancels Too Late
+
+If the client cancels too late before the service is completed, Autopro fee is cancelled.
+
+The cancellation must still be recorded.
+
+The service provider can define late-cancellation rules in their service policy, but Autopro fee is cancelled unless another confirmed platform rule applies.
+
+Repeated late cancellations can affect the client’s trust score and booking privileges.
+
+---
+
+## Provider Cancels Too Late
+
+If the service provider cancels too late, Autopro fee must be paid by the service provider.
+
+This rule protects the platform and the client from providers wasting time after receiving bookings.
+
+Late provider cancellation must be recorded and can affect:
+
+- Provider ranking
+- Provider reach
+- Trust score
+- Plan privileges
+- Future booking visibility
+
+---
+
+## Client Refuses Cash Payment After Service
+
+If the booking agreement says the client will pay cash and the client refuses to pay after the service is completed, the responsibility transfers to the client.
+
+This rule must be written clearly in the first booking agreement before confirmation.
+
+Autopro must track:
+
+- Service agreement
+- Payment method selected
+- Client confirmation
+- Provider confirmation
+- Service completion proof
+- Messages
+- Photos/videos if available
+- Final invoice
+- Refusal report
+
+If proof shows the client refused cash payment after confirmed service completion, the unpaid amount and related fee responsibility can be transferred to the client.
+
+This protects service providers from dishonest clients.
+
+---
+
+## Provider Claims Service Completed But Client Disagrees
+
+If the provider claims the service was completed but the client disagrees, Autopro must use proof and recorded data to decide responsibility.
+
+Autopro must check:
+
+- Appointment confirmation
+- Service status updates
+- Client messages
+- Provider messages
+- Photos/videos
+- Location/time if available
+- Payment confirmation
+- Invoice
+- Receipt
+- Vehicle history update
+- Provider proof
+- Client proof
+
+If the client already paid and the provider did not deny receiving payment, or the provider confirmed receiving payment, Autopro fee must be paid by the provider.
+
+If the provider proves they were not paid, the case must enter dispute review.
+
+Autopro must register everything to protect both sides.
+
+---
+
+## Shipping Delay Causes Cancellation
+
+Shipping time must be agreed before purchase.
+
+Example:
+
+```txt
+Estimated delivery: 7 to 15 business days
