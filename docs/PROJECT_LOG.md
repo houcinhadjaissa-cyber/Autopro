@@ -122,3 +122,11 @@ Fixed and updated project continuity files:
 docs/SYSTEMS_INDEX.md
 docs/AI_CONTEXT.md
 docs/CURRENT_STATUS.md
+---
+
+## Update: QR confirmation and reusable core system added
+
+Created:
+
+```txt
+docs/QR_CONFIRMATION_AND_REUSABLE_CORE.md
