@@ -130,3 +130,11 @@ Created:
 
 ```txt
 docs/QR_CONFIRMATION_AND_REUSABLE_CORE.md
+---
+
+## Update: Product and service payment flows added
+
+Added detailed payment flow requirements to:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
