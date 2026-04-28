@@ -240,3 +240,24 @@ After that, continue with:
 7. Return rules
 8. Dispute rules
 9. Admin money dashboard
+---
+
+## QR Confirmation and Reusable Core Engine
+
+File:
+
+```txt
+QR_CONFIRMATION_AND_REUSABLE_CORE.md
+```
+
+Purpose:
+
+- QR confirmation system
+- Manual confirmation alternative
+- Job done confirmation
+- Package received confirmation
+- Cash collection confirmation
+- Service completion confirmation
+- Payment QR direction
+- Reusable private platform core
+- Future project reuse structure
