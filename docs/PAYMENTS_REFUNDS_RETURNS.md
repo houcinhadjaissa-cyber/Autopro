@@ -516,3 +516,45 @@ Example:
 ```txt
 Official bank rate: 1€ = 150 DZD
 Real procurement/market cost may be closer to 1€ = 280 DZD or more
+---
+
+# Service Payment Flow
+
+This section defines how payments work for service providers on Autopro.
+
+This applies to:
+
+- Car wash
+- Mobile car wash
+- Tire change
+- Tire repair
+- Scanner/diagnostic check
+- Software update services
+- Mechanics
+- Mobile mechanics
+- Detailing
+- Car wrapping
+- Paint/body shops
+- Other vehicle-related services
+
+Autopro must make the service payment flow:
+
+- Legal
+- Clear
+- Honest
+- Secure
+- Automated
+- Easy to use
+- Fraud-resistant
+- Fair for clients
+- Fair for service providers
+- Protective of Autopro fees
+
+---
+
+# 1. Fixed-Price Service Payment
+
+For fixed-price services such as car wash, tire change, scanner check, and detailing, the standard payment rule is:
+
+```txt
+Payment happens after the job is completed.
