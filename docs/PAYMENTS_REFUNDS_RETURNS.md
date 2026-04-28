@@ -437,3 +437,45 @@ Example:
 ```txt
 Official bank rate: 1€ = 150 DZD
 Real market/procurement cost may be closer to 1€ = 280 DZD or more
+---
+
+# Product Payment Flow
+
+This section defines how product payments work in Autopro.
+
+Autopro must support online payments, cash payments, cash-on-delivery countries, international suppliers, shipping company settlements, supplier payouts, Autopro fees, failed payments, fraud protection, and flexible country rules.
+
+The system must be flexible from day one.
+
+Admin must be able to configure payment rules by:
+
+- Country
+- Region
+- Supplier
+- Shipping company
+- Payment method
+- Supplier trust level
+- Product category
+- Product value
+- Bulk order
+- B2B contract
+- Order risk level
+
+---
+
+# 1. Online Payment Flow
+
+When the client pays online by card, wallet, bank method, or payment provider, Autopro must support a held/pending money flow.
+
+Recommended structure:
+
+```txt
+Client pays online
+Money enters pending/held balance
+Supplier confirms order
+Shipping progress is tracked
+Delivery is confirmed
+Return/dispute rules are checked
+Autopro fee is secured
+Supplier payout becomes available
+Shipping company settlement is calculated
