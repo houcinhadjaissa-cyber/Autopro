@@ -318,3 +318,11 @@ Created and updated:
 
 ```txt
 docs/QR_CONFIRMATION_AND_REUSABLE_CORE.md
+---
+
+# Latest Completed Step
+
+Added detailed product and service payment flow requirements to:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
