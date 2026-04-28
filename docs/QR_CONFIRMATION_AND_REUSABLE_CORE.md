@@ -305,3 +305,14 @@ To start another website using the same core idea later:
 Later, the owner can create a private template repository for the reusable core.
 
 Only the owner should control access to that template repository.
+---
+
+# QR Confirmation Must Be Optional and Flexible
+
+The QR confirmation engine must be a full working method, but it must not be the only confirmation method.
+
+For important actions, Autopro should support both:
+
+```txt
+Manual digital confirmation
+QR scan confirmation
