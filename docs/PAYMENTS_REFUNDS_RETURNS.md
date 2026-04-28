@@ -479,3 +479,40 @@ Return/dispute rules are checked
 Autopro fee is secured
 Supplier payout becomes available
 Shipping company settlement is calculated
+---
+
+# Payment Infrastructure, Currency Rates, and Support Automation
+
+This section defines important infrastructure rules for currencies, payment holding, staff support, and automated proof systems.
+
+---
+
+## Currency Rate Sources
+
+Autopro must support multiple currency and pricing rate sources.
+
+The system must not depend on only one exchange rate source.
+
+Possible rate sources:
+
+- Official bank rate
+- Central bank rate
+- Payment provider rate
+- Supplier settlement rate
+- Logistics partner settlement rate
+- Admin-approved country pricing rate
+- Market reference rate for pricing awareness
+- Manual admin override
+- Route-specific pricing rate
+
+---
+
+## Algeria Real Market Pricing
+
+For Algeria and similar countries, official bank conversion may not reflect real procurement cost.
+
+Example:
+
+```txt
+Official bank rate: 1€ = 150 DZD
+Real procurement/market cost may be closer to 1€ = 280 DZD or more
