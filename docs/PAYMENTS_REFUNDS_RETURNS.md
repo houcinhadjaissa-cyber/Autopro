@@ -588,3 +588,14 @@ Confirmed rule:
 
 ```txt
 Country law is the standard.
+## Product Payment Flow
+
+Autopro's product payment flow manages how customers pay for parts and accessories, how suppliers are compensated, and how Autopro collects its fees. This section details both online and cash payment mechanisms, the flow of funds, and how disputes, refunds, and returns are integrated into the financial process.
+
+### Dispute Resolution Flow for Product Payments
+
+Autopro will implement a comprehensive, fair, seamless, and largely automated dispute resolution system. This system is designed to provide clear processes for all parties involved, with a strong emphasis on evidence, legal compliance, and efficient resolution.
+
+**1. Who Can Open a Dispute:**
+
+*   Any authenticated user with an 
