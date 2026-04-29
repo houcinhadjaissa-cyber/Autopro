@@ -486,3 +486,15 @@ If this file is pasted into a new conversation:
 - Ask before moving to coding.
 - Continue documenting the platform before building.
 - Treat confirmed owner requirements as fixed unless owner changes them.
+---
+
+# Latest Continuation Update - Payments, Refunds, Returns, Cash Flow, Payouts, and Business Debt
+
+The Autopro payments documentation has been expanded significantly.
+
+Important new or expanded files now include:
+
+```txt
+docs/CREDIT_WALLET_AND_CLIENT_TRUST.md
+docs/QR_CONFIRMATION_AND_REUSABLE_CORE.md
+docs/PAYMENTS_REFUNDS_RETURNS.md
