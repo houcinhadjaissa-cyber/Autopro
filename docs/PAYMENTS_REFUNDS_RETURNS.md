@@ -1019,3 +1019,143 @@ Autopro must use a security-focused structure with:
 If fraud detection triggers, Autopro can automatically block the partner account, office account, employee account, or private link.
 
 If fraud 
+---
+
+# Confirmed Supplier Payout, Business Debt, and Autopro Fee Collection Rules
+
+This section records confirmed rules for Autopro fee visibility, fee limits, supplier payouts, business debt, negative balances, debt deadlines, payment methods, chargebacks, payout holds, business statements, and staff permissions.
+
+Autopro must make money movement clear, automated, proof-based, legally compliant by country, and visible to the correct role.
+
+---
+
+## 1. Autopro Fee Visibility
+
+Confirmed rule:
+
+- Client sees the final price only.
+- Client does not see Autopro internal profit, commission, or fee breakdown.
+- Supplier sees Autopro fee obligations connected to their products, orders, payouts, plans, and invoices.
+- Service provider sees Autopro fee obligations connected to services, bookings, jobs, plans, and invoices.
+- Shipping company sees Autopro fee obligations connected to delivery, cash collection, logistics, settlements, and contracts.
+- Admin/full owner sees the full breakdown.
+
+For VIP, bulk, fleet, and contract accounts, Autopro must be able to show:
+
+- Original Autopro fee
+- VIP reduction
+- Plan discount
+- Bulk discount
+- Fleet/contract discount
+- Savings gained from being VIP or using a paid plan
+- Final amount owed
+
+The client must not need to understand the internal Autopro business fee structure.
+
+---
+
+## 2. Autopro Fee Maximum
+
+Confirmed rule:
+
+Autopro percentage-based platform fees must not surpass 20% unless a separate legal/business exception is approved by admin/full owner and allowed by country law.
+
+The 20% maximum applies to:
+
+- Product sales
+- Service bookings
+- Examination/diagnosis fees
+- Shipping/logistics platform fees
+- B2B/fleet order platform fees
+
+The 20% maximum does not automatically apply to:
+
+- Ads/promotions, because they are separate paid services
+- Plan/subscription fees, because they are fixed plan prices
+- Optional featured placement packages
+- Optional analytics packages
+- Other separately purchased business tools
+
+Country/category exceptions require admin/full owner approval and legal/business review.
+
+Autopro must balance:
+
+- Maximum legal profit for Autopro
+- Strong client experience
+- Repeat purchases
+- Supplier profitability
+- Service provider profitability
+- Long-term marketplace growth
+
+---
+
+## 3. Online Product Order Autopro Fee Timing
+
+For online product orders:
+
+1. Autopro fee is calculated when the order is created.
+2. Autopro fee becomes secured when client payment is captured.
+3. Autopro fee is separated before supplier payout.
+4. Supplier sees the fee in their dashboard.
+5. Client sees only the final client-facing price.
+
+Confirmed rule:
+
+If the order is cancelled before the supplier ships or starts the confirmed shipping process, the Autopro fee can be cancelled or reduced according to cancellation rules.
+
+Once the order has been shipped or shipping handoff has started, Autopro fee is automatically secured according to platform rules, even if later there is a delivery issue, return, refund, or dispute.
+
+Responsibility rules decide who reimburses Autopro if a refund, chargeback, return, or store credit case happens later.
+
+---
+
+## 4. Cash Product Order Autopro Fee Timing
+
+For cash product orders, Autopro fee is not collected from an online payment capture.
+
+Instead, the Autopro fee becomes part of the business fee balance/debt system.
+
+Confirmed rule:
+
+For cash product orders, Autopro fee is automatically added to the supplier, service provider, shipping company, or responsible business fee balance depending on who completed the sale, collected the cash, or owes the platform fee.
+
+The business can pay this balance through:
+
+- Weekly billing
+- Monthly billing
+- Monthly plan + fee billing
+- Partner desk payment
+- Online payment
+- Bank transfer
+- Deduction from future payouts
+- Other country-specific methods
+
+The business dashboard must show live updated fee/debt amounts clearly.
+
+---
+
+## 5. Who Pays Autopro Fee By Default
+
+Confirmed standard rule:
+
+Supplier/service provider pays Autopro fees by default.
+
+Autopro must also support exceptions:
+
+- Client can pay a visible service/convenience fee if admin enables it and country law allows it.
+- Shipping company can pay logistics/collection fees if contract says so.
+- Supplier pays product commission.
+- Service provider pays booking/service commission.
+- Hybrid business pays based on product + service parts of the order.
+- Autopro can reduce or absorb fees during promotions if admin decides.
+- Country law decides if fees must be shown, separated, taxed, or handled differently.
+
+Important legal wording:
+
+Autopro must not call a platform fee a “tax” unless it is a real government tax. If a small client-facing convenience/service fee is used, it must be handled transparently according to country law.
+
+Suggested client-facing convenience/service fee range for future testing:
+
+```txt
+0.5% to 3%
+or a small fixed local amount
