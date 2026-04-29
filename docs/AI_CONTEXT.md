@@ -498,3 +498,87 @@ Important new or expanded files now include:
 docs/CREDIT_WALLET_AND_CLIENT_TRUST.md
 docs/QR_CONFIRMATION_AND_REUSABLE_CORE.md
 docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+---
+
+# Latest Recovery Override - Financial Planning Status
+
+This recovery section confirms the latest accurate project status if older sections above still mention an outdated next step.
+
+Autopro has now completed major documentation for:
+
+- Online product payment rules
+- Cash product payment rules
+- Cash-on-delivery rules
+- Supplier payout timing
+- Risk reserves
+- Shipping company cash collection
+- ZR Express-style partner desk/payment confirmation engine
+- Business debt system
+- Negative balances
+- Autopro fee collection rules
+- Chargeback responsibility
+- Staff financial permissions
+- Client credit/wallet direction
+- QR confirmation direction
+
+Important files now active:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+docs/CREDIT_WALLET_AND_CLIENT_TRUST.md
+docs/QR_CONFIRMATION_AND_REUSABLE_CORE.md
+```
+
+## Do Not Repeat These Questions
+
+Do not repeat already answered questions about:
+
+- Authorization before capture
+- 48-hour supplier/service provider confirmation
+- Supplier cancellation after confirmation
+- Supplier payout after shipping handoff
+- New supplier payout after delivery confirmation
+- Risky supplier payout holds
+- Partial payout and reserves
+- Cash Expected order status
+- Cash collector roles
+- Cash order trust checks
+- Cash order limits/deposits
+- Client refusal to pay cash
+- Shipping company cash collection
+- Partner desk/ZR Express-style engine
+- Cash refunds
+- International supplier cash collection
+- Business debt
+- Business debt deadlines
+- Business debt payment plans
+- Negative balances
+- Deducting debt from future payouts
+- Chargebacks
+- Payout holds during dispute
+- Business invoices/statements
+- Staff permissions for money/debt/payout changes
+
+## Current Next Planning Step
+
+The next planning step should continue from:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+Recommended next topic:
+
+```txt
+Shipping company settlement detailed rules
+```
+
+Alternative next topic:
+
+```txt
+Refund and return decision matrix
+```
+
+Ask the owner which one to continue with if unclear.
