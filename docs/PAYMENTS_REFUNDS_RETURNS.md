@@ -558,3 +558,33 @@ For fixed-price services such as car wash, tire change, scanner check, and detai
 
 ```txt
 Payment happens after the job is completed.
+---
+
+# Refund and Return Flow
+
+This section defines how refunds, returns, replacements, damaged parts, wrong parts, service refunds, partial refunds, store credit, fraud prevention, and responsibility decisions work in Autopro.
+
+Autopro must make refund and return handling:
+
+- Legal by country
+- Fair
+- Secure
+- Automated
+- Proof-based
+- Clear to clients
+- Clear to suppliers
+- Clear to service providers
+- Clear to shipping companies
+- Protective of Autopro
+- Protective against fraud
+
+---
+
+# 1. Product Return Window
+
+The product return window must follow country law as the highest rule.
+
+Confirmed rule:
+
+```txt
+Country law is the standard.
