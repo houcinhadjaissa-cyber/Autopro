@@ -340,3 +340,76 @@ Important updated or newly referenced files:
 docs/PAYMENTS_REFUNDS_RETURNS.md
 docs/CREDIT_WALLET_AND_CLIENT_TRUST.md
 docs/QR_CONFIRMATION_AND_REUSABLE_CORE.md
+```
+
+---
+
+# Current Status Recovery Override - Payments Expanded
+
+This section confirms the latest correct project status if older sections above still show outdated payment planning status.
+
+## Latest Completed Work
+
+The following payment and financial planning topics have been documented:
+
+- Online payment authorization before capture
+- 48-hour supplier/service provider confirmation window
+- Supplier cancellation after confirmation
+- Trusted supplier cancellation handling
+- Supplier payout timing
+- New supplier payout holds
+- Risky supplier payout holds
+- Partial payouts and reserves
+- Cash product payment flow
+- Cash-on-delivery availability
+- Cash collector roles
+- Client trust checks for cash orders
+- Cash order deposits/limits
+- Client refusal to pay cash
+- Shipping company cash collection
+- Partner desk / ZR Express-style confirmation and payment engine
+- Cash receipt proof
+- Cash refunds
+- International supplier cash-on-delivery handling
+- Autopro fee visibility and maximum rules
+- Business debt system
+- Debt deadlines and escalation
+- VIP/trusted business debt handling
+- Business payment methods
+- Automatic debt deduction from payouts
+- Negative balances
+- Refund reimbursement
+- Chargeback responsibility
+- Payout holds during disputes
+- Business invoices and statements
+- Staff permissions for money/debt/payout/settlement changes
+
+## Active Financial Documentation Files
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+docs/CREDIT_WALLET_AND_CLIENT_TRUST.md
+docs/QR_CONFIRMATION_AND_REUSABLE_CORE.md
+```
+
+## Correct Current Next Step
+
+Continue detailing:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+Recommended next topic:
+
+```txt
+Shipping company settlement detailed rules
+```
+
+Alternative next topic:
+
+```txt
+Refund and return decision matrix
+```
+
+No coding should start yet.
