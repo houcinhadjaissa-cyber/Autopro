@@ -599,3 +599,94 @@ Autopro will implement a comprehensive, fair, seamless, and largely automated di
 **1. Who Can Open a Dispute:**
 
 *   Any authenticated user with an 
+---
+
+# Confirmed Online Product Payment Rules
+
+This section records confirmed rules for online product payments, supplier confirmation, payout timing, risk reserves, shipping company settlement, failed payments, client cancellation, and linked product/service orders.
+
+---
+
+## 1. Online Payment Authorization Before Capture
+
+Autopro must use an authorization-first structure where supported by the payment provider and country law.
+
+Confirmed flow:
+
+1. Client clicks Pay Now or Place Order.
+2. Autopro checks/authorizes that the client has enough available money.
+3. No money is captured from the client yet.
+4. Order status becomes Pending Supplier Confirmation or Pending Required Confirmations.
+5. Supplier and/or service provider receives automatic notification only after payment authorization is successful.
+6. Supplier and/or service provider has 48 hours to confirm availability, shipping possibility, and/or booking slot.
+7. If the supplier and/or service provider does not confirm within 48 hours, the authorization is cancelled.
+8. If all required parties confirm within 48 hours, Autopro captures the payment.
+9. Captured money goes first to Autopro, the payment provider holding balance, approved merchant balance, or legally required holding structure depending on the country and payment provider.
+
+Autopro must not capture online payment before required supplier/service provider confirmation unless a country-specific, provider-specific, or admin-approved rule requires a different process.
+
+---
+
+## 2. Pending Confirmation Status
+
+Online product orders must support a pending state.
+
+Possible pending statuses include:
+
+- Pending payment authorization
+- Payment authorized
+- Pending supplier confirmation
+- Pending service provider confirmation
+- Pending required confirmations
+- Authorization expiring soon
+- Authorization cancelled
+- Payment captured
+- Order confirmed
+
+The client must see a clear message explaining that the order request was submitted but is waiting for business confirmation.
+
+The supplier/service provider must see a clear 48-hour confirmation deadline.
+
+---
+
+## 3. Supplier Cancellation After Confirmation
+
+If a supplier confirms an order and Autopro captures the client payment, then the supplier later says the product is unavailable or cannot be shipped, responsibility depends on supplier trust status and history.
+
+### New Supplier Rule
+
+For a new supplier, cancellation after confirmation creates supplier responsibility.
+
+Autopro must support:
+
+- Full client refund
+- Store credit if the client chooses it
+- Supplier warning
+- Supplier trust score reduction
+- Possible restriction if repeated
+- Autopro fee or processing fee charged according to platform rules
+
+### Trusted Supplier Rule
+
+For a trusted supplier with good history, one honest cancellation after confirmation should be handled smoothly.
+
+Autopro must support:
+
+- Full client refund or store credit, based on client choice
+- Apology message from supplier/platform
+- No automatic warning if the case is reasonable
+- No automatic trust score reduction if the supplier has good history
+- Autopro fee reduced to only the real transaction/refund processing cost, not the full normal platform fee
+
+Trusted supplier protection must not be used to hide repeated problems. If a trusted supplier repeatedly confirms orders and then cancels them, Autopro can apply warnings, score reductions, payout holds, restrictions, or suspension.
+
+---
+
+## 4. Supplier Payout Trigger
+
+The standard supplier payout trigger for online product orders is package handoff confirmation.
+
+Confirmed standard rule:
+
+```txt
+Supplier payout becomes available after the shipping company confirms that it received the package from the supplier.
