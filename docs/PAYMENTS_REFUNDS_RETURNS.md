@@ -1023,9 +1023,20 @@ If fraud
 
 # Confirmed Supplier Payout, Business Debt, and Autopro Fee Collection Rules
 
-This section records confirmed rules for Autopro fee visibility, fee limits, supplier payouts, business debt, negative balances, debt deadlines, payment methods, chargebacks, payout holds, business statements, and staff permissions.
+This section records confirmed rules for supplier payouts, service provider payouts, shipping company payouts, Autopro fee collection, unpaid business debt, negative balances, chargebacks, payout holds, statements, and staff permissions.
 
-Autopro must make money movement clear, automated, proof-based, legally compliant by country, and visible to the correct role.
+Autopro must make fee collection and payout handling:
+
+- Legal by country
+- Automated where possible
+- Clear to business users
+- Protected for Autopro
+- Fair to suppliers
+- Fair to service providers
+- Fair to shipping companies
+- Seamless for trusted/VIP partners
+- Strict against fraud and repeated abuse
+- Fully visible to admin/full owner
 
 ---
 
@@ -1034,103 +1045,107 @@ Autopro must make money movement clear, automated, proof-based, legally complian
 Confirmed rule:
 
 - Client sees the final price only.
-- Client does not see Autopro internal profit, commission, or fee breakdown.
-- Supplier sees Autopro fee obligations connected to their products, orders, payouts, plans, and invoices.
-- Service provider sees Autopro fee obligations connected to services, bookings, jobs, plans, and invoices.
-- Shipping company sees Autopro fee obligations connected to delivery, cash collection, logistics, settlements, and contracts.
-- Admin/full owner sees the full breakdown.
+- Client does not see Autopro internal profit, commission, or fee breakdown unless legally required.
+- Supplier can see Autopro fee per part, per order, and per applicable product transaction.
+- Service provider can see Autopro fee per service, booking, examination, diagnosis, or completed job.
+- Shipping company can see its own logistics, collection, or platform fee obligations.
+- Admin/full owner sees the full internal breakdown.
 
-For VIP, bulk, fleet, and contract accounts, Autopro must be able to show:
+For VIP deals, bulk orders, fleet services, and special contracts, business users can see:
 
 - Original Autopro fee
 - VIP reduction
-- Plan discount
-- Bulk discount
-- Fleet/contract discount
-- Savings gained from being VIP or using a paid plan
-- Final amount owed
+- Plan-based reduction
+- Bulk/order reduction
+- Fleet/contract reduction
+- Savings created by VIP status, plan level, or contract
 
-The client must not need to understand the internal Autopro business fee structure.
+The client experience must remain simple and should not expose internal business fee logic unless the law requires disclosure.
 
 ---
 
 ## 2. Autopro Fee Maximum
 
-Confirmed rule:
+Autopro commission-style platform fees must not surpass 20% as the standard maximum.
 
-Autopro percentage-based platform fees must not surpass 20% unless a separate legal/business exception is approved by admin/full owner and allowed by country law.
-
-The 20% maximum applies to:
+This 20% maximum applies to:
 
 - Product sales
 - Service bookings
 - Examination/diagnosis fees
 - Shipping/logistics platform fees
-- B2B/fleet order platform fees
+- B2B/fleet order commissions
 
-The 20% maximum does not automatically apply to:
+Separate paid services are not treated as normal commission fees. These include:
 
-- Ads/promotions, because they are separate paid services
-- Plan/subscription fees, because they are fixed plan prices
-- Optional featured placement packages
+- Ads
+- Promotions
+- Featured listings
+- Subscription plans
+- Fixed plan prices
 - Optional analytics packages
-- Other separately purchased business tools
+- Optional premium business tools
 
-Country/category exceptions require admin/full owner approval and legal/business review.
+Country/category exceptions require admin/full owner approval and must follow applicable law.
 
-Autopro must balance:
+Autopro must keep fee rules flexible so the platform can protect Autopro profit while also supporting:
 
-- Maximum legal profit for Autopro
-- Strong client experience
+- Good client experience
 - Repeat purchases
 - Supplier profitability
 - Service provider profitability
-- Long-term marketplace growth
+- Shipping partner cooperation
+- VIP and fleet discounts
+- Country-specific pricing rules
 
 ---
 
-## 3. Online Product Order Autopro Fee Timing
+## 3. Online Product Order Fee Timing
 
 For online product orders:
 
 1. Autopro fee is calculated when the order is created.
-2. Autopro fee becomes secured when client payment is captured.
+2. Autopro fee is secured when client payment is captured.
 3. Autopro fee is separated before supplier payout.
 4. Supplier sees the fee in their dashboard.
-5. Client sees only the final client-facing price.
+5. Client sees only the final price unless law requires otherwise.
 
 Confirmed rule:
 
-If the order is cancelled before the supplier ships or starts the confirmed shipping process, the Autopro fee can be cancelled or reduced according to cancellation rules.
+If the order is cancelled before the supplier ships or starts the confirmed fulfillment process, the normal Autopro fee can be cancelled or reduced according to cancellation rules.
 
-Once the order has been shipped or shipping handoff has started, Autopro fee is automatically secured according to platform rules, even if later there is a delivery issue, return, refund, or dispute.
+Once the order is shipped or fulfillment has started, Autopro fee is automatically secured according to the platform rules, even if the order later has a delivery, return, or dispute issue.
 
-Responsibility rules decide who reimburses Autopro if a refund, chargeback, return, or store credit case happens later.
+Responsibility rules decide later if the fee remains, is reduced, is transferred, or is charged to the responsible party.
 
 ---
 
-## 4. Cash Product Order Autopro Fee Timing
+## 4. Cash Product Order Fee Timing
 
-For cash product orders, Autopro fee is not collected from an online payment capture.
+For cash product orders, Autopro fee is not collected from online client payment.
 
-Instead, the Autopro fee becomes part of the business fee balance/debt system.
+Instead, Autopro fee is automatically added to the supplier, service provider, shipping company, or responsible business bill.
 
-Confirmed rule:
+Cash order fees can be billed:
 
-For cash product orders, Autopro fee is automatically added to the supplier, service provider, shipping company, or responsible business fee balance depending on who completed the sale, collected the cash, or owes the platform fee.
+- Per order
+- Weekly
+- Monthly
+- With plan billing
+- According to contract
+- According to country/payment rules
+- According to admin settings
 
-The business can pay this balance through:
+The business dashboard must clearly show:
 
-- Weekly billing
-- Monthly billing
-- Monthly plan + fee billing
-- Partner desk payment
-- Online payment
-- Bank transfer
-- Deduction from future payouts
-- Other country-specific methods
-
-The business dashboard must show live updated fee/debt amounts clearly.
+- Order amount
+- Cash collected
+- Autopro fee owed
+- Due date
+- Payment method options
+- Paid/unpaid status
+- Linked invoice or bill
+- Any penalties or restrictions if unpaid
 
 ---
 
@@ -1138,24 +1153,127 @@ The business dashboard must show live updated fee/debt amounts clearly.
 
 Confirmed standard rule:
 
-Supplier/service provider pays Autopro fees by default.
+Supplier/service provider pays Autopro fees as the standard rule.
 
-Autopro must also support exceptions:
+Autopro must support exceptions where legally and commercially appropriate:
 
-- Client can pay a visible service/convenience fee if admin enables it and country law allows it.
-- Shipping company can pay logistics/collection fees if contract says so.
+- Client can pay a visible service/convenience/operational fee if admin enables it and the law allows it.
+- Shipping company can pay logistics or collection fee if contract says so.
 - Supplier pays product commission.
 - Service provider pays booking/service commission.
-- Hybrid business pays based on product + service parts of the order.
-- Autopro can reduce or absorb fees during promotions if admin decides.
-- Country law decides if fees must be shown, separated, taxed, or handled differently.
+- Hybrid business pays based on the product and service portions of the order.
+- Autopro can discount or absorb fees during promotions if admin decides.
+- Country law decides if a fee must be shown, hidden inside final price, taxed, invoiced, or handled differently.
 
-Important legal wording:
+Any client-facing fee must be handled honestly and legally. If the law requires the fee to be shown, Autopro must show it.
 
-Autopro must not call a platform fee a “tax” unless it is a real government tax. If a small client-facing convenience/service fee is used, it must be handled transparently according to country law.
+Suggested future configuration:
 
-Suggested client-facing convenience/service fee range for future testing:
+- Small operational/convenience fee can be configurable by country.
+- Example range can be 0.5% to 3% or a small fixed local amount, depending on country law, payment method, partner desk cost, and platform strategy.
+- The fee should be capped so the client experience stays positive.
+- Admin/full owner must control whether this fee is included in final price or shown separately where legally required.
+
+---
+
+## 6. Shipping Company Fees
+
+Shipping companies can have Autopro platform, logistics, collection, or settlement fees depending on contract.
+
+Special discounted shipping company fees can apply when a shipping/logistics company provides extra value or extra risk coverage.
+
+Example:
+
+A shipping/logistics company pays the supplier abroad, such as in China, and receives equivalent cash settlement locally, such as in Algeria.
+
+In that case, Autopro can give discounted fees because the shipping company is helping solve international supplier payment and cash collection problems.
+
+Shipping company fee rules must be configurable by:
+
+- Country
+- Shipping company
+- Route
+- Service type
+- Cash collection role
+- International settlement role
+- Risk level
+- Contract
+- Admin decision
+
+---
+
+## 7. Trusted Supplier Payout
+
+Trusted suppliers can receive faster payouts after shipping company package handoff or received scan.
+
+Trusted/VIP suppliers can receive payout before package handoff only under controlled conditions.
+
+Allowed cases can include:
+
+- Very trusted/VIP supplier
+- Low-risk product
+- Low-value product
+- Admin approval
+- Supplier has guarantee/security deposit/credit arrangement with Autopro
+- Country/payment provider supports the structure
+- Supplier has excellent history and low dispute rate
+
+Autopro must protect itself from loss, fraud, and refunds when early payout is allowed.
+
+---
+
+## 8. New Supplier Payout
+
+New suppliers receive payout after package delivery is confirmed, not just package handoff, until they build trust.
+
+This protects Autopro and clients while the supplier is still proving reliability.
+
+New supplier payout rules can loosen over time if the supplier shows:
+
+- Successful deliveries
+- Low dispute rate
+- Low return rate
+- Good communication
+- Fast confirmations
+- Good client feedback
+- Accurate product listings
+- Reliable shipping behavior
+- Timely payment of Autopro fees
+
+---
+
+## 9. Risky Supplier Payout
+
+Risky suppliers or suppliers with previous warnings can have payout delayed until:
+
+- Delivery is confirmed
+- Return window rules are satisfied
+- Dispute window rules are satisfied
+- Staff/admin review is completed if needed
+
+Risky supplier behavior can include:
+
+- Repeated cancellations
+- Wrong parts
+- Damaged items
+- Delayed shipping
+- Missing proof
+- Client complaints
+- Cash not reported
+- Fee debt not paid
+- Fraud reports
+- Repeated disputes
+
+Autopro can apply payout holds, reserves, restrictions, reduced visibility, or suspension depending on severity.
+
+---
+
+## 10. Partial Payout and Reserve
+
+Autopro must support partial payout and payout reserve.
+
+Example:
 
 ```txt
-0.5% to 3%
-or a small fixed local amount
+Supplier receives 80% after package handoff.
+Autopro holds 20% reserve until delivery/dispute window ends.
