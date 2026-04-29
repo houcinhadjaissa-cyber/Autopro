@@ -261,3 +261,11 @@ Purpose:
 - Payment QR direction
 - Reusable private platform core
 - Future project reuse structure
+---
+
+## Credit, Wallet, and Client Trust System
+
+File:
+
+```txt
+CREDIT_WALLET_AND_CLIENT_TRUST.md
