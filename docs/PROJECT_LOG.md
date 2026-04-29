@@ -138,3 +138,18 @@ Added detailed payment flow requirements to:
 
 ```txt
 docs/PAYMENTS_REFUNDS_RETURNS.md
+---
+
+# Project Log - Payments, Cash Flow, Payouts, and Business Debt Expansion
+
+## Summary
+
+Expanded Autopro financial documentation with detailed rules for online payments, cash payments, partner desk collection, supplier payouts, business debt, negative balances, chargebacks, and staff financial permissions.
+
+## Files Updated
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+docs/AI_CONTEXT.md
+docs/CURRENT_STATUS.md
+docs/PROJECT_LOG.md
