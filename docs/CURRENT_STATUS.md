@@ -655,3 +655,71 @@ Payments file cleanup and consolidation
 ```
 
 No coding should start yet.
+```
+
+---
+
+# Current Status Recovery Override - Admin Money Dashboard Completed
+
+Admin money dashboard and financial controls have been documented inside:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+## Latest Completed Work
+
+Completed payment/refund/return planning now includes:
+
+- Online product payment flow
+- Cash product payment flow
+- Supplier payout rules
+- Business debt rules
+- Autopro fee collection rules
+- Shipping company settlement detailed rules part 1
+- Shipping company settlement detailed rules part 2
+- Refund and return decision matrix
+- Service payment, service refund, and service provider payout final details
+- Admin money dashboard and financial controls
+
+## Admin Money Dashboard Topics Completed
+
+Autopro now has confirmed rules for:
+
+- Full owner financial visibility
+- Admin dashboard summary and drill-down structure
+- Money balance categories
+- Complete transaction ledger
+- Filters and search
+- Supplier/service provider/shipping company financial profile views
+- Supplier import/export/demand/growth intelligence
+- Fee automation rules
+- Manual adjustment permissions
+- Payout approval controls
+- Refund approval controls
+- Business debt dashboard
+- Cash control dashboard
+- Country and currency dashboard
+- Alerts and risk warnings
+- Staff financial task assignment
+- Staff financial performance tracking
+- Financial audit logs
+- Export/download reports
+- Tax/accounting reporting direction
+- Payment provider monitoring
+- Fraud/risk dashboard
+- Owner profit dashboard
+- Dashboard permissions
+- Dashboard section structure
+
+## Correct Current Next Step
+
+Perform:
+
+```txt
+Payments file cleanup and consolidation
+```
+
+The cleanup should replace the messy current `docs/PAYMENTS_REFUNDS_RETURNS.md` with one clean consolidated version.
+
+No coding should start yet.
