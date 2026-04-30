@@ -229,3 +229,68 @@ Refund and return decision matrix
 ```
 
 Do not repeat already completed payment, cash, payout, debt, negative balance, chargeback, or staff financial permission questions unless the owner asks to revise them.
+```
+
+---
+
+# Project Log Recovery Entry - Shipping Settlement Rules Completed
+
+## Summary
+
+Expanded Autopro payment/refund/return documentation with detailed shipping company settlement rules.
+
+## Main File Updated
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+## Completed Shipping Settlement Decisions
+
+Confirmed and documented:
+
+- Shipping companies have their own business account type.
+- Shipping companies do not need full public marketplace profiles by default.
+- Shipping companies can have private dashboards.
+- Shipping companies can have employees with role-based permissions.
+- Shipping employee roles include company admin, regional manager, office/desk worker, driver, warehouse worker, finance employee, support employee, and returns employee.
+- Package handoff from supplier to shipping company should be confirmed from both sides where possible.
+- QR scan, manual confirmation, shipping scan, photo/video proof, and staff/admin confirmation can be used depending on situation.
+- Supplier payout can depend on shipping company handoff confirmation.
+- Shipping company responsibility begins after confirmed package handoff.
+- Delivery confirmation can use QR, manual confirmation, delivery scan, photo, GPS if legal, signature if required, or pickup desk confirmation.
+- COD delivery requires cash collection confirmation before payment flow is closed.
+- Shipping company settlement can be immediate, daily, weekly, monthly, contract-based, country-based, or admin-controlled.
+- Shipping companies can pay Autopro fees and can receive discounts for extra services or risk.
+- Autopro supports the model where shipping/logistics company pays supplier abroad and collects equivalent cash locally.
+- Route-specific exchange/pricing rates are confirmed.
+- Shipping company IDs and reputation should be reusable in future owner platforms where legally allowed.
+- Lost/damaged/late package responsibility is proof-based.
+- Warehouse handoffs, relabeling, local carrier assignment, and label printing must be supported.
+- Failed delivery attempts require reason selection and optional notes/proof.
+- Delivery reschedule rules must be flexible.
+- Storage fees can exist where legal.
+- Return shipping fee responsibility depends on proof and cause.
+- Shipping companies can open disputes.
+- Shipping companies have trust/performance scores.
+- Shipping companies can receive penalties and rewards.
+- Shipping company plans and premium features must be supported.
+- Customs/import tracking and fee responsibility must be supported.
+- Shipping insurance and claim flow must be supported.
+- Future API/integration with shipping systems must be planned from day one.
+- Private partner portal must exist for companies without modern software/API.
+- Admin/staff controls for shipping settlement must be role-based and audit logged.
+- Shipping statement/payment reconciliation must be automated.
+- Shipping company client-data access must be limited to delivery needs.
+- Shipping company VIP/trusted client lists can exist as paid-plan/premium features where legal.
+- Shipping company support must support AI, tickets, direct staff, urgent contact, account manager, and saved support history.
+
+## Next Recommended Work
+
+Continue with:
+
+```txt
+Refund and return decision matrix
+```
+
+Do not repeat shipping settlement questions unless the owner asks to revise them.
