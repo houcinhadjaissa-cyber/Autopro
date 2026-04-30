@@ -281,3 +281,13 @@ File:
 
 ```txt
 docs/CREDIT_WALLET_AND_CLIENT_TRUST.md
+---
+
+# Systems Index Update - Clean Payments Reference
+
+A clean consolidated payments reference has been created.
+
+Clean active file:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS_CLEAN.md
