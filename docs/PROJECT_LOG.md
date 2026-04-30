@@ -426,3 +426,71 @@ Payments file cleanup and consolidation
 ```
 
 Do not repeat service payment and provider payout questions unless the owner asks to revise them.
+```
+
+---
+
+# Project Log Recovery Entry - Admin Money Dashboard Completed
+
+## Summary
+
+Expanded Autopro payment/refund/return documentation with admin money dashboard and financial control requirements.
+
+## Main File Updated
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+## Completed Admin Money Dashboard Decisions
+
+Confirmed and documented:
+
+- Admin money dashboard must show full financial visibility.
+- Full owner must be able to see every transaction, fee, payout, refund, debt, staff adjustment, balance, dispute hold, manual override, audit log, and report.
+- Dashboard sections must show summary totals first and allow drill-down into detailed records.
+- Dashboard must include total revenue, fees, product fees, service fees, shipping/logistics fees, plan revenue, ads/promotions revenue, refunds, returns, chargebacks, debts, balances, cash, country/currency breakdown, and profit/loss estimates.
+- Dashboard must include account counts and vehicle counts.
+- Dashboard must include supplier import/export/demand/growth intelligence.
+- Dashboard must support pending, available, held, Autopro fee, business debt, negative, cash expected, cash collected, cash not remitted, refund reserve, and chargeback reserve balances.
+- Autopro must have a complete transaction ledger for every money movement.
+- Every dashboard section must support filters, search, ranking, detailed views, exports where allowed, permissions, staff assignment, and audit logs where relevant.
+- Each business profile must have an admin financial view.
+- Admin must be able to create automated fee rules.
+- Manual financial adjustments require controlled permissions, reason, proof, and audit logs.
+- Payouts are automated for trusted/low-risk cases and reviewed for risky/high-value/disputed cases.
+- Refunds are automated for simple eligible cases and reviewed for risky/high-value/fraud cases.
+- Business debt dashboard must show supplier, provider, shipping company, partner desk, reimbursement, plan, cash, chargeback, penalty, debt age, deadlines, payment plans, and escalation status.
+- Cash control dashboard must track cash expected, collected, not remitted, COD, refunds, partner desk payments, shipping cash settlement, direct cash collection, and reconciliation.
+- Country/currency dashboard must track DZD, EUR, USD, GBP, NGN, payment methods, exchange rates, route-specific rates, market/procurement rates, bank/provider rates, overrides, and gain/loss estimates.
+- Alerts and risk warnings must exist.
+- Money-related tasks must be automatically assignable to staff.
+- Staff financial performance must be tracked.
+- Every financial action must have audit logs.
+- Admin must be able to export reports in CSV, Excel, and PDF.
+- Tax/accounting reporting must be supported and legally reviewed before launch.
+- Payment provider monitoring must be supported.
+- Fraud/risk analytics must be supported.
+- Owner profit dashboard must show revenue, costs, risks, growth trends, best partners, worst risk areas, and suggestions to increase profit.
+- Dashboard permissions must be role-based and audit logged.
+- Dashboard sections must be selectable and assignable to specific roles/employees.
+
+## Next Maintenance Work
+
+Perform:
+
+```txt
+Payments file cleanup and consolidation
+```
+
+The owner wants a simple replacement workflow:
+
+```txt
+Open docs/PAYMENTS_REFUNDS_RETURNS.md
+Select all old text
+Delete old text
+Paste one clean consolidated replacement text
+Commit
+```
+
+Do not repeat admin money dashboard questions unless the owner asks to revise them.
