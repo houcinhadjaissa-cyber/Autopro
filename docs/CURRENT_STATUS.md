@@ -413,3 +413,85 @@ Refund and return decision matrix
 ```
 
 No coding should start yet.
+```
+
+---
+
+# Current Status Recovery Override - Shipping Settlement Completed
+
+Shipping company settlement planning has been expanded and documented inside:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+## Latest Completed Work
+
+Completed shipping/payment topics now include:
+
+- Online product payment flow
+- Cash product payment flow
+- Supplier payout rules
+- Business debt rules
+- Autopro fee collection rules
+- Shipping company settlement detailed rules part 1
+- Shipping company settlement detailed rules part 2
+
+## Shipping Settlement Topics Completed
+
+Autopro now has confirmed rules for:
+
+- Shipping company accounts
+- Shipping dashboards
+- Shipping company employees
+- Shipping permissions
+- Package handoff confirmations
+- Delivery confirmations
+- Cash collection by shipping company
+- Shipping payouts
+- Shipping settlement statements
+- Shipping company fees
+- International supplier payment handled by shipping/logistics partners
+- Route-specific exchange/pricing rates
+- Package loss responsibility
+- Package damage responsibility
+- Late delivery responsibility
+- Pickup desk no-show
+- Failed delivery attempts
+- Rescheduling rules
+- Reschedule fees
+- Storage fees
+- Return shipping fee responsibility
+- Shipping company disputes
+- Shipping trust/performance scores
+- Shipping penalties and rewards
+- Shipping company plans
+- Warehouse handoff rules
+- Warehouse damage/loss responsibility
+- Customs/import tracking
+- Customs/import fee responsibility
+- Shipping insurance
+- Insurance claim flow
+- Shipping API/integration direction
+- Partner portal for shipping companies without software/API
+- Staff/admin controls for shipping settlements
+- Statement/payment reconciliation
+- Shipping company access to client data
+- Shipping company VIP/trusted client lists
+- Shipping company support/contact flow
+
+## Correct Current Next Step
+
+Continue detailing:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+Next topic:
+
+```txt
+Refund and return decision matrix
+```
+
+No coding should start yet.
