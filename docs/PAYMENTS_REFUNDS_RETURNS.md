@@ -2848,3 +2848,86 @@ The standard Autopro direction is:
 
 ```txt
 No automatic return/refund only because the client changed mind, unless country law requires it or supplier policy allows it.
+---
+
+# Confirmed Service Payment, Service Refund, and Service Provider Payout Final Details
+
+This section records confirmed rules for service payments, service provider payouts, service refunds, examination/diagnosis fees, service quotes, provider-ordered parts, cancellations, no-shows, service completion confirmation, service disputes, service warranty, rework, extra work, overcharging protection, provider protection, provider trust score, rewards, penalties, and provider statements.
+
+Autopro must make service payment and service provider payout handling:
+
+- Legal by country
+- Flexible
+- Automated where possible
+- Easy for clients
+- Easy for service providers
+- Proof-based
+- Secure
+- Fair to honest clients
+- Fair to honest service providers
+- Protective of Autopro fees
+- Connected to invoices, quotes, vehicle history, trust scores, disputes, and dashboards
+
+---
+
+## 1. Service Payment Types
+
+Autopro must support multiple service payment types.
+
+Supported service payment types can include:
+
+- Fixed-price service paid after completion
+- Fixed-price service paid before appointment if provider/admin/country rules allow
+- Examination/diagnosis fee paid after appointment as the standard direction
+- Examination/diagnosis fee paid before appointment if provider requires it and law allows
+- Deposit before appointment if provider requires it and law allows
+- Cash after service
+- Online payment after service
+- Online authorization before appointment with capture after completion
+- Provider-selected payment methods
+- Admin-controlled payment rules by country, category, provider, and service type
+
+For fixed-price services, price can depend on factors such as:
+
+- Vehicle type
+- Vehicle size
+- Vehicle class
+- Vehicle condition
+- Service difficulty
+- Service duration
+- Location
+- Mobile service vs shop service
+- Materials used
+- Number of workers needed
+- Urgency
+- Client location distance
+- Provider pricing policy
+- Country/city pricing standards
+- VIP/fleet/bulk contract rules
+
+Autopro must allow service providers to set flexible service prices while keeping prices clear to the client before booking.
+
+---
+
+## 2. Standard Fixed-Price Service Payment Timing
+
+For simple fixed-price services such as car wash, tire change, tire repair, scan check, detailing, and similar services, the standard payment rule is:
+
+1. Client books service.
+2. Provider confirms appointment.
+3. Service is completed.
+4. Provider marks service as completed.
+5. Client confirms completion.
+6. Client pays after completion, either cash or online depending on agreed method.
+7. Autopro fee becomes owed after completion/payment confirmation.
+
+This is the standard rule unless provider, country, admin, payment provider, or service type requires a different flow.
+
+---
+
+## 3. Examination and Diagnosis Fee Timing
+
+For diagnosis or examination before a major repair, the standard direction is:
+
+```txt
+Client pays examination/diagnosis fee after the examination is completed.
