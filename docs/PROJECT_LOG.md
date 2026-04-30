@@ -294,3 +294,62 @@ Refund and return decision matrix
 ```
 
 Do not repeat shipping settlement questions unless the owner asks to revise them.
+```
+
+---
+
+# Project Log Recovery Entry - Refund and Return Decision Matrix Completed
+
+## Summary
+
+Expanded Autopro payment/refund/return documentation with a detailed refund and return decision matrix.
+
+## Main File Updated
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+## Completed Refund and Return Decisions
+
+Confirmed and documented:
+
+- Autopro supports full refunds, partial refunds, store credit, replacement, repair/service correction, reschedule, no refund, refund minus allowed fees, and admin custom decisions.
+- Partial refunds must connect to detailed invoice line items.
+- Client can choose money refund or store credit when both are legally and operationally available.
+- Store credit cannot replace a legally required money refund unless law and client agreement allow it.
+- Refund/return cases that require human review must become staff tasks.
+- Staff tasks are assigned by risk, value, country, trust level, complexity, workload, and staff experience.
+- Product-not-received cases require tracking, delivery proof, handoff proof, QR/manual confirmation, and staff review when needed.
+- Wrong part responsibility is assigned by proof between supplier, client, service provider, Autopro/platform, or shared responsibility.
+- Damaged part responsibility is assigned by proof between supplier, shipping company, warehouse/partner, client, insurance, contract, or law.
+- Changed-mind returns are not automatic unless law requires them or supplier policy allows them.
+- Sensitive/electrical/electronic/software-related parts can have stricter return rules where legal.
+- Used/installed parts are not normally returnable unless defective, warranty-covered, legally required, supplier-approved, or caused by responsible party error.
+- Completed service refunds depend on proof of whether the service was completed correctly.
+- Service quality problems require photos/videos, reports, provider notes, vehicle history, diagnostics, before/after proof, warranty terms, and staff/third-party inspection if needed.
+- Return windows follow country law as the standard.
+- Supplier can offer longer/more flexible return windows but cannot remove legal minimum rights.
+- Return approval can be automatic, supplier-controlled, service-provider-controlled, shipping-company-involved, or staff/admin-reviewed depending on case.
+- Return shipping methods include labels, pickup desk, shipping pickup, service provider handling, supplier arrangement, Autopro arrangement, or warehouse handling.
+- Return shipping cost responsibility depends on proof and cause.
+- Refund timing depends on trust level, risk, supplier rules, payment method, country law, and proof.
+- Replacement timing depends on trust level, risk, supplier settings, product value, and country law.
+- Refunds should usually go back through the original payment method where possible and legal.
+- Cash refunds through partner desk/shipping company must be supported for cash-heavy countries.
+- Restocking/damage fees are supported only where legal and must be clear.
+- Refund/return fraud protection includes abuse scores, serial checks, QR proof, vehicle history checks, device/IP checks where legal, staff review, and fraud suspension/ban.
+- Supplier refusal of valid refund can trigger staff/admin review, forced refund/store credit, reimbursement debt, payout hold, trust score reduction, restrictions, suspension, or legal review depending on supplier trust and proof.
+- Trusted/VIP suppliers receive softer handling for reasonable disputes before harsh action.
+- Client returning wrong/different item is treated as serious fraud risk.
+- Refunds/returns must update vehicle history when relevant.
+
+## Next Recommended Work
+
+Continue with:
+
+```txt
+Service payment, service refund, and service provider payout final details
+```
+
+Do not repeat refund and return decision matrix questions unless the owner asks to revise them.
