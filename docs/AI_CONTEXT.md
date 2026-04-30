@@ -867,3 +867,158 @@ Service payment, service refund, and service provider payout final details
 ```
 
 The next questions should define service provider payment timing, service cancellation, no-show rules, service correction, provider payouts, service debt, examination/diagnosis fees, service warranty, cash service payments, and service provider disputes.
+```
+
+---
+
+# Latest Recovery Override - Service Payment and Provider Payout Details Completed
+
+This section confirms the latest accurate continuation status.
+
+Service payment, service refund, and service provider payout final details have now been documented in:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+## Completed Service Payment Topics
+
+Autopro now has confirmed rules for:
+
+- Service payment types
+- Fixed-price services
+- Fixed-price payment after completion as standard
+- Examination/diagnosis fee timing
+- Deposits before appointment if provider requires and law allows
+- Cash after service
+- Online payment after service
+- Online authorization before appointment with capture after completion where supported
+- Service provider-selected payment methods
+- Admin-controlled service payment rules
+- Service quote after examination
+- Required parts
+- Optional parts
+- Non-urgent parts
+- Labor cost
+- Examination fee
+- Shipping cost if parts are needed
+- Warranty terms
+- Estimated completion time
+- Client approval checkboxes
+- Client ability to remove optional/non-urgent items
+- Client ability to reschedule remaining work
+- Service provider ordering parts for client
+- Client digital quote approval
+- Provider vehicle and compatibility confirmation
+- Supplier part availability confirmation
+- Shipping to provider/client confirmation
+- Provider part received confirmation
+- Client service completion confirmation
+- Client cancellation before appointment
+- Provider cancellation before appointment
+- Client no-show
+- Provider no-show
+- Service completion confirmation
+- Service provider payout timing
+- Service provider cash collection
+- Service provider online payment
+- Service disputes
+- Service proof requirements
+- Service warranty
+- Service correction/rework
+- Extra work discovered during service
+- Overcharging protection
+- Provider protection from unfair clients
+- Service provider trust score
+- Service provider rewards and penalties
+- Service provider statements and growth analytics
+
+## Important Confirmed Service Rules
+
+For simple fixed-price services, the standard flow is:
+
+```txt
+Client books service.
+Provider confirms appointment.
+Service is completed.
+Provider marks completed.
+Client confirms completion.
+Client pays after completion by agreed method.
+Autopro fee becomes owed after completion/payment confirmation.
+```
+
+For examination/diagnosis, the standard direction is:
+
+```txt
+Client pays examination/diagnosis fee after examination is completed.
+```
+
+Examination fee can also be added to the final repair bill.
+
+Provider can require advance payment/deposit if legal and clearly shown before booking.
+
+Service providers can order parts for clients only after clear digital client approval.
+
+Extra work discovered during service requires updated digital quote and client approval before work starts, unless a documented legal/safety emergency exception applies.
+
+Service provider payout can become available after completion confirmation and payment/cash confirmation.
+
+Trusted/VIP providers can receive faster payouts.
+
+Risky providers can have delayed payouts.
+
+New providers should not automatically be treated harshly if they are honest and building their business.
+
+Service provider cash collection creates provider debt for Autopro fees.
+
+Online service payment can use authorization before appointment and capture after completion where payment provider/country supports it.
+
+## Do Not Repeat Service Payment Questions
+
+Do not repeat already answered questions about:
+
+- Service payment types
+- Standard fixed-price service payment timing
+- Examination/diagnosis fee timing
+- Service quote after examination
+- Provider ordering parts for client
+- Client cancellation before appointment
+- Provider cancellation before appointment
+- Client no-show
+- Provider no-show
+- Service completion confirmation
+- Service provider payout timing
+- Service provider cash collection
+- Service provider online payment
+- Service disputes
+- Service proof requirements
+- Service warranty
+- Service correction/rework
+- Extra work discovered during service
+- Service provider overcharging protection
+- Service provider protection from unfair clients
+- Service provider trust score
+- Service provider rewards and penalties
+- Service provider statements
+
+## Correct Current Next Planning Step
+
+Continue with:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+Next recommended topic:
+
+```txt
+Admin money dashboard and financial controls
+```
+
+After Admin money dashboard and financial controls are documented, the next recommended maintenance step is:
+
+```txt
+Payments file cleanup and consolidation
+```
+
+Cleanup should be done safely by creating a clean consolidated file first, not by deleting the existing payment file immediately.
