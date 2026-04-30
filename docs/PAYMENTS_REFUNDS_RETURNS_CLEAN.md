@@ -3291,3 +3291,710 @@ This clean file now includes Part 3 of the payments cleanup:
 Next cleanup part to add:
 
 - Service payment, service refunds, and service provider payout details
+---
+
+# 113. Service Payment, Service Refund, and Service Provider Payout Details
+
+This section consolidates confirmed rules for service payments, service provider payouts, service refunds, examination/diagnosis fees, service quotes, provider-ordered parts, cancellations, no-shows, service completion confirmation, service disputes, service warranty, rework, extra work, overcharging protection, provider protection, provider trust score, rewards, penalties, and provider statements.
+
+Autopro must make service payment and service provider payout handling:
+
+- Legal by country
+- Flexible
+- Automated where possible
+- Easy for clients
+- Easy for service providers
+- Proof-based
+- Secure
+- Fair to honest clients
+- Fair to honest service providers
+- Protective of Autopro fees
+- Connected to invoices
+- Connected to quotes
+- Connected to vehicle history
+- Connected to trust scores
+- Connected to disputes
+- Connected to dashboards
+
+---
+
+# 114. Service Payment Types
+
+Autopro must support multiple service payment types.
+
+Supported service payment types can include:
+
+- Fixed-price service paid after completion
+- Fixed-price service paid before appointment if provider, admin, country, or payment rules allow
+- Examination/diagnosis fee paid after appointment as the standard direction
+- Examination/diagnosis fee paid before appointment if provider requires it and law allows
+- Deposit before appointment if provider requires it and law allows
+- Cash after service
+- Online payment after service
+- Online authorization before appointment with capture after completion where supported
+- Provider-selected payment methods
+- Admin-controlled payment rules by country, category, provider, and service type
+
+For fixed-price services, price can depend on:
+
+- Vehicle type
+- Vehicle size
+- Vehicle class
+- Vehicle condition
+- Service difficulty
+- Service duration
+- Location
+- Mobile service vs shop service
+- Materials used
+- Number of workers needed
+- Urgency
+- Client location distance
+- Provider pricing policy
+- Country/city pricing standards
+- VIP/fleet/bulk contract rules
+
+Autopro must allow service providers to set flexible prices while keeping prices clear to the client before booking.
+
+---
+
+# 115. Standard Fixed-Price Service Payment Timing
+
+For simple fixed-price services such as car wash, tire change, tire repair, scan check, detailing, and similar services, the standard payment rule is:
+
+1. Client books service.
+2. Provider confirms appointment.
+3. Service is completed.
+4. Provider marks service as completed.
+5. Client confirms completion.
+6. Client pays after completion by agreed method, either cash or online.
+7. Autopro fee becomes owed after completion/payment confirmation.
+
+This is the standard rule unless provider, country, admin, payment provider, or service type requires a different flow.
+
+---
+
+# 116. Examination and Diagnosis Fee Timing
+
+For diagnosis or examination before a major repair, the standard direction is:
+
+Client pays examination/diagnosis fee after the examination is completed.
+
+The examination fee can also be:
+
+- Added to the final repair bill
+- Paid before appointment if provider requires it and law allows
+- Paid after appointment as standard
+- Controlled by provider settings
+- Controlled by admin/country rules
+- Different for new/risky clients if provider requires advance payment and law allows
+
+No-show fee should not be the standard for examination appointments unless provider policy, country law, and admin rules allow it and the client saw the policy before booking.
+
+---
+
+# 117. Service Quote After Examination
+
+After examination, the service provider can send a digital quote/bill for repair.
+
+The quote must be clear and structured.
+
+The quote can include:
+
+- Required parts
+- Optional parts
+- Non-urgent parts
+- Labor cost
+- Examination fee
+- Shipping cost if parts are needed
+- Warranty terms
+- Estimated completion time
+- Client approval checkboxes
+- Ability for client to remove optional/non-urgent items
+- Ability for client to reschedule remaining work
+- Possible discount on future labor if provider enables it
+
+Required, optional, and non-urgent items must be clearly separated.
+
+The client can approve only urgent/required work and reschedule optional/non-urgent work if they cannot afford everything at once.
+
+This helps the client control cost and helps the provider order only approved parts.
+
+---
+
+# 118. Service Provider Orders Parts for Client
+
+When a service provider orders parts for the client, Autopro must require clear confirmations.
+
+Required confirmations can include:
+
+- Client approves digital quote
+- Client approves each required part
+- Client approves or rejects each optional part
+- Client approves or reschedules non-urgent parts
+- Provider confirms vehicle details
+- Provider confirms part compatibility
+- Supplier confirms part availability
+- Payment or authorization is confirmed
+- Shipping to provider, client, or agreed location is confirmed
+- Provider confirms part received
+- Provider confirms part condition if needed
+- Client confirms service completed
+
+The quote should rank parts clearly, such as:
+
+- Safety-critical
+- Required for repair
+- Recommended
+- Optional
+- Non-urgent
+
+Autopro must update each role step by step:
+
+- Client
+- Service provider
+- Supplier
+- Shipping company if involved
+- Admin/staff
+
+The provider must not order parts on behalf of the client without clear digital approval.
+
+---
+
+# 119. Client Cancellation Before Appointment
+
+If client cancels before a service appointment, Autopro must handle it based on timing, policy, client trust level, provider policy, and country law.
+
+Rules can include:
+
+- Free cancellation before allowed deadline
+- Cancellation fee if late and legal
+- Deposit can be kept if legal and shown before booking
+- No-show/cancellation score affected if repeated
+- VIP/elderly clients receive softer handling
+- Provider protected if proof exists
+- Country/provider policy decides where applicable
+- Client must see cancellation policy before booking
+
+For new or risky clients, late cancellation fees can be added to their next booking/order bill if legal and clearly shown.
+
+For trusted/VIP clients, cancellation fees or deposit loss should be handled more softly, with refund or credit where appropriate.
+
+---
+
+# 120. Service Provider Cancellation Before Appointment
+
+If a service provider cancels before appointment, Autopro must protect the client and handle provider trust fairly.
+
+Autopro must support:
+
+- Client refund/deposit return automatically where applicable
+- Client reschedule option
+- Client choice of another provider
+- Provider trust score impact if cancellations repeat without valid reason
+- No penalty for valid emergency
+- Staff review for trusted/VIP providers
+- Autopro fee reduced or cancelled depending on stage
+- Client apology/notification automatically
+
+New providers can receive a simple warning first if they cancel without proof.
+
+Risky providers can receive stronger automatic consequences.
+
+Trusted/VIP providers must receive staff review before harsh action because a trusted provider may have a valid emergency or serious operational issue.
+
+---
+
+# 121. Client No-Show for Service Appointment
+
+If client does not show up for a service appointment:
+
+- No-show is recorded.
+- Provider can mark no-show.
+- Proof/time record can be added if needed.
+- Client receives warning depending on trust level.
+- No-show fee can apply if legal, provider required it, and client saw it before booking.
+- Deposit can be kept if legal.
+- Repeated no-show restricts booking/cash options.
+- VIP/elderly clients receive support review first.
+
+If the client gives a valid reason, such as the car breaking down before reaching the provider, the provider can choose to:
+
+- Wait for the client
+- Reschedule
+- Cancel with no penalty
+- Apply another solution agreed by both sides
+
+Autopro must keep this flexible and understandable because vehicle problems can happen unexpectedly.
+
+---
+
+# 122. Provider No-Show for Service Appointment
+
+If provider does not show up, refuses a booked job, or does not honor an appointment:
+
+- Provider no-show is recorded.
+- Client gets refund, reschedule, or alternate provider option.
+- Provider trust score can be affected depending on trust level and proof.
+- Repeated cases reduce visibility.
+- Staff review applies if provider gives valid reason.
+- Emergency/force majeure exception applies when proven.
+- Client receives apology/notification automatically.
+- Compensation can be enabled by admin or offered by provider.
+
+Provider fee penalties are not standard unless platform rules, country law, or contract later allow them.
+
+If provider voluntarily compensates the client, this can positively affect provider trust score and reputation.
+
+---
+
+# 123. Service Completion Confirmation
+
+Service completion must be confirmable in multiple ways depending on service type.
+
+Completion confirmation methods can include:
+
+- Provider marks completed
+- Client confirms completed
+- QR confirmation
+- Manual digital confirmation
+- Photos/videos if needed
+- Service report if provider uses it
+- Before/after proof if provider uses it
+- Vehicle ID/history update
+- Staff confirmation if disputed
+
+Photos/videos, service reports, and before/after proof are not required for every service, but they must be available for services where proof is useful.
+
+Influencer/media clients may be able to tag the provider with photos/videos later if social features are enabled.
+
+Completion confirmation must update:
+
+- Client dashboard
+- Provider dashboard
+- Admin dashboard
+- Payment status
+- Invoice/receipt
+- Vehicle history where applicable
+- Payout status
+- Dispute window if applicable
+
+---
+
+# 124. Service Provider Payout Timing
+
+Service provider payout timing must depend on confirmation, payment method, trust level, country, service value, and dispute risk.
+
+Provider payout can become available after:
+
+- Client confirms completion
+- QR/manual completion confirmation
+- Payment is confirmed
+- Cash collection is confirmed
+- Dispute window ends if needed
+- Admin/staff release if disputed
+
+Trusted/VIP providers can receive faster payouts.
+
+Risky providers can have delayed payouts.
+
+New providers should not automatically be treated harshly. If a new provider has a good early record and the service is legally completed, they should receive normal/fair payout timing so they can grow and succeed on Autopro.
+
+Admin must control payout rules by:
+
+- Country
+- Service type
+- Service value
+- Provider trust level
+- Provider history
+- Payment method
+- Dispute risk
+- Legal/payment provider rules
+
+---
+
+# 125. Service Provider Cash Collection
+
+If provider collects cash after service:
+
+1. Provider confirms cash collected.
+2. Client confirms cash paid if possible.
+3. QR/manual proof is saved.
+4. Cash receipt is generated.
+5. Autopro fee becomes provider debt.
+6. Provider dashboard updates.
+7. Admin dashboard updates.
+8. Provider bill updates automatically.
+9. Unpaid fee triggers reminders/restrictions according to business debt rules.
+10. Country tax rules apply.
+
+Cash collection must be proof-based, simple, and connected to the provider’s fee balance.
+
+---
+
+# 126. Service Provider Online Payment
+
+If client pays online for a service, Autopro must support a safe held/authorized flow where possible.
+
+Payment flow can include:
+
+1. Client books service.
+2. Online payment is authorized before appointment if needed.
+3. Money is not fully captured until the correct trigger if authorization-before-capture is supported.
+4. Service provider confirms appointment.
+5. Service is completed.
+6. Client confirms completion.
+7. Autopro captures payment after completion where supported.
+8. Autopro/payment provider holds funds first.
+9. Autopro fee is separated before payout.
+10. Provider payout becomes available after completion confirmation.
+11. If dispute opens, refund and payout are held.
+
+If the payment provider or country does not support authorization-before-capture, Autopro must use the safest available legal alternative.
+
+Trusted providers can receive faster payout after completion confirmation.
+
+---
+
+# 127. Service Dispute Examples
+
+Autopro must support service disputes.
+
+Service dispute examples include:
+
+- Provider no-show
+- Client no-show
+- Service not completed
+- Service quality problem
+- Wrong part installed
+- Faulty part supplied by supplier
+- Client says provider damaged vehicle
+- Provider says damage existed before
+- Client refused payment
+- Provider says client added extra work without paying
+- Provider says client was abusive/unsafe
+- Client says provider overcharged
+- Provider says client cancelled late
+- Provider says client did not approve extra work
+- Client says provider performed unapproved extra work
+- Warranty service disagreement
+- Rework disagreement
+
+The full conversation link/history must be connected to the dispute because it contains important details for staff evaluation.
+
+---
+
+# 128. Service Proof Requirements
+
+Service disputes must be proof-based.
+
+Accepted proof can include:
+
+- Photos/videos
+- Before/after proof if available
+- Service report if available
+- Diagnostic report
+- Client confirmation
+- Provider confirmation
+- QR scan
+- Vehicle ID/history
+- Chat messages
+- Invoice/quote
+- Staff notes
+- Third-party inspection if needed later
+- Warranty terms
+- Appointment record
+- Payment confirmation
+- Parts used
+- Provider notes
+- Client complaint details
+
+The proof process must be easy to use, flexible, and automated where possible.
+
+---
+
+# 129. Service Warranty
+
+Service providers can offer warranty.
+
+Warranty is not required for every service unless country law, service type, or admin/provider rules require it.
+
+Autopro must support:
+
+- Provider-offered warranty
+- Required warranty for certain services if law requires
+- Warranty terms shown before booking
+- Warranty saved to vehicle history
+- Warranty claim creating correction, refund, or rework case
+- Admin control by country/service/provider
+- Supplier part warranty separated from service warranty
+
+Supplier part warranty and service provider labor warranty must be separate records.
+
+Example:
+
+- Part warranty = supplier/manufacturer responsibility.
+- Labor/service warranty = service provider responsibility.
+
+---
+
+# 130. Service Correction and Rework
+
+If provider made a mistake, the provider should normally get a chance to correct it before refund.
+
+Rules:
+
+- Provider gets chance to correct.
+- Free rework is standard if provider fault is proven.
+- Client can refuse rework if there is a serious safety/trust issue.
+- Refund can apply if provider cannot correct.
+- Warranty terms apply where relevant.
+- Staff/admin decides if disputed.
+
+This must be flexible, secure, and fair.
+
+---
+
+# 131. Extra Work Discovered During Service
+
+If provider finds extra needed work during service:
+
+1. Provider must send updated digital quote.
+2. Client must approve before extra work starts.
+3. Client can approve or decline each item.
+4. Client can reschedule extra work.
+5. Emergency/safety exception can apply if legally needed.
+6. Extra work without approval may not be payable.
+7. All changes are saved to invoice and vehicle history where applicable.
+8. Dashboards update step by step.
+
+The final price must not change without client approval unless a legal emergency/safety exception applies and is documented.
+
+---
+
+# 132. Service Provider Overcharging Protection
+
+Autopro must protect clients from overcharging.
+
+Controls can include:
+
+- Digital quote required
+- Client approval required
+- Price ranges by service/category
+- Admin review of suspicious prices
+- Client dispute option for overcharge
+- Provider pricing history tracked
+- Final price must match approved quote unless client approves changes
+- Hidden Autopro fee not shown to client unless legally required
+- Comparison to provider’s normal pricing
+- Comparison to local category pricing where available
+- Staff review for risky providers or repeated complaints
+
+Autopro must keep service pricing flexible while protecting clients from surprise charges.
+
+---
+
+# 133. Service Provider Protection From Unfair Clients
+
+Autopro must protect service providers from unfair clients.
+
+Protection tools include:
+
+- Client approval proof
+- Before/after proof if available
+- No-show records
+- Abuse reports
+- Payment confirmation
+- Staff review
+- Client trust score
+- Ability to refuse unsafe/abusive client
+- VIP/trusted provider support
+- Conversation history
+- Quote approval record
+- Completion confirmation
+- Vehicle condition notes
+- Provider notes
+
+When client or provider reports abuse, Autopro must show a structured list of abuse categories plus a note field.
+
+Abuse categories can include:
+
+- Verbal abuse
+- Emotional abuse
+- Physical abuse
+- Threats
+- Harassment
+- Unsafe behavior
+- Property damage
+- Refusal to pay
+- Fraud attempt
+- Other with explanation
+
+Staff must be able to access the full conversation and proof to evaluate what happened.
+
+---
+
+# 134. Service Provider Trust and Performance Score
+
+Service providers must have trust/performance scores.
+
+Score factors can include:
+
+- Completion rate
+- Repeat completion with same client
+- Repeat completion with different clients
+- Fleet/client company work history
+- Trusted company relationships
+- No-show rate
+- Cancellation rate
+- Service quality complaints
+- Rework rate
+- Refund rate
+- Payment reliability
+- Response time
+- Client ratings
+- Staff review results
+- Fraud/suspicious activity
+- Quote accuracy
+- On-time appointment behavior
+- Warranty claim behavior
+- Dispute outcome history
+- Client retention
+- Plan payment reliability
+
+Good performance can build the provider account.
+
+Bad repeated performance can limit, restrict, suspend, or block the account.
+
+Strong service providers can receive better reach, verified badge eligibility, plan discounts, admin dashboard ranking, and more bookings.
+
+---
+
+# 135. Service Provider Rewards and Penalties
+
+Autopro must support service provider rewards and penalties.
+
+Rewards can include:
+
+- Higher visibility
+- Lower Autopro fee
+- Faster payout
+- Featured profile
+- More bookings
+- VIP/trusted badge
+- Access to better tools/plans
+- Better dashboard analytics
+- Plan discounts
+- Fleet/B2B opportunity access
+- Priority support
+- Growth recommendations
+
+Penalties can include:
+
+- Warning
+- Reduced visibility
+- Payout hold
+- Account restriction
+- Suspension
+- Ban for fraud/repeated abuse
+- Plan downgrade
+- Loss of premium features
+- Higher payout reserve
+- Staff/admin review
+
+Rewards and penalties must be flexible, automated where possible, and safe for all roles.
+
+---
+
+# 136. Service Provider Statements
+
+Service providers must receive statements.
+
+Statements can be monthly and available by custom date range.
+
+Statements must show:
+
+- Bookings
+- Completed jobs
+- Cancelled jobs
+- No-shows
+- Cash collected
+- Online payments
+- Autopro fees
+- Plan fees
+- Refunds
+- Rework cases
+- Payouts
+- Debt
+- Disputes
+- Taxes if applicable
+- Client repeat rate
+- Revenue since joining Autopro
+- Profit/revenue trend since joining
+- Projected growth
+- Effect of paid plans on growth/profit
+- Missed opportunities
+- Recommended upgrades
+- Best-performing services
+- Low-performing services
+- Fleet/B2B opportunities if available
+
+Advanced analytics can be plan-based premium features.
+
+The provider dashboard should help service providers understand their growth and how Autopro improves their business.
+
+---
+
+# 137. Service Payment and Provider Payout Goal
+
+The goal of the service payment and provider payout system is to make service commerce:
+
+- Flexible
+- Automated where possible
+- Legal by country
+- Easy to understand
+- Secure
+- Proof-based
+- Fair to clients
+- Fair to service providers
+- Supportive of new honest providers
+- Protective of trusted/VIP providers
+- Strict against fraud and repeated abuse
+- Connected to vehicle history
+- Connected to invoices and quotes
+- Connected to payment, payout, debt, and dispute systems
+
+Autopro must support providers so they can grow fast while protecting clients, platform trust, and Autopro revenue.
+
+---
+
+# 138. Part 4 Completion Note
+
+This clean file now includes Part 4 of the payments cleanup:
+
+- Service payment types
+- Fixed-price service payment timing
+- Examination/diagnosis fee timing
+- Service quote after examination
+- Service provider ordering parts for client
+- Client cancellation before appointment
+- Provider cancellation before appointment
+- Client no-show
+- Provider no-show
+- Service completion confirmation
+- Service provider payout timing
+- Service provider cash collection
+- Service provider online payment
+- Service disputes
+- Service proof requirements
+- Service warranty
+- Service correction/rework
+- Extra work discovered during service
+- Overcharging protection
+- Provider protection from unfair clients
+- Service provider trust score
+- Service provider rewards and penalties
+- Service provider statements
+
+Next cleanup part to add:
+
+- Admin money dashboard and financial controls
