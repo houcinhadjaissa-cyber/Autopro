@@ -582,3 +582,128 @@ Refund and return decision matrix
 ```
 
 Ask the owner which one to continue with if unclear.
+```
+
+---
+
+# Latest Recovery Override - Shipping Settlement Completed
+
+This section confirms the latest accurate continuation status.
+
+Shipping company settlement detailed rules have now been documented in:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+Completed shipping settlement sections:
+
+- Shipping company account types
+- Shipping company employee roles
+- Shipping company employee permissions
+- Package handoff confirmation
+- Package handoff effects
+- Shipping company dashboard growth/profit features
+- Delivery confirmation methods
+- Delivery confirmation effects
+- Shipping company cash collection
+- Shipping company payout timing
+- Shipping company settlement statements
+- Shipping company fees to Autopro
+- Shipping company pays supplier abroad and collects local cash
+- Route-specific exchange-rate rules
+- Shipping company ID reuse for future owner platforms
+- Lost package responsibility
+- Damaged package responsibility
+- Late delivery responsibility
+- Pickup desk no-show rules
+- Return package handled by shipping company
+- Failed delivery attempts
+- Failed delivery reasons
+- Delivery rescheduling
+- Reschedule fees
+- Storage fees
+- Return to supplier after failed delivery/no-show
+- Return shipping fee responsibility
+- Shipping company disputes
+- Shipping company trust/performance score
+- Shipping company penalties and rewards
+- Shipping company plans and premium features
+- Warehouse handoff rules
+- Warehouse loss/damage responsibility
+- Customs/import tracking
+- Customs/import fees
+- Shipping insurance
+- Insurance claim flow
+- Shipping company API/integration direction
+- Private partner portal for companies without API
+- Staff/admin controls for shipping settlement
+- Statement/payment reconciliation
+- Shipping company access to client data
+- Shipping company VIP/trusted client lists
+- Shipping company support/contact flow
+
+Important confirmed rule:
+
+```txt
+Route-specific exchange rate = Yes
+```
+
+Route-specific rate means pricing/exchange/settlement rates can differ by route, such as:
+
+- China to Algeria
+- Turkey to Algeria
+- Europe to Algeria
+- UAE to Algeria
+- Algeria local delivery
+
+## Do Not Repeat Shipping Settlement Questions
+
+Do not repeat already answered questions about:
+
+- Shipping company account types
+- Shipping company dashboards
+- Shipping company employee roles
+- Shipping permissions
+- Package handoff
+- Delivery confirmation
+- Cash collection by shipping company
+- Shipping company settlements
+- Shipping company fees
+- International supplier payment by shipping company
+- Route-specific rates
+- Package loss
+- Package damage
+- Late delivery
+- Pickup desk no-show
+- Failed delivery attempts
+- Rescheduling
+- Storage fees
+- Return shipping fees
+- Shipping company disputes
+- Shipping company trust scores
+- Shipping company plans
+- Warehouse handoffs
+- Customs/import
+- Insurance
+- API/integration
+- Partner portal
+- Shipping reconciliation
+- Shipping access to client data
+- Shipping support flow
+
+## Correct Current Next Planning Step
+
+Continue with:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+Next recommended topic:
+
+```txt
+Refund and return decision matrix
+```
+
+The next questions should define refund/return outcomes by reason, responsibility, payment method, product/service status, shipping status, country law, proof, and Autopro fee handling.
