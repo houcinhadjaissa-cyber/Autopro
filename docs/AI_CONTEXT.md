@@ -1181,3 +1181,13 @@ Commit
 ```
 
 The AI must provide the replacement text in a beginner-friendly way and make sure no confirmed rules are intentionally lost.
+---
+
+# Latest Recovery Override - Clean Payments File Completed
+
+The payments/refunds/returns cleanup has been completed safely.
+
+A clean consolidated payments file now exists:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS_CLEAN.md
