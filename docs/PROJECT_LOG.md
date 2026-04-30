@@ -353,3 +353,76 @@ Service payment, service refund, and service provider payout final details
 ```
 
 Do not repeat refund and return decision matrix questions unless the owner asks to revise them.
+```
+
+---
+
+# Project Log Recovery Entry - Service Payment and Provider Payout Details Completed
+
+## Summary
+
+Expanded Autopro payment/refund/return documentation with final service payment, service refund, and service provider payout rules.
+
+## Main File Updated
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+## Completed Service Payment Decisions
+
+Confirmed and documented:
+
+- Autopro supports multiple service payment types.
+- Fixed-price services are paid after completion as the standard.
+- Examination/diagnosis fees are paid after examination as the standard.
+- Examination/diagnosis fee can be added to the final repair bill.
+- Deposits before appointment can exist if provider requires them and law allows.
+- Service providers choose allowed payment methods within admin/country limits.
+- Admin controls service payment rules by country, provider, category, and service type.
+- Service quotes after examination must include required parts, optional parts, non-urgent parts, labor cost, examination fee, shipping cost, warranty terms, estimated completion time, and client approval checkboxes.
+- Client can remove optional/non-urgent items or reschedule them.
+- Service provider can order parts for client only after digital client approval.
+- Provider must confirm vehicle details and part compatibility.
+- Supplier must confirm part availability.
+- Provider must confirm part received where applicable.
+- Client must confirm service completion.
+- Client cancellation before appointment can be free before deadline or fee-based if late/legal/provider policy allows.
+- VIP/elderly clients receive softer handling.
+- Provider cancellation gives client refund/reschedule/alternate provider options.
+- Trusted/VIP providers receive staff review before harsh action.
+- Client no-show and provider no-show are recorded and affect trust depending on proof and repetition.
+- Service completion can be confirmed by provider, client, QR/manual confirmation, vehicle history update, and optional proof.
+- Provider payout becomes available after completion and payment/cash confirmation.
+- Trusted/VIP providers can receive faster payouts.
+- Risky providers can have delayed payouts.
+- New honest providers should be supported with fair payout timing.
+- Provider cash collection creates provider debt for Autopro fee.
+- Online service payment can use authorization before appointment and capture after completion where supported.
+- Service disputes include no-show, service not completed, service quality, wrong part installed, faulty supplier part, vehicle damage claims, payment refusal, extra work disputes, abuse/unsafe behavior, and overcharging.
+- Service proof includes photos/videos, diagnostic reports, confirmations, QR scan, vehicle history, chat, invoice/quote, staff notes, and third-party inspection if needed later.
+- Service providers can offer warranty.
+- Part warranty and service/labor warranty are separate.
+- Provider should normally get chance to correct/rework before refund if provider made a mistake.
+- Extra work requires updated quote and client approval before work starts.
+- Autopro must protect clients from overcharging.
+- Autopro must protect providers from unfair clients.
+- Service providers must have trust/performance scores.
+- Rewards and penalties must exist for providers.
+- Provider statements must show bookings, jobs, cancellations, no-shows, cash, online payments, fees, plan fees, refunds, rework, payouts, debt, disputes, taxes, revenue since joining, projected growth, and plan impact.
+
+## Next Recommended Work
+
+Continue with:
+
+```txt
+Admin money dashboard and financial controls
+```
+
+After that, perform:
+
+```txt
+Payments file cleanup and consolidation
+```
+
+Do not repeat service payment and provider payout questions unless the owner asks to revise them.
