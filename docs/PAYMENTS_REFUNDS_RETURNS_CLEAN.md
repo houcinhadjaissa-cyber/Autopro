@@ -1084,3 +1084,411 @@ This clean file currently includes Part 1 of the payments cleanup:
 Next cleanup part to add:
 
 - Shipping company settlement detailed rules
+---
+
+# 40. Shipping Company Settlement Rules
+
+This section consolidates the confirmed shipping company settlement, delivery, cash collection, warehouse, customs, insurance, and logistics partner rules.
+
+Autopro must support shipping/logistics companies as serious business partners, not only simple delivery labels.
+
+The shipping company system must be:
+
+- Flexible
+- Legal by country
+- Automated where possible
+- Proof-based
+- Secure
+- Expandable
+- Role-based
+- Connected to payments
+- Connected to cash collection
+- Connected to supplier payout
+- Connected to client trust
+- Connected to disputes
+- Connected to future owner platforms where legally and contractually allowed
+
+---
+
+# 41. Shipping Company Account Type
+
+Shipping companies must have their own business account type inside Autopro.
+
+Shipping companies do not need a full public marketplace profile like suppliers or service providers by default.
+
+Shipping companies can have private or limited public information such as:
+
+- WhatsApp number
+- Phone number
+- Facebook page
+- Website link
+- Office/location information if allowed
+- Support contact details
+
+Autopro must support different shipping company account levels, including:
+
+- Full shipping partner
+- Limited delivery partner
+- Cash collection partner
+- Pickup desk
+- Warehouse
+- Stop desk
+- Local delivery office
+- International logistics partner
+- Route-specific partner
+- Strategic partner
+
+Admin/full owner must control exactly what each shipping company can access.
+
+The structure must be flexible so if a shipping company grows or expands services, Autopro can support that expansion without rebuilding the system.
+
+---
+
+# 42. Shipping Company Roles and Employees
+
+Shipping companies must be able to create employee accounts for workers, offices, and internal teams.
+
+Possible employee roles include:
+
+- Company owner/admin
+- Regional manager
+- Office/desk worker
+- Delivery driver
+- Warehouse worker
+- Finance employee
+- Support employee
+- Cash collection employee
+- Returns employee
+- Pickup desk employee
+
+The number of employees and unlocked features can depend on:
+
+- Shipping company plan level
+- Contract
+- Country
+- Admin settings
+
+Autopro must support flexible employee expansion so a shipping company can start small and grow inside the platform.
+
+---
+
+# 43. Shipping Company Employee Permissions
+
+Every shipping company employee must have limited permissions based on their job.
+
+Standard permission examples:
+
+- Driver can confirm delivery only.
+- Desk worker can confirm pickup, payment, return, and no-show only.
+- Finance employee can view settlements, bills, and cash collection records only.
+- Manager can view region reports and assigned office performance.
+- Company admin can manage employees and permissions.
+- Warehouse worker can confirm package received, stored, handed off, damaged, or returned.
+- Support employee can view assigned shipment support cases.
+- No employee can see unrelated client/private data.
+
+Autopro must provide standard role templates and default permission groups to make setup easy.
+
+Shipping company admin/owner can add, modify, or remove roles and permissions according to company needs, within limits allowed by Autopro.
+
+Autopro admin/full owner keeps final control over platform-level permissions and restrictions.
+
+Every permission change must be audit logged.
+
+Autopro should include useful shipping/logistics software patterns such as:
+
+- Office-level access
+- Region-level access
+- Driver route assignment
+- Delivery proof upload
+- Cash collection summary
+- Return package tracking
+- Settlement reports
+- Failed delivery reason tracking
+- Employee activity logs
+- Performance dashboards
+- Fraud alerts
+- Route performance analytics
+- Plan-based premium tools
+
+---
+
+# 44. Package Handoff From Supplier to Shipping Company
+
+When a supplier hands a package to a shipping company, the handoff must be confirmed from both sides where possible.
+
+This confirmation matters because supplier payout and Autopro fee handling can depend on it.
+
+Accepted confirmation methods include:
+
+- QR scan
+- Manual digital confirmation
+- Supplier confirmation
+- Shipping company confirmation
+- Photo/video proof if needed
+- Staff/admin confirmation if disputed
+- Shipping scan
+- Pickup receipt
+- Package label scan
+- Warehouse receiving scan
+- Timestamped handoff record
+
+Confirmed rule:
+
+Package handoff should require both supplier confirmation and shipping company confirmation unless admin, country, route, or partner rules allow a simpler method.
+
+The package handoff record must connect to:
+
+- Order ID
+- Supplier ID
+- Shipping company ID
+- Driver/employee ID if applicable
+- Package ID/tracking ID
+- Date/time
+- Location if legal and available
+- Confirmation method
+- Photos/videos if needed
+- QR/scan record if used
+
+---
+
+# 45. Package Handoff Effect
+
+When the shipping company confirms package received from supplier:
+
+- Order timeline updates.
+- Supplier dashboard updates.
+- Shipping company dashboard updates.
+- Client dashboard updates.
+- Admin dashboard updates.
+- Messaging/timeline proof updates.
+- Shipping tracking starts or updates.
+- Client is notified.
+- Supplier payout can become available depending on supplier trust/risk rules.
+- Shipping company responsibility begins from that point.
+- Database records exact confirmation time and proof.
+
+This confirmation must be stored as a digital step for accuracy, automation, and dispute proof.
+
+---
+
+# 46. Shipping Company Dashboard Growth and Profit Features
+
+Shipping company dashboards should show operations and business growth.
+
+The dashboard can show:
+
+- Deliveries completed
+- Deliveries failed
+- Cash collected
+- Revenue earned
+- Fees owed
+- Settlement status
+- Average delivery time
+- Late delivery rate
+- Return rate
+- Dispute rate
+- Damage/loss rate
+- Office performance
+- Driver performance
+- Route performance
+- Growth compared to first month
+- Profit trend
+- Recommended upgrades
+- Plan benefits
+- Missed opportunities
+- Suggested expansion areas
+
+Advanced analytics can be plan-based premium features.
+
+The goal is to make Autopro valuable for shipping companies so they prefer using Autopro tools instead of buying separate expensive software.
+
+---
+
+# 47. Successful Delivery Confirmation
+
+Successful delivery must support flexible confirmation methods depending on country, shipping method, and partner setup.
+
+Accepted delivery confirmation methods include:
+
+- Client QR scan
+- Driver QR scan
+- Client manual confirmation
+- Shipping company confirmation
+- Delivery photo where legal
+- GPS/location where legal
+- Signature where required by law or contract
+- Pickup desk confirmation
+- Office confirmation
+- Delivery scan
+- Staff/admin confirmation if disputed
+
+Autopro must make delivery confirmation legal, easy, automated where possible, and flexible.
+
+The result must be one clear delivery confirmation record even if different countries or shipping companies use different confirmation methods.
+
+---
+
+# 48. Delivery Confirmation Effect
+
+When delivery is confirmed:
+
+- Order status becomes Delivered.
+- Database updates first.
+- Client dashboard updates.
+- Supplier dashboard updates.
+- Shipping company dashboard updates.
+- Admin dashboard updates.
+- Messaging/order timeline updates.
+- Shipping company payout becomes available according to contract/rules.
+- COD cash collection is checked if applicable.
+- Supplier payout rules continue or complete.
+- Return/dispute window starts if applicable.
+- Client receives receipt/invoice update.
+- Proof is saved.
+- Trust score signals can update.
+
+If COD applies, delivery confirmation alone is not enough to close the payment flow unless cash collection is also confirmed.
+
+Autopro must support country-specific rules for delivery confirmation, return windows, dispute windows, tax documents, and receipt requirements.
+
+---
+
+# 49. Cash Collected by Shipping Company
+
+If a shipping company collects cash from the client, the shipping company owes the relevant amount to Autopro, supplier, or settlement system according to contract.
+
+Settlement timing can be:
+
+- Immediately after cash collection confirmation
+- End of day
+- Weekly
+- Monthly
+- Based on contract
+- Based on country law
+- Based on shipping company service model
+- Controlled by admin
+
+Cash collection must be:
+
+- Confirmed
+- Timestamped
+- Linked to order
+- Linked to invoice/payment record
+- Linked to collector/employee
+- Linked to shipping company account
+- Reconciled automatically
+- Visible in settlement records
+
+---
+
+# 50. Shipping Company Payout Timing
+
+Autopro can pay shipping companies their delivery fee according to contract and country rules.
+
+Shipping company payout can happen:
+
+- After successful delivery
+- After COD cash is collected and confirmed
+- After return/dispute window ends
+- In weekly batch settlement
+- In monthly batch settlement
+- Immediately for trusted shipping companies if admin enables it
+- Based on country rules
+- Based on contract
+- Based on admin settings
+
+Settlement timing should be agreed from day one, such as weekly or monthly.
+
+If a shipping company does not collect or receive due settlement at the exact time, the amount can automatically roll into the next settlement bill until collected or paid.
+
+If Autopro has an issue paying a shipping company on time, automatic notices must be sent with a clear expected payment date.
+
+---
+
+# 51. Shipping Company Settlement Statement
+
+Shipping companies must receive settlement statements.
+
+Statements can include:
+
+- Deliveries completed
+- Deliveries failed
+- Cash collected
+- Cash owed to Autopro
+- Cash owed to supplier
+- Cash owed to shipping company
+- Shipping fees earned
+- Autopro logistics/platform fees
+- Refunds handled
+- Returns handled
+- Penalties if legal
+- Adjustments
+- Disputes
+- Paid/unpaid settlement status
+- Taxes if applicable
+- Country-required documents if applicable
+- Office/employee breakdown if available
+- Route breakdown if available
+
+Statements must be automated, detailed, saved in the database, and accessible from shipping company dashboard and admin dashboard.
+
+Autopro must research country-specific legal/tax/receipt requirements and use them as default settings where applicable.
+
+---
+
+# 52. Shipping Company Fees to Autopro
+
+Shipping companies can pay Autopro fees.
+
+Fee types can include:
+
+- Platform fee
+- Logistics fee
+- Cash collection fee
+- Partner engine usage fee
+- Settlement fee
+- Route management fee
+- Premium dashboard/tool fee
+- Plan/subscription fee
+
+The standard direction is that shipping companies can pay fees per order plus plan fees if they choose paid plan features.
+
+Fees and discounts must be configurable by:
+
+- Country
+- Company
+- Contract
+- Route
+- Service type
+- Cash collection role
+- International settlement role
+- Risk level
+- Plan level
+- Volume
+- Admin decision
+- Assigned staff permissions
+
+Discounted fees can apply when shipping companies provide extra service or take extra risk.
+
+Example:
+
+A shipping company pays the supplier in China first, then collects equivalent cash in Algeria.
+
+This shipping company can receive discounted Autopro fees because it helps solve international supplier payment and local cash collection problems.
+
+Admin can also set no-fee or reduced-fee arrangements for selected strategic partners.
+
+---
+
+# 53. Shipping Company Pays Supplier Abroad and Collects Local Cash
+
+Autopro must support a model where a trusted shipping/logistics company pays a supplier abroad and collects equivalent local cash in the destination country.
+
+Example:
+
+```txt
+Shipping/logistics company pays supplier in China.
+Client pays cash locally in Algeria.
+Shipping/logistics company receives local settlement/cash.
+Autopro tracks the full settlement ledger.
