@@ -707,3 +707,163 @@ Refund and return decision matrix
 ```
 
 The next questions should define refund/return outcomes by reason, responsibility, payment method, product/service status, shipping status, country law, proof, and Autopro fee handling.
+```
+
+---
+
+# Latest Recovery Override - Refund and Return Decision Matrix Completed
+
+This section confirms the latest accurate continuation status.
+
+The refund and return decision matrix has now been documented in:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+## Completed Refund and Return Topics
+
+Autopro now has confirmed rules for:
+
+- Main refund outcomes
+- Full refund
+- Partial refund
+- Store credit
+- Replacement
+- Repair/service correction
+- Reschedule
+- No refund
+- Refund minus return shipping fee if legal
+- Refund minus damage/restocking fee if legal
+- Admin custom decision
+- Client choice between money refund and store credit
+- Staff task automation for refund/return/dispute cases
+- Product not received
+- Wrong part received
+- Damaged part received
+- Changed-mind product returns
+- Used or installed parts
+- Electrical/electronic/sensitive parts
+- Service already completed
+- Service quality problems
+- Return windows
+- Return approval
+- Return shipping methods
+- Return shipping cost responsibility
+- Refund timing
+- Replacement timing
+- Refund method by original payment
+- Partial refund rules
+- Restocking/damage fees
+- Refund/return fraud protection
+- Supplier refuses valid refund
+- Client returns wrong/different item
+- Refund and vehicle history connection
+
+## Important Confirmed Refund/Return Rules
+
+Autopro must support multiple refund outcomes:
+
+- Full refund
+- Partial refund
+- Store credit
+- Replacement
+- Repair/service correction
+- Reschedule
+- No refund
+- Refund minus allowed fees
+- Admin custom decision
+
+Client should be able to choose money refund or store credit when both are legally and operationally available.
+
+Store credit can be offered but should not replace a legally required money refund.
+
+Country law is the standard for return windows and refund rights.
+
+Supplier can offer better/longer terms but cannot remove legal minimum client rights.
+
+Changed-mind returns are not automatic unless country law requires them or supplier policy allows them.
+
+Sensitive, electrical, electronic, software-related, used, or installed parts can have stricter return rules where legal.
+
+Wrong part responsibility is assigned by proof:
+
+- Supplier if supplier listed/shipped wrong part
+- Client if client selected wrong vehicle/part despite warnings
+- Service provider if provider ordered wrong part
+- Autopro if compatibility/platform error caused it
+- Shared if multiple parties caused it
+
+Damaged part responsibility is assigned by proof:
+
+- Supplier if damaged before shipping or bad packaging
+- Shipping company if damaged during transport
+- Warehouse/partner if damaged there
+- Client if damaged after delivery
+- Insurance/contract/country law applies
+
+Service refunds depend on proof:
+
+- No refund if service completed correctly
+- Partial refund if service partially failed
+- Free correction/rework if provider fault
+- Full refund if paid online and service not delivered
+- Supplier responsible if faulty part caused issue
+- Vehicle history/service report can be proof
+
+Refund/return fraud protection includes:
+
+- Return abuse score
+- Refund abuse score
+- Serial/part number checks
+- QR/scan proof
+- Photos/videos
+- Vehicle ID/history checks
+- Device/IP checks where legal
+- Staff review for repeat cases
+- Suspension/ban for fraud
+- VIP/elderly support review before harsh action
+
+## Do Not Repeat Refund/Return Questions
+
+Do not repeat already answered questions about:
+
+- Main refund outcomes
+- Client refund method choice
+- Product not received
+- Wrong part received
+- Damaged part received
+- Changed-mind returns
+- Used/installed parts
+- Sensitive/electrical/electronic parts
+- Service already completed
+- Service quality proof
+- Return windows
+- Return approval
+- Return shipping methods
+- Return shipping cost responsibility
+- Refund timing
+- Replacement timing
+- Refund method by payment type
+- Partial refunds
+- Restocking/damage fees
+- Refund/return fraud controls
+- Supplier refusing valid refund
+- Client returning wrong/different item
+- Refund and vehicle history
+
+## Correct Current Next Planning Step
+
+Continue with:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+Next recommended topic:
+
+```txt
+Service payment, service refund, and service provider payout final details
+```
+
+The next questions should define service provider payment timing, service cancellation, no-show rules, service correction, provider payouts, service debt, examination/diagnosis fees, service warranty, cash service payments, and service provider disputes.
