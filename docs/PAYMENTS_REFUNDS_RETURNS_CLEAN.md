@@ -3998,3 +3998,1050 @@ This clean file now includes Part 4 of the payments cleanup:
 Next cleanup part to add:
 
 - Admin money dashboard and financial controls
+---
+
+# 139. Admin Money Dashboard and Financial Controls
+
+This section consolidates confirmed rules for the Autopro admin money dashboard, owner profit dashboard, financial controls, ledgers, balances, staff permissions, audit logs, reports, tax/accounting direction, fraud monitoring, payment provider monitoring, and role-based dashboard access.
+
+Autopro must make the admin money dashboard:
+
+- Clear
+- Detailed
+- Flexible
+- Secure
+- Live-updated where possible
+- Easy to filter
+- Easy to search
+- Easy to assign to staff roles
+- Connected to all financial systems
+- Protective of Autopro revenue
+- Useful for business growth decisions
+- Useful for fraud prevention
+- Useful for tax/accounting preparation
+- Reusable for future owner platforms
+
+Autopro must reduce platform-side errors as much as possible through structured ledgers, audit logs, permissions, automated alerts, reconciliations, approvals, and staff task routing.
+
+---
+
+# 140. Admin Money Dashboard Purpose
+
+The admin money dashboard must show full financial visibility for Autopro.
+
+The dashboard must include:
+
+- Total Autopro revenue
+- Total fees earned
+- Product fees
+- Service fees
+- Shipping/logistics fees
+- Plan/subscription revenue
+- Ads/promotions revenue
+- Refunds
+- Returns
+- Chargebacks
+- Business debt owed to Autopro
+- Pending balances
+- Available balances
+- Held balances
+- Negative balances
+- Cash expected
+- Cash collected
+- Cash missing/not remitted
+- Country/currency breakdown
+- Profit/loss estimates
+
+The dashboard must also include platform growth and account data, such as:
+
+- Number of client accounts
+- Number of supplier accounts
+- Number of service provider accounts
+- Number of hybrid business accounts
+- Number of shipping company accounts
+- Number of staff accounts
+- Number of vehicles added
+- Vehicle count by type
+- Vehicle count by brand
+- Vehicle count by model
+- Vehicle count by year/generation where available
+- Number of orders
+- Number of bookings
+- Number of returns
+- Number of disputes
+- Number of active business partners
+- Number of paid plan users
+
+The dashboard should be instructive, well documented, and highly detailed.
+
+Main dashboard sections should show summary totals first. When the owner/admin selects a section, it should open deeper details.
+
+---
+
+# 141. Owner and Admin Visibility
+
+The full owner must be able to see everything.
+
+Full owner visibility includes:
+
+- Every transaction
+- Every fee
+- Every payout
+- Every refund
+- Every debt
+- Every staff adjustment
+- Every country/currency
+- Every supplier balance
+- Every service provider balance
+- Every shipping company balance
+- Every partner desk balance
+- Every dispute hold
+- Every manual override
+- Every audit log
+- Every financial report
+- Every staff financial action
+
+The owner dashboard should show total summaries first.
+
+The owner must be able to select any summary and drill down by:
+
+- Country
+- City
+- Region
+- Currency
+- Supplier ID
+- Service provider ID
+- Shipping company ID
+- Client ID
+- Vehicle type
+- Vehicle brand/model
+- Product category
+- Service type
+- Date range
+- Payment method
+- Trust level
+- Risk level
+- Staff member
+- Dispute/refund/debt status
+
+Detailed sections can be assigned one by one to selected employees and roles.
+
+Employees should be able to rearrange the data they are allowed to see on their own dashboard based on their workflow, without accessing restricted data.
+
+The dashboard must be flexible for all roles while keeping owner control and security.
+
+---
+
+# 142. Supplier Import, Export, Demand, and Growth Intelligence
+
+The admin dashboard should help the owner understand supplier performance, market demand, imports, exports, and investment opportunities.
+
+The dashboard can include:
+
+- Total imports by supplier
+- Total exports/sales by supplier
+- Supplier imports ranked from highest to lowest
+- Supplier exports/sales ranked from highest to lowest
+- Supplier profit/growth trend
+- Supplier imports compared to exports
+- Supplier wholesale performance
+- Supplier retail performance
+- Supplier category performance
+- Supplier country performance
+- Supplier monthly performance
+- Supplier best-selling parts
+- Supplier slow-moving parts
+- Supplier missed demand
+- Supplier return rate
+- Supplier dispute rate
+- Supplier fee contribution to Autopro
+- Supplier plan level
+- Supplier paid/unpaid fees
+- Supplier opportunities for growth
+
+For wholesalers, the dashboard should show:
+
+- Imported stock
+- Exported/sold stock
+- Bulk order performance
+- Fleet/B2B order performance
+- Profit estimates where available
+- Best client segments
+- Best countries/regions
+- Slow categories
+- Fast-growing categories
+
+The dashboard should also help the owner identify:
+
+- Most requested parts
+- Most purchased parts
+- Repeated purchase categories
+- Trending categories
+- High-demand vehicle brands/models
+- Under-supplied categories
+- Services with growing demand
+- Parts the owner may want to invest in
+- Countries/cities with unmet demand
+- Best timing for investment
+- Suggested supplier/category expansion
+
+Autopro can later use analytics and AI suggestions to recommend where the owner should invest to increase profit.
+
+Access to these intelligence sections must be controlled by role permissions.
+
+---
+
+# 143. Dashboard Money Balances
+
+The admin dashboard must separate money into clear balance categories.
+
+Required balances:
+
+- Pending balance
+- Available balance
+- Held balance
+- Autopro fee balance
+- Business debt balance
+- Negative balance
+- Cash expected
+- Cash collected
+- Cash not remitted
+- Refund reserve
+- Chargeback reserve
+
+Each balance should show an overall total first.
+
+When selected, each balance should open detailed breakdowns by:
+
+- Country
+- Currency
+- Payment method
+- Product category
+- Service category
+- Supplier
+- Service provider
+- Shipping company
+- Partner desk
+- Client
+- Order
+- Invoice
+- Date range
+- Risk level
+- Trust level
+- Dispute status
+- Refund status
+- Debt age
+
+Additional useful balance details can include:
+
+- Aging balances
+- High-risk balances
+- Overdue balances
+- Balances held by disputes
+- Balances held by chargebacks
+- Balances waiting provider/payment processor settlement
+- Balances waiting cash remittance
+- Balances waiting staff approval
+
+---
+
+# 144. Complete Transaction Ledger
+
+Autopro must have one complete transaction ledger for every money movement.
+
+Ledger records must include:
+
+- Transaction ID
+- Order ID
+- Service ID
+- Invoice ID
+- Payment ID
+- Refund ID
+- Return ID
+- Dispute ID
+- Client ID
+- Supplier ID
+- Service provider ID
+- Shipping company ID
+- Partner desk ID if applicable
+- Staff ID if actioned by staff
+- Amount
+- Currency
+- Country
+- Payment method
+- Status
+- Date/time
+- Reason
+- Proof link
+- Audit log link
+
+The transaction ledger should have a dedicated admin section.
+
+The ledger section should show summary numbers first, then allow deeper investigation by selecting each record or category.
+
+Every financial event must be traceable.
+
+---
+
+# 145. Admin Filters and Search
+
+Every important admin money dashboard section must support filters and search.
+
+Required filters include:
+
+- Country
+- Currency
+- Date range
+- Payment method
+- Supplier
+- Service provider
+- Shipping company
+- Partner desk
+- Client
+- Staff member
+- Order ID
+- Invoice ID
+- Payment ID
+- Dispute ID
+- Refund status
+- Return status
+- Debt status
+- Trust level
+- Risk level
+- Category
+- Service type
+- Vehicle type
+- Vehicle brand/model where useful
+- City/region
+- Plan level
+- Payout status
+- Cash status
+
+Employees with permission can add or rearrange filters in their own dashboard views for research and workflow efficiency.
+
+Filters must respect role permissions.
+
+---
+
+# 146. Business Financial Profile View
+
+Each supplier, service provider, shipping company, and partner business must have an admin financial profile view.
+
+The admin financial profile should show:
+
+- Total sales/bookings/deliveries
+- Autopro fees generated
+- Fees paid
+- Fees unpaid
+- Payouts sent
+- Payouts pending
+- Held payouts
+- Refunds caused
+- Returns caused
+- Disputes caused
+- Debt
+- Negative balance
+- Cash collected
+- Cash not remitted
+- Trust score
+- Risk score
+- Plan level
+- Profit/growth trend
+- Payment reliability
+- Refund rate
+- Dispute rate
+- Chargeback impact
+- Staff notes
+- Audit history
+- Suggested growth actions
+
+Business accounts can have their own allowed financial views.
+
+Business owners/admins can assign certain financial sections to their own employees depending on their plan, permissions, and admin rules.
+
+Some advanced analytics can be unlocked by paid plans or direct admin approval.
+
+---
+
+# 147. Autopro Fee Automation
+
+Admin must be able to create automated fee rules.
+
+Fee automation can depend on:
+
+- Country
+- Region
+- Product category
+- Service category
+- Supplier
+- Service provider
+- Shipping company
+- Partner desk
+- Trust level
+- Risk level
+- Plan level
+- Campaign
+- B2B/fleet contract
+- Payment method
+- Order value
+- Service value
+- Shipping route
+- Route-specific rate
+- Cash collection role
+- Maximum fee cap
+
+Autopro should research proven marketplace pricing and commission methods and use recommended defaults by country, category, and role.
+
+Admin/full owner must keep full control to add, modify, disable, or override fee rules.
+
+The goal is maximum Autopro profitability while keeping the best experience and profitability for honest suppliers, service providers, shipping companies, and clients.
+
+---
+
+# 148. Manual Financial Adjustment Controls
+
+Manual financial adjustments must be controlled carefully.
+
+Rules:
+
+- Full owner can adjust anything.
+- Finance staff can adjust within limits set by the owner.
+- Finance director or selected high-ranking finance role can receive larger limits if owner approves.
+- Manager approval rules can be added later.
+- Support can request adjustments only.
+- Senior support can request or escalate according to permission.
+- Two-person approval is required for high-value changes.
+- Reason is required.
+- Proof is required.
+- Every adjustment is audit logged.
+- User/business is notified if relevant.
+
+Each employee must have specific roles and limits selected by the owner or authorized high-ranking employee.
+
+High-ranking employees can later receive limited authority to manage selected permissions, but the full owner remains the final authority.
+
+---
+
+# 149. Payout Approval Controls
+
+Payouts must be automated where safe and manually controlled where risk is higher.
+
+Payout approval rules:
+
+- Fully automated for trusted/low-risk cases.
+- Manual approval for high-value payouts.
+- Manual approval for risky/new businesses where rules require it.
+- Manual approval during disputes.
+- Two-person approval for very high payouts.
+- Admin controls payout thresholds.
+- Selected employees can be given approval permissions.
+- Country/payment provider rules apply.
+
+Autopro must support secure, flexible, automated payout controls from day one.
+
+---
+
+# 150. Refund Approval Controls
+
+Refunds must be automated for simple eligible cases and reviewed for risky cases.
+
+Refund approval rules:
+
+- Fully automated for simple eligible refunds.
+- Staff review for high-value refunds.
+- Senior staff approval for high-value refunds where admin requires it.
+- Staff review for risky clients.
+- Staff review for risky suppliers/providers.
+- Staff review for fraud indicators.
+- Staff can temporarily block suspicious refund release until senior review.
+- Two-person approval for large refunds.
+- Manager and senior staff approval can be required for large refunds.
+- Admin controls thresholds.
+- Selected employees can receive limited approval permissions.
+- Country law/payment provider rules apply.
+
+Autopro must keep refund controls flexible, secure, and automated where possible.
+
+---
+
+# 151. Business Debt Dashboard
+
+The admin dashboard must show business debts clearly.
+
+Debt categories include:
+
+- Supplier debt
+- Service provider debt
+- Shipping company debt
+- Partner desk debt
+- Refund reimbursement debt
+- Store credit reimbursement debt
+- Unpaid plan/subscription fees
+- Cash collected but not remitted
+- Chargeback debt
+- Penalty fee if legal
+- Shipping settlement debt
+- Manual adjustment debt
+- Debt age
+- Debt deadline
+- Payment plan status
+- Escalation status
+
+Business debts should be ranked automatically.
+
+Ranking/filtering can be by:
+
+- Country
+- City
+- Business type
+- Supplier only
+- Service provider only
+- Shipping company only
+- Partner desk only
+- Debt amount
+- Debt age
+- Risk level
+- Trust level
+- Payment plan status
+- Escalation stage
+
+---
+
+# 152. Cash Control Dashboard
+
+The admin dashboard must show cash flows clearly.
+
+Cash control records include:
+
+- Cash expected
+- Cash collected
+- Who collected cash
+- Cash not remitted
+- COD orders
+- Cash refunds
+- Partner desk payments
+- Shipping company cash settlement
+- Supplier direct cash collection
+- Service provider cash collection
+- Missing cash alerts
+- Cash reconciliation
+- Cash collection proof
+- Cash collector ID
+- Cash settlement deadline
+- Cash settlement status
+
+The cash dashboard must be clear, transparent, well organized, ranked, secure, and automated.
+
+---
+
+# 153. Country and Currency Dashboard
+
+The admin dashboard must show money by country and currency.
+
+The dashboard must support currencies such as:
+
+- DZD
+- EUR
+- USD
+- GBP
+- NGN
+- Other currencies added later
+
+Country/currency dashboard must show:
+
+- Country-specific payment methods
+- Exchange rates used
+- Route-specific rates
+- Market/procurement rates
+- Bank/payment provider rates
+- Manual override rates
+- Currency gain/loss estimate
+- Currency conversion history
+- Currency risk alerts
+- Cash-heavy country rules
+- Online-payment country rules
+- Tax/accounting differences by country
+
+The system must be flexible, secure, updated frequently where possible, easy to read, rearrangeable, and automated.
+
+---
+
+# 154. Alerts and Risk Warnings
+
+The admin dashboard must show alerts and risk warnings.
+
+Alerts can include:
+
+- High refund rate
+- High return rate
+- High dispute rate
+- High chargeback rate
+- Cash not remitted
+- Supplier debt overdue
+- Provider debt overdue
+- Shipping settlement mismatch
+- Suspicious client behavior
+- Suspicious supplier behavior
+- Suspicious service provider behavior
+- Suspicious shipping company behavior
+- Suspicious staff adjustment
+- Payment provider failure
+- Exchange rate problem
+- Repeated failed deliveries
+- Repeated no-shows
+- High-value payout pending approval
+- Large refund pending approval
+- Repeated client cancellations
+- Repeated provider cancellations
+- Partner desk issue
+- API/integration error
+- Tax/reporting issue
+- Unusual cash collection behavior
+- Unusual refund pattern
+- Repeated duplicate account attempts
+
+Alerts must be flexible, easy to read, secure, and automated.
+
+---
+
+# 155. Staff Financial Task Assignment
+
+Money-related tasks must be automatically assignable to staff.
+
+Task examples include:
+
+- Refund review
+- Return review
+- Dispute review
+- Chargeback review
+- Debt follow-up
+- Payout approval
+- Manual adjustment request
+- Shipping settlement mismatch
+- Cash missing investigation
+- Partner desk issue
+- High-risk transaction review
+- Tax/accounting review
+- Payment provider issue
+- Suspicious staff adjustment review
+- Business payment plan review
+
+Task assignment must be flexible so the owner/admin can assign each part to specific employees or roles.
+
+Tasks must be easy to read, prioritized, secure, and tracked.
+
+---
+
+# 156. Staff Performance for Financial Tasks
+
+Admin must be able to track staff performance on money-related tasks.
+
+Performance metrics can include:
+
+- Tasks solved
+- Time to resolution
+- Accuracy
+- Escalations
+- Mistakes reversed
+- Fraud caught
+- Customer satisfaction
+- Business satisfaction
+- Manager review
+- Rewards/promotions
+- Number of high-risk cases solved
+- Number of reopened cases
+- Number of incorrect decisions
+- Average handling time
+- Department/team performance
+
+Staff performance can be tracked by:
+
+- Employee
+- Role
+- Department
+- Team
+- Country
+- Task type
+- Complexity
+- Time period
+- Manager/senior reviewer
+
+The employee structure must be flexible from day one.
+
+The owner can later add roles such as:
+
+- CEO
+- CFO
+- Finance director
+- Senior manager
+- Department director
+- Regional manager
+- Team lead
+
+These roles can sit under the owner with limits set by the owner.
+
+---
+
+# 157. Audit Logs
+
+Every financial action must have audit logs.
+
+Audit logs must record:
+
+- Who changed it
+- Staff/user ID
+- Role at time of action
+- What changed
+- Old value
+- New value
+- Reason
+- Proof
+- Date/time
+- IP/device/session where legal
+- Approval chain
+- Related order
+- Related service
+- Related payment
+- Related refund
+- Related dispute
+- Related business debt
+- Related payout
+- Related report/export
+
+Audit logs are required for trust, fraud prevention, accounting, legal defense, and staff accountability.
+
+Autopro should support strong identity, access, and security structures such as:
+
+- Role-based permissions
+- Strong passwords
+- Multi-factor authentication where possible
+- Passkeys where possible
+- Device/session monitoring where legal
+- Staff access logs
+- Approval chains
+- Limited access tokens
+- Revoked access history
+
+Future direction:
+
+The same access/audit structure can later support office tools such as door access, company cards, company spending approvals, and other owner platforms, if legally and technically appropriate.
+
+This reusable structure must remain private and owner-controlled.
+
+---
+
+# 158. Export and Download Reports
+
+Admin must be able to export financial reports.
+
+Export formats can include:
+
+- CSV
+- Excel
+- PDF
+
+Reports can include:
+
+- Country tax report
+- Supplier statement
+- Service provider statement
+- Shipping company statement
+- Partner desk statement
+- Debt report
+- Refund report
+- Return report
+- Dispute report
+- Cash report
+- Chargeback report
+- Payout report
+- Revenue report
+- Profit estimate report
+- Staff performance report
+- Audit log report
+- Custom date range report
+
+The owner can assign selected employees permission to download all reports or only selected reports.
+
+All exports must be permission-controlled and audit logged.
+
+---
+
+# 159. Tax and Accounting Direction
+
+Autopro must prepare tax/accounting reports.
+
+Tax/accounting support can include:
+
+- Country-specific tax reports
+- VAT/sales tax if applicable
+- Business invoices
+- Client receipts
+- Supplier/provider/shipping statements
+- Cash settlement records
+- Refund/return records
+- Chargeback records
+- Accountant export
+- Admin manual tax settings
+- Legal/accounting review before launch
+
+For the owner/admin, tax/accounting reporting is a core business need.
+
+For other roles such as suppliers, service providers, shipping companies, hybrid businesses, influencers, and partners, advanced tax/accounting reports can be a paid-plan feature if legally allowed.
+
+Autopro should research each country’s tax/reporting requirements and use them as default templates where possible.
+
+The tax/accounting engine should help users generate useful legal reports that can be:
+
+- Downloaded
+- Printed
+- Shared with accountant
+- Saved to profile/files
+- Exported to accounting software if supported later
+- Stored in document history
+
+The tax/accounting engine must be flexible and allow assigned employees to manage settings within permissions.
+
+Legal/accounting review is required before launch in each country.
+
+---
+
+# 160. Payment Provider Monitoring
+
+The admin dashboard must monitor payment providers.
+
+Monitoring can include:
+
+- Provider status
+- Failed payments
+- Successful payments
+- Refund failures
+- Chargeback notices
+- Payout failures
+- Settlement delays
+- Provider fees
+- Country availability
+- API errors
+- Webhook failures
+- Authorization failures
+- Capture failures
+- Refund processing time
+- Provider balance
+- Provider dispute notices
+- Provider compliance alerts
+
+Payment provider monitoring must be detailed, easy to access, assignable to specific employees, flexible, and automated where provider APIs allow.
+
+---
+
+# 161. Fraud and Risk Dashboard
+
+The admin dashboard must include fraud/risk analytics.
+
+Fraud/risk analytics can include:
+
+- Risky clients
+- Risky suppliers
+- Risky service providers
+- Risky shipping companies
+- Risky partner desks
+- Risky staff actions
+- Return abuse
+- Refund abuse
+- Cash abuse
+- No-show abuse
+- Fake orders
+- Duplicate accounts
+- Device/IP risk where legal
+- High-risk routes
+- High-risk categories
+- High-risk countries
+- High-risk payment methods
+- High-risk refund patterns
+- High-risk shipping patterns
+- Repeated refused COD
+- Repeated overcharge complaints
+- Repeated wrong part claims
+- Repeated empty box claims
+- Suspicious manual adjustments
+
+The fraud/risk dashboard must be detailed, flexible, automated, easy to read, and assignable to specific employees.
+
+---
+
+# 162. Owner Profit Dashboard
+
+The owner profit dashboard must show Autopro’s business performance.
+
+Owner profit dashboard can include:
+
+- Daily revenue
+- Weekly revenue
+- Monthly revenue
+- Revenue by country
+- Revenue by city/region
+- Revenue by category
+- Revenue by supplier
+- Revenue by service provider
+- Revenue by shipping company
+- Revenue by partner desk
+- Fees earned
+- Fees unpaid
+- Plan revenue
+- Ads revenue
+- Sponsored listing revenue
+- Featured profile revenue
+- Cash collected
+- Cash missing
+- Refund cost
+- Chargeback cost
+- Staff cost later
+- Shipping partner cost
+- Payment provider cost
+- Tax estimate
+- Profit/loss estimate
+- Growth trends
+- Best partners
+- Worst risk areas
+- Best categories
+- Worst categories
+- Best countries
+- Best cities
+- Fastest-growing services
+- Fastest-growing parts
+- Client repeat purchase rate
+- Supplier growth
+- Provider growth
+- Shipping partner growth
+- Suggestions to increase profit
+- Suggested fee adjustments
+- Suggested plan offers
+- Suggested investment opportunities
+- Suggested country/category expansion
+
+The owner must be able to rearrange the dashboard and assign specific sections to selected employees.
+
+The dashboard should be easy to read, ranked, filterable, and updated frequently where possible.
+
+---
+
+# 163. Dashboard Permissions
+
+Financial dashboard access must be controlled by permissions.
+
+Permission direction:
+
+- Full owner has all access.
+- Finance staff has limited access selected by owner.
+- Support does not get broad money dashboard access by default.
+- Senior support can have limited dispute/refund view selected by owner.
+- Manager can have approval view if allowed.
+- Shipping settlement staff can view shipping-related financial sections only.
+- Tax/accounting staff can export or view tax/accounting sections only.
+- Every role is controlled by permissions.
+- Every access is audit logged.
+
+The owner can give selected control permissions to specific employees.
+
+Example:
+
+The owner can give a CEO or finance director limited authority to add, modify, or assign permissions for selected roles, while the owner keeps final authority.
+
+Permission delegation must be flexible, secure, and audit logged.
+
+---
+
+# 164. Dashboard Section Structure
+
+Each financial dashboard section must be clearly separated.
+
+Each section should be built for a specific type of information.
+
+Related sections can be combined only when it improves clarity.
+
+Each section must support:
+
+- Summary total
+- Detailed view
+- Filtering
+- Ranking
+- Search
+- Export where allowed
+- Permission control
+- Staff assignment
+- Audit logs where relevant
+- Alerts where relevant
+- Drill-down from summary to details
+
+Each selectable detail or entire section can be assigned to a specific role or employee.
+
+This gives the owner and staff better research, better decisions, and better workflow.
+
+---
+
+# 165. Admin Money Dashboard Goal
+
+The goal of the admin money dashboard is to give the owner full financial control of Autopro.
+
+The dashboard must help the owner:
+
+- Understand revenue
+- Understand profit
+- Track fees
+- Track debt
+- Track cash
+- Track payouts
+- Track refunds
+- Track disputes
+- Track risks
+- Track staff actions
+- Track supplier performance
+- Track service provider performance
+- Track shipping company performance
+- Track client demand
+- Track vehicle data growth
+- Detect fraud
+- Detect missing money
+- Prepare tax/accounting reports
+- Find investment opportunities
+- Improve partner performance
+- Increase Autopro profit
+
+Autopro must make this dashboard flexible, secure, automated, role-based, and useful for future owner platforms.
+
+---
+
+# 166. Part 5 Completion Note
+
+This clean file now includes Part 5 of the payments cleanup:
+
+- Admin money dashboard purpose
+- Owner/full admin visibility
+- Supplier import/export/demand intelligence
+- Dashboard money balances
+- Transaction ledger
+- Admin filters and search
+- Business financial profile view
+- Autopro fee automation
+- Manual financial adjustment controls
+- Payout approval controls
+- Refund approval controls
+- Business debt dashboard
+- Cash control dashboard
+- Country and currency dashboard
+- Alerts and risk warnings
+- Staff financial task assignment
+- Staff financial task performance
+- Audit logs
+- Export/download reports
+- Tax/accounting direction
+- Payment provider monitoring
+- Fraud and risk dashboard
+- Owner profit dashboard
+- Dashboard permissions
+- Dashboard section structure
+
+Next cleanup step:
+
+- Final review of clean payments file
+- Update cleanup status
+- Decide whether to keep both payment files or later replace the old file
