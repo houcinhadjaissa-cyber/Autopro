@@ -1022,3 +1022,162 @@ Payments file cleanup and consolidation
 ```
 
 Cleanup should be done safely by creating a clean consolidated file first, not by deleting the existing payment file immediately.
+```
+
+---
+
+# Latest Recovery Override - Admin Money Dashboard Completed
+
+This section confirms the latest accurate continuation status.
+
+Admin money dashboard and financial controls have now been documented in:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+## Completed Admin Money Dashboard Topics
+
+Autopro now has confirmed rules for:
+
+- Admin money dashboard purpose
+- Owner/full admin visibility
+- Dashboard money balances
+- Complete transaction ledger
+- Admin filters and search
+- Business financial profile views
+- Supplier import/export/demand/growth intelligence
+- Autopro fee automation
+- Manual financial adjustment controls
+- Payout approval controls
+- Refund approval controls
+- Business debt dashboard
+- Cash control dashboard
+- Country and currency dashboard
+- Alerts and risk warnings
+- Staff financial task assignment
+- Staff performance for financial tasks
+- Audit logs
+- Export/download reports
+- Tax/accounting direction
+- Payment provider monitoring
+- Fraud and risk dashboard
+- Owner profit dashboard
+- Dashboard permissions
+- Dashboard section structure
+
+## Important Confirmed Admin Dashboard Rules
+
+The full owner must be able to see everything, including:
+
+- Every transaction
+- Every fee
+- Every payout
+- Every refund
+- Every debt
+- Every staff adjustment
+- Every country/currency
+- Every supplier/provider/shipping company balance
+- Every dispute hold
+- Every manual override
+- Every audit log
+- Every report/export
+
+The dashboard must show summary totals first, then allow drill-down into detailed records.
+
+Every major dashboard section must support:
+
+- Filtering
+- Search
+- Ranking
+- Detailed view
+- Export where allowed
+- Permission control
+- Staff assignment
+- Audit logs where relevant
+- Alerts where relevant
+
+Admin money dashboard must include:
+
+- Revenue
+- Fees
+- Refunds
+- Returns
+- Chargebacks
+- Business debt
+- Pending balances
+- Available balances
+- Held balances
+- Negative balances
+- Cash expected
+- Cash collected
+- Cash missing/not remitted
+- Country/currency breakdown
+- Profit/loss estimates
+- Account counts
+- Vehicle counts
+- Supplier/provider/shipping growth analytics
+- Fraud/risk analytics
+- Tax/accounting reports
+- Payment provider monitoring
+
+Autopro must support a complete transaction ledger for every money movement.
+
+Manual financial adjustments require permissions, reason, proof, audit logs, and high-value approval controls.
+
+Payouts and refunds must be automated for safe cases and manually reviewed for risky/high-value/disputed cases.
+
+Tax/accounting reports must be prepared by country and require legal/accounting review before launch.
+
+Advanced tax/accounting reports can become paid-plan features for suppliers, service providers, shipping companies, hybrid businesses, influencers, and partners where legally allowed.
+
+## Do Not Repeat Admin Money Dashboard Questions
+
+Do not repeat already answered questions about:
+
+- Admin money dashboard purpose
+- Owner visibility
+- Money balances
+- Transaction ledger
+- Admin filters/search
+- Business financial profile views
+- Fee automation
+- Manual adjustment controls
+- Payout approval controls
+- Refund approval controls
+- Business debt dashboard
+- Cash control dashboard
+- Country/currency dashboard
+- Alerts and risk warnings
+- Staff financial task assignment
+- Staff financial performance tracking
+- Audit logs
+- Export/download reports
+- Tax/accounting direction
+- Payment provider monitoring
+- Fraud/risk dashboard
+- Owner profit dashboard
+- Dashboard permissions
+- Dashboard section structure
+
+## Correct Current Next Maintenance Step
+
+The next recommended step is:
+
+```txt
+Payments file cleanup and consolidation
+```
+
+Cleanup must be done safely.
+
+The owner prefers one simple replacement workflow:
+
+```txt
+Open docs/PAYMENTS_REFUNDS_RETURNS.md
+Select all old text
+Delete old text
+Paste one clean consolidated replacement text
+Commit
+```
+
+The AI must provide the replacement text in a beginner-friendly way and make sure no confirmed rules are intentionally lost.
