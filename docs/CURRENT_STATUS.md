@@ -723,3 +723,13 @@ Payments file cleanup and consolidation
 The cleanup should replace the messy current `docs/PAYMENTS_REFUNDS_RETURNS.md` with one clean consolidated version.
 
 No coding should start yet.
+---
+
+# Current Status Recovery Override - Clean Payments File Completed
+
+The payments/refunds/returns documentation cleanup has been completed into a clean consolidated file.
+
+Clean active reference:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS_CLEAN.md
