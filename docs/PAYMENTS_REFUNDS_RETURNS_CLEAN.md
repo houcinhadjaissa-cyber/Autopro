@@ -1492,3 +1492,1018 @@ Shipping/logistics company pays supplier in China.
 Client pays cash locally in Algeria.
 Shipping/logistics company receives local settlement/cash.
 Autopro tracks the full settlement ledger.
+```
+
+This model is especially important for cash-heavy countries.
+
+Confirmed rule:
+
+This model must be supported only with:
+
+- Approved trusted shipping/logistics partners
+- Contract
+- Proof
+- Settlement ledger
+- Exchange-rate rules
+- Legal review
+
+The model can be standard in cash-heavy countries where useful, but it must remain optional and configurable.
+
+---
+
+# 54. Shipping Company ID Reuse for Future Owner Platforms
+
+Shipping company ID, trust score, reputation, route history, settlement history, and account data should be structured so they can be reused in future owner platforms where legally and contractually allowed.
+
+Future platform reuse can include:
+
+- Same trusted shipping company account structure
+- Same company ID
+- Same verified business data
+- Same performance history
+- Same route capability
+- Same cash collection capability
+- Same settlement reliability score
+- Same employee/office structure if enabled
+- Same plan/contract relationship if applicable
+
+Admin controls can include:
+
+- Enable for Autopro only
+- Enable for a specific future project
+- Disable for future projects
+- Delete/anonymize if legally required
+- Modify project access
+- Restrict by country
+- Restrict by service type
+
+This must follow privacy law, contracts, and data retention rules.
+
+---
+
+# 55. Exchange Rate for International Shipping Settlement
+
+If a shipping company pays a supplier abroad and collects local cash, Autopro must support controlled exchange-rate rules.
+
+Exchange-rate control can include:
+
+- Admin-approved rate
+- Assigned employee-approved rate
+- Shipping company contract rate
+- Payment provider/bank rate where countries use banking-based payment flows
+- Market/procurement reference rate where legally usable
+- Route-specific rate
+- Manual finance/admin override
+- Country law requirement
+
+Route-specific rate is confirmed as required.
+
+Route-specific rate means the approved rate can be different for each shipping/payment route.
+
+Examples:
+
+- China to Algeria
+- Turkey to Algeria
+- Europe to Algeria
+- UAE to Algeria
+- Local Algeria to Algeria
+
+Each route can have different shipping cost, currency risk, supplier settlement method, customs risk, cash collection method, and pricing reality.
+
+Autopro must make exchange-rate calculations realistic, frequently updated where possible, secure, audit logged, legal, and flexible.
+
+---
+
+# 56. Shipping Company Loses Package
+
+If shipping company confirms it received the package from supplier and the package is later lost, shipping company is responsible unless proof shows another party caused the loss.
+
+Responsibility rules:
+
+- Shipping company responsible if package was lost after confirmed handoff.
+- Supplier responsible only if bad packaging or wrong handoff caused loss and proof confirms it.
+- Autopro responsible only if package was received and checked into an Autopro-controlled warehouse, then lost due to Autopro/warehouse fault.
+- Warehouse/partner responsible if loss happened after warehouse received and accepted package.
+- Staff/admin decides by proof when automation cannot decide.
+- Insurance/contract rules apply.
+- Country law applies first.
+
+Autopro must support automatic international-to-local route transition.
+
+Example flow:
+
+1. China to Algeria shipment arrives.
+2. Autopro/partner warehouse confirms received.
+3. System links package to original client order.
+4. System prepares Algeria local delivery details.
+5. System generates local carrier label/papers, such as ZR Express papers.
+6. Employee can print local delivery label.
+7. Client dashboard updates.
+8. Supplier, shipping, local carrier, and admin dashboards update.
+
+---
+
+# 57. Shipping Company Damages Package
+
+If package is damaged during shipping, responsibility depends on proof.
+
+Responsibility rules:
+
+- Shipping company responsible if transport caused damage.
+- Supplier responsible if bad packaging caused damage.
+- Warehouse/partner responsible if damage happened in warehouse/partner location.
+- Staff/admin decides by proof when automation cannot decide.
+- Insurance/contract rules apply.
+- Country law applies first.
+
+If shipping company notices bad packaging before shipping:
+
+1. Shipping company flags package as Packaging Problem.
+2. Supplier is notified.
+3. Package should not continue until issue is resolved unless admin/contract rules allow.
+4. Supplier can fix/change packaging.
+5. If supplier refuses to fix packaging and accepts responsibility, package can continue under Supplier Packaging Responsibility.
+6. Shipping company is protected from packaging-related damage responsibility after proper proof and notice.
+7. Decision is saved in order timeline and dispute proof.
+
+---
+
+# 58. Late Delivery Responsibility
+
+Shipping company is responsible for late delivery when proof shows delay was caused by shipping company.
+
+Responsibility examples:
+
+- Shipping company responsible if delivery exceeds promised timeline due to shipping company action/inaction.
+- Shipping company responsible if tracking shows delay caused by shipping company.
+- Supplier responsible if supplier handed package late.
+- Client responsible if client was unavailable, did not answer, refused delivery, or missed pickup.
+- Weather, disaster, war, emergency, strikes, customs block, or force majeure requires review.
+- Staff/admin decides by proof when automation cannot decide.
+- Country/contract rules apply.
+
+Autopro must automate late delivery detection where possible by comparing:
+
+- Promised timeline
+- Supplier handoff date
+- Shipping scan dates
+- Route standard duration
+- Delivery attempt records
+- Client availability records
+- Force majeure flags
+- Country/region disruption alerts where available
+
+---
+
+# 59. Client No-Show at Pickup Desk
+
+If client does not pick up a package at pickup desk:
+
+- Client receives reminder.
+- Client receives clear pickup deadline.
+- No-show is recorded.
+- Client dashboard updates.
+- Shipping company/desk dashboard updates.
+- Supplier dashboard updates if needed.
+- Admin dashboard updates.
+- Client trust score can be affected if no valid reason exists, especially for new clients.
+- Storage fee can be added if legal.
+- Transportation fee can be added if legal.
+- Return to supplier/warehouse can start after deadline.
+- Staff review applies for VIP/elderly clients where appropriate.
+- Shipping company/desk is protected if proof exists.
+
+Trusted/VIP clients and elderly clients should receive softer handling and human support review before harsh penalties where appropriate.
+
+---
+
+# 60. Return Package Handled by Shipping Company
+
+When a client returns a package through a shipping company, Autopro must require clear confirmations.
+
+Return confirmations can include:
+
+- Client return request approved by supplier or Autopro rules
+- Shipping company receives return package
+- QR/manual return confirmation
+- Photo/video proof if needed
+- Package delivered back to supplier or warehouse
+- Supplier confirms returned package received
+- Supplier inspection result
+- Refund/replacement decision
+- Dispute link if any
+- Return shipping cost responsibility
+- Date/time records
+- Employee/office/driver ID if applicable
+
+The return package flow must update:
+
+- Client dashboard
+- Supplier dashboard
+- Shipping company dashboard
+- Admin dashboard
+- Refund status
+- Return status
+- Dispute status if applicable
+- Payment/payout hold status
+- Credit/reimbursement ledger if applicable
+
+---
+
+# 61. Failed Delivery Attempts
+
+If delivery or handover fails, Autopro must record the failed attempt.
+
+A failed delivery attempt must include:
+
+- Order ID
+- Package/tracking ID
+- Shipping company ID
+- Driver/employee/desk ID if applicable
+- Date/time
+- Location if legal and available
+- Failed delivery reason
+- Optional written explanation
+- Proof if needed
+- Next action
+- Reschedule status
+- Fee status if applicable
+- Responsible party if clear
+- Staff/admin review status if needed
+
+When delivery attempt fails:
+
+- Attempt is recorded.
+- Reason is required.
+- Standard failed-delivery reason list appears.
+- Text box allows explanation.
+- Client is notified.
+- Supplier is notified if needed or if supplier enabled notifications.
+- Admin dashboard updates.
+- Driver/desk can add proof if needed.
+- Second attempt can be scheduled if allowed.
+- Extra delivery fee can apply if legal/admin enabled.
+- Client trust score can be affected if client caused repeated failures.
+- Shipping company trust score can be affected if shipping company caused repeated failures.
+
+Client trust score should not be harshly affected after one failed attempt unless fraud or serious abuse is clear.
+
+---
+
+# 62. Failed Delivery Reasons
+
+Autopro must support structured failed delivery reasons.
+
+Reasons can include:
+
+- Client did not answer phone
+- Client did not answer WhatsApp/contact method
+- Client not at address
+- Client changed address at last minute
+- Wrong address from client
+- Address unclear
+- Driver could not understand location
+- Client refused package
+- Client refused cash payment
+- Client asked to reschedule
+- Driver did not attempt delivery
+- Driver could not access location
+- Security/building access issue
+- Weather issue
+- Disaster, war, fire, road issue, or emergency
+- Package damaged before delivery
+- Package missing or lost
+- Office/pickup desk closed
+- Customs/import issue
+- Supplier gave wrong client information
+- Supplier gave wrong phone number
+- Autopro system/address error
+- Local carrier issue
+- Warehouse delay
+- Pickup deadline missed
+- Cash collection problem
+- Other reason with required explanation
+
+For unclear addresses or access problems, delivery employee should attempt to contact client before marking failed, where practical and legal.
+
+---
+
+# 63. Delivery Reschedule Rules
+
+Autopro must support flexible delivery rescheduling.
+
+Parties who can reschedule depending on reason and permission:
+
+- Client
+- Shipping company
+- Supplier
+- Admin/support staff
+- Automated system
+
+New clients can normally receive up to 2 delivery attempts if allowed.
+
+Trusted/VIP clients can receive up to 3 delivery attempts and a longer reschedule window, such as 4 days, if admin rules allow.
+
+Elderly clients or clients with support needs receive softer handling and human support before harsh consequences.
+
+Automation must be available but not the only method.
+
+---
+
+# 64. Delivery Reschedule Fees
+
+Autopro must support delivery reschedule fees where legal and enabled.
+
+Rules:
+
+- No fee for first reschedule.
+- Fee can apply after repeated client-caused failures.
+- Fee can apply if client repeatedly gives wrong address.
+- Fee can apply if client repeatedly misses delivery or pickup.
+- Fee can apply if client requests extra attempts beyond allowed free attempts.
+- Supplier can be responsible if supplier repeatedly gave wrong information or shipped late.
+- Autopro absorbs cost if platform/system error caused issue.
+- Country law and admin settings decide final rules.
+
+Trusted/VIP/elderly clients should receive support review before fees where appropriate.
+
+All fees must be shown clearly before client confirms an action that creates a fee, where legally required.
+
+---
+
+# 65. Storage Fee at Pickup Desk or Warehouse
+
+Autopro must support storage fees where legal.
+
+Rules can include:
+
+- No fee during first grace period.
+- Fee after pickup deadline.
+- Different fees by country.
+- Different fees by partner.
+- Different fees by warehouse/pickup desk.
+- VIP/elderly clients receive staff contact before fee where appropriate.
+- Admin controls storage fee rules.
+- Partner desk/warehouse can receive part of storage fee if contract allows.
+
+After repeated failed pickup/delivery attempts, client can be offered:
+
+1. Reschedule if allowed.
+2. Keep package at warehouse/pickup desk for fixed storage fee.
+3. Return package to supplier/warehouse after deadline.
+
+Trusted/VIP/elderly clients can be allowed storage for a specific period, such as 15 days, if legal and enabled.
+
+---
+
+# 66. Return to Supplier After Failed Delivery or No-Show
+
+Autopro must support automatic and manual return-to-supplier or return-to-warehouse rules.
+
+Package can be returned after:
+
+- Pickup deadline expires
+- Repeated delivery failures
+- Client refuses package
+- Client refuses cash payment
+- Staff/admin review
+- Country/partner rule triggers automatic return
+- Supplier chooses return/hold/dispose option if legal
+- Warehouse holding period ends
+
+VIP/elderly clients receive extra contact attempts before return where appropriate.
+
+Supplier can choose return, hold, dispose, or another legal action only if country law, contract, and platform rules allow.
+
+---
+
+# 67. Return Shipping Fee Responsibility After Failed Delivery
+
+Return shipping fee responsibility is decided by proof, country law, contract, and platform rules.
+
+Possible responsibility:
+
+- Client pays if client caused failure or refused package without valid reason.
+- Supplier pays if supplier caused wrong information, wrong item, bad packaging, or late shipping.
+- Shipping company pays if shipping company caused failure.
+- Autopro pays if platform/system error caused failure.
+- Fee can be split if responsibility is shared.
+- Staff/admin decides by proof.
+- Country law/contract applies first.
+
+If client refuses a valid package without valid reason, client can be responsible for return shipping fee where legal.
+
+If client paid online, eligible refund can happen according to rules, but return fee can be deducted or added to account/next order where legal.
+
+If client chose COD and refuses payment without valid reason, return fee can be added to account/next order where legal.
+
+Trusted/VIP/elderly clients receive staff review before return fees where appropriate.
+
+---
+
+# 68. Shipping Company Disputes
+
+Shipping companies must be able to open disputes.
+
+Examples:
+
+- Client says package was not delivered but driver has proof.
+- Supplier says package was not picked up but shipping company has proof.
+- Supplier gave damaged or badly packaged item.
+- Supplier gave wrong shipment information.
+- Client refused COD payment.
+- Client no-show after allowed attempts.
+- Autopro settlement not paid.
+- Wrong fee charged.
+- Package loss responsibility disagreement.
+- Package damage responsibility disagreement.
+- Return package disagreement.
+- Warehouse handoff disagreement.
+- Cash collected/remitted disagreement.
+- Customs/import responsibility disagreement.
+
+Shipping company can be allowed to refuse, return, or flag badly packaged items.
+
+Dispute handling must be proof-based, automated where possible, and escalated to staff/admin when needed.
+
+---
+
+# 69. Shipping Company Trust and Performance Score
+
+Shipping companies must have trust/performance scores.
+
+Score factors can include:
+
+- Delivery success rate
+- Late delivery rate
+- Lost package rate
+- Damage rate
+- Cash settlement reliability
+- Proof quality
+- Dispute rate
+- Client complaints
+- Supplier complaints
+- Fraud/suspicious activity
+- Staff review results
+- Return handling quality
+- Pickup desk performance
+- Office performance
+- Driver performance
+- Settlement accuracy
+- API/portal reporting reliability
+
+Score must account for events outside shipping company control:
+
+- Weather
+- War
+- Fire
+- Disaster
+- Road closure
+- Customs delay
+- Force majeure
+- Client no-show
+- Supplier late handoff
+- Autopro/system issue
+
+New shipping companies can be reviewed after repeated failures, such as 4 failed deliveries, depending on country and volume.
+
+Trusted/VIP shipping companies receive more understanding and staff support if unusual problems appear.
+
+---
+
+# 70. Shipping Company Penalties and Rewards
+
+Autopro must support penalties and rewards for shipping companies.
+
+Penalties can include:
+
+- Warning
+- Reduced visibility
+- Reduced route priority
+- Payout hold
+- Settlement hold
+- Account restriction
+- Lower trust score
+- Plan downgrade
+- Suspension
+- Ban for fraud
+- Loss of premium features
+- Loss of international settlement access
+- Staff/admin review
+
+Rewards can include:
+
+- Higher route priority
+- Lower Autopro fee
+- Faster settlement
+- Featured/approved partner badge
+- More delivery volume
+- Better plan features
+- Access to international settlement model
+- VIP client service tools
+- Advanced analytics
+- Better support priority
+- Growth recommendations
+
+Rewards and penalties must be flexible, automated where possible, and admin-controlled.
+
+---
+
+# 71. Shipping Company Plans and Premium Features
+
+Shipping companies must be able to have plans like suppliers and service providers.
+
+Plan features can include:
+
+- More employee accounts
+- More office accounts
+- Advanced dashboard
+- Route analytics
+- Finance reports
+- Cash collection reports
+- API/integration access
+- Bulk label printing
+- Warehouse module
+- Pickup desk module
+- Staff permission tools
+- Faster support
+- Lower Autopro fee
+- Featured/approved partner status
+- International settlement tools
+- Multi-country shipping tools
+- Route expansion tools
+- VIP client handling tools
+- Advanced reconciliation tools
+- Fraud alerts
+- Performance reports
+- Growth recommendations
+
+Autopro must support different plan types for:
+
+- Local shipping companies
+- National shipping companies
+- Multi-country shipping companies
+- International logistics companies
+- Pickup desk networks
+- Warehouse partners
+- Cash collection partners
+- ZR Express-style local partners
+
+Plans must support future owner platforms, not only car parts.
+
+---
+
+# 72. Warehouse Handoff Rules
+
+If package passes through an Autopro warehouse or partner warehouse, Autopro must support structured confirmations.
+
+Warehouse confirmations can include:
+
+- Warehouse receives package
+- Package condition checked
+- Package stored
+- Package relabeled if needed
+- Local carrier assigned
+- Package handed to next carrier
+- QR confirmation
+- Scan confirmation
+- Manual confirmation
+- Photo/video if needed
+- Employee ID recorded
+- Date/time recorded
+- Location recorded if legal
+- Condition report
+- Damage flag if applicable
+- Missing item flag if applicable
+
+Autopro must avoid forcing unnecessary manual confirmation steps if route does not require it.
+
+The priority order is:
+
+1. Get the package to the client legally and safely.
+2. Keep all parties informed.
+3. Collect accurate proof.
+4. Investigate repeated missing steps.
+5. Allow approved exceptions for direct routes or simplified partners.
+
+Repeated missing warehouse/shipping steps should trigger staff investigation unless route exception exists.
+
+---
+
+# 73. Warehouse Damage or Loss Responsibility
+
+If package is lost or damaged in warehouse, responsibility depends on proof.
+
+Possible responsibility:
+
+- Warehouse/partner responsible if loss/damage happened after warehouse received and accepted package.
+- Autopro responsible if warehouse is Autopro-controlled and Autopro/warehouse fault caused issue.
+- Shipping company responsible if damage happened before warehouse receiving confirmation.
+- Supplier responsible if bad packaging caused damage.
+- Staff/admin decides by proof when automation cannot decide.
+- Insurance/contract applies.
+- Country law applies.
+
+Condition must be recorded at warehouse receiving so responsibility can be assigned fairly.
+
+---
+
+# 74. Customs and Import Tracking
+
+Autopro must support customs/import tracking for international orders.
+
+Tracking can include:
+
+- Customs status
+- Import fees
+- Duties/taxes
+- Documents required
+- Package held by customs
+- Customs delay
+- Customs release
+- Customs rejection
+- Client responsibility
+- Supplier responsibility
+- Shipping company responsibility
+- Autopro/platform responsibility
+- Country-specific import rules
+- Admin/staff review
+- Shipping company proof upload
+- Document upload
+- Customs notes
+- Estimated delay
+- Updated delivery timeline
+
+Shipping company can select customs/import issue as delayed delivery reason.
+
+Autopro must support flexible customs options by country, route, supplier, shipping company, product category, and legal requirement.
+
+---
+
+# 75. Customs and Import Fees
+
+Customs/import fees must be agreed and clear before purchase whenever possible.
+
+Possible responsibility:
+
+- Client pays if shown before purchase.
+- Supplier pays if included in product/shipping agreement.
+- Shipping/logistics partner pays first and bills later if contract says so.
+- Autopro pays only if platform promise/error caused issue.
+- Country law decides where applicable.
+- Incoterms/shipping agreement decides where applicable.
+- Admin controls rules by country, supplier, shipping route, product category, and contract.
+
+Autopro must be flexible enough to support different international trade models.
+
+---
+
+# 76. Shipping Insurance
+
+Autopro must support shipping insurance where legally and commercially available.
+
+Insurance options can include:
+
+- Optional insurance paid by client
+- Required insurance for high-value products if selected by supplier/client/admin rules
+- Supplier-purchased insurance
+- Shipping company included insurance
+- Autopro-offered insurance if legally/partner approved
+- Insurance by category
+- Insurance by product value
+- Insurance by country
+- Insurance by route
+- Admin-controlled availability
+
+Insurance options must be clear before purchase where applicable.
+
+---
+
+# 77. Insurance Claim Flow
+
+If insured package is lost or damaged, Autopro must support an insurance claim flow.
+
+Flow:
+
+1. Claim opens automatically or manually.
+2. Proof is collected.
+3. Related payout/refund is held if needed.
+4. Shipping company and/or insurer reviews.
+5. Staff/admin reviews if needed.
+6. Client receives refund, replacement, or store credit depending on decision.
+7. Responsible party or insurer reimburses Autopro or supplier according to settlement rules.
+8. Claim record is saved permanently.
+9. Ledger and statements update.
+10. Dashboards update.
+
+---
+
+# 78. Shipping Company API and Integration Direction
+
+Autopro must be structured from day one to later integrate with shipping company systems.
+
+Future integrations can include:
+
+- Automatic label creation
+- Tracking synchronization
+- Delivery status synchronization
+- Cash collection synchronization
+- Settlement synchronization
+- Webhooks/API
+- Bulk upload if API is not available
+- CSV/Excel import
+- Private partner portal if no API exists
+- Label printing
+- Return label creation
+- Pickup desk status sync
+- Warehouse status sync
+
+Example:
+
+Autopro should be able to integrate with ZR Express for labels, tracking, pickup confirmation, delivery confirmation, and cash collection if ZR Express provides an API or compatible import method.
+
+External systems must receive limited scoped access only.
+
+Security direction:
+
+- External systems access only assigned shipments/tasks.
+- API keys/tokens are revocable.
+- Sensitive client/profile/vehicle data is not exposed unless necessary and legal.
+- All external changes are audit logged.
+- Suspicious integration behavior can be blocked automatically.
+- Manual staff review required before restoring suspicious access.
+- Data validation prevents external systems from corrupting Autopro records.
+- Integration permissions adjustable by admin.
+
+---
+
+# 79. If Shipping Company Has No Software or API
+
+If local shipping company has no modern software/API, Autopro must provide tools so they can still work inside platform.
+
+Autopro can provide:
+
+- Private partner portal
+- Mobile-friendly web page
+- Office login
+- Driver login
+- QR scan tool
+- Manual confirmation forms
+- Bulk Excel/CSV upload
+- Printable labels
+- Settlement dashboard
+- Cash collection dashboard
+- Pickup desk dashboard
+- Return handling forms
+- Failed delivery forms
+- Proof upload forms
+- Basic finance reports
+
+These tools must be easy to use, flexible, secure, and automated as much as possible.
+
+---
+
+# 80. Staff/Admin Controls for Shipping Settlement
+
+Admin/full owner and assigned staff must control shipping settlement settings.
+
+Controls can include:
+
+- Shipping company approval
+- Routes allowed
+- Countries served
+- Regions served
+- Fees
+- Discounts
+- Suggested discounts
+- Settlement schedule
+- Cash collection limits
+- Employee access limits
+- Trust score overrides
+- Dispute decisions
+- Payout holds
+- Manual adjustments with audit log
+- Suspend shipping partner
+- Ban shipping partner
+- Generate partner access links
+- Revoke partner access links
+- Assign staff to shipping partners
+- Approve API/integration access
+- Disable API/integration access
+- Set route-specific rates
+- Set customs/import rules
+- Set insurance rules
+- Set storage fee rules
+- Set return shipping fee rules
+
+Autopro can use algorithmic suggestions for discounts, route improvements, or partner upgrades.
+
+Each role can accept, reject, or modify suggested changes depending on permission.
+
+---
+
+# 81. Shipping Company Statement and Payment Reconciliation
+
+Autopro must reconcile shipping company statements automatically.
+
+Reconciliation means Autopro compares expected money, deliveries, fees, and settlements against actual confirmed records.
+
+Autopro must match:
+
+- Delivered orders
+- Failed deliveries
+- Cash collected
+- Cash remitted
+- Delivery fees
+- Return fees
+- Storage fees
+- Refunds
+- Returns
+- Lost/damaged claims
+- Autopro fees
+- Partner desk fees
+- Insurance claims
+- Customs/import fees if applicable
+- Adjustments
+- Overpayments
+- Underpayments
+- Missing money
+- Missing proof
+- Duplicate records
+- Late settlements
+
+If mismatch is detected, Autopro creates:
+
+- Alert
+- Reconciliation issue record
+- Suggested adjustment
+- Staff/admin review task if needed
+- Updated statement status
+- Proof request if needed
+
+---
+
+# 82. Shipping Company Access to Client Data
+
+Shipping companies must only see client data needed for assigned delivery, pickup, cash collection, return, or support task.
+
+Possible visible data:
+
+- Delivery name needed for shipment
+- Phone number if needed
+- WhatsApp/contact method if allowed
+- Delivery address for assigned delivery
+- Pickup location details
+- Order total if COD/cash collection applies
+- Product category if needed
+- Package size/weight if needed
+- Special delivery notes if client entered them
+- Legal/tax delivery information if required by country
+
+Shipping companies must not see:
+
+- Unrelated order history
+- Private client profile data
+- Vehicle history unless needed and legally allowed
+- Unrelated addresses
+- Unrelated phone numbers
+- Private payment details
+- Full product details unless needed
+- Internal Autopro profit/fee breakdown unless relevant to their own settlement
+
+Users can have different names for different purposes where legal:
+
+- Public profile name
+- Shipping name
+- Legal billing name
+- Company name
+- Employee pickup/contact name
+- Order contact name
+- Influencer/media name later if applicable
+
+Data visibility must be controlled by:
+
+- Country law
+- Shipping company role
+- Employee permission
+- Delivery task
+- Partner trust level
+- Admin settings
+- Client privacy settings where allowed
+
+After delivery, client data should be hidden or minimized except for legal, accounting, audit, dispute, and proof records.
+
+---
+
+# 83. Shipping Company VIP/Trusted Client Lists
+
+Autopro can support shipping-company-specific VIP/trusted client lists as paid-plan or premium feature where legal and privacy rules allow.
+
+Shipping company can create its own preferred/trusted client list.
+
+Autopro can suggest clients based on:
+
+- Verified account
+- Excellent delivery behavior
+- Repeat successful deliveries
+- No repeated no-show
+- No repeated refusal
+- Good cash behavior
+- Low dispute history
+- Trusted/VIP status
+- Strong proof history
+
+Shipping company can:
+
+- Accept suggested client
+- Reject suggested client
+- Modify the list
+- Add allowed clients manually
+- Remove clients from list
+
+Access eligibility can require:
+
+- At least 1 month on Autopro
+- No serious warnings
+- No repeated reports
+- Excellent track record
+- Repeated successful delivery use
+- No more than allowed failed deliveries in a month
+- Approved plan level
+- Admin approval if needed
+
+Autopro must protect VIP and trusted clients and must not expose unnecessary private data.
+
+---
+
+# 84. Shipping Company Support and Contact Flow
+
+Shipping company support must be structured and saved.
+
+Support options include:
+
+- AI support first for new/normal shipping partners
+- Direct staff support for trusted/VIP shipping partners
+- Ticket system
+- Emergency phone/contact for urgent cases
+- Shipping partner account manager for big partners
+- Chat attached to shipment/order
+- Support history saved
+- Staff notes
+- Proof upload
+- Internal escalation
+- Manager escalation
+- Finance escalation for settlement issues
+
+A ticket system means a support case with a unique ID linked to the order, shipment, proof, conversation, staff notes, and decision.
+
+Urgent cases can include:
+
+- High-value package issue
+- Cash collection problem
+- Lost package
+- Customs hold
+- Driver safety issue
+- Fraud/suspicious activity
+- Settlement dispute
+- VIP client delivery problem
+- Major route disruption
+
+---
+
+# 85. Part 2 Completion Note
+
+This clean file now includes Part 2 of the payments cleanup:
+
+- Shipping company accounts
+- Shipping company roles and permissions
+- Package handoff
+- Delivery confirmation
+- Cash collection
+- Shipping company payout
+- Shipping company statements
+- Shipping company fees
+- International supplier payment by shipping partner
+- Route-specific exchange rates
+- Package loss and damage
+- Late delivery
+- Pickup desk no-show
+- Failed delivery attempts
+- Rescheduling
+- Storage fees
+- Return shipping responsibility
+- Shipping company disputes
+- Shipping company trust scores
+- Shipping plans and premium features
+- Warehouse handoffs
+- Customs/import
+- Insurance
+- API/integration direction
+- Partner portals
+- Reconciliation
+- Client data access
+- Shipping support flow
+
+Next cleanup part to add:
+
+- Refund and return decision matrix
