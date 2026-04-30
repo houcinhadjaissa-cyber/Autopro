@@ -495,3 +495,81 @@ Refund and return decision matrix
 ```
 
 No coding should start yet.
+```
+
+---
+
+# Current Status Recovery Override - Refund and Return Decision Matrix Completed
+
+The refund and return decision matrix has been documented inside:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+## Latest Completed Work
+
+Completed payment/refund/return planning now includes:
+
+- Online product payment flow
+- Cash product payment flow
+- Supplier payout rules
+- Business debt rules
+- Autopro fee collection rules
+- Shipping company settlement detailed rules part 1
+- Shipping company settlement detailed rules part 2
+- Refund and return decision matrix
+
+## Refund and Return Topics Completed
+
+Autopro now has confirmed rules for:
+
+- Full refunds
+- Partial refunds
+- Store credit
+- Replacements
+- Repair/service corrections
+- Reschedules
+- No-refund cases
+- Refund minus return shipping fee if legal
+- Refund minus damage/restocking fee if legal
+- Admin custom decisions
+- Client choice between refund and store credit
+- Staff task automation for refund/return review
+- Product not received
+- Wrong part responsibility
+- Damaged part responsibility
+- Changed-mind return rules
+- Used/installed part rules
+- Electrical/electronic/sensitive part rules
+- Completed service refund rules
+- Service quality proof rules
+- Return windows by country law
+- Return approval rules
+- Return shipping methods
+- Return shipping cost responsibility
+- Refund timing
+- Replacement timing
+- Refund method by payment method
+- Partial refund rules
+- Restocking/damage fee rules
+- Fraud protection
+- Supplier refusal of valid refund
+- Client returning wrong/different item
+- Refund/return connection to vehicle history
+
+## Correct Current Next Step
+
+Continue detailing:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+Next topic:
+
+```txt
+Service payment, service refund, and service provider payout final details
+```
+
+No coding should start yet.
