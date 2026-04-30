@@ -2611,3 +2611,240 @@ The goal of these shipping settlement rules is to make shipping operations:
 - Reusable in future owner platforms
 
 Autopro must focus on getting packages to clients while keeping every important step recorded, connected, and reviewable.
+---
+
+# Confirmed Refund and Return Decision Matrix
+
+This section records confirmed rules for refunds, returns, replacements, store credit, service correction, wrong parts, damaged parts, changed-mind returns, sensitive parts, used/installed parts, service refunds, return windows, return approvals, refund timing, replacement timing, refund methods, partial refunds, fraud protection, supplier refusal, wrong returned items, and vehicle history updates.
+
+Autopro must make refund and return decisions:
+
+- Legal by country
+- Flexible
+- Automated where possible
+- Proof-based
+- Fair to clients
+- Fair to suppliers
+- Fair to service providers
+- Fair to shipping companies
+- Protective of Autopro
+- Clear before purchase
+- Clear during return/refund requests
+- Connected to invoices, proof, disputes, vehicle history, and dashboards
+
+Autopro must reduce platform-side errors as much as possible through structured confirmations, proof, automation, audit logs, staff review, and clear country-specific legal rules.
+
+---
+
+## 1. Main Refund Outcomes
+
+Autopro must support multiple refund and return outcomes.
+
+Possible outcomes include:
+
+- Full refund
+- Partial refund
+- Store credit
+- Replacement
+- Repair/service correction
+- Reschedule
+- No refund
+- Refund minus return shipping fee if legal
+- Refund minus damage/restocking fee if legal
+- Admin custom decision
+
+Partial refunds are required because a large order may include many parts, and only one part or selected parts may need refund.
+
+Autopro must use detailed bills, invoices, line items, product IDs, service IDs, and payment records so the system can refund only the affected part of an order instead of the entire order.
+
+---
+
+## 2. Client Choice Between Money Refund and Store Credit
+
+If a refund is approved, the client must be offered clear refund options.
+
+Autopro must support:
+
+- Money refund
+- Store credit
+- Replacement
+- Partial refund
+- Other legally allowed method
+
+The client should be able to choose money refund or store credit when both are legally and operationally available.
+
+Money refund is required if country law requires it.
+
+Store credit can be offered as an option, not forced unless legally allowed and clearly agreed.
+
+Store credit bonus can be enabled later for selected clients, VIP clients, trusted clients, promotions, or admin-approved situations.
+
+High-risk or fraud-risk cases require staff review before money refund or store credit is released.
+
+---
+
+## 3. Refund Staff Task Automation
+
+Refund, return, fraud, and dispute cases must be automatically routed to staff when human review is required.
+
+Autopro must support a staff task system where cases are assigned based on:
+
+- Case type
+- Risk level
+- Value
+- Country
+- Client trust level
+- Supplier trust level
+- Service provider trust level
+- Shipping company trust level
+- Staff role
+- Staff experience level
+- Staff workload
+- Staff working hours
+- Staff rest hours
+- Urgency
+- Escalation level
+
+Tasks should be ranked by importance so staff can handle daily work in the correct priority.
+
+Task assignment should consider staff capacity per hour and pause during rest hours or unavailable periods.
+
+More complex tasks should be assigned to more experienced staff.
+
+High-ranked tasks can be escalated from support staff to senior support, then to manager, then to admin/full owner if needed.
+
+Senior staff can access manager escalation according to permission rules.
+
+Suppliers, service providers, shipping companies, and VIP/trusted clients can request escalation when allowed by role, plan, contract, or legal requirement.
+
+Staff performance can be tracked by:
+
+- Tasks solved
+- Task difficulty
+- Correct decision rate
+- Time to resolution
+- Client/business satisfaction
+- Escalation quality
+- Proof quality
+- Manager review
+- Reopened cases
+- Fraud prevention success
+
+Staff can receive internal credit, rewards, recognition, bonuses, or promotion eligibility based on successful task handling, controlled by admin/full owner and assigned managers.
+
+All staff task actions must be audit logged.
+
+---
+
+## 4. Product Not Received
+
+If a client says a product was not received, Autopro must automatically check available proof first.
+
+Autopro must check:
+
+- Shipping tracking
+- Delivery confirmation
+- QR confirmation
+- Manual confirmation
+- Pickup desk confirmation
+- Shipping company proof
+- Client proof if needed
+- Supplier handoff proof
+- Warehouse proof if applicable
+- Staff/admin notes if any
+
+During investigation:
+
+- Supplier payout can be held.
+- Shipping company payout can be held.
+- Refund can be held until proof is reviewed.
+- Client must receive regular updates.
+- Dashboards must update.
+
+Responsibility direction:
+
+- If shipping tracking confirms the package was not delivered, refund/replacement can be approved according to proof and rules.
+- Shipping company is responsible if the package was confirmed received by shipping company and then lost.
+- Supplier is responsible if the package was never handed to shipping company.
+- Warehouse/partner is responsible if package was received into warehouse and lost there.
+- Staff/admin decides by proof when automation cannot decide.
+
+The client must be clearly informed whether the issue is:
+
+- Shipping company lost package
+- Supplier never handed package to shipping
+- Warehouse/partner issue
+- Autopro/platform issue
+- Still under investigation
+
+---
+
+## 5. Wrong Part Received
+
+If the client receives the wrong part, responsibility must be assigned by proof.
+
+Possible responsibility:
+
+- Supplier responsible if supplier listed wrong part.
+- Supplier responsible if supplier shipped wrong part.
+- Client responsible if client selected wrong vehicle/part despite clear warnings.
+- Service provider responsible if service provider ordered the wrong part for the client.
+- Autopro responsible if compatibility engine/platform showed a wrong match.
+- Shared responsibility if multiple parties caused the error.
+- Staff/admin decides by proof when automation cannot decide.
+
+Proof can include:
+
+- Vehicle ID/history
+- Selected vehicle
+- VIN if used
+- OEM number
+- Manufacturer part number
+- Supplier listing
+- Client selection
+- Service provider order request
+- Compatibility engine result
+- Chat messages
+- Invoice
+- Photos/videos
+- QR/scan records
+- Packaging label
+- Staff notes
+
+Autopro must make this flexible and automated while keeping responsibility fair.
+
+---
+
+## 6. Damaged Part Received
+
+If the client receives a damaged part, responsibility must be assigned by proof.
+
+Possible responsibility:
+
+- Supplier responsible if part was damaged before shipping.
+- Supplier responsible if packaging was bad.
+- Shipping company responsible if damage happened during transport.
+- Warehouse/partner responsible if damage happened there.
+- Client responsible if client damaged it after delivery.
+- Insurance/contract/country law applies.
+- Staff/admin decides by proof when automation cannot decide.
+
+If shipping company notices damaged part or bad packaging before shipping:
+
+1. Shipping company flags the package as damaged or packaging problem.
+2. Supplier is notified.
+3. Supplier can replace/fix the part or packaging.
+4. If supplier refuses and chooses to continue shipping, supplier can accept responsibility.
+5. Shipping company is protected from responsibility for that pre-existing issue if proof and notice exist.
+6. The decision is saved in the order timeline and dispute proof.
+
+Autopro must handle damaged-part cases legally, fairly, and automatically where possible.
+
+---
+
+## 7. Product Works But Client Changed Mind
+
+The standard Autopro direction is:
+
+```txt
+No automatic return/refund only because the client changed mind, unless country law requires it or supplier policy allows it.
