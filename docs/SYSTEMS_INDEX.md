@@ -269,3 +269,15 @@ File:
 
 ```txt
 CREDIT_WALLET_AND_CLIENT_TRUST.md
+---
+
+# Systems Index Update - Credit, QR, Reusable Core, and Shipping Settlement
+
+Additional active system documentation now includes:
+
+## Credit, Wallet, and Client Trust
+
+File:
+
+```txt
+docs/CREDIT_WALLET_AND_CLIENT_TRUST.md
