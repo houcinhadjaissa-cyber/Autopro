@@ -573,3 +573,85 @@ Service payment, service refund, and service provider payout final details
 ```
 
 No coding should start yet.
+```
+
+---
+
+# Current Status Recovery Override - Service Payment Details Completed
+
+Service payment, service refund, and service provider payout final details have been documented inside:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+## Latest Completed Work
+
+Completed payment/refund/return planning now includes:
+
+- Online product payment flow
+- Cash product payment flow
+- Supplier payout rules
+- Business debt rules
+- Autopro fee collection rules
+- Shipping company settlement detailed rules part 1
+- Shipping company settlement detailed rules part 2
+- Refund and return decision matrix
+- Service payment, service refund, and service provider payout final details
+
+## Service Payment Topics Completed
+
+Autopro now has confirmed rules for:
+
+- Fixed-price service payments
+- Examination/diagnosis fee timing
+- Deposits if legal/provider-required
+- Cash after service
+- Online payment after service
+- Online authorization before appointment and capture after completion where supported
+- Service provider payment method selection
+- Admin/country/provider/service-type payment control
+- Service quote after examination
+- Provider ordering parts for client
+- Client approval for required/optional/non-urgent items
+- Client ability to reschedule remaining work
+- Client cancellation rules
+- Provider cancellation rules
+- Client no-show rules
+- Provider no-show rules
+- Service completion confirmation
+- Provider payout timing
+- Provider cash collection
+- Provider online payment
+- Service disputes
+- Service proof
+- Service warranty
+- Service correction/rework
+- Extra work approval
+- Overcharging protection
+- Provider protection from unfair clients
+- Provider trust/performance score
+- Provider rewards and penalties
+- Provider monthly statements and growth analytics
+
+## Correct Current Next Step
+
+Continue detailing:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS.md
+```
+
+Next topic:
+
+```txt
+Admin money dashboard and financial controls
+```
+
+After that, perform:
+
+```txt
+Payments file cleanup and consolidation
+```
+
+No coding should start yet.
