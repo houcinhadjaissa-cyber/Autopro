@@ -494,3 +494,17 @@ Commit
 ```
 
 Do not repeat admin money dashboard questions unless the owner asks to revise them.
+---
+
+# Project Log Recovery Entry - Clean Payments File Completed
+
+## Summary
+
+Completed safe cleanup and consolidation of the Autopro payments/refunds/returns documentation.
+
+## Files Involved
+
+Clean active file:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS_CLEAN.md
