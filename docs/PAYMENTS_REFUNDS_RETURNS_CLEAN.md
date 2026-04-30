@@ -2507,3 +2507,787 @@ This clean file now includes Part 2 of the payments cleanup:
 Next cleanup part to add:
 
 - Refund and return decision matrix
+---
+
+# 86. Refund and Return Decision Matrix
+
+This section consolidates confirmed rules for refunds, returns, replacements, store credit, service correction, wrong parts, damaged parts, changed-mind returns, sensitive parts, used/installed parts, return windows, approvals, refund timing, replacement timing, fraud protection, supplier refusal, wrong returned items, and vehicle history updates.
+
+Autopro must make refund and return decisions:
+
+- Legal by country
+- Flexible
+- Automated where possible
+- Proof-based
+- Fair to clients
+- Fair to suppliers
+- Fair to service providers
+- Fair to shipping companies
+- Protective of Autopro
+- Clear before purchase
+- Clear during return/refund requests
+- Connected to invoices
+- Connected to proof
+- Connected to disputes
+- Connected to vehicle history
+- Connected to dashboards
+
+Country law is the standard and highest rule.
+
+---
+
+# 87. Main Refund Outcomes
+
+Autopro must support multiple refund and return outcomes.
+
+Possible outcomes include:
+
+- Full refund
+- Partial refund
+- Store credit
+- Replacement
+- Repair/service correction
+- Reschedule
+- No refund
+- Refund minus return shipping fee if legal
+- Refund minus damage/restocking fee if legal
+- Admin custom decision
+
+Partial refunds are required because a large order can include many parts, and only one part or selected parts may need refund.
+
+Autopro must use detailed bills, invoices, line items, product IDs, service IDs, and payment records so the system can refund only the affected part of an order instead of refunding the entire order.
+
+---
+
+# 88. Client Choice Between Money Refund and Store Credit
+
+If a refund is approved, the client must be offered clear refund options.
+
+Autopro must support:
+
+- Money refund
+- Store credit
+- Replacement
+- Partial refund
+- Other legally allowed method
+
+The client should be able to choose money refund or store credit when both are legally and operationally available.
+
+Money refund is required if country law requires it.
+
+Store credit can be offered as an option, not forced unless legally allowed and clearly agreed.
+
+Store credit bonus can be enabled later for selected clients, VIP clients, trusted clients, promotions, or admin-approved situations.
+
+High-risk or fraud-risk cases require staff review before money refund or store credit is released.
+
+---
+
+# 89. Refund Staff Task Automation
+
+Refund, return, fraud, and dispute cases must be automatically routed to staff when human review is required.
+
+Autopro must support a staff task system where cases are assigned based on:
+
+- Case type
+- Risk level
+- Value
+- Country
+- Client trust level
+- Supplier trust level
+- Service provider trust level
+- Shipping company trust level
+- Staff role
+- Staff experience level
+- Staff workload
+- Staff working hours
+- Staff rest hours
+- Urgency
+- Escalation level
+
+Tasks should be ranked by importance so staff can handle daily work in the correct priority.
+
+Task assignment should consider staff capacity per hour and pause during rest hours or unavailable periods.
+
+More complex tasks should be assigned to more experienced staff.
+
+High-ranked tasks can be escalated from support staff to senior support, then to manager, then to admin/full owner if needed.
+
+Suppliers, service providers, shipping companies, and VIP/trusted clients can request escalation when allowed by role, plan, contract, or legal requirement.
+
+Staff performance can be tracked by:
+
+- Tasks solved
+- Task difficulty
+- Correct decision rate
+- Time to resolution
+- Client/business satisfaction
+- Escalation quality
+- Proof quality
+- Manager review
+- Reopened cases
+- Fraud prevention success
+
+Staff can receive internal credit, rewards, recognition, bonuses, or promotion eligibility based on successful task handling, controlled by admin/full owner and assigned managers.
+
+All staff task actions must be audit logged.
+
+---
+
+# 90. Product Not Received
+
+If a client says a product was not received, Autopro must automatically check available proof first.
+
+Autopro must check:
+
+- Shipping tracking
+- Delivery confirmation
+- QR confirmation
+- Manual confirmation
+- Pickup desk confirmation
+- Shipping company proof
+- Client proof if needed
+- Supplier handoff proof
+- Warehouse proof if applicable
+- Staff/admin notes if any
+
+During investigation:
+
+- Supplier payout can be held.
+- Shipping company payout can be held.
+- Refund can be held until proof is reviewed.
+- Client must receive regular updates.
+- Dashboards must update.
+
+Responsibility direction:
+
+- If shipping tracking confirms the package was not delivered, refund/replacement can be approved according to proof and rules.
+- Shipping company is responsible if the package was confirmed received by shipping company and then lost.
+- Supplier is responsible if the package was never handed to shipping company.
+- Warehouse/partner is responsible if package was received into warehouse and lost there.
+- Staff/admin decides by proof when automation cannot decide.
+
+The client must be clearly informed whether the issue is:
+
+- Shipping company lost package
+- Supplier never handed package to shipping
+- Warehouse/partner issue
+- Autopro/platform issue
+- Still under investigation
+
+---
+
+# 91. Wrong Part Received
+
+If the client receives the wrong part, responsibility must be assigned by proof.
+
+Possible responsibility:
+
+- Supplier responsible if supplier listed wrong part.
+- Supplier responsible if supplier shipped wrong part.
+- Client responsible if client selected wrong vehicle/part despite clear warnings.
+- Service provider responsible if service provider ordered the wrong part for the client.
+- Autopro responsible if compatibility engine/platform showed a wrong match.
+- Shared responsibility if multiple parties caused the error.
+- Staff/admin decides by proof when automation cannot decide.
+
+Proof can include:
+
+- Vehicle ID/history
+- Selected vehicle
+- VIN if used
+- OEM number
+- Manufacturer part number
+- Supplier listing
+- Client selection
+- Service provider order request
+- Compatibility engine result
+- Chat messages
+- Invoice
+- Photos/videos
+- QR/scan records
+- Packaging label
+- Staff notes
+
+Autopro must make wrong-part responsibility flexible, automated where possible, and fair.
+
+---
+
+# 92. Damaged Part Received
+
+If the client receives a damaged part, responsibility must be assigned by proof.
+
+Possible responsibility:
+
+- Supplier responsible if part was damaged before shipping.
+- Supplier responsible if packaging was bad.
+- Shipping company responsible if damage happened during transport.
+- Warehouse/partner responsible if damage happened there.
+- Client responsible if client damaged it after delivery.
+- Insurance/contract/country law applies.
+- Staff/admin decides by proof when automation cannot decide.
+
+If shipping company notices damaged part or bad packaging before shipping:
+
+1. Shipping company flags the package as damaged or packaging problem.
+2. Supplier is notified.
+3. Supplier can replace/fix the part or packaging.
+4. If supplier refuses and chooses to continue shipping, supplier can accept responsibility.
+5. Shipping company is protected from responsibility for that pre-existing issue if proof and notice exist.
+6. The decision is saved in the order timeline and dispute proof.
+
+Autopro must handle damaged-part cases legally, fairly, and automatically where possible.
+
+---
+
+# 93. Product Works But Client Changed Mind
+
+The standard Autopro direction is:
+
+```txt
+No automatic return/refund only because the client changed mind, unless country law requires it or supplier policy allows it.
+```
+
+Changed-mind return can be allowed when:
+
+- Country law requires it.
+- Supplier return policy allows it.
+- Supplier agrees manually.
+- Client is trusted/VIP and supplier chooses softer handling.
+- Admin/country rules allow it.
+
+Changed-mind return can be refused when:
+
+- Country law allows refusal.
+- Supplier policy refuses it.
+- Product is sensitive or non-returnable.
+- Product was opened, used, or installed where return is not allowed.
+- Product category has stricter legal/platform rules.
+
+Supplier must be able to mark specific parts as non-returnable or sensitive where legal.
+
+If a product is non-refundable or non-returnable, the client must see this clearly before order confirmation.
+
+Supplier should reconfirm sensitive/non-returnable status before accepting the order when required by rules.
+
+If country law forces returns even for changed-mind cases, Autopro must clearly show that rule to the supplier before supplier accepts orders in that country.
+
+Supplier can see client return behavior where legally allowed and relevant, including repeated changed-mind returns, to help protect suppliers from abuse.
+
+---
+
+# 94. Used or Installed Parts
+
+The standard rule is:
+
+```txt
+Used or installed parts are not returnable unless defective, warranty-covered, legally required, or supplier agrees.
+```
+
+Used/installed parts can be handled differently when:
+
+- Part is defective.
+- Warranty applies.
+- Supplier agrees to accept return.
+- Wrong part was installed because supplier, platform, or service provider caused the error.
+- Country law requires a return/refund.
+- Staff/admin decides by proof.
+
+If a part was damaged during installation by the client or service provider, responsibility must be assigned by proof.
+
+If a service provider installed a wrong part because of service provider error, the service provider can be responsible.
+
+If the platform compatibility engine caused the wrong installation, Autopro/platform responsibility can apply.
+
+If supplier supplied the wrong part, supplier responsibility can apply.
+
+Autopro must keep these cases flexible, legal, and proof-based.
+
+---
+
+# 95. Electrical, Electronic, and Sensitive Parts
+
+Electrical, electronic, software-related, and supplier-marked sensitive parts must have stricter return rules where legal.
+
+Sensitive parts can include:
+
+- Sensors
+- ECUs
+- Batteries
+- Modules
+- Software-related parts
+- Programmed parts
+- Sealed electronics
+- Any part the supplier marks as sensitive within legal limits
+
+Rules can include:
+
+- Stricter return rules
+- Return only if unopened/unused
+- Return only with proof of defect
+- Warranty/testing proof required
+- No return after installation unless warranty applies or law requires it
+- Supplier approval required where allowed
+- Country law applies first
+
+Sensitive item rules must be visible to the client before purchase.
+
+Supplier must be able to mark sensitive parts, but admin/country law controls the final allowed policy.
+
+---
+
+# 96. Service Already Completed Refund Rule
+
+If a service is completed and the client asks for a refund, Autopro must check whether the service was completed correctly.
+
+General rules:
+
+- No refund if service was completed correctly.
+- Partial refund if service partially failed and both sides agree or proof supports it.
+- Free correction/rework if provider fault is proven.
+- Full refund if paid online and service was not delivered at all.
+- Supplier responsible if the issue came from a faulty part and not provider work.
+- Staff/admin decides by proof when automation cannot decide.
+- Vehicle history and service report are used as proof.
+
+If the issue is caused by a faulty part, the supplier or warranty process may be responsible instead of the service provider.
+
+If the service provider caused the issue through bad work, service provider responsibility applies.
+
+---
+
+# 97. Service Quality Problem
+
+If client says service quality is bad, Autopro must check proof.
+
+Proof can include:
+
+- Photos/videos
+- Service report
+- Client complaint details
+- Provider notes
+- Vehicle ID/history
+- Diagnostic report
+- Before/after proof
+- Staff inspection if available later
+- Third-party inspection if available later
+- Warranty terms
+- Chat messages
+- Appointment record
+- Parts used
+- Client confirmation
+- Provider confirmation
+
+Autopro must consider:
+
+- Service provider trust level
+- Service provider history
+- Client trust level
+- Client VIP status
+- Client complaint history
+- Previous vehicle condition
+- Vehicle history
+- Before-service proof
+- After-service proof
+- Whether expected result was realistic
+
+Example:
+
+If the vehicle body or paint was already damaged before a car wash or detailing service, the service provider is not responsible for failing to fix pre-existing body/paint damage unless they promised that result.
+
+Suggested automatic decision support:
+
+- Compare before/after photos.
+- Check service package description.
+- Check provider notes.
+- Check client complaint category.
+- Check whether the vehicle had previous damage.
+- Check whether a warranty was offered.
+- Check repeated complaints against provider.
+- Check repeated complaints from client.
+- Use staff review for unclear or high-value cases.
+
+---
+
+# 98. Return Window
+
+Return windows must depend on country law.
+
+Confirmed rules:
+
+- Country law is the standard.
+- Supplier can offer a longer return window.
+- Product category can have shorter/stricter rules if legal.
+- Sensitive parts can have stricter return rules if legal.
+- VIP clients can receive softer support.
+- Admin controls default windows by country, category, supplier, and product type.
+- Serious safety, fraud, warranty, or legal cases can be investigated even after normal return window.
+
+Autopro must research each country’s return rules and use them as default standards.
+
+Supplier can add more flexible terms but cannot remove legal minimum rights.
+
+---
+
+# 99. Return Approval
+
+Return requests can be approved by different parties depending on case type.
+
+Approvers can include:
+
+- System automatically for simple eligible returns.
+- Supplier for supplier-controlled returns.
+- Service provider if service/installed part is involved.
+- Shipping company if shipping damage/loss is involved.
+- Staff/admin for high-value, risky, disputed, or unclear returns.
+- Country law/platform rules when legally required.
+
+For shipping damage/loss cases, shipping company can participate in review and submit proof.
+
+Shipping company profile should not be unfairly affected before responsibility is settled.
+
+Trusted/VIP shipping companies should receive fair review and support before score impact where appropriate.
+
+---
+
+# 100. Return Shipping Method
+
+Autopro must support multiple return shipping methods.
+
+Return methods can include:
+
+- Client receives return label.
+- Client drops package at pickup desk.
+- Shipping company picks up package.
+- Service provider handles return if part was installed there.
+- Supplier arranges return.
+- Autopro arranges return if needed by staff.
+- Warehouse/partner receives return.
+- Country/supplier/shipping partner/product value decides method.
+
+If a service provider handles a return, the service provider must confirm that the part is returnable or that return handling is approved.
+
+Return shipping must be flexible and automated where possible.
+
+---
+
+# 101. Return Shipping Cost Responsibility
+
+Return shipping cost responsibility must be assigned by proof, law, and platform rules.
+
+Possible responsibility:
+
+- Supplier pays if wrong, damaged, or defective before shipping.
+- Supplier pays if supplier insisted on shipping after damaged/bad packaging warning.
+- Shipping company pays if damaged/lost during shipping.
+- Client pays if changed mind or refused a valid package.
+- Service provider pays if service provider ordered or installed wrong part.
+- Autopro pays if platform error caused the return.
+- Fee can be split if responsibility is shared.
+- Country law applies first.
+- Staff/admin decides by proof.
+
+Autopro must make responsibility flexible and automated where possible.
+
+---
+
+# 102. Refund Timing
+
+Refund timing must depend on client trust, supplier rules, risk level, payment method, country law, and proof.
+
+Possible refund timing:
+
+- Immediately after return approved for trusted/VIP clients, if legally and operationally allowed.
+- After supplier confirmation for certain cases.
+- After shipping company confirms return package received for new clients.
+- After supplier receives return for risky clients.
+- After supplier inspection for risky/new clients.
+- After dispute decision.
+- Store credit can be issued faster if client accepts.
+- High-risk refunds require staff review.
+
+Supplier-controlled timing:
+
+- Autopro sets country-law minimum standards.
+- Supplier can add stricter or more flexible requirements where legal.
+- Legal minimum standards cannot be changed by supplier.
+- Supplier must see mandatory legal rules clearly.
+- Supplier can configure additional rules depending on client type, product category, trust level, and risk.
+
+If the client has the right to be refunded and supplier refuses, Autopro must create a staff task to contact and investigate the supplier.
+
+Refund handling must be fast, legal, and automated where possible.
+
+---
+
+# 103. Replacement Timing
+
+Replacement timing must depend on trust, risk, product value, supplier settings, and country law.
+
+Possible replacement timing:
+
+- Immediately after return approved for trusted/VIP clients.
+- After client ships return for risky clients.
+- After shipping company confirms return received for new clients.
+- After supplier receives/inspects return if supplier chooses this rule and it is legal.
+- Faster replacement for VIP/trusted clients.
+- Depends on supplier trust, client trust, product value, risk, and country.
+
+Standard direction:
+
+- Trusted/VIP clients can receive faster replacement.
+- New clients can wait until shipping company confirms return.
+- Risky clients can wait until supplier receives and inspects return.
+- Supplier can configure replacement rules within legal limits.
+- Admin controls default country/category rules.
+
+---
+
+# 104. Refund Method by Original Payment
+
+The standard refund method should be the same method used by the client to pay, where possible and legal.
+
+Refund methods can include:
+
+- Online card refund to same card/provider
+- Bank transfer if available
+- Store credit if client chooses
+- Cash refund through partner desk/shipping company if cash paid
+- Wallet/credit balance if legally allowed in future
+- Manual admin-approved method if required
+- Country law/payment provider rules
+
+Future e-wallet support must be planned, but full wallet/cash-out functionality requires legal review, payment provider approval, and country compliance.
+
+Cash refunds through partner desk or shipping company are required for cash-heavy countries where supported.
+
+---
+
+# 105. Partial Refund Rules
+
+Partial refund can apply when only part of an order or service is affected.
+
+Examples:
+
+- One item missing
+- Multiple selected items missing
+- Product has minor damage and client agrees to keep it
+- Service partially completed
+- Shipping delay compensation if legal/admin enabled
+- Price adjustment
+- Missing accessory
+- Supplier/provider offers discount to solve issue
+- Large order with only one affected item
+- Bundle with one affected component
+
+Shipping delay compensation should normally affect shipping fees only, not product price or service price, unless admin/country law/contract says otherwise.
+
+Missing accessory responsibility must be checked because it may be supplier fault, shipping fault, warehouse fault, or client fraud.
+
+Partial refunds must connect to detailed invoice line items.
+
+---
+
+# 106. Restocking and Damage Fees
+
+Autopro must support restocking or damage fees where legal.
+
+Rules can include:
+
+- Restocking/damage fee allowed if legal.
+- Fee mainly applies to changed-mind returns.
+- Fee applies if product is returned used/damaged by client.
+- Fee does not apply when supplier, shipping company, service provider, warehouse, or platform caused the problem.
+- Supplier can set policy within legal limits.
+- Admin controls rules by country, category, and supplier.
+- Client must see fee before return confirmation.
+
+The fee must not become an unfair obstacle that prevents normal clients from ordering.
+
+Restocking/damage policies must be clear before purchase and before return confirmation.
+
+Autopro can facilitate and record this fee, but it must follow country law and the supplier/client agreement.
+
+---
+
+# 107. Refund and Return Fraud Protection
+
+Autopro must protect the refund and return system from fraud.
+
+Fraud controls can include:
+
+- Return abuse score
+- Refund abuse score
+- Empty box claim investigation
+- Serial number check
+- Part number check
+- Photos/videos required
+- QR/scan proof
+- Vehicle ID/history check
+- Device/IP checks where legal
+- Staff review for repeat cases
+- Suspension/ban for fraud accounts
+- VIP/elderly human review before harsh action
+- Delivery proof
+- Pickup desk proof
+- Supplier inspection proof
+- Shipping company return proof
+- Warranty proof
+- Chat/support history
+
+Suggested fraud limits:
+
+- More than 2 return/refund claims in 7 days can trigger review for normal/new clients.
+- VIP/elderly clients can receive softer review, such as up to 4 cases in 7 days before harsh action, depending on context and staff review.
+- Empty box claims require strong investigation.
+- Not answering supplier/staff messages, delivery calls, or proof requests can increase fraud risk.
+- Repeated no-show can increase fraud risk.
+- Intentional fraud can cause immediate restriction, suspension, or block.
+
+Fraud rules must be flexible and admin-controlled.
+
+---
+
+# 108. Supplier Refuses Valid Refund
+
+If supplier refuses a valid refund or return, Autopro must act according to supplier trust level, proof, and law.
+
+Autopro must support:
+
+- Staff/admin review
+- Forced refund/store credit where platform rules and law allow
+- Supplier reimbursement owed to Autopro
+- Supplier trust score reduction
+- Payout hold
+- Account restriction
+- Suspension for repeated refusal
+- Legal review if needed
+
+New/risky supplier direction:
+
+- If new or risky supplier refuses valid refund without valid reason, Autopro can force refund/store credit and add reimbursement to supplier bill.
+- If supplier does not pay reimbursement, restrictions, suspension, or block can apply.
+- Supplier can contact staff to appeal.
+
+Trusted/VIP supplier direction:
+
+- Trusted/VIP suppliers receive softer handling for reasonable disputes.
+- Staff should investigate and solve the problem before harsh action.
+- If staff cannot solve it, case escalates to senior staff, then manager.
+- The goal is to protect trusted/VIP suppliers from fraud, false accusations, and simple conflicts while still protecting clients and legal rights.
+
+Repeated abuse removes trusted protection.
+
+---
+
+# 109. Client Returns Wrong or Different Item
+
+If client returns a different item than received, Autopro must treat it as a serious fraud-risk case.
+
+Autopro must support:
+
+- Refund blocked
+- Client asked for explanation
+- Proof checked
+- Serial number checked
+- Part number checked
+- Photos/videos checked
+- Shipping/pickup desk proof checked
+- Supplier inspection checked
+- Client trust score affected if no valid explanation
+- Staff/admin review
+- Fraud case if intentional
+- VIP/elderly support review before harsh action
+
+For new or risky clients, returned item can be checked by shipping company, pickup desk, stop desk, warehouse, or supplier before refund is released.
+
+If intentional fraud is confirmed, Autopro can suspend or block the client according to platform rules.
+
+---
+
+# 110. Refund and Vehicle History
+
+Refunds and returns must connect to vehicle history when relevant.
+
+Vehicle history should update when:
+
+- Part was installed then removed
+- Service was completed and refunded
+- Wrong part was installed
+- Defective part was diagnosed
+- Replacement part was installed
+- Warranty claim happened
+- Service correction/rework happened
+- Part failed after installation
+- Return/refund affected vehicle service record
+
+Vehicle history visibility:
+
+- Visible to client
+- Visible to admin
+- Visible to authorized service provider only where needed
+- Not public unless client shares
+- Controlled by privacy settings and country law
+
+Autopro must make this secure, automated, and flexible.
+
+---
+
+# 111. Refund and Return Decision Matrix Goal
+
+The goal is to make refund and return handling:
+
+- Flexible
+- Automated where possible
+- Fully secured
+- Legal by country
+- Proof-based
+- Fair to honest clients
+- Fair to honest suppliers
+- Fair to honest service providers
+- Fair to honest shipping companies
+- Strict against fraud
+- Clear before purchase
+- Clear before refund/return confirmation
+- Connected to invoices
+- Connected to ledgers
+- Connected to proof
+- Connected to disputes
+- Connected to vehicle history
+
+Autopro must keep the client experience simple while giving admin and business users the detailed proof and responsibility structure needed to protect everyone.
+
+---
+
+# 112. Part 3 Completion Note
+
+This clean file now includes Part 3 of the payments cleanup:
+
+- Refund outcomes
+- Client refund method choice
+- Refund staff task automation
+- Product not received
+- Wrong part received
+- Damaged part received
+- Changed-mind returns
+- Used/installed parts
+- Electrical/electronic/sensitive parts
+- Service refund rules
+- Service quality proof
+- Return windows
+- Return approvals
+- Return shipping methods
+- Return shipping cost responsibility
+- Refund timing
+- Replacement timing
+- Refund method by original payment
+- Partial refunds
+- Restocking/damage fees
+- Fraud protection
+- Supplier refusal of valid refund
+- Wrong returned item
+- Vehicle history connection
+
+Next cleanup part to add:
+
+- Service payment, service refunds, and service provider payout details
