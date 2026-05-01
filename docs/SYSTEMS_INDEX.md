@@ -291,3 +291,13 @@ Clean active file:
 
 ```txt
 docs/PAYMENTS_REFUNDS_RETURNS_CLEAN.md
+---
+
+# Systems Index Update - Staff Permissions Active Planning
+
+The clean payments/refunds/returns reference has been completed.
+
+Clean active payments file:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS_CLEAN.md
