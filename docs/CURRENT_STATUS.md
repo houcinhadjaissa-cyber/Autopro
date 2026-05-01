@@ -743,3 +743,13 @@ The clean active payments reference is:
 
 ```txt
 docs/PAYMENTS_REFUNDS_RETURNS_CLEAN.md
+---
+
+# Current Status Recovery Override - Staff Permissions Documentation Created
+
+The staff permissions and employee management documentation has been created.
+
+New completed file:
+
+```txt
+docs/STAFF_PERMISSIONS_AND_ROLES.md
