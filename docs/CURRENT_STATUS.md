@@ -733,3 +733,13 @@ Clean active reference:
 
 ```txt
 docs/PAYMENTS_REFUNDS_RETURNS_CLEAN.md
+---
+
+# Current Status Recovery Override - Staff Permissions Planning Started
+
+The payments/refunds/returns documentation cleanup has been completed.
+
+The clean active payments reference is:
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS_CLEAN.md
