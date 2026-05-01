@@ -301,3 +301,13 @@ Clean active payments file:
 
 ```txt
 docs/PAYMENTS_REFUNDS_RETURNS_CLEAN.md
+---
+
+# Systems Index Update - Staff Permissions Completed
+
+Staff permissions and employee management documentation has been created.
+
+File:
+
+```txt
+docs/STAFF_PERMISSIONS_AND_ROLES.md
