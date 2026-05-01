@@ -508,3 +508,28 @@ Clean active file:
 
 ```txt
 docs/PAYMENTS_REFUNDS_RETURNS_CLEAN.md
+---
+
+# Project Log Recovery Entry - Staff Permissions Planning Started
+
+## Summary
+
+Confirmed that payments/refunds/returns cleanup is completed and that the next planning topic is staff permissions and employee roles.
+
+## Completed Before This Step
+
+The following are confirmed completed in project memory:
+
+- Payments, refunds, and returns documentation
+- Admin money dashboard documentation
+- Shipping settlement rules
+- Refund/return decision matrix
+- Service payment and service provider payout details
+- Credit/wallet system direction
+- QR confirmation system direction
+- Clean payments file creation
+
+## Clean Active Payments Reference
+
+```txt
+docs/PAYMENTS_REFUNDS_RETURNS_CLEAN.md
