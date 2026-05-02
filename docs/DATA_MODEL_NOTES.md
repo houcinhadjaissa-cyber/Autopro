@@ -29,3 +29,23 @@
 *   **Automation:** Tasks (disputes, fraud alerts) are created automatically for staff.
 *   **Performance Tracking:** System automatically ranks staff based on "Excellent Work" vs "Mistakes."
 *   **Debt Ledger:** A dedicated system tracks money owed to Autopro by businesses (COD orders).
+
+## 6. Search & Discovery (Optimized)
+*   **Anonymized Search Logs:** Autopro will track what users search for to improve results, but logs are anonymized for privacy.
+*   **30-Day Cleanup:** Detailed search history is automatically deleted after 30 days to keep server costs low.
+*   **Trending & Recommendations:** The system will use "Trending Searches" by country and "Product Recommendations" (e.g., matching filters to oil) to increase sales.
+
+## 7. Analytics & System Health
+*   **Automated Summaries:** Detailed daily stats are converted into summaries; old raw data is deleted automatically to save space.
+*   **Business Dashboards:** Every business gets its own analytics table to track growth and performance.
+*   **System Health Monitoring:** A dedicated table monitors automated tasks (like payments or imports) and alerts the owner immediately if anything fails.
+
+## 8. Security & Fraud Prevention
+*   **IP Blocking:** A "Blocked IPs" system will automatically stop known hackers or aggressive bots.
+*   **Sensitive Logs:** Any high-risk action (changing bank details or deleting users) is logged permanently for audit.
+*   **Risk Scores:** Both users and businesses are assigned a risk score based on return behavior, payment disputes, and trust history.
+
+## 9. Social Commerce (TikTok-Style)
+*   **Short Videos:** A dedicated table stores short video demonstrations linked directly to Product IDs.
+*   **One-Click Buy:** Video records must support direct checkout triggers.
+*   **Influencer Tracking:** Influencer campaigns are tracked in the database to automate commission and sales reporting.
