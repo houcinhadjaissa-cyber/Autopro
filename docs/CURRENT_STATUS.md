@@ -753,3 +753,13 @@ New completed file:
 
 ```txt
 docs/STAFF_PERMISSIONS_AND_ROLES.md
+---
+
+# Current Status Recovery Override - Business Profiles Documentation Created
+
+The business profiles documentation has been created.
+
+New completed file:
+
+```txt
+docs/BUSINESS_PROFILES.md
