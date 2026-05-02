@@ -1282,3 +1282,10 @@ Key new additions: Anonymized search logic, 30-day data auto-cleaning, TikTok-st
 
 Project status: Documentation Phase.
 Next Step: Create docs/MVP_SCOPE.md to define the "Minimum Viable Product."
+---
+# Latest Recovery Override - MVP Scope Started
+Autopro will launch in Algeria and Nigeria as a full marketplace (Suppliers + Service Providers). 
+The foundation for TikTok-style videos and TecDoc API must be ready on Day One. 
+Launch will start as a controlled "Soft Launch" with invited businesses first.
+
+Completed file: docs/MVP_SCOPE.md
