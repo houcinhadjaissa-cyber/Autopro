@@ -1220,3 +1220,17 @@ Completed file:
 
 ```txt
 docs/STAFF_PERMISSIONS_AND_ROLES.md
+---
+
+# Latest Recovery Override - Business Profiles Documentation Created
+
+Autopro is still in the documentation and planning stage.
+
+No coding has started yet.
+
+The business profiles documentation has been created.
+
+Completed file:
+
+```txt
+docs/BUSINESS_PROFILES.md
