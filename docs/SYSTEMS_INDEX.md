@@ -311,3 +311,13 @@ File:
 
 ```txt
 docs/STAFF_PERMISSIONS_AND_ROLES.md
+---
+
+# Systems Index Update - Business Profiles Completed
+
+Business profiles documentation has been created.
+
+File:
+
+```txt
+docs/BUSINESS_PROFILES.md
