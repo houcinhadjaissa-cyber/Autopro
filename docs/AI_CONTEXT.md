@@ -1289,3 +1289,9 @@ The foundation for TikTok-style videos and TecDoc API must be ready on Day One.
 Launch will start as a controlled "Soft Launch" with invited businesses first.
 
 Completed file: docs/MVP_SCOPE.md
+---
+# Latest Recovery Override - Admin Dashboard Completed
+The Admin Dashboard requirements are finalized in docs/ADMIN_DASHBOARD_REQUIREMENTS.md. 
+Key Features: Facebook-style responsive UI (Mobile + Desktop), Omni-Search for VIN/Orders, Automated shop onboarding with Trust Tiers, and Multi-project switching logic.
+
+Project status: Documentation Phase (Moving to Homepage & Design).
