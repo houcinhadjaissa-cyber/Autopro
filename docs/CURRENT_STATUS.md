@@ -826,3 +826,5 @@ Added System Integration (including Recall System), Smart Automation Rules, Data
 `COMPATIBILITY_ENGINE_ADMIN_RULES.md` is now fully documented across four waves, covering all administrative, automation, legal, and multi-country aspects of the Compatibility Engine.
 ## Latest Update – B2B Fleet Wave 2 Completed
 Added Pricing & Billing, Bulk Ordering, Service Booking tools, Reporting & Analytics, and Contracts & Agreements to `B2B_FLEET_COMPATIBILITY.md`.
+## Latest Update – B2B Fleet Wave 3 Completed
+Added Multi-Location Management, Supplier Integration, Performance KPIs, Risk & Insurance tools, and Onboarding/Migration features to `B2B_FLEET_COMPATIBILITY.md`.
