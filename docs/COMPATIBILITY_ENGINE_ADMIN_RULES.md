@@ -347,3 +347,90 @@ The system must fully track staff performance in a flexible and automated way, v
 - Quality of decisions made
 
 Performance data can be used for evaluations, promotions, and training improvements.
+---
+
+## 17. Advanced Analytics & Insights
+
+### 17.1 Analytics Dashboard
+The Admin dashboard must include advanced analytics for the Compatibility Engine, including:
+
+- Vehicle models with the highest number of compatibility issues
+- Suppliers causing the most problems over time
+- Trends in Quality Score changes across the platform
+- Full filtering and ranking systems
+- Live comparison tools to benchmark any part or supplier against other platforms
+
+### 17.2 Predictive System
+The system must be able to predict future problems by analyzing Quality Score trends. When a supplier’s score is trending downward, the system must automatically flag it and create a task for a specific employee to review before the issue becomes critical.
+
+### 17.3 Custom Reports
+Admin and Selected Employees must be able to create custom reports and save them for regular use. These reports must include:
+
+- Professional and legally standardized templates
+- Automatic data population with each update
+- Ability to assign reports to specific employees for review
+- Automatic implementation of country-specific legal terms and tax information
+- Options to send, print, or link reports directly
+
+## 18. Supplier Appeal & Dispute Resolution
+
+### 18.1 Appeal Rights by Supplier Type
+Suppliers must have the right to appeal penalties or Quality Score reductions under the following rules:
+
+- **New suppliers**: Allowed to appeal but receive lower priority. Staff must contact them up to 3 times.
+- **VIP and Trusted suppliers**: Appeal is mandatory before any serious action that could affect their operations.
+- **Risky suppliers**: Appeal is disabled until their performance numbers improve, after which the appeal option is reactivated.
+
+### 18.2 Formal Dispute Resolution
+A formal dispute resolution workflow must exist between suppliers and the platform when there is disagreement about compatibility data. This workflow must be visible and trackable.
+
+### 18.3 Penalty Pause During Appeal
+When a supplier submits an appeal, the system must automatically pause any further penalties until the appeal is reviewed and resolved.
+
+## 19. API & External Access
+
+### 19.1 Limited API Access
+The system must offer a limited API for the Compatibility Engine so that selected partners and large suppliers can connect their own systems directly.
+
+### 19.2 Temporary API Access
+The Admin must be able to grant temporary API access to specific employees or external consultants for data analysis purposes.
+
+### 19.3 API Permission Levels
+Different levels of API access must be available:
+
+- Read-only
+- Read + Write
+- Full Admin access
+
+Access levels can be assigned and revoked by the Admin at any time.
+
+## 20. Data Retention & Deletion
+
+### 20.1 Retention Period
+Compatibility history and audit logs must be kept for **1 year** by default. The Admin and Selected Employees must be able to modify this period at any time.
+
+### 20.2 Automatic Data Deletion
+Old compatibility data must be deleted automatically under the following rules:
+
+- Standard deletion occurs after 4 months.
+- If a supplier’s performance improves within 20 days of a score reduction, their data is gradually deleted (40% → 60% → 100%).
+- VIP and Trusted suppliers can have their data deleted on the same day without affecting their operations.
+
+The goal of this system is to give suppliers space to grow and recover from mistakes rather than permanently punishing them.
+
+### 20.3 Account Closure
+If a supplier account is permanently closed, all their compatibility data and history must be automatically deleted after 1 month.
+
+## 21. Multi-Country & Governance
+
+### 21.1 Country-Specific Rules
+The Compatibility Engine must support country-specific rules. This includes different Quality Score thresholds, penalty structures, and appeal processes depending on the country of operation.
+
+### 21.2 Governance Policies
+The Admin must be able to create “Governance Policies” that apply differently depending on the country or region. These policies must be fully flexible and automated.
+
+### 21.3 Global Override
+A “Global Override” option must exist, allowing the Admin to apply one rule or change across all countries at once when needed.
+
+## 22. Completion of Admin Rules File
+The 
