@@ -260,3 +260,88 @@ Fleet accounts must be able to import their existing data from other systems (ve
 
 ### 14.3 Migration Support
 The system must offer migration tools and support for companies switching from other fleet management software. This includes data mapping, validation, and assistance during the transition period.
+---
+
+## 15. Advanced Automation & AI
+
+### 15.1 Smart Automation Features
+The system must use automation and basic AI to assist fleet managers, including:
+
+- Automatically suggesting when to replace parts based on usage data
+- Predicting maintenance needs before they become urgent
+- Automatically reordering frequently used parts when stock is low
+
+Fleet managers must also be able to create custom reminders for any features they need.
+
+### 15.2 Custom Automation Rules
+Fleet accounts must be able to create custom automation rules. For example:
+- “If any vehicle in Group A reaches 80,000 km, automatically create a maintenance booking.”
+
+The system should also suggest to service providers to offer specific discounts for these types of repeat maintenance bookings.
+
+### 15.3 Smart Alerts
+The system must send smart, fully automated alerts to fleet managers. Examples include:
+- “3 vehicles in your fleet are due for service this week”
+- “Supplier X has delayed 4 orders this month”
+
+Alerts must be fully flexible. Fleet owners must be able to:
+- Select all vehicles or only specific vehicles
+- Assign alerts to specific employees or groups of vehicles
+
+## 16. Security & Data Privacy
+
+### 16.1 Enhanced Security Features
+B2B and Fleet accounts must have enhanced security features compared to normal users. This is mandatory and includes:
+
+- IP address restrictions
+- Advanced login logs
+- Detailed activity monitoring
+
+### 16.2 Data Sharing Control
+Fleet companies must have full control over what data is shared with suppliers or service providers. This feature must be available since day one. Examples include hiding vehicle owner details or location when sending orders.
+
+### 16.3 Activity Logs
+The system must keep detailed activity logs of everything that happens inside the fleet account, including who did what and when.
+
+## 17. Support & Dedicated Tools
+
+### 17.1 Dedicated Support
+Large fleet accounts must have access to dedicated support, such as a personal account manager or priority support line.
+
+### 17.2 Private Fleet Dashboard
+The system must offer a private dashboard or portal visible only to fleet companies. This dashboard must include advanced tools not available to normal users.
+
+### 17.3 Training & Onboarding
+The system must offer training and onboarding sessions specifically designed for fleet managers and their teams. This is mandatory.
+
+## 18. Monetization & Revenue Models
+
+### 18.1 B2B Pricing Models
+B2B and Fleet accounts must have access to different monetization models, including:
+
+- Subscription plans
+- Pay-per-use
+- Revenue sharing with suppliers
+- Custom enterprise pricing
+
+### 18.2 Exclusive Promotions
+The system must allow Autopro to offer special promotions and exclusive deals only to fleet customers. This feature must be available since day one.
+
+### 18.3 Loyalty & Volume Rewards
+Fleet accounts must be able to earn rewards and discounts based on their purchase volume and loyalty.
+
+## 19. Future Scalability & Integration
+
+### 19.1 Integration with Autopro Systems
+The B2B/Fleet system must be designed to easily integrate with other Autopro features, including:
+
+- Payments system
+- Vehicle History
+- Admin Dashboard
+- Compatibility Engine
+
+### 19.2 External System Integration
+Fleet accounts must be able to connect their own internal systems (ERP, accounting software, HR systems) through APIs.
+
+### 19.3 Multi-Country Operations
+The system must support multi-country fleet operations. A single fleet account must be able to manage vehicles across different countries (e.g., Algeria, Nigeria, Europe) while applying different rules and requirements per country.
