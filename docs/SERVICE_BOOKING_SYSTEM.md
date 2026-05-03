@@ -197,3 +197,81 @@ Payment for services is collected after the service is completed as the standard
 
 ### 10.2 Split Payment
 The system must support splitting payment between parts and labor. For example, clients can pay for parts upfront and labor after the service is completed.
+---
+
+## 11. Multi-Provider & Multi-Vehicle Bookings
+
+### 11.1 Multi-Provider Bookings
+Clients must be able to book services from multiple providers in one request, provided the timing allows it. For example, a client can book a brake service at 9 AM with one provider and an oil change at 12 PM with another.
+
+### 11.2 Multi-Vehicle Bookings
+Clients must be able to book services for multiple vehicles in a single request. This is allowed only if the service provider has the capacity to handle multiple vehicles from the same client at once. Clients can also book services for their entire garage across multiple days and providers.
+
+### 11.3 Split Service Requests
+The system must allow splitting one service request across multiple providers. For example, one provider can handle diagnostics while another handles the actual repair.
+
+## 12. Service Provider Staff & Permissions
+
+### 12.1 Staff Management
+Service providers must be able to add their own staff members (mechanics, receptionists, managers, etc.) with different permission levels inside their account. This is mandatory.
+
+### 12.2 Staff Roles
+The system must include standard roles for service providers, based on best practices in the industry. Common roles include:
+
+- Owner
+- Manager
+- Senior Mechanic
+- Mechanic / Technician
+- Receptionist
+- Accountant / Finance
+
+However, the system must be fully flexible and automated, allowing service providers to create, modify, or remove roles according to their own structure.
+
+### 12.3 Access Levels
+Different staff members must have different access levels. For example:
+
+- Mechanics can only update service status and upload proof of work.
+- Managers can send quotes, handle payments, and manage staff.
+- Accountants can only view financial reports and invoices.
+
+## 13. System Integration
+
+### 13.1 Vehicle History Integration
+The Service Booking System must be directly connected to the Vehicle History system. Every completed service must be automatically added to the vehicle’s permanent history.
+
+### 13.2 Compatibility Engine Integration
+The system must be connected to the Compatibility Engine. When booking a service, the system must suggest compatible parts based on the vehicle, including pricing. Service providers can add their own alternatives, and the system will automatically suggest additional options if needed.
+
+### 13.3 Payments Integration
+The Service Booking System must be integrated with the Payments system. This includes:
+
+- Automatic invoice generation
+- Deposit collection before service (when required)
+- Payment release after service completion and confirmation
+- Automatic payout to the service provider after the service is confirmed
+
+## 14. Dispute Resolution & Complaints
+
+### 14.1 Complaint & Dispute Process
+When a client is unhappy with a service, there must be a formal complaint and dispute process. The level of staff intervention and resolution path depends on:
+
+- The seriousness of the issue
+- The trust level of the client
+- The trust level of the service provider
+
+### 14.2 Review Response Rules
+Service providers cannot respond to negative reviews or complaints before they are made public. However, VIP and Trusted service providers receive immediate staff review when they report a review for fraud or abuse.
+
+### 14.3 Staff Mediation
+When a dispute cannot be resolved between the client and the service provider, Autopro staff must be able to step in as mediators. This process must be available for serious cases.
+
+## 15. Recurring Services & Maintenance Plans
+
+### 15.1 Recurring Bookings
+Clients must be able to set up recurring service bookings. For example, an oil change every 6 months or every 10,000 km.
+
+### 15.2 Maintenance Plans
+Service providers must be able to create Maintenance Plans that clients can subscribe to. Examples include Gold, Silver, and Bronze service packages with different benefits and pricing.
+
+### 15.3 Automatic Reminders
+The system must automatically remind clients when their next recurring service or maintenance plan is due.
