@@ -828,3 +828,5 @@ Added System Integration (including Recall System), Smart Automation Rules, Data
 Added Pricing & Billing, Bulk Ordering, Service Booking tools, Reporting & Analytics, and Contracts & Agreements to `B2B_FLEET_COMPATIBILITY.md`.
 ## Latest Update – B2B Fleet Wave 3 Completed
 Added Multi-Location Management, Supplier Integration, Performance KPIs, Risk & Insurance tools, and Onboarding/Migration features to `B2B_FLEET_COMPATIBILITY.md`.
+## Latest Update – B2B Fleet Wave 4 Completed
+Added Advanced Automation & AI, Security & Privacy, Dedicated Support Tools, Monetization Models, and Future Scalability features to `B2B_FLEET_COMPATIBILITY.md`.
