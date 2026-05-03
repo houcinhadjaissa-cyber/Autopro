@@ -629,3 +629,6 @@ docs/REUSABLE_PLATFORM_CORE_AND_ID_SYSTEM.md
 ## [Current Date] – Started SERVICE_BOOKING_SYSTEM.md
 - Completed Wave 1 covering booking flows, vehicle history rules, quoting process, and emergency services.
 - Next: Wave 2 of this file.
+## [Current Date] – Completed Wave 2 of SERVICE_BOOKING_SYSTEM.md
+- Covered scheduling logic, cancellation policies, service execution, and payment rules.
+- Next: Wave 3 of this file.
