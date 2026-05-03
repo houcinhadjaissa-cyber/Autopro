@@ -799,3 +799,13 @@ docs/REUSABLE_PLATFORM_CORE_AND_ID_SYSTEM.md
 ## Remaining before Coding:
 - MVP Scope final polish.
 - Final Documentation Audit.
+## Latest Update – Compatibility Engine Completed
+The full Compatibility Engine specification has been finalized with deep technical details including:
+- Multi-path search (VIN, Visual, Package)
+- TecDoc-compatible data structure
+- Match scoring with green/red attribute display
+- Advanced compare feature (including ECU/ECM tuning)
+- Saved items / Garage system with project integration
+- Installation counter and social proof logic
+
+File: `docs/COMPATIBILITY_ENGINE.md` is now complete and ready for future technical implementation.
