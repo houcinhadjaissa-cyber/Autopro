@@ -102,3 +102,96 @@ This visibility must be fully automated and based on the roles the user defines.
 
 ### 4.3 Internal Staff Permissions System
 Fleet accounts must have their own internal “Staff Permissions” system similar to Autopro’s main platform. This allows fleet companies to manage access and responsibilities for their own team members independently.
+---
+
+## 5. Pricing & Billing
+
+### 5.1 Special Pricing Models
+B2B and Fleet accounts must have access to special pricing models, including:
+
+- Volume-based discounts
+- Tiered pricing based on number of vehicles
+- Fixed monthly or annual pricing
+- Contract-based pricing
+
+### 5.2 Custom Pricing Agreements
+Fleet accounts must be able to negotiate and set custom prices with specific suppliers or service providers. However, any custom pricing agreement must be confirmed and accepted by both parties before it becomes active.
+
+### 5.3 Payment Terms
+The system must support different payment terms for B2B accounts, such as:
+
+- Pay on delivery
+- 15-day credit
+- 30-day credit
+- Monthly invoicing
+
+These terms must only be activated after confirmation from both sides and after evaluating known risks.
+
+## 6. Bulk Ordering & Procurement
+
+### 6.1 Bulk Ordering Capabilities
+Fleet customers must be able to:
+
+- Create bulk orders for multiple vehicles at once
+- Use their “Standard Part Lists” to generate automatic orders
+- Set recurring orders (e.g., monthly oil change kits for all vehicles)
+
+All bulk ordering features must be fully flexible and automated from day one.
+
+### 6.2 Price Comparison
+Fleet managers and authorized employees must be able to compare prices from multiple suppliers for the same bulk order before confirming the purchase.
+
+### 6.3 Internal Budget Controls
+Fleet accounts must be able to set internal budgets and spending limits per department, per vehicle group, or per employee. This feature is mandatory and must be fully flexible and automated.
+
+## 7. Service Booking & Maintenance
+
+### 7.1 Fleet Service Management Tools
+Fleet accounts must have access to specialized tools for managing service bookings across many vehicles. This includes scheduling maintenance for dozens or hundreds of vehicles at different times. All tools must be fully flexible and automated.
+
+### 7.2 Service Provider Assignment
+Fleet managers must be able to assign specific service providers or mechanics to certain vehicles or groups. However, the assignment only becomes active after the service provider or mechanic confirms and accepts the assignment.
+
+### 7.3 Maintenance Calendar
+Fleet accounts must have access to a private **Maintenance Calendar** or **Service Planner** that is visible only to authorized users within the fleet account.
+
+## 8. Reporting & Analytics
+
+### 8.1 Fleet Reporting Tools
+Fleet managers must be able to generate comprehensive reports, including:
+
+- Cost per vehicle
+- Parts usage and consumption
+- Maintenance history
+- Supplier performance
+- Total spending per month, quarter, or year
+
+The system must include the best proven report formats used by professional fleet companies. All reports must be:
+
+- Highly informative
+- Tax-friendly
+- Legally compliant (automatically adjusted per country)
+- Easy to read, send, and print
+
+### 8.2 Report Export
+Fleet accounts must be able to automatically export detailed reports for their own accounting, tax, and internal purposes.
+
+### 8.3 Supplier & Service Provider Analytics
+The system must provide performance analytics that allow fleet managers to compare different suppliers and service providers. This includes metrics such as pricing, delivery speed, quality, response time, and reliability. The analytics must follow the best proven methods used in the fleet management industry.
+
+## 9. Contracts & Agreements
+
+### 9.1 Contract Management
+B2B and Fleet accounts must be able to create, manage, and store contracts directly on the platform with both Autopro and with suppliers/service providers.
+
+### 9.2 Digital Signing
+The system must support digital signing of agreements. This feature must be fully flexible, automated, and legally valid in each country where Autopro operates.
+
+### 9.3 Contract Types
+The system must support different types of contracts, including but not limited to:
+
+- Annual supply agreements
+- Maintenance service contracts
+- Preferred supplier agreements
+- Volume commitment contracts
+- Service level agreements (SLA)
