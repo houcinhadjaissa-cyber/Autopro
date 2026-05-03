@@ -638,3 +638,6 @@ docs/REUSABLE_PLATFORM_CORE_AND_ID_SYSTEM.md
 ## [Current Date] – Completed Wave 4 of SERVICE_BOOKING_SYSTEM.md
 - Covered mobile services, provider analytics, promotions, certifications, and liability.
 - Next: Wave 5 or move to another file.
+## [Current Date] – Completed Wave 5 of SERVICE_BOOKING_SYSTEM.md
+- Covered automation, client experience, onboarding, privacy, and governance.
+- Next: Wave 6 or move to another file.
