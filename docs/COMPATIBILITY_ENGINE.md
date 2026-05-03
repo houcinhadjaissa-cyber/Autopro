@@ -157,3 +157,83 @@ When no matches are found:
 ### 15.6 Future TecDoc Integration
 * The current structure is built to accept TecDoc data without major changes.
 * When the TecDoc API is connected, the system should automatically enrich existing parts with official data while keeping manual entries as fallback.
+---
+
+## 16. Edge Cases & Advanced Rules (Wave 3)
+
+### 16.1 Rare, Old & Used Parts Support
+The system must support both new and used spare parts.  
+Even if no new parts are available for very old or rare vehicles (e.g., 1985 Mercedes), the system must show available used parts.  
+When new parts are unavailable, the system automatically includes used/reconditioned parts in the results with clear labeling.
+
+### 16.2 Conflicting Compatibility Data
+If suppliers give conflicting answers about whether a part fits a vehicle:
+- The system shows both answers at the bottom of the results.
+- Reviews, returns, and successful installation reports automatically influence ranking.
+- Users can mark in their review whether the installation was successful or unsuccessful.
+- Suppliers, service providers, and brands that receive high numbers of positive witness reports (successful installs) receive ranking boosts and reward options (discounts or free installs for top contributors).
+
+### 16.3 Missing Compatibility Data
+If a supplier uploads a part without compatibility data:
+- The system shows the closest matching parts based on category and specifications.
+- Parts are ranked by how closely they match the user’s vehicle.
+- If no car is selected, generic parts (like oil filters) appear at the bottom of results.
+- If the supplier specializes in specific brands, their parts appear in relevant searches but ranked lower.
+
+### 16.4 Helping Users Fix Wrong Vehicle Selection
+If a user selects the wrong year (e.g., 2018 instead of 2019), the system automatically shows two clear options side-by-side:
+- Option A: 2018 model with the selected part
+- Option B: 2019 model with the selected part
+The user can compare both or directly choose the correct one.
+
+### 16.5 Performance Requirements
+- Search results must load in **maximum 2 seconds**.
+- The system must not overload the server or external databases (TecDoc).
+- Popular searches are cached for faster loading.
+
+### 16.6 Too Many Filters Handling
+When a user applies too many filters at once, the system does not block results. Instead, it shows multiple ranked answer groups:
+- Each group shows the exact specifications requested.
+- Groups missing one or more filters are clearly marked in red with the missing filter highlighted.
+- All options remain visible and ranked.
+
+### 16.7 Smart Search Features
+The search bar must support:
+- Text search
+- QR code scanning
+- Picture search (upload photo of part or car)
+- Popular searches are remembered and loaded faster.
+
+### 16.8 Manual Data Correction Process
+Staff cannot directly edit supplier compatibility data.  
+Instead, incorrect data is automatically sent as a notification to the supplier for them to correct.  
+VIP, trusted, or elderly suppliers can request staff assistance.
+
+### 16.9 Roles Allowed to Manage Data
+Only **Admin** and **selected employees** can manually edit or override compatibility data when needed.
+
+### 16.10 Audit Log
+Every manual change to compatibility data must be recorded with:
+- Who made the change
+- When it was changed
+- Reason for the change
+
+### 16.11 Vehicle History Integration
+When a part is successfully installed:
+- The “Verified Fitment Counter” increases automatically.
+- The part’s visibility and ranking improve.
+- The installation is recorded in the vehicle’s permanent history.
+
+### 16.12 TecDoc & Multi-Database Strategy
+When connecting external databases (TecDoc and others):
+- The system keeps both manual and external data.
+- TecDoc data is shown as more trusted when available.
+- Manual entries remain as fallback.
+
+### 16.13 Supplier Trust & Ranking
+Suppliers with higher trust scores (based on successful installations, low returns, and positive reviews) automatically receive higher ranking in search results.
+
+### 16.14 User Error Reporting
+Users (clients, suppliers, service providers, influencers) can report “This part does not fit my car” directly from the product page.  
+Reports are filtered and ranked by user type to reduce fraud.  
+Valid reports are automatically converted into staff tasks for review and action.
