@@ -275,3 +275,83 @@ Service providers must be able to create Maintenance Plans that clients can subs
 
 ### 15.3 Automatic Reminders
 The system must automatically remind clients when their next recurring service or maintenance plan is due.
+---
+
+## 16. Mobile & On-Site Services
+
+### 16.1 Mobile Service Support
+The system must support mobile service providers who travel to the client’s location. This includes mobile mechanics, tire services, detailing, and roadside assistance.
+
+### 16.2 Service Radius
+Mobile service providers must be able to set a service radius (e.g., 15 km). They can also accept jobs beyond their set radius for an additional fee.
+
+### 16.3 Estimated Arrival Time
+The system must show clients the estimated arrival time of mobile service providers based on their current location and traffic conditions.
+
+## 17. Reporting & Analytics for Providers
+
+### 17.1 Business Reports
+Service providers must be able to generate comprehensive reports, including:
+
+- Monthly revenue
+- Most popular services
+- Client retention rate
+- Average service time
+- Peak hours and days
+- Cancellation and no-show rates
+
+The system must follow the best proven reporting structures used in the service industry. All reports must be fully automated and flexible for customization.
+
+### 17.2 Staff Performance Analytics
+Service providers must be able to view performance analytics about their staff, such as:
+
+- Which mechanic completes jobs fastest
+- Client satisfaction ratings per staff member
+- Number of jobs handled per employee
+
+### 17.3 Benchmarking Tools
+The system must provide benchmarking tools that allow service providers to compare their performance with similar shops anonymously.
+
+## 18. Marketing & Promotion Tools
+
+### 18.1 Promotions & Discounts
+Service providers must be able to create promotions and discounts directly through the platform. This is mandatory. Examples include:
+
+- 20% off for first-time clients
+- Loyalty discounts
+- Seasonal offers
+
+### 18.2 Targeted Offers
+The system must allow service providers to run targeted offers to specific clients or client groups. This should follow the structure and tools used by platforms like TikTok for ad creation, customization, and targeting. Examples include sending discounts to clients who haven’t visited in 6 months.
+
+### 18.3 Visibility Boosting
+Service providers must be able to boost their visibility in search results through promotions or paid placements.
+
+## 19. Quality Standards & Certifications
+
+### 19.1 Certification Display
+Service providers must be able to display their certifications and qualifications on their profile. This includes manufacturer certifications, ISO certifications, and specialized training.
+
+### 19.2 Certification Filtering
+Clients must be able to filter service providers based on certifications or specializations.
+
+### 19.3 Certification Verification
+The system must have a verification process for service providers claiming specific certifications. This process should follow the best proven methods used by major platforms such as Alibaba and Amazon, including document submission, review, and badge display.
+
+## 20. Insurance & Liability
+
+### 20.1 Insurance Requirement
+Service providers are **not** required to have insurance to offer services on the platform.
+
+### 20.2 Insurance Status Display
+The system must store and display the insurance status of service providers to clients when available.
+
+### 20.3 Liability Rules
+The system must have clear liability rules when something goes wrong during a service. This includes cases such as:
+
+- Damage to the vehicle during service
+- Wrong part installed
+- Injury during service
+- Service not completed as agreed
+
+These rules must define responsibility between the client, service provider, and Autopro where applicable.
