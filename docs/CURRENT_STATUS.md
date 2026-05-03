@@ -836,3 +836,5 @@ Added Advanced Analytics, Legal & Compliance tools, Sustainability Tracking, Emp
 `B2B_FLEET_COMPATIBILITY.md` is now fully documented across six waves, covering all major aspects of B2B and Fleet management.
 ## Latest Update – Service Booking System Wave 1 Completed
 Started and expanded `SERVICE_BOOKING_SYSTEM.md` with booking types, request process, vehicle integration, provider workflow, and emergency services.
+## Latest Update – Service Booking System Wave 2 Completed
+Added detailed rules for scheduling, cancellation, rescheduling, proof of work, client confirmation, and payment in `SERVICE_BOOKING_SYSTEM.md`.
