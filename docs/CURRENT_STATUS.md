@@ -1,4 +1,5 @@
-# Autopro Current Status
+## Latest Update – B2B Fleet Compatibility File Started
+Created `B2B_FLEET_COMPATIBILITY.md` and completed Wave 1, covering account structures, vehicle management, and internal permissions for B2B/Fleet customers.# Autopro Current Status
 
 This file explains the current state of the Autopro project.
 
