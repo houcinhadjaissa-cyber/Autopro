@@ -231,3 +231,119 @@ The audit log must track both:
 - Every view of a compatibility record (for security and accountability)
 
 The log must include who viewed or changed the record, when, and what was viewed or changed.
+---
+
+## 12. System Integration
+
+### 12.1 Connection with Staff Permissions
+The Compatibility Engine Admin panel must be directly connected to the main Staff Permissions system. When a new employee role is created in the staff panel, it must automatically appear as an available option in the Compatibility Engine permission settings.
+
+### 12.2 Cross-Platform Impact of Penalties
+Changes made in the Compatibility Engine (such as penalties or quality score drops) must automatically affect other areas of the platform under the following rules:
+
+- If the issue is repeated more than 4 times → The penalty automatically affects the supplier’s ranking, payout speed, and marketplace visibility.
+- If the supplier is new → The effect starts after 4 incidents.
+- If the supplier is trusted or VIP → Staff must contact them first, and the effect starts after 5 incidents.
+- If the supplier is marked as risky → The effect starts automatically after 3 incidents.
+
+### 12.3 Connection with Vehicle History & Recall System
+The Compatibility Engine must be connected to the Vehicle History system. When staff approve a compatibility correction, the system must check if the part was previously installed in any vehicle.
+
+If a part was installed incorrectly, the system must automatically activate a **Recall Process** with the following rules:
+
+- The supplier is required to initiate the recall.
+- The supplier must cover the full cost of replacement.
+- The supplier must send a formal apology to the affected clients.
+- The recall process starts with VIP and trusted suppliers first, then extends to normal clients.
+- If the mistake originated from the brand (and the supplier was only the middleman), the supplier can generate a full legal reimbursement letter with all costs and details to claim compensation from the brand.
+
+**Recall Score Benefit**:  
+Suppliers who complete recalls receive a **50% boost** in their trust records. Their recall performance is displayed as a visible score on their profile, which improves their reach, plan discounts, and overall ranking.
+
+## 13. Automation & Smart Rules
+
+### 13.1 Smart Automation Rules
+The system must support “Smart Rules” that can take automatic action, including:
+
+- Automatically pause a supplier’s parts if their Quality Score drops below a defined threshold.
+- Automatically approve minor corrections from Trusted or VIP suppliers.
+
+All smart rules must be visible to the Admin and Selected Employees and fully flexible for modification.
+
+### 13.2 Custom Rule Creation
+Admin and Selected Employees must be able to create fully custom automation rules. Examples include:
+- “If a supplier receives 5 complaints in 7 days, automatically reduce their ranking by 20%.”
+- “If a supplier’s Quality Score drops below 60, automatically send them a warning and pause new uploads for 48 hours.”
+
+The system must follow the best proven automation practices used by major platforms and allow easy modification by the Admin.
+
+### 13.3 Pattern Detection & AI Flagging
+The system must use pattern detection and basic AI to flag suspicious activity, such as:
+
+- A supplier uploading 1000 parts with almost identical compatibility data.
+- Sudden unusual changes in upload behavior.
+
+All flagged activities must be recorded and made visible to the Admin and Selected Employees for review and decision.
+
+## 14. Data Management
+
+### 14.1 Data Export
+Admin and Senior Staff must be able to export compatibility data, including:
+
+- All parts from one supplier
+- All compatibility records for a specific vehicle
+- The full audit log
+
+### 14.2 Automatic Backup
+The system must automatically back up all compatibility data every 24 hours (daily). Manual backup must also be available at any time.
+
+### 14.3 Data Import
+Staff must be able to import compatibility data from external files (CSV/Excel) directly through the admin panel, in addition to the normal supplier upload system.
+
+## 15. Legal, Compliance & Security
+
+### 15.1 Digital Confirmation for Changes
+Some employee roles must require a digital signature or confirmation step before saving manual changes, for legal protection. The Admin can decide which roles require this step.
+
+### 15.2 Legal Dispute Reports
+In case of a legal dispute, the system must be able to automatically generate a full report containing:
+
+- All compatibility data related to the part
+- History of all changes made
+- Staff actions and decisions
+- Relevant legal information based on the client’s country
+
+### 15.3 Access Security
+- The Admin must have unrestricted access to the Compatibility Engine admin panel from any location.
+- Selected Employees must use two-factor authentication (2FA) to access the panel.
+
+## 16. Staff Training & Onboarding
+
+### 16.1 Training & Exhibition Mode
+The system must include a full **Training / Exhibition Mode** with the following features:
+
+- New employees can practice all functionalities in a safe test environment disconnected from real private data.
+- The mode can be used for training, education, and public exhibitions.
+- Admin can create custom logins for trainers, teachers, or exhibition staff.
+- Logins can be set with time expiration (e.g., 15-day training program that automatically deactivates).
+- Logins can also be restricted to specific hours (e.g., exhibition mode active from 7 AM to 10 PM for 7 days).
+
+### 16.2 Knowledge Base & Training Materials
+The admin panel must include a **Knowledge Base** with common compatibility issues and solutions. 
+
+Training materials must be:
+- Automatically generated as PDF documents in multiple languages.
+- Fully flexible — when the Admin or Selected Employees add new rules or systems, they are automatically added to the training materials with dates.
+- Allow the Admin to select specific tasks and rules for a new employee and generate a personalized training manual.
+
+The system should follow the best training structures used by major platforms (Amazon, Alibaba, Facebook, TikTok), including video tutorials, picture-based manuals, and live-updating documentation.
+
+### 16.3 Staff Performance Tracking
+The system must fully track staff performance in a flexible and automated way, visible only to the Admin and Selected Employees. This includes:
+
+- Number of tasks resolved
+- Average resolution time
+- Number of correct vs. incorrect decisions
+- Quality of decisions made
+
+Performance data can be used for evaluations, promotions, and training improvements.
