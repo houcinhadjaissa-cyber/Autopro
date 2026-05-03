@@ -635,3 +635,6 @@ docs/REUSABLE_PLATFORM_CORE_AND_ID_SYSTEM.md
 ## [Current Date] – Completed Wave 3 of SERVICE_BOOKING_SYSTEM.md
 - Covered staff management, integrations with other systems, dispute handling, and recurring services.
 - Next: Wave 4 of this file.
+## [Current Date] – Completed Wave 4 of SERVICE_BOOKING_SYSTEM.md
+- Covered mobile services, provider analytics, promotions, certifications, and liability.
+- Next: Wave 5 or move to another file.
