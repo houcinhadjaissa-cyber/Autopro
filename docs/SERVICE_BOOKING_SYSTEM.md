@@ -121,3 +121,79 @@ Emergency services must follow different rules compared to normal bookings, incl
 - Faster response time expectations
 - Different cancellation policy
 - Priority matching in the system
+---
+
+## 6. Appointment Confirmation & Scheduling
+
+### 6.1 Scheduling Process
+Once a client accepts a quote or the examination is completed, the scheduling process works as follows:
+
+- The system first automatically suggests available time slots to the provider.
+- The provider can adjust or modify the suggested slots.
+- The final available slots are then sent to the client to choose from.
+
+### 6.2 Specific Time Requests
+Only VIP, Trusted, and elderly clients can request a specific time. The provider can accept, reject, or propose an alternative time.
+
+### 6.3 Buffer Time
+The system must support buffer time between appointments (e.g., 30 minutes) for cleaning, preparation, or rest.
+
+## 7. Cancellation, Rescheduling & No-Show Rules
+
+### 7.1 Cancellation Policy
+- If the client cancels before the appointment, no penalty applies. The provider can choose to accept or reject an instant reschedule.
+- If the provider cancels before the due date, the client can reschedule (except for risky providers).
+- Emergency services follow stricter cancellation rules than normal services.
+
+### 7.2 No-Show Rules
+- **Client No-Show**: New clients receive a warning. VIP, Trusted, and elderly clients are contacted by staff if repeated. Repeated no-shows by new clients limit their access to VIP and Trusted providers.
+- **Provider No-Show**: The client can choose another provider or reschedule. New providers receive warnings and reduced reach. VIP and Trusted providers are contacted by staff before any penalty.
+
+### 7.3 Rescheduling Limits
+- If the provider is at fault: New clients get 2 reschedules, VIP/Trusted get 5 reschedules.
+- If the client is at fault: New clients can only reschedule if the provider accepts. VIP/Trusted clients get 5 reschedule chances.
+
+## 8. Service Execution & Proof of Work
+
+### 8.1 Required Proof
+During service, providers must upload:
+- Diagnostic reports
+- Updated results of the work performed
+
+Photos and videos are optional unless specifically requested. The system must track the full parts journey (from ordering to installation) and send automatic updates to the client at each stage.
+
+### 8.2 Live Updates
+Clients must be able to request live updates or photos during the service.
+
+### 8.3 Service Status Updates
+The system must require providers to mark services as “In Progress” and “Completed” with timestamps. These updates are automatically sent to the client.
+
+## 9. Client Confirmation & Quality Control
+
+### 9.1 Service Completion Confirmation
+After the service is marked complete, confirmation is required from both sides before payment is released, except in the following cases:
+
+- When both the client and provider are VIP/Trusted, only the provider’s confirmation is needed.
+- New or risky clients and providers require confirmation from both sides.
+- Examination fees must be paid after the examination is completed. The client can either add it to the final bill or pay it separately.
+- If the client rejects the repair offer after examination, they must still pay the examination fee before taking the car.
+- Providers can offer discounts or free examinations to selected clients (VIP, Trusted, or custom groups).
+
+### 9.2 Service Rejection
+Clients can reject the service if they are not satisfied. Rejection can happen:
+
+- Before the service begins (after seeing the quote or examination results)
+- After the service is completed (if the work is unsatisfactory)
+
+In both cases, a clear dispute or resolution process must be followed.
+
+### 9.3 Rating & Review System
+There must be a dedicated rating and review system for services. Reviews and ratings must directly affect the service provider’s overall rating and visibility on the platform.
+
+## 10. Payment During Service
+
+### 10.1 Payment Timing
+Payment for services is collected after the service is completed as the standard rule. However, the exact timing can vary based on the service provider’s settings and the laws of the country.
+
+### 10.2 Split Payment
+The system must support splitting payment between parts and labor. For example, clients can pay for parts upfront and labor after the service is completed.
