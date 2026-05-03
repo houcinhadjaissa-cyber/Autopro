@@ -345,3 +345,72 @@ Fleet accounts must be able to connect their own internal systems (ERP, accounti
 
 ### 19.3 Multi-Country Operations
 The system must support multi-country fleet operations. A single fleet account must be able to manage vehicles across different countries (e.g., Algeria, Nigeria, Europe) while applying different rules and requirements per country.
+---
+
+## 20. Advanced Analytics & Business Intelligence
+
+### 20.1 Business Intelligence Tools
+Fleet accounts must have access to advanced business intelligence tools, including:
+
+- Cost forecasting
+- Profit and loss per vehicle
+- Return on investment (ROI) on parts and maintenance
+- Spending trends and optimization suggestions
+
+### 20.2 Visual Dashboards
+Fleet managers must be able to create custom visual dashboards with charts and graphs for their internal team. The system should serve as a **one-stop platform** for all company needs. All proven features used by professional fleet companies (regardless of vehicle type) must be researched and included where relevant.
+
+### 20.3 Predictive Analytics
+The system must provide predictive analytics with full details. This includes forecasting total maintenance costs for the next 6 months or longer. All predictive features must be flexible and fully automated.
+
+## 21. Legal & Compliance
+
+### 21.1 Automatic Compliance Tracking
+The system must automatically help fleet companies stay compliant with local laws by tracking:
+
+- Vehicle inspection deadlines
+- Insurance expiry dates
+- Environmental and regulatory requirements
+
+### 21.2 Legal Document Management
+Fleet accounts must be able to easily store, manage, and access legal documents such as contracts, permits, and insurance papers directly on the platform.
+
+### 21.3 Automatic Compliance Reports
+The system must generate automatic compliance reports that can be shared with government authorities when needed. These reports must follow the best legal standards and be fully informative for each country’s requirements.
+
+## 22. Sustainability & Environmental Tracking
+
+### 22.1 Environmental Impact Tracking
+The system must automatically track environmental impact for fleet vehicles when activated by the owner or selected employees. This includes:
+
+- CO₂ emissions
+- Fuel consumption
+- Electric vehicle battery health
+
+### 22.2 Sustainability Goals
+Fleet managers must be able to set sustainability goals and track progress with full information and proofs. This data must be detailed enough to support tax reports and regulatory requirements.
+
+### 22.3 Green Fleet Initiatives
+The system must support green fleet initiatives by prioritizing eco-friendly parts and service providers when requested.
+
+## 23. Employee Training & Certification
+
+### 23.1 Certification Tracking
+The system must allow fleet companies to track training and certifications of their mechanics and drivers. This is mandatory and includes tracking driver license expiry and mechanic certifications.
+
+### 23.2 Training Assignment
+Fleet managers must be able to assign training modules or safety courses to their employees directly through the platform. The system must support regular updates, direct messaging, and video calls.
+
+### 23.3 Expiration Reminders
+The system must automatically send reminders when certifications or licenses are about to expire.
+
+## 24. Advanced Features & Future Ideas
+
+### 24.1 GPS & IoT Integration
+The system must support integration with vehicle tracking devices (GPS/IoT) for real-time location, mileage tracking, and fuel monitoring.
+
+### 24.2 Dispute Resolution
+The system must include a dedicated dispute resolution process between fleet companies and suppliers/service providers directly on the platform.
+
+### 24.3 Data Ownership & Portability
+Fleet accounts must have full data ownership and portability rights. They must be able to easily export all their data at any time if they decide to leave the platform.
