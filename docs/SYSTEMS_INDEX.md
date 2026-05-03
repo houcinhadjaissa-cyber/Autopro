@@ -343,3 +343,4 @@ File:
 docs/REUSABLE_PLATFORM_CORE_AND_ID_SYSTEM.md
 - [DATA_MODEL_NOTES.md](./DATA_MODEL_NOTES.md) - Database structure and logic.
 - [MVP_SCOPE.md](./MVP_SCOPE.md) - Phase 1 launch requirements.
+- [COMPATIBILITY_ENGINE.md](./COMPATIBILITY_ENGINE.md) – Fully detailed (Search logic, Match scoring, Compare, Saved Items, Packages).
