@@ -355,3 +355,85 @@ The system must have clear liability rules when something goes wrong during a se
 - Service not completed as agreed
 
 These rules must define responsibility between the client, service provider, and Autopro where applicable.
+---
+
+## 21. Smart Features & Automation
+
+### 21.1 Client Smart Suggestions
+The system must use smart suggestions for clients based on their vehicle history. Examples include:
+
+- Suggesting when the next service is due
+- Recommending services the client hasn’t done in a while
+- Notifying clients about seasonal maintenance (e.g., winter tire change)
+
+### 21.2 Smart Provider Matching
+The system must automatically match clients with the best service providers based on location, price, ratings, availability, and verification status. Priority should be given to verified, trusted, and well-reviewed providers.
+
+### 21.3 Provider AI Suggestions
+For now, service providers will **not** receive AI-based suggestions. This feature can be added in the future if needed.
+
+## 22. Client Experience Enhancements
+
+### 22.1 Real-Time Service Tracking
+Clients must be able to track the service in real-time. Status updates should include:
+
+- Parts ordered
+- Technician assigned
+- Work in progress
+- Ready for pickup
+
+### 22.2 Direct Communication
+Clients cannot communicate directly with assigned mechanics or technicians during the service. Communication is controlled through the staff structure of the service provider (owner, manager, or receptionist).
+
+### 22.3 Special Requests
+Clients must be able to add special requests or instructions when booking. Examples include:
+
+- “Please use synthetic oil only”
+- “Do not wash the car”
+- “Use original parts only”
+
+## 23. Provider Onboarding & Verification
+
+### 23.1 Onboarding Process
+New service providers must go through a structured onboarding process that includes:
+
+- Document upload and verification
+- Profile setup and service listing creation
+- Basic training on how to use the platform
+- Agreement to platform rules and policies
+
+### 23.2 Verification Levels
+The system must support different verification levels for service providers. However, all providers must receive equal opportunities from day one. Higher verification levels (such as adding insurance, certifications, or business documents) will improve trust scores and visibility.
+
+### 23.3 Equal Opportunity Policy
+New service providers will not go through a trial or probation period. Instead, they receive equal access to all core features from day one. Additional features, visibility, and trust benefits are earned through performance, verification, and client feedback.
+
+## 24. Data & Privacy
+
+### 24.1 Data Collection
+The system must collect all necessary data from clients and service providers during the booking process to ensure the best experience and maximum benefits for all parties.
+
+### 24.2 Data Sharing Control
+Clients must be able to control what information is shared with service providers. For example, they can hide their phone number until the booking is confirmed.
+
+### 24.3 Data Retention Rules
+The system must follow strict data retention rules. Old booking data can be automatically deleted after a defined period. However, this must not negatively affect:
+
+- The ongoing provider-client relationship
+- The building of trust and performance scores over time
+
+## 25. Final Governance & Future Scalability
+
+### 25.1 Provider Exit Rules
+The Service Booking System must have clear rules about what happens when a service provider leaves the platform or gets banned. This includes handling of ongoing bookings, refunds, client data, and outstanding payments.
+
+### 25.2 Future Integration
+The Service Booking System must be designed to easily integrate with future Autopro features from day one. This includes integration with:
+
+- Ads and promotions system
+- Influencer tools
+- B2B Fleet system
+- Payments and Vehicle History systems
+
+### 25.3 Feedback System
+There must be a feedback system where both clients and service providers can suggest improvements to the booking system. All feedback must be visible to the Admin and Selected Employees for review and future development.
