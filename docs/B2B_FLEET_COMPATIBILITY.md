@@ -414,3 +414,73 @@ The system must include a dedicated dispute resolution process between fleet com
 
 ### 24.3 Data Ownership & Portability
 Fleet accounts must have full data ownership and portability rights. They must be able to easily export all their data at any time if they decide to leave the platform.
+---
+
+## 25. Vehicle Lifecycle Management
+
+### 25.1 Full Lifecycle Tracking
+The system must track the complete lifecycle of each vehicle in a fleet. This includes:
+
+- Purchase date and initial cost
+- Major repairs and maintenance history
+- Total cost of ownership (TCO)
+- Depreciation tracking
+- Estimated resale value
+
+### 25.2 Vehicle Retirement & Disposal
+Fleet managers must be able to mark vehicles as “Retired” or “For Sale” and manage the full disposal process directly inside the platform. This includes documentation and status tracking.
+
+### 25.3 Replacement Recommendations
+The system must provide smart recommendations on when it is more cost-effective to replace a vehicle rather than continue maintaining it, based on total cost of ownership and performance data.
+
+## 26. Inventory & Warehouse Management
+
+### 26.1 Spare Parts Inventory
+Large fleet accounts must be able to manage their own spare parts inventory through the platform. This includes tracking stock levels, receiving low-stock alerts, and enabling automatic reordering when needed.
+
+### 26.2 Private Warehouses
+The system must allow fleet companies to create private warehouses or storage locations with their own inventory management.
+
+### 26.3 Parts Transfer
+Fleet managers must be able to easily transfer parts between different branches or warehouses, with full tracking and history.
+
+## 27. Driver Behavior & Safety
+
+### 27.1 Driver Monitoring
+The system must support driver behavior monitoring, including tracking of speeding, harsh braking, fuel efficiency, and other safety metrics per driver.
+
+### 27.2 Driver Scorecards
+Fleet managers must be able to create driver scorecards and performance reports to evaluate and improve driver behavior.
+
+### 27.3 Safety Alerts & Training
+The system must automatically send safety alerts and training recommendations based on driver behavior data.
+
+## 28. Financial Management
+
+### 28.1 Advanced Financial Tools
+Fleet accounts must have access to advanced financial tools, including:
+
+- Budget planning per vehicle or department
+- Cost allocation
+- Invoice management
+- Payment tracking
+
+### 28.2 Automated Financial Reporting
+The system must automatically categorize expenses and generate financial summaries suitable for accounting and tax purposes.
+
+### 28.3 Budget Alerts
+Fleet managers must be able to set spending limits and receive automatic alerts when budgets are close to being exceeded.
+
+## 29. Final Governance & Closing Rules
+
+### 29.1 Data Ownership
+The system must have clear and transparent rules about data ownership between Autopro and the fleet company.
+
+### 29.2 Offboarding Process
+There must be a formal offboarding process when a fleet company decides to leave the platform. This process must ensure all data is handled according to the agreed ownership rules.
+
+### 29.3 Data Archiving
+The system must allow fleet companies to archive old data instead of permanently deleting it. Archived data must remain accessible for a defined period when needed.
+
+## 30. Completion of B2B Fleet Compatibility File
+The `B2B_FLEET_COMPATIBILITY.md` file is now complete. It covers account structures, vehicle management, pricing, bulk ordering, service planning, reporting, contracts, multi-location support, automation, security, sustainability, training, analytics, lifecycle management, inventory, financial tools, and governance.
