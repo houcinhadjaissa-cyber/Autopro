@@ -830,3 +830,5 @@ Added Pricing & Billing, Bulk Ordering, Service Booking tools, Reporting & Analy
 Added Multi-Location Management, Supplier Integration, Performance KPIs, Risk & Insurance tools, and Onboarding/Migration features to `B2B_FLEET_COMPATIBILITY.md`.
 ## Latest Update – B2B Fleet Wave 4 Completed
 Added Advanced Automation & AI, Security & Privacy, Dedicated Support Tools, Monetization Models, and Future Scalability features to `B2B_FLEET_COMPATIBILITY.md`.
+## Latest Update – B2B Fleet Wave 5 Completed
+Added Advanced Analytics, Legal & Compliance tools, Sustainability Tracking, Employee Training, GPS/IoT Integration, and Data Portability to `B2B_FLEET_COMPATIBILITY.md`.
