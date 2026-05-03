@@ -814,3 +814,6 @@ The Compatibility Engine has been fully documented across four detailed waves.
 Key features now include: TecDoc-ready architecture, multi-source result ranking, Compatibility Quality Score, B2B fleet support, sponsored compatibility, and advanced complementary part logic.
 
 File: `docs/COMPATIBILITY_ENGINE.md` is now complete.
+## Latest Update – Compatibility Engine Admin Rules File Created
+Created and started documenting `COMPATIBILITY_ENGINE_ADMIN_RULES.md`.  
+Completed first section: Roles, Permissions, Manual Overrides, Quality Score, and Penalties & Rewards.
