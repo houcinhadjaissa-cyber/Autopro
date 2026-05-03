@@ -195,3 +195,68 @@ The system must support different types of contracts, including but not limited 
 - Preferred supplier agreements
 - Volume commitment contracts
 - Service level agreements (SLA)
+---
+
+## 10. Multi-Location & Branch Management
+
+### 10.1 Multi-Branch Support
+B2B and Fleet accounts must be able to manage multiple branches or locations under one main account. This feature must be fully flexible and automated, allowing companies to operate across different cities or regions seamlessly.
+
+### 10.2 Branch Independence
+Each branch must have the ability to maintain its own separate inventory, vehicle list, and permission settings. However, the main account must retain full visibility and control over all branches when needed.
+
+### 10.3 Transfer Between Branches
+The system must allow transferring vehicles and parts between different branches of the same fleet company. This process must be simple and fully tracked.
+
+## 11. Integration with Suppliers & Service Providers
+
+### 11.1 Direct Connection
+Fleet accounts must be able to connect directly with their preferred suppliers and service providers through the platform. This allows direct ordering and booking without going through the public marketplace. However, the system must still provide live price comparison with other suppliers for transparency.
+
+### 11.2 Preferred Supplier Network
+Fleet companies must be able to create their own private **Preferred Supplier Network** — a custom list of trusted suppliers and mechanics. This feature is mandatory.
+
+### 11.3 Priority Notifications
+Fleet managers must receive special notifications and priority access when their preferred suppliers have stock availability or open slots. This helps reduce downtime and improve efficiency.
+
+## 12. Performance Tracking & KPIs
+
+### 12.1 Key Performance Indicators
+The system must track comprehensive KPIs for fleet accounts, including:
+
+- Average cost per vehicle per month
+- Vehicle downtime
+- Parts failure rate
+- Supplier reliability score
+- Maintenance frequency and cost
+- Fuel efficiency (where applicable)
+
+All KPIs must be fully flexible and automated.
+
+### 12.2 Custom KPIs & Alerts
+Fleet managers must be able to create their own custom KPIs and receive automatic alerts when targets are not met or when performance drops below defined thresholds.
+
+### 12.3 Anonymous Benchmarking
+The system must provide benchmarking tools that allow fleet companies to compare their performance against similar fleets anonymously. This feature is mandatory and must follow the best industry practices.
+
+## 13. Risk Management & Insurance
+
+### 13.1 Insurance Integration
+The system must automatically support linking insurance information to vehicles and parts. This includes showing which parts or repairs are covered by insurance in case of damage. The feature must be fully flexible and automated.
+
+### 13.2 Risk Analysis Tools
+Fleet accounts must have access to automated risk analysis tools that can predict potential issues, such as which vehicles are likely to need expensive repairs soon. These tools must be fully flexible and automated.
+
+### 13.3 Claims Management
+The system must allow fleet companies to manage claims and incidents related to parts and services directly on the platform. This includes logging incidents, tracking claims status, and storing related documents.
+
+## 14. Onboarding & Data Migration
+
+### 14.1 Guided Onboarding
+B2B and Fleet customers must have access to a guided onboarding process specifically designed for their needs. This includes step-by-step setup for adding vehicles, creating groups, setting permissions, and configuring workflows. All onboarding materials must be easy to read, share, and study.
+
+### 14.2 Data Import
+Fleet accounts must be able to import their existing data from other systems (vehicle lists, maintenance history, supplier data, etc.). The import process must be easy, flexible, and fully automated. The platform must be capable of reading and processing data from any other fleet management software.
+
+### 14.3 Migration Support
+The system must offer migration tools and support for companies switching from other fleet management software. This includes data mapping, validation, and assistance during the transition period.
