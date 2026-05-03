@@ -125,3 +125,35 @@ When showing a part with less than 100% certainty:
 When no matches are found:
 * The system displays a helpful message.
 * It automatically shows the vehicle selection/search bar again so the user can adjust their filters immediately.
+---
+
+## 15. Edge Cases & Advanced Rules
+
+### 15.1 Rare & Special Vehicles
+* The system must support rare vehicles (limited edition, old models, commercial vehicles, heavy-duty trucks).
+* When a vehicle has very few or no parts listed, the system should automatically suggest similar compatible models with a clear message: “No exact matches found. Here are similar vehicles that use the same parts.”
+
+### 15.2 Conflicting or Missing Data
+* If two suppliers list different compatibility for the same part, the system flags it for staff review.
+* If a part has no compatibility data at all, it is hidden from vehicle-specific searches but remains visible in the supplier’s catalog with a warning label: “Compatibility data missing – Contact supplier.”
+
+### 15.3 Performance Requirements
+* Search results must load in under 2 seconds even with 50,000+ parts.
+* The system must support caching of popular vehicle searches.
+* Heavy filtering (by price, brand, shipping speed) must not slow down the page.
+
+### 15.4 Admin & Staff Controls
+* Authorized staff must be able to manually correct compatibility data.
+* Staff can override supplier data when proof is provided.
+* All manual changes must be logged with date, staff name, and reason.
+
+### 15.5 Integration with Other Systems
+* When a part is successfully installed, it must automatically update:
+  - The vehicle’s history
+  - The part’s “Verified Fitment Counter”
+  - The supplier’s performance score
+* The engine must work with the Saved Items / Garage system and the Compare feature.
+
+### 15.6 Future TecDoc Integration
+* The current structure is built to accept TecDoc data without major changes.
+* When the TecDoc API is connected, the system should automatically enrich existing parts with official data while keeping manual entries as fallback.
