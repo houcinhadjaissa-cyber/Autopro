@@ -1328,3 +1328,13 @@ Key additions:
 - Installation counter and social proof
 
 Current Project Status: Documentation Phase (Moving to next major system).
+# Latest Recovery Override – Compatibility Engine Update
+Added researched content on Data Quality, Validation & Automation Rules to `COMPATIBILITY_ENGINE.md`.
+
+Key additions:
+- Automated validation during part uploads
+- Supplier Quality Scoring system
+- Smart automation rules for data quality
+- Manual review workflow for flagged items
+
+This improves the reliability and scalability of the Compatibility Engine.
