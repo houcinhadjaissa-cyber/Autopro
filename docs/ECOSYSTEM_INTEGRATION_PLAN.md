@@ -173,3 +173,46 @@ This file will be expanded step by step after reviewing and improving all existi
 - Data is consistent across all systems with minimal manual intervention.
 - New features can be added without breaking existing integrations.
 - The platform can scale to support thousands of daily transactions.
+---
+
+## 12. Data Flow Between Major Systems
+
+### 12.1 Overview
+For the ecosystem to work smoothly, data must flow correctly between systems. Below is the recommended data flow structure.
+
+### 12.2 Core Data Flows
+
+**1. User → Vehicle History**
+- When a user buys a part or books a service, the order details are sent to the Vehicle History system.
+- The history record includes: Part/Service ID, Date, Mileage, Provider, and Proof (if available).
+
+**2. Compatibility Engine → Service Booking**
+- When a user searches for a service, the Service Booking system queries the Compatibility Engine to show only compatible parts and services for the selected vehicle.
+
+**3. Orders → Payments → Invoicing**
+- Every order (product or service) is linked to the Payments system.
+- Once payment is confirmed, an invoice is automatically generated and linked to the order.
+
+**4. Reviews → Loyalty & Trust**
+- After a completed order, users can leave a review.
+- Reviews update the Loyalty points and the Trust Score of both the user and the business.
+
+**5. Business Dashboard → All Systems**
+- Business owners (suppliers and service providers) can view data from Orders, Reviews, Compatibility, and Payments in one unified dashboard.
+
+### 12.3 Critical Integration Rules
+
+- Every major action (purchase, service completion, review, payment) must update the Vehicle History when applicable.
+- The Compatibility Engine must always be the single source of truth for part-to-vehicle matching.
+- Payments should never be processed without a linked order.
+- All systems must respect the same user permissions and privacy settings.
+
+### 12.4 Data Ownership Summary
+
+| Data Type             | Primary Owner       | Can Be Shared With          |
+|-----------------------|---------------------|-----------------------------|
+| Vehicle History       | Client              | Service Providers (with permission) |
+| Product Compatibility | Platform + Supplier | All users (read-only)       |
+| Orders & Payments     | Client + Business   | Platform (for processing)   |
+| Reviews               | Client              | Public (after moderation)   |
+| Business Analytics    | Business            | Platform (aggregated)       |
