@@ -426,3 +426,120 @@ The system should follow modern accessibility standards, including:
 - Multi-language interface with right-to-left (RTL) support where needed
 
 This ensures the platform is usable by the widest possible audience.
+---
+
+## 41. Security, Access Control & Fraud Prevention (Researched Implementation)
+
+### 41.1 Role-Based Access Control (RBAC)
+The Compatibility Engine must implement strict role-based access control. Access levels should be clearly defined and enforced across the platform. Recommended roles include:
+
+- **Admin / Owner**: Full access to all data, settings, overrides, and audit logs.
+- **Selected Employees**: Configurable access levels (e.g., can review reports, approve compatibility changes, or manage specific categories).
+- **Suppliers**: Can upload and manage their own parts and compatibility data, but cannot modify data from other suppliers or override system rules without approval.
+- **Service Providers**: Read-only access to compatibility data for service planning. Cannot modify core data.
+- **Clients**: Can only view and search compatibility data. No modification rights.
+
+All roles must be fully flexible and manageable through the admin panel.
+
+### 41.2 Data Access Restrictions
+To protect sensitive vehicle and development data, the system must enforce the following rules:
+
+- Only Admin and Selected Employees can access advanced development, testing, and diagnostic databases.
+- Suppliers can only view and edit their own uploaded compatibility data.
+- All bulk data exports and modifications must require explicit approval from authorized personnel.
+- Sensitive fields (such as internal OEM mappings or manufacturer testing data) must be hidden from non-admin users.
+
+### 41.3 Fraud Prevention Measures
+Based on best practices from platforms like Alibaba, Amazon, and eBay, the system must include multiple layers of fraud prevention:
+
+- **Duplicate Detection**: Automatically flag when the same part is uploaded multiple times with conflicting compatibility data.
+- **Pattern Analysis**: Detect unusual behavior such as a supplier uploading hundreds of parts with identical compatibility mappings in a short time.
+- **Review Scoring**: Parts or compatibility data from new or low-trust suppliers should be flagged for manual review before going live.
+- **User Reporting**: Both clients and service providers must be able to report suspicious or incorrect compatibility data directly from the product page.
+
+### 41.4 Audit Logging
+Every action related to the Compatibility Engine must be logged, including:
+
+- Who made the change
+- What was changed (before and after values)
+- When the change occurred
+- Reason for the change (when applicable)
+
+Audit logs must be easily searchable and exportable for compliance and investigation purposes.
+
+### 41.5 Rate Limiting & API Security
+All API endpoints related to the Compatibility Engine must include:
+
+- Rate limiting to prevent abuse and data scraping
+- Request validation and sanitization
+- Authentication and authorization checks on every request
+- Logging of failed or suspicious API calls
+
+### 41.6 Data Encryption & Protection
+All sensitive data must be encrypted both in transit (using HTTPS/TLS) and at rest. This includes:
+
+- Compatibility mappings
+- Diagnostic and development data
+- Supplier and client information
+
+The system should follow modern security standards used in the automotive industry, including ISO/SAE 21434 guidelines where applicable.
+
+### 41.7 Incident Response
+The system must include a clear process for handling security incidents or data breaches, including:
+
+- Automatic alerts to the Admin and Selected Employees
+- Temporary restriction of affected accounts or data
+- Full audit trail for investigation
+- Communication protocol for affected users (when necessary)
+- ---
+
+## 42. Integration with Other Systems (Researched Implementation)
+
+### 42.1 Core Integration Philosophy
+The Compatibility Engine should not work in isolation. It must be deeply integrated with other major systems to create a true automotive ecosystem. This approach is used successfully by platforms like Amazon Automotive and Alibaba Auto, where users can move seamlessly between browsing parts, booking services, and managing their vehicle history.
+
+### 42.2 Key System Integrations
+
+#### A. Vehicle History System
+- Every completed service or part installation should automatically update the vehicle’s permanent history.
+- The Compatibility Engine should be able to read from the Vehicle History to make smarter part suggestions (e.g., “You installed brake pads 18 months ago – consider replacement soon”).
+- Users should be able to see which parts were previously installed on their vehicle directly from the compatibility results.
+
+#### B. Service Booking System
+- When a user searches for a part, the system should also suggest relevant services (e.g., “Brake pads + Brake Service”).
+- Service providers should be able to see compatible parts for the vehicle they are working on without leaving the booking interface.
+- The engine should support “Parts + Service” bundled bookings.
+
+#### C. Payments & Invoicing System
+- The Compatibility Engine should support real-time pricing, including shipping costs and platform fees.
+- It should connect with the payments system to show final prices (part + shipping + fees) during search.
+- Automatic invoice generation for B2B and fleet customers should include compatibility details.
+
+#### D. B2B & Fleet System
+- Fleet accounts should be able to upload their entire vehicle list and get bulk compatibility results.
+- The engine should support custom pricing and part lists per fleet or company.
+- Fleet managers should be able to set standard part lists that appear first in search results for their vehicles.
+
+#### E. Admin & Analytics Dashboard
+- The Admin should be able to monitor compatibility accuracy, error rates, and supplier data quality in real time.
+- Analytics should show which parts have the highest return or complaint rates due to fitment issues.
+
+### 42.3 Benefits of Strong Integration
+When the Compatibility Engine is well integrated with other systems, the platform gains several advantages:
+
+- Higher user retention (users stay longer because everything is connected)
+- Increased average order value (users buy parts + services together)
+- Better data quality (more real-world installation data improves matching accuracy)
+- Stronger competitive advantage (very few platforms offer this level of integration)
+
+### 42.4 Implementation Priority
+For day one, the following integrations should be prioritized:
+
+1. Vehicle History connection
+2. Service Booking connection
+3. Basic Payments integration (real-time pricing)
+
+More advanced integrations (B2B Fleet tools, deep analytics, and manufacturer portals) can be added in later phases.
+
+### 42.5 Future Vision
+In the long term, the Compatibility Engine should become the central intelligence layer of the entire Autopro platform — connecting clients, suppliers, service providers, fleets, and eventually vehicle manufacturers in one unified system.
