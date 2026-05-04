@@ -351,3 +351,78 @@ The OBD and development tools module should be built with future expansion in mi
 
 ### 39.6 Implementation Priority
 For day one, the system should support basic OBD reading and automatic vehicle identification. Advanced development and testing features can be rolled out in phases as the platform matures and partnerships with manufacturers or diagnostic tool companies are established.
+---
+
+## 40. Advanced Search & User Experience Features (Researched Implementation)
+
+### 40.1 Multi-Mode Search Experience
+The Compatibility Engine must support multiple search methods to match how different users interact with automotive platforms. These methods are inspired by the best features from TecDoc, 7zap, Alibaba, Amazon, and eBay:
+
+- **Visual Hierarchical Browsing**: Brand logo → Model range → Generation/Phase → Year → Engine/Specifications (similar to 7zap).
+- **VIN-Based Search**: Direct input of VIN for instant vehicle locking and 100% fitment results.
+- **Part Number Search**: Supports OEM numbers, Aftermarket numbers, Barcodes (GTIN), and internal SKUs with fuzzy matching.
+- **Category & Keyword Search**: Flexible search across part names, categories, and descriptions.
+- **Image-Based Search** (Future): Upload a photo of a part or vehicle component for AI-assisted identification.
+
+### 40.2 Smart Search Suggestions
+The system must provide intelligent suggestions while the user types, including:
+
+- Popular searches for the selected vehicle
+- Frequently bought together parts
+- Related services (e.g., “Brake pads” suggests “Brake discs” and “Brake fluid”)
+- Previously searched items by the user
+
+This approach follows the smart search experience used by Amazon and Alibaba.
+
+### 40.3 Result Organization & Filtering
+Search results must be clearly organized and easy to navigate. Recommended structure:
+
+- **Sections by Quality Tier**: Budget Parts, Quality Parts, Premium Parts, Performance Parts.
+- **Sorting Options**: Price (low to high), Match Percentage, Distance (for local suppliers), Rating, Delivery Speed.
+- **Advanced Filters**: Brand, Price range, Shipping availability, Warranty length, Condition (New/Used/Reconditioned), Certification.
+
+### 40.4 Part Comparison Tool
+Users must be able to select 2–3 parts and compare them side-by-side. The comparison table should include:
+
+- Price (including shipping)
+- Match percentage with the selected vehicle
+- Brand and quality tier
+- Warranty and return policy
+- Supplier rating and delivery time
+- Key specifications (dimensions, weight, material)
+
+This feature is especially useful for mechanics, fleet managers, and technically knowledgeable users.
+
+### 40.5 Saved Searches & Alerts
+Users should be able to save specific searches and receive notifications when:
+
+- New compatible parts become available
+- Prices drop on saved items
+- A previously out-of-stock part is back in inventory
+
+This follows the “Save Search” and alert systems used effectively on platforms like eBay and Alibaba.
+
+### 40.6 Error Handling & User Guidance
+When no results are found, the system must not show a blank page. Instead, it should:
+
+- Suggest similar vehicles or alternative part numbers
+- Offer to broaden the search (e.g., show near matches)
+- Provide guidance on how to improve the search (e.g., “Try selecting the engine code”)
+
+### 40.7 Mobile & Accessibility Optimization
+The search and browsing experience must be fully optimized for mobile devices, as many users (especially in emerging markets) access the platform primarily via smartphones. This includes:
+
+- Fast loading times
+- Touch-friendly filters and selection
+- Clear visual hierarchy with large images
+- Offline caching of recently viewed vehicles and parts
+
+### 40.8 Accessibility Features
+The system should follow modern accessibility standards, including:
+
+- High contrast mode
+- Screen reader compatibility
+- Keyboard navigation support
+- Multi-language interface with right-to-left (RTL) support where needed
+
+This ensures the platform is usable by the widest possible audience.
