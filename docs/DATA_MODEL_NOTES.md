@@ -134,3 +134,157 @@ Project-specific settings (currency, language, tax rules, etc.) are stored in a 
 
 ## 9. Summary
 This data model is designed to be the strong, flexible, and future-proof foundation for Autopro and all future projects. It balances performance, security, cost efficiency, and advanced functionality while remaining maintainable by a small team.
+---
+
+## 10. Detailed Table Structures & Relationships
+
+### 10.1 Core Identity Tables
+
+#### `users`
+- `id` (UUID, Primary Key)
+- `global_user_id` (Unique across all projects)
+- `email` (Unique)
+- `phone_number`
+- `created_at`
+- `last_login_at`
+- `status` (Active, Suspended, Deleted)
+- `risk_score`
+
+**Relationships:**
+- One-to-Many with `user_profiles`
+- One-to-Many with `vehicles` (via `vehicle_garage`)
+- One-to-Many with `orders`
+
+#### `user_profiles`
+- `id`
+- `user_id` (Foreign Key → users)
+- `display_name`
+- `avatar_url`
+- `bio`
+- `location`
+- `preferred_language`
+- `created_at`
+
+#### `user_auth`
+- `id`
+- `user_id` (Foreign Key → users)
+- `password_hash`
+- `last_password_change`
+- `two_factor_enabled`
+- `recovery_codes`
+
+### 10.2 Vehicle System
+
+#### `vehicles`
+- `id`
+- `vin` (Unique)
+- `make`
+- `model`
+- `generation`
+- `year`
+- `engine_code`
+- `fuel_type`
+- `transmission`
+- `drive_type`
+- `body_style`
+- `market_region`
+- `status` (Active, Archived)
+
+**Relationships:**
+- One-to-Many with `vehicle_history`
+- Many-to-Many with `users` (via `vehicle_garage`)
+
+#### `vehicle_history`
+- `id`
+- `vehicle_id`
+- `event_type` (Service, Part Installation, Inspection, etc.)
+- `description`
+- `date`
+- `mileage`
+- `provider_id`
+- `order_id`
+- `notes`
+
+#### `vehicle_garage`
+- `id`
+- `user_id`
+- `vehicle_id`
+- `nickname`
+- `is_primary`
+- `privacy_level` (Private, Share with Providers, Public)
+
+### 10.3 Product & Compatibility System
+
+#### `products`
+- `id`
+- `supplier_id`
+- `name`
+- `brand`
+- `oem_number`
+- `aftermarket_number`
+- `category_id`
+- `price`
+- `stock_quantity`
+- `condition` (New, Used, Reconditioned)
+- `status`
+
+#### `product_compatibility`
+- `id`
+- `product_id`
+- `vehicle_id`
+- `match_percentage`
+- `match_type` (Exact, Near, Universal)
+- `source` (TecDoc, Manual, Supplier)
+- `verified_installations_count`
+
+### 10.4 Business & Operations Tables
+
+#### `business_profiles`
+- `id`
+- `owner_user_id`
+- `business_type` (Supplier, Service Provider, Fleet, Hybrid)
+- `business_name`
+- `verification_level`
+- `trust_score`
+- `status`
+
+#### `orders`
+- `id`
+- `user_id`
+- `business_id`
+- `order_type` (Product, Service, Package, Bundle)
+- `status`
+- `total_amount`
+- `created_at`
+- `completed_at`
+
+#### `reviews`
+- `id`
+- `order_id`
+- `user_id`
+- `rating`
+- `comment`
+- `has_proof` (Boolean)
+- `created_at`
+
+### 10.5 Key Relationships Summary
+
+- `users` → `vehicle_garage` → `vehicles`
+- `products` → `product_compatibility` → `vehicles`
+- `orders` → `reviews`
+- `business_profiles` → `products` / `orders`
+- `vehicle_history` → `orders` (optional link)
+
+### 10.6 Recommended Indexes
+For performance, the following indexes are strongly recommended:
+
+- `products`: Index on `oem_number`, `brand`, `category_id`
+- `product_compatibility`: Index on `vehicle_id` and `product_id`
+- `vehicle_history`: Index on `vehicle_id` and `date`
+- `orders`: Index on `user_id` and `status`
+
+### 10.7 Security Notes per Table
+- `user_auth`: Highest security (encryption + limited access)
+- `vehicles` and `vehicle_history`: Medium security with privacy controls
+- `products` and `reviews`: Public read access with moderation
+- `audit_logs` and `system_health`: Admin-only access
