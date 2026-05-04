@@ -650,3 +650,7 @@ docs/REUSABLE_PLATFORM_CORE_AND_ID_SYSTEM.md
 ## [Current Date] – Started COMPATIBILITY_ENGINE_FINAL_IMPLEMENTATION.md
 - Completed Wave 1 covering architecture, data structure, matching logic, and security.
 - Next: Wave 2 of this file.
+## [Current Date] – Added Data Quality Section to Compatibility Engine
+- Added Section 32: Data Quality, Validation & Automation Rules (researched).
+- Focus: Automated validation during upload, supplier quality scoring, and smart automation rules.
+- Next: Continue adding more sections to COMPATIBILITY_ENGINE.md or move to another file.
