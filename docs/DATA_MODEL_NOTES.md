@@ -288,3 +288,72 @@ For performance, the following indexes are strongly recommended:
 - `vehicles` and `vehicle_history`: Medium security with privacy controls
 - `products` and `reviews`: Public read access with moderation
 - `audit_logs` and `system_health`: Admin-only access
+---
+
+## 11. Data Retention, Archiving & Cleanup Policies
+
+### 11.1 Purpose
+To keep the platform fast, affordable, and compliant, the system must have clear rules for how long different types of data are kept.
+
+### 11.2 Data Retention Rules
+
+| Data Type                        | Retention Period       | Action After Period          | Reason |
+|----------------------------------|------------------------|------------------------------|--------|
+| Detailed Search Logs             | 30 days                | Automatically deleted        | Cost & Privacy |
+| User Activity Logs (non-sensitive) | 90 days              | Archived                     | Analytics |
+| Order & Transaction History      | 5 years                | Archived                     | Legal & Tax |
+| Vehicle History                  | Permanent              | Never deleted                | Core value |
+| Product Reviews                  | Permanent              | Never deleted                | Trust & Social Proof |
+| Audit Logs (High-risk actions)   | Permanent              | Never deleted                | Security & Compliance |
+| Temporary Media (upload previews)| 7 days                 | Deleted                      | Storage cost |
+
+### 11.3 Automated Cleanup System
+The platform should run daily automated tasks that:
+- Delete expired search logs
+- Archive old orders and analytics data
+- Move inactive vehicles (unregistered for long periods) to an archived state
+- Clean up temporary files and failed uploads
+
+### 11.4 User Data Deletion Rights
+Users must be able to request full or partial deletion of their data. The system should:
+- Allow users to export their data first
+- Anonymize or delete personal data upon request (while keeping necessary records like orders for legal reasons)
+- Provide clear information about what can and cannot be deleted
+
+### 11.5 Archiving Strategy
+Instead of deleting important data, the system should move old records to archive tables or cold storage. This keeps the main database fast while preserving historical information when needed.
+---
+
+## 12. Security, Access Control & Privacy Patterns
+
+### 12.1 Security Principles
+- **Least Privilege**: Every user and system component should only have the minimum access required.
+- **Data Separation**: Sensitive data (authentication, financial, medical) is stored separately from public data.
+- **Audit Everything**: All important actions must be logged.
+- **Encryption**: Sensitive data is encrypted both in transit and at rest.
+
+### 12.2 Access Control Levels
+
+| Role                  | Access Level                          | Examples of Allowed Actions |
+|-----------------------|---------------------------------------|-----------------------------|
+| **Client**            | Limited                               | View products, place orders, manage own garage |
+| **Service Provider**  | Medium                                | Manage services, view compatible parts, access own orders |
+| **Supplier**          | Medium                                | Manage products, upload compatibility data, view own sales |
+| **Staff (Selected)**  | High (Role-based)                     | Review disputes, approve data, manage users |
+| **Admin / Owner**     | Full                                  | Full system access and configuration |
+
+### 12.3 Privacy Controls
+- Users can control how much of their vehicle history is shared with service providers.
+- Sensitive fields (email, phone, address) are hidden by default and only shared when necessary.
+- All personal data access is logged and can be reviewed by the user or admin.
+
+### 12.4 Fraud & Risk Management
+- Every user and business has a **Risk Score** that updates automatically based on behavior (returns, disputes, payment issues).
+- High-risk accounts can be automatically limited (e.g., cannot use Cash on Delivery).
+- Suspicious patterns (multiple accounts from same IP, rapid orders, etc.) trigger staff review.
+
+### 12.5 Recommended Security Practices
+- Use Row-Level Security (RLS) in PostgreSQL/Supabase to enforce data access rules at the database level.
+- Implement rate limiting on all public APIs.
+- Regularly rotate API keys and secrets.
+- Conduct periodic security audits and access reviews.
