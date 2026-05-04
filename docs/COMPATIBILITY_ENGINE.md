@@ -167,3 +167,63 @@ The system supports automatic promotions such as “Buy this part and get 15% of
 
 ## 22. Zero Results Handling
 When no matches are found, the system shows a helpful message and automatically displays the vehicle selection/search bar again.
+---
+
+## 37. Matching Logic & Search Experience (Researched Implementation)
+
+### 37.1 Matching Priority System
+The Compatibility Engine follows this strict priority order, based on how professional platforms like TecDoc and 7zap operate:
+
+1. **VIN Match** (Highest priority – 100% certainty)
+2. **OEM Number Match** (Direct manufacturer part number)
+3. **Technical Attribute Match** (Engine code, fuel type, transmission, body style, drive type)
+4. **Manual / Bulk Mapping** (Supplier-uploaded compatibility)
+5. **Fuzzy / Near Match** (Lowest priority)
+
+### 37.2 Near Match & Percentage Ranking
+When a part does not have a 100% match, the system must clearly display the match percentage. Results are ranked from highest to lowest:
+
+- 100% Match → “Guaranteed Fit”
+- 95–99% Match → “Highly Recommended – Minor verification needed”
+- 90–94% Match → “Good Match – Please verify specifications”
+- Below 90% → Shown only if user enables “Show near matches”
+
+Each result must clearly show the matching attributes in green and non-matching attributes in red, ranked from most important to least important.
+
+### 37.3 OEM vs Aftermarket Distinction
+Following best practices from Alibaba, Amazon, and eBay:
+
+- **OEM (Original Equipment Manufacturer)**: Marked with the car brand logo and labeled “Genuine”.
+- **Aftermarket Premium**: Labeled “Premium” (e.g., Bosch, Brembo, Mann-Filter).
+- **Aftermarket Standard**: Labeled “Standard”.
+
+The system must allow filtering by these three categories.
+
+### 37.4 “Cars that fit” Feature
+When a user clicks on a part, the system must show a section labeled **“Cars that fit”**. This section displays:
+
+- Brand, Model, Year, Engine, and Version (European, Chinese, Middle East, etc.)
+- Ranked by number of successful installations (most installed vehicles appear first)
+- Each vehicle entry shows the match percentage
+
+This feature is inspired by 7zap and TecDoc’s vehicle compatibility view.
+
+### 37.5 Search Flexibility
+The search engine must support multiple search methods:
+
+- Visual browsing (Brand → Model → Generation → Year)
+- VIN search
+- Part number search (OEM, Aftermarket, Barcode)
+- Category browsing
+- Keyword search with fuzzy matching
+
+The system must return relevant results regardless of how the user searches, following the flexible search experience of Alibaba and Amazon.
+
+### 37.6 Real-time TecDoc Integration
+The engine connects to TecDoc only when needed (for example, when a client selects a vehicle and searches for parts). When connected, the system displays:
+
+- Official TecDoc images and specifications
+- All matching parts from Autopro suppliers underneath
+- Clear separation between TecDoc reference data and supplier listings
+
+This approach ensures legal compliance while giving users a full TecDoc-like experience.
