@@ -844,3 +844,5 @@ Added Multi-Provider/Multi-Vehicle bookings, Staff Permissions, System Integrati
 Added Mobile Services, Reporting & Analytics, Marketing Tools, Certification Verification, and Liability Rules to `SERVICE_BOOKING_SYSTEM.md`.
 ## Latest Update – Service Booking System Wave 5 Completed
 Added Smart Features, Client Experience Enhancements, Provider Onboarding, Data Privacy, and Final Governance to `SERVICE_BOOKING_SYSTEM.md`.
+## Latest Update – Service Booking System Wave 6 Completed
+Added Advanced Diagnostics & AI, Loyalty Programs, Multi-Language/Country Support, and Final Governance to `SERVICE_BOOKING_SYSTEM.md`.
