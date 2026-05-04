@@ -227,3 +227,66 @@ The engine connects to TecDoc only when needed (for example, when a client selec
 - Clear separation between TecDoc reference data and supplier listings
 
 This approach ensures legal compliance while giving users a full TecDoc-like experience.
+---
+
+## 38. Data Model & Storage Structure (Researched Implementation)
+
+### 38.1 Core Data Entities
+Based on industry standards used by TecDoc, 7zap, and major automotive databases, the Compatibility Engine must include the following core entities:
+
+- **Vehicle Master Data**: Make, Model, Generation, Phase/Facelift, Year, Body Type, Engine Code, Fuel Type, Transmission, Drive Type, Market/Region.
+- **Part Master Data**: Part ID, Manufacturer Part Number (OEM), Aftermarket Number, Brand, Category, Sub-category, Dimensions, Weight, GTIN/Barcode.
+- **Compatibility Relationship**: Links between Vehicle and Part, including Match Type (Exact, Near, Universal), Match Percentage, and Source (TecDoc, Manual, Supplier).
+- **Regional Variant**: Handles differences between European, Chinese, Middle East, North American, and other market versions of the same vehicle.
+- **OEM & Cross-Reference Table**: Stores multiple OEM numbers and their relationships.
+- **Media & Documentation**: Links to images, PDFs, installation guides, and 3D models.
+
+### 38.2 Database Architecture Recommendation
+After analyzing TecDoc’s structure and how large platforms (Alibaba, Amazon Automotive, eBay Motors) handle millions of compatibility records, the recommended approach is a **hybrid model**:
+
+- **Relational Database** (PostgreSQL or MySQL) for core entities (Vehicles, Parts, Suppliers, Orders).
+- **Graph Database** (Neo4j or similar) for compatibility relationships. This allows fast traversal when finding all vehicles that fit a specific part or all parts that fit a specific vehicle.
+- **Search Engine** (Elasticsearch or similar) for fast, flexible searching across part numbers, vehicle attributes, and keywords.
+
+This hybrid structure is currently used by several high-performance automotive platforms to balance speed, flexibility, and data integrity.
+
+### 38.3 How to Store Compatibility Data
+For parts that fit hundreds or thousands of vehicles, the system should **not** create one record per vehicle. Instead:
+
+- Each Part has a **Compatibility Array** stored as a reference to Vehicle IDs or grouped by Vehicle Family.
+- Vehicles are grouped logically (e.g., BMW 3 Series E90/E91/E92/E93 share many parts).
+- Regional variants and facelifts are stored as separate but linked records.
+
+This structure follows TecDoc’s KType and Article Number system while remaining flexible for manual updates.
+
+### 38.4 Data Normalization vs Performance
+- Core data (Vehicles, Parts, Brands) should be normalized to avoid duplication.
+- Compatibility relationships can be partially denormalized (storing key attributes like Engine Code directly in the relationship table) to improve read performance during searches.
+- This approach is commonly used in large automotive databases to handle both high accuracy and fast response times.
+
+### 38.5 Versioning & History
+Every compatibility record must include:
+- Creation date
+- Last modified date
+- Source of the data (TecDoc, Supplier Upload, Manual Entry, Admin Override)
+- Version history for audit and rollback purposes
+
+This is essential for platforms that need to track changes over time, especially when dealing with manufacturers and large suppliers.
+
+### 38.6 Scalability Considerations
+The data model must support:
+- Millions of parts
+- Hundreds of thousands of vehicles
+- Multiple countries and regional variants
+- Real-time and batch updates from suppliers
+
+The recommended structure allows the system to scale while remaining maintainable by a small team.
+
+### 38.7 Future-Proofing
+The data model is designed to eventually support advanced use cases such as:
+- Full vehicle development and testing data
+- Integration with OBD/diagnostic tools
+- AI-based predictive maintenance
+- Manufacturer and supplier collaboration portals
+
+This ensures the system can grow from a simple parts marketplace into a full automotive ecosystem platform.
