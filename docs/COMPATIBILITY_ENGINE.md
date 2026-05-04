@@ -749,3 +749,74 @@ This measured approach reduces risk while allowing the platform to grow into a c
 
 ### 31.9 Competitive Advantage
 By planning for these advanced features from day one (even if implemented later), Autopro can position itself as a forward-thinking platform rather than just another car parts website. This long-term vision helps attract serious partners, investors, and manufacturers who are looking for modern, scalable solutions.
+---
+
+## 32. Data Quality, Validation & Automation Rules (Researched Implementation)
+
+### 32.1 Importance of Data Quality
+The success of the Compatibility Engine depends heavily on the quality of the data it uses. Poor compatibility data leads to wrong part recommendations, high return rates, and loss of user trust. Therefore, the system must include strong validation, automation, and quality control mechanisms from day one.
+
+### 32.2 Automated Validation During Upload
+When suppliers upload parts (individually or in bulk), the system must automatically check for the following:
+
+- Missing critical fields (OEM number, compatibility list, brand, category)
+- Invalid or duplicate OEM numbers
+- Inconsistent compatibility data (e.g., the same part listed with conflicting vehicle matches)
+- Unrealistic pricing or stock levels
+- Poor quality images or missing media
+
+Parts that fail validation should not be blocked entirely. Instead, they should be moved to a “Needs Review” list for the supplier to complete or correct.
+
+### 32.3 Compatibility Data Validation Rules
+The system should enforce the following rules when processing compatibility data:
+
+- Every part must be linked to at least one vehicle or marked as “Universal”.
+- Regional variants must be correctly assigned (e.g., European vs Chinese specification).
+- Facelift and generation differences must be respected.
+- Conflicting data from different sources should be flagged for manual review.
+
+### 32.4 Quality Scoring System
+The Compatibility Engine should maintain a hidden **Compatibility Quality Score** for every supplier and part. This score is influenced by:
+
+- Accuracy of uploaded compatibility data
+- Number of successful installations vs returns
+- User reports and complaints
+- Response time to correction requests
+
+Suppliers with higher quality scores should receive better visibility and ranking. Those with consistently low scores should face automatic restrictions.
+
+### 32.5 Automation Rules
+The system should support automated rules that help maintain data quality without constant manual intervention. Examples include:
+
+- Automatically pause parts from suppliers whose quality score drops below a defined threshold.
+- Automatically approve minor compatibility corrections from Trusted or VIP suppliers.
+- Flag and review parts that receive multiple “Does not fit” reports within a short period.
+
+These rules should be fully flexible and adjustable by the Admin and Selected Employees.
+
+### 32.6 Manual Review Process
+For cases that require human judgment, the system should allow Selected Employees to:
+
+- Review and correct compatibility data
+- Approve or reject bulk uploads
+- Override automated decisions when needed
+- Add internal notes for future reference
+
+All manual changes must be logged with clear reasoning.
+
+### 32.7 Continuous Improvement
+The system should regularly analyze data quality trends and suggest improvements. This can include:
+
+- Identifying vehicle models with high mismatch rates
+- Detecting suppliers who consistently upload low-quality data
+- Recommending updates to validation rules based on real-world performance
+
+### 32.8 Implementation Priority
+For day one, the following data quality features should be implemented:
+
+1. Basic validation during part upload (missing fields, duplicates).
+2. Quality scoring system for suppliers.
+3. Manual review workflow for flagged items.
+4. Simple automation rules (e.g., auto-pause low-quality suppliers).
+
+More advanced validation and AI-assisted quality control can be added in later phases.
