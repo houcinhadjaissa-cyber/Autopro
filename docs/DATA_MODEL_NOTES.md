@@ -1,51 +1,136 @@
 # Autopro Data Model & Database Architecture
 
-## 1. Vision & Strategy
-*   **Backbone First:** This is the primary database planning file.
-*   **Cross-Project Core:** Supports Autopro first, but allows future projects (grocery, medical, etc.) to use the same user/ID system.
-*   **Flexibility:** Logic is designed to work with any database (like Supabase) but remains flexible.
-*   **Beginner Friendly:** Tables use simple names like `users`, `vehicles`, and `orders`.
+## 1. Vision & Strategic Goals
 
-## 2. Infrastructure & Optimization (Low Cost/High Speed)
-*   **Media Storage:** Photos/Videos/PDFs are stored in light object storage, NOT the database.
-*   **Caching:** Uses device-level caching to save server costs and increase speed.
-*   **Auto-Cleaning:** An automated algorithm decides what data stays "live" and what is archived to keep the server light and cheap.
-*   **Live Vehicles:** Only "live" registered vehicles are saved; unregistered/crashed vehicles are archived/deleted to save space.
+### 1.1 Primary Purpose
+This file defines the complete database architecture and data model for Autopro. It serves as the **core reusable structure** that can be adapted for future projects (e.g., grocery, medical, real estate, or other marketplaces).
 
-## 3. Global Identity & Localization
-*   **Global User ID:** One account works across all future owner projects.
-*   **Security Separation:** Login emails and passwords are stored separately from public profiles for maximum security.
-*   **Algeria-Specific Rates:** Supports manual overrides for realistic currency exchange rates (e.g., Square rate vs. Bank rate).
-*   **Route Rates:** Shipping prices are calculated by specific routes (China-to-Algeria, etc.).
-*   **No Hebrew:** Hebrew is removed from all language and data options entirely.
+### 1.2 Key Principles
+- **Backbone First**: Build a strong, scalable foundation before adding features.
+- **Multi-Project Reusability**: One global identity system that works across all future platforms.
+- **Performance & Cost Efficiency**: Designed to run affordably while remaining fast.
+- **Future-Proof**: Supports advanced use cases such as AI, diagnostics, vehicle development, and manufacturer integration.
+- **Security by Design**: Strong separation between sensitive and public data.
 
-## 4. Automotive & TecDoc Logic
-*   **Garage System:** Supports multiple vehicles per user with privacy controls.
-*   **Vehicle History:** Permanent records for service, parts, and mileage.
-*   **TecDoc Copy+:** Product catalog mimics TecDoc compatibility but adds easier bulk-upload tools for local suppliers.
-*   **Snapshot Pricing:** The system "freezes" the price at checkout so it cannot change during the order process.
+## 2. Database Architecture
 
-## 5. Staff & Operations
-*   **Automation:** Tasks (disputes, fraud alerts) are created automatically for staff.
-*   **Performance Tracking:** System automatically ranks staff based on "Excellent Work" vs "Mistakes."
-*   **Debt Ledger:** A dedicated system tracks money owed to Autopro by businesses (COD orders).
+### 2.1 Recommended Technology Stack
+- **Primary Database**: PostgreSQL (or Supabase/Postgres-compatible)
+- **Search Layer**: Elasticsearch (or Meilisearch for lower cost)
+- **Relationship Layer**: Graph database (Neo4j or similar) for complex compatibility and relationship queries
+- **Media Storage**: Object storage (S3, Supabase Storage, or Cloudflare R2)
+- **Caching**: Redis (or built-in caching in Supabase)
 
-## 6. Search & Discovery (Optimized)
-*   **Anonymized Search Logs:** Autopro will track what users search for to improve results, but logs are anonymized for privacy.
-*   **30-Day Cleanup:** Detailed search history is automatically deleted after 30 days to keep server costs low.
-*   **Trending & Recommendations:** The system will use "Trending Searches" by country and "Product Recommendations" (e.g., matching filters to oil) to increase sales.
+### 2.2 Hybrid Architecture Approach
+The system uses a hybrid model to balance performance, flexibility, and cost:
+- Relational database for core structured data (users, orders, vehicles, parts).
+- Graph database for complex relationships (compatibility, vehicle history, social connections).
+- Search engine for fast, flexible querying.
+- Object storage for media files.
 
-## 7. Analytics & System Health
-*   **Automated Summaries:** Detailed daily stats are converted into summaries; old raw data is deleted automatically to save space.
-*   **Business Dashboards:** Every business gets its own analytics table to track growth and performance.
-*   **System Health Monitoring:** A dedicated table monitors automated tasks (like payments or imports) and alerts the owner immediately if anything fails.
+This approach is used successfully by large-scale platforms that handle millions of records and complex relationships.
 
-## 8. Security & Fraud Prevention
-*   **IP Blocking:** A "Blocked IPs" system will automatically stop known hackers or aggressive bots.
-*   **Sensitive Logs:** Any high-risk action (changing bank details or deleting users) is logged permanently for audit.
-*   **Risk Scores:** Both users and businesses are assigned a risk score based on return behavior, payment disputes, and trust history.
+## 3. Core Entities & Tables
 
-## 9. Social Commerce (TikTok-Style)
-*   **Short Videos:** A dedicated table stores short video demonstrations linked directly to Product IDs.
-*   **One-Click Buy:** Video records must support direct checkout triggers.
-*   **Influencer Tracking:** Influencer campaigns are tracked in the database to automate commission and sales reporting.
+### 3.1 Global Identity System
+- `users` – Core user accounts (global across all projects)
+- `user_profiles` – Public profile information
+- `user_auth` – Separate secure table for emails and passwords
+- `user_roles` – Role assignments (client, supplier, service provider, staff, admin, etc.)
+
+### 3.2 Vehicle System
+- `vehicles` – Master vehicle records
+- `vehicle_history` – Permanent service, parts, and maintenance records
+- `vehicle_garage` – Links users to their vehicles (with privacy controls)
+- `vehicle_specifications` – Detailed technical data (engine, transmission, etc.)
+
+### 3.3 Product & Compatibility System
+- `products` – Master product table
+- `product_compatibility` – Links products to vehicles (with match percentage and source)
+- `product_categories` – Hierarchical categories
+- `product_media` – Images, videos, and documents (stored in object storage)
+
+### 3.4 Business & Operations
+- `business_profiles` – Supplier, service provider, and fleet accounts
+- `staff_members` – Platform and business staff
+- `orders` – All order types (products, services, packages)
+- `invoices` – Billing and invoicing records
+- `payments` – Payment transactions and history
+
+### 3.5 Supporting Tables
+- `reviews` – Product and service reviews with proof linking
+- `loyalty_points` – User loyalty and rewards
+- `notifications` – System and user notifications
+- `audit_logs` – All important system actions
+- `system_health` – Monitoring of automated tasks and background jobs
+
+## 4. Automotive-Specific Logic
+
+### 4.1 Compatibility Engine Support
+- Supports TecDoc-style matching with additional flexibility for local suppliers.
+- Stores match percentage, match type, and data source.
+- Supports regional variants and facelift differences.
+
+### 4.2 Vehicle History & Diagnostics
+- Permanent, immutable service and part installation records.
+- Support for future OBD/diagnostic data integration.
+- Links between parts, services, and vehicle history.
+
+### 4.3 Garage & Multi-Vehicle Management
+- Users can have multiple vehicles.
+- Privacy controls for sharing vehicle history with service providers.
+- Support for fleet and business vehicle groups.
+
+## 5. Security & Compliance
+
+### 5.1 Data Separation
+- Sensitive authentication data is stored separately from public profiles.
+- Financial and personal data has restricted access.
+
+### 5.2 Fraud Prevention
+- Risk scoring for users and businesses.
+- IP blocking and suspicious activity detection.
+- Permanent audit logs for high-risk actions.
+
+### 5.3 Data Retention
+- 30-day cleanup for detailed search logs.
+- Automated archiving of old or inactive records.
+- Clear rules for data deletion upon user request.
+
+## 6. Performance & Scalability
+
+### 6.1 Cost Optimization
+- Media stored outside the database.
+- Aggressive caching strategy.
+- Automated data cleanup and archiving.
+
+### 6.2 Scalability
+- Designed to handle millions of products and compatibility records.
+- Supports sharding and read replicas when needed.
+- Background job processing for heavy operations.
+
+## 7. Multi-Project Reusability
+
+### 7.1 Global User Identity
+One user account works across all future projects owned by the same creator.
+
+### 7.2 Modular Design
+Tables are designed to be reusable with minimal changes for new verticals (grocery, medical, etc.).
+
+### 7.3 Configuration Layer
+Project-specific settings (currency, language, tax rules, etc.) are stored in a flexible configuration system.
+
+## 8. Future Expansion
+
+### 8.1 Advanced Features
+- AI-based recommendations and predictive maintenance.
+- Augmented Reality (AR) support.
+- Integration with diagnostic tools and vehicle development systems.
+- Manufacturer and engineering collaboration portals.
+
+### 8.2 Data Insights
+- Anonymized analytics for internal decision-making.
+- Potential future offering of aggregated insights to manufacturers and suppliers.
+
+## 9. Summary
+This data model is designed to be the strong, flexible, and future-proof foundation for Autopro and all future projects. It balances performance, security, cost efficiency, and advanced functionality while remaining maintainable by a small team.
