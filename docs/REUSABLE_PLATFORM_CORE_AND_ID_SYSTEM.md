@@ -1370,3 +1370,14 @@ Autopro must avoid:
 - Making the ID system hard for developers to understand
 
 The reusable core must stay fully flexible, readable, reusable, automated where possible, and safe.
+
+---
+## ✅ OWNER-APPROVED DECISIONS (2026-05-05)
+
+### Global ID Format
+- Format: `auto_{project}_{type}_{ulid}`
+- Example: `auto_autopro_user_01JZ8X9Y2K3M4N5P6Q7R8S9T0`
+- Why ULID: Sortable, shorter than UUID, URL-safe, works across all future projects
+- User-centric: Same user ID works across Autopro + future projects; data shared ONLY with explicit consent
+
+### Multi-Project Isolation (Hybrid Model)
