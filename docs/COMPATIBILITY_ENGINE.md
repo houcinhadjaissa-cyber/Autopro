@@ -931,3 +931,53 @@ By following the rules and features documented in this file, the engine can serv
 ## End of COMPATIBILITY_ENGINE.md
 
 This file now contains both the core specification and advanced researched implementation guidelines for the Compatibility Engine.
+---
+## ✅ OWNER-APPROVED DECISIONS (2026-05-05)
+
+### Search Paths (All Supported)
+- VIN scan (camera or manual entry)
+- Visual catalog click (7zap-style exploded diagrams)
+- Text search (part name, keyword, description)
+- OEM number lookup (manufacturer part number)
+- Package/bundle search ("brake kit for Golf 7")
+- Vehicle selection (Year → Make → Model → Engine → Trim)
+- AI suggestion ("Based on your Golf 7, you might need...")
+
+### Match Certainty Display
+- 🟢 100% Match: "Confirmed Fit" + checkmark + vehicle count
+- 🟡 85-99%: "Likely Fit" + warning icon + "Verify manually"  
+- 🔴 <85%: "Not Compatible" + X icon + alternative suggestions
+- Tap vehicle count to expand list: "15x VW Golf 2009 2.0 TDI, 12x VW Caddy 2008 2.0 TDI..."
+
+### TecDoc Integration (Day-One Ready)
+- API connector built but disabled by default
+- Manual YMM mapping active for soft launch
+- Toggle in admin dashboard to enable TecDoc when license acquired
+- Fallback: If TecDoc API fails → use cached/manual data
+
+### Advanced Comparison Features
+- Side-by-side: Part brands, price vs quality, shipping time vs cost
+- Visual: spec tables, images, 3D models (if available)
+- Direct actions: "Buy This Part", "Book Installation", "Add to Fleet Order"
+
+### Saved Items / Garage System (Your 7zap.com Vision)
+1. User adds vehicle → system loads TecDoc-style exploded diagram
+2. Left panel: Vehicle technical image (facelift-aware, year-specific)
+3. Center panel: Standard category icons (engine, brakes, electrical...)
+4. Click category → shows ONLY parts compatible with THIS exact vehicle
+5. Parts from multiple suppliers shown with: price, shipping, rating, match score
+6. Garage integrates with: Compatibility Engine, Service Booking, Vehicle History
+
+### Sponsored/Featured Parts (Monetization)
+- Featured placement in search results (labeled "Sponsored")
+- Homepage banner ads (category-specific targeting)
+- "Premium Badge" on product cards (requires verification)
+- Sponsored compatibility matches (must still meet minimum quality score)
+- All sponsored content clearly labeled + user can filter out
+
+### OBD/Diagnostics Integration (Day-One Ready)
+- Supported devices: Autel MaxiCOM, Launch X431 (China); Bosch KTS, Delphi DS (Europe); Generic ELM327 (Africa); Snap-on MODIS (US)
+- Connection: Browser Bluetooth API (mobile-friendly) + fallback manual code entry
+- AI analysis optional: User toggles "Show AI Diagnosis"
+- Comparison table: AI findings vs mechanic findings vs TecDoc database
+- One-click: "Fix This Issue" → shows compatible parts + service providers
