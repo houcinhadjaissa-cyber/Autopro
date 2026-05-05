@@ -5061,3 +5061,53 @@ Part 2 complete: #40 - #85
 Part 3 complete: #86 - #112
 Part 4 complete: #113 - #138
 Part 5 complete: #139 - #166
+---
+## ✅ OWNER-APPROVED DECISIONS (2026-05-05)
+
+### Payment Authorization Flow (Research-Based)
+- Client pays → Authorization hold (not captured)
+- Supplier/Provider has 48 hours to confirm order/service
+- If confirmed → Capture payment + release to settlement queue
+- If not confirmed → Cancel authorization + notify client
+- If disputed → Hold funds + trigger review workflow
+- Why 48 hours: Industry standard (Alibaba/Amazon), enough time for stock check, prevents client frustration
+
+### Cash-on-Delivery Trust Checks
+- Trust Score Calculation:
+  * Base score: 50
+  * +10 verified phone, +10 verified email, +5 per successful order (max +20), +15 VIP status
+  * -20 per failed COD attempt, -50 fraud flags (immediate block)
+- COD Limits by Trust Level:
+  * 0-49: ❌ Not allowed (100% upfront deposit required)
+  * 50-69: 10,000 DZD / 5,000 NGN limit (30% deposit)
+  * 70-89: 50,000 DZD / 25,000 NGN limit (10% deposit)
+  * 90-100: Unlimited COD (no deposit)
+
+### Supplier Payout Timing (Risk-Based)
+- New Tier (<10 orders, <30 days): Payout after delivery confirmation + 7-day return window, 20% reserve
+- Trusted Tier (>50 orders, >90 days, <2% disputes): Payout after shipping handoff confirmation, 5% reserve
+- VIP Tier (>200 orders, >180 days, <0.5% disputes): Payout after order confirmation (pre-funding), 0% reserve
+- Risky Tier (>5% disputes, fraud flags): Manual admin approval required, 50% reserve
+
+### Algeria/Nigeria Currency Handling (Dual-Rate System)
+- Algeria Implementation:
+  * Two rate sources in config table: `bank_rate` (auto-fetch from Bank of Algeria API) + `market_rate` (manual admin override, updated weekly)
+  * Checkout shows both options: "Pay with official bank rate (1 EUR = 150 DZD) OR market rate (1 EUR = 260 DZD) - faster processing"
+  * Default: market_rate (configurable per country)
+- Other Countries:
+  * Nigeria: Central Bank of Nigeria API (official) + black market monitoring (for risk assessment)
+  * Europe: ECB API (auto-fetch)
+  * China: PBOC API + commercial bank spreads
+  * Admin dashboard shows rate sources + last update time
+
+### QR Confirmation Protocol
+- QR REQUIRED FOR: Package handoff (supplier → shipping), Cash collection (COD deliveries), High-value orders (> $500 equivalent), Admin financial overrides
+- MANUAL CONFIRMATION ALLOWED FOR: Service completion (if QR not feasible), Low-value orders (< $50), Emergency situations (with reason logged)
+- Implementation: Unique QR per transaction (order_id + timestamp + HMAC signature), scan via mobile camera, server validates signature + timestamp + order status
+
+### Chargeback Responsibility (Proof-Based)
+- Wrong part shipped → Supplier responsible → Proof: Order details + part photos + compatibility check logs → Fee refunded to client, charged to supplier
+- Damaged in transit → Shipping company responsible → Proof: Handoff confirmation + delivery photos + tracking → Fee held until resolution, then assigned
+- System error (bug) → Autopro responsible → Proof: Error logs + reproduction steps → Fee refunded, internal incident report
+- Client fraud → Client responsible → Proof: Device/IP logs + behavioral analysis → Fee retained, client banned
+- Shared fault → Proportional assignment → Proof: Multi-party evidence review → Fee split per admin decision
