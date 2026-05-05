@@ -81,3 +81,114 @@
 ## 🧩 COMPONENT LIBRARY (Your Vision)
 
 ### Vehicle Garage Page (7zap.com Style)
+
+---
+
+## 📱 MOBILE-FIRST UX RULES
+
+### Navigation
+- Bottom tab bar for primary actions (Home, Search, Garage, Bookings, Profile)
+- Hamburger menu for secondary actions (Settings, Help, Language)
+- Back button always visible in header
+
+### Forms
+- One field per row on mobile
+- Auto-focus next field on input
+- Real-time validation (green check/red X)
+- "Save as Default" checkbox for address/payment info
+
+### Loading States
+- Skeleton screens (gray placeholders) instead of spinners
+- Progressive image loading (blur → sharp)
+- Offline indicator: "You're offline — changes will sync when connected"
+
+### Error Handling
+- User-friendly messages: "We couldn't find parts for this vehicle. Try: [suggestions]"
+- Actionable errors: "Payment failed. Try: [another method] or [contact support]"
+- Recovery paths: Every error screen has "Go Back" + "Try Again" buttons
+
+---
+
+## 🌙 DARK MODE SUPPORT
+
+### Implementation Plan
+- System-preference detection (auto-switch)
+- Manual toggle in user settings (sun/moon icon)
+- All colors defined in CSS variables for easy switching
+- Test both modes on mobile browser before launch
+
+### Dark Mode Colors
+- Background: `#0F172A` (instead of white)
+- Cards: `#1E293B` with subtle border
+- Text: `#F1F5F9` primary, `#94A3B8` secondary
+- Maintain same contrast ratios as light mode
+
+---
+
+## 🔄 FLEXIBILITY RULES (Your Requirement)
+
+### Config-Driven Design
+- Colors, fonts, spacing defined in `design-config.json` (no hardcoding)
+- Admin can update brand colors without code changes
+- Country-specific UI tweaks via config (e.g., RTL for Algeria)
+
+### Component Variants
+- Every component has: Default, Compact, Expanded variants
+- Admin can choose variant per page via config
+- Example: Product grid can switch between "2-column mobile" / "3-column tablet" / "4-column desktop"
+
+### A/B Testing Ready
+- All UI elements tagged for analytics
+- Admin can run A/B tests: "Button Color: Blue vs Green"
+- Results dashboard shows conversion impact
+
+---
+
+## 🚫 EXCLUSIONS (Your Requirements)
+
+### Israel/Hebrew Exclusion
+- No Hebrew language option in language selector
+- No Israel country code in address forms
+- No +972 phone validation rule
+- Audit log entry if any attempt detected
+
+### No Clutter Rule
+- Progressive disclosure: Advanced features hidden until needed
+- No more than 3 primary actions per screen
+- "Show More" buttons instead of endless scrolling
+
+---
+
+## 📋 IMPLEMENTATION CHECKLIST (For Future Coding Phase)
+
+### Phase 1: Foundation (Technical Setup)
+- [ ] Setup Tailwind CSS with custom config (colors, fonts, spacing)
+- [ ] Create CSS variables for light/dark mode
+- [ ] Build responsive layout container (mobile-first breakpoints)
+- [ ] Implement RTL support for Arabic
+
+### Phase 2: Core Components
+- [ ] Vehicle Garage page (7zap.com style)
+- [ ] Omni-search bar with auto-complete
+- [ ] Product card component (with match score badges)
+- [ ] Service booking card component
+
+### Phase 3: Polish
+- [ ] Dark mode toggle + system detection
+- [ ] Offline support + skeleton screens
+- [ ] A/B testing framework for UI elements
+- [ ] Admin config panel for design tweaks
+
+---
+
+## ✅ OWNER APPROVAL
+
+This design system reflects my vision:
+- 7zap.com/TecDoc style vehicle garage ✅
+- Mobile-first, thumb-friendly UX ✅
+- Algeria/Nigeria localization (RTL, languages, address formats) ✅
+- Config-driven flexibility for future projects ✅
+- Israel/Hebrew exclusion ✅
+
+Approved by: houcinhadjaissa-cyber
+Date: 2026-05-05
