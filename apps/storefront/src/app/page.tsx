@@ -1,134 +1,40 @@
-export default function AdminDashboard() {
+export default function Home() {
   return (
-    <div className="min-h-screen bg-canvas">
-      {/* Top Navigation */}
-      <nav className="bg-surface-1 border-b border-surface-2 px-6 py-4">
-        <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-primary">Autopro Admin</h1>
-          <div className="flex items-center gap-4">
-            <div className="text-gray-400">👤 Admin User</div>
+    <main className="min-h-screen bg-canvas">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-b from-primary-900 to-canvas py-20 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+            Welcome to <span className="text-primary">Autopro</span>
+          </h1>
+          <p className="text-xl text-gray-300 mb-8">
+            Your complete automotive ecosystem - Parts, Services & Vehicle History
+          </p>
+          
+          {/* Search Bar Placeholder */}
+          <div className="max-w-2xl mx-auto bg-surface-1 rounded-lg p-4 border border-primary/20">
+            <div className="text-gray-400">
+              🔍 Search by VIN, Part Number, or Vehicle Model...
+            </div>
           </div>
         </div>
-      </nav>
-
-      <div className="flex">
-        {/* Sidebar */}
-        <aside className="sidebar w-64 min-h-screen p-6 hidden md:block">
-          <nav className="space-y-2">
-            <a href="#" className="block px-4 py-2 bg-primary/20 text-primary rounded-lg font-medium">
-              📊 Dashboard
-            </a>
-            <a href="#" className="block px-4 py-2 text-gray-400 hover:bg-surface-2 hover:text-white rounded-lg transition-all">
-              🛒 Orders
-            </a>
-            <a href="#" className="block px-4 py-2 text-gray-400 hover:bg-surface-2 hover:text-white rounded-lg transition-all">
-               Suppliers
-            </a>
-            <a href="#" className="block px-4 py-2 text-gray-400 hover:bg-surface-2 hover:text-white rounded-lg transition-all">
-              🔧 Services
-            </a>
-            <a href="#" className="block px-4 py-2 text-gray-400 hover:bg-surface-2 hover:text-white rounded-lg transition-all">
-              🚚 Shipping
-            </a>
-            <a href="#" className="block px-4 py-2 text-gray-400 hover:bg-surface-2 hover:text-white rounded-lg transition-all">
-              👥 Users
-            </a>
-            <a href="#" className="block px-4 py-2 text-gray-400 hover:bg-surface-2 hover:text-white rounded-lg transition-all">
-              ⚙️ Settings
-            </a>
-          </nav>
-        </aside>
-
-        {/* Main Content */}
-        <main className="flex-1 p-6">
-          {/* Stats Grid */}
-          <div className="grid md:grid-cols-4 gap-6 mb-8">
-            <div className="dashboard-card p-6">
-              <div className="text-gray-400 text-sm mb-2">Total Revenue</div>
-              <div className="text-3xl font-bold text-primary">$12,450</div>
-              <div className="text-success text-sm mt-2">↑ 12% this week</div>
-            </div>
-
-            <div className="dashboard-card p-6">
-              <div className="text-gray-400 text-sm mb-2">Total Orders</div>
-              <div className="text-3xl font-bold text-info">342</div>
-              <div className="text-success text-sm mt-2">↑ 8% this week</div>
-            </div>
-
-            <div className="dashboard-card p-6">
-              <div className="text-gray-400 text-sm mb-2">Active Suppliers</div>
-              <div className="text-3xl font-bold text-warning">28</div>
-              <div className="text-gray-400 text-sm mt-2">+3 new this month</div>
-            </div>
-
-            <div className="dashboard-card p-6">
-              <div className="text-gray-400 text-sm mb-2">Pending Orders</div>
-              <div className="text-3xl font-bold text-error">15</div>
-              <div className="text-gray-400 text-sm mt-2">Requires attention</div>
-            </div>
-          </div>
-
-          {/* Recent Orders */}
-          <div className="dashboard-card p-6 mb-8">
-            <h2 className="text-xl font-bold mb-4">Recent Orders</h2>
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className="border-b border-surface-2">
-                  <tr className="text-left text-gray-400">
-                    <th className="pb-3">Order ID</th>
-                    <th className="pb-3">Customer</th>
-                    <th className="pb-3">Product</th>
-                    <th className="pb-3">Amount</th>
-                    <th className="pb-3">Status</th>
-                  </tr>
-                </thead>
-                <tbody className="text-sm">
-                  <tr className="border-b border-surface-2">
-                    <td className="py-3">#ORD-001</td>
-                    <td className="py-3">Ahmed K.</td>
-                    <td className="py-3">Brake Pads - VW Golf</td>
-                    <td className="py-3">$125.00</td>
-                    <td className="py-3"><span className="px-2 py-1 bg-success/20 text-success rounded">Completed</span></td>
-                  </tr>
-                  <tr className="border-b border-surface-2">
-                    <td className="py-3">#ORD-002</td>
-                    <td className="py-3">Fatima B.</td>
-                    <td className="py-3">Oil Filter - Toyota</td>
-                    <td className="py-3">$45.00</td>
-                    <td className="py-3"><span className="px-2 py-1 bg-warning/20 text-warning rounded">Pending</span></td>
-                  </tr>
-                  <tr>
-                    <td className="py-3">#ORD-003</td>
-                    <td className="py-3">Mohammed L.</td>
-                    <td className="py-3">Spark Plugs Set</td>
-                    <td className="py-3">$78.50</td>
-                    <td className="py-3"><span className="px-2 py-1 bg-info/20 text-info rounded">Processing</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* Quick Actions */}
-          <div className="grid md:grid-cols-3 gap-6">
-            <button className="dashboard-card p-6 text-left hover:scale-105 transition-transform">
-              <div className="text-3xl mb-2">➕</div>
-              <div className="font-semibold text-primary">Add New Product</div>
-            </button>
-            <button className="dashboard-card p-6 text-left hover:scale-105 transition-transform">
-              <div className="text-3xl mb-2">👤</div>
-              <div className="font-semibold text-primary">Manage Suppliers</div>
-            </button>
-            <button className="dashboard-card p-6 text-left hover:scale-105 transition-transform">
-              <div className="text-3xl mb-2">📊</div>
-              <div className="font-semibold text-primary">View Analytics</div>
-            </button>
-          </div>
-        </main>
       </div>
-    </div>
-  );
-}              Find parts that perfectly match your vehicle using our advanced compatibility engine
+
+      {/* Features Section */}
+      <div className="max-w-6xl mx-auto px-4 py-16">
+        <h2 className="text-3xl font-bold text-center mb-12">
+          What We Offer
+        </h2>
+        
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* Feature 1 */}
+          <div className="bg-surface-1 rounded-lg p-6 border border-surface-2 hover:border-primary/50 transition-all">
+            <div className="text-4xl mb-4">🔧</div>
+            <h3 className="text-xl font-semibold mb-2 text-primary">
+              Compatible Parts
+            </h3>
+            <p className="text-gray-400">
+              Find parts that perfectly match your vehicle using our advanced compatibility engine
             </p>
           </div>
 
