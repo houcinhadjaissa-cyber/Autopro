@@ -1,1 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 11, 14, 17;
+  --background-end-rgb: 11, 14, 17;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  min-height: 100vh;
+}
+
+/* Sidebar styles */
+.sidebar {
+  background: #1E293B;
+  border-right: 1px solid #334155;
+}
+
+/* Dashboard cards */
+.dashboard-card {
+  background: #1E293B;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+  border-color: #6FB81A;
+  box-shadow: 0 4px 12px rgba(111, 184, 26, 0.1);
+}
