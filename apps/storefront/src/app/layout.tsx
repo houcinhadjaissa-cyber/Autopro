@@ -1,8 +1,20 @@
 import type { Metadata } from "next";
+import { Inter, JetBrains_Mono } from "next/font/google";
+import "./globals.css";
 
-export const meta Metadata = {
-  title: "Autopro API",
-  description: "Backend API for Autopro platform",
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const jetbrainsMono = JetBrains_Mono({ 
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
+});
+
+export const metadata: Metadata = {
+  title: "Autopro - Automotive Parts & Services Marketplace",
+  description: "Find compatible car parts, book services, and manage your vehicle history",
 };
 
 export default function RootLayout({
@@ -12,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-canvas text-white`}>
+        {children}
+      </body>
     </html>
   );
 }
