@@ -1,304 +1,157 @@
 # Autopro Project Log
 
-**Last Updated:** 2026-05-06
+**Last Updated:** 2026-05-07
 
-This file tracks all major progress on the Autopro project.
+This file tracks major progress on the Autopro project.
 
 ---
 
 # Project Overview
 
-Project Name: Autopro
-Type: Automotive Marketplace Platform
-Target Markets: Algeria, Nigeria
-Live URL: https://autopro-i38e.vercel.app/
+Project Name: **Autopro**
+
+Type: **Automotive marketplace platform**
+
+Target Markets:
+- Algeria
+- Nigeria
 
 ---
 
-# Phase 1: Documentation (COMPLETED)
+# Earlier Completed Foundation
 
-Date: Before 2026-05-06
+## Documentation Phase
+Completed before current Supabase phase:
+- platform blueprint and system planning
+- marketplace requirements
+- design system direction
+- user roles and flows
+- payment/logistics/specification documents
+- recovery memory files
 
-Completed Tasks:
-- Created GitHub repository
-- Created 30+ specification documents
-- Defined platform architecture
-- Documented user roles (11 types)
-- Documented payment systems (online + cash)
-- Documented shipping and logistics
-- Documented vehicle compatibility engine
-- Documented service booking system
-- Documented B2B/Fleet features
-- Documented monetization strategy
-- Documented admin dashboard requirements
-- Created ECOSYSTEM_INTEGRATION_PLAN.md
-- Locked all specifications
-
-Key Files Created:
-- AI_CONTEXT.md
-- CURRENT_STATUS.md
-- PROJECT_LOG.md
-- SYSTEMS_INDEX.md
-- PLATFORM_BLUEPRINT.md
-- USER_ROLES_AND_FLOWS.md
-- PAYMENTS_REFUNDS_RETURNS_CLEAN.md
-- SHIPPING_AND_LOGISTICS.md
-- COMPATIBILITY_ENGINE.md
-- SERVICE_BOOKING_SYSTEM.md
-- VEHICLE_ID_AND_HISTORY.md
-- B2B_FLEET_COMPATIBILITY.md
-- MONETIZATION_STRATEGY.md
-- ADMIN_DASHBOARD_REQUIREMENTS.md
-- HOMEPAGE_REQUIREMENTS.md
-- MVP_SCOPE.md
-- DATA_MODEL_NOTES.md
-- DESIGN_SYSTEM.md
-- And more...
+## Storefront Foundation
+Previously completed in project context:
+- Homepage
+- Search / Parts page
+- Services page
+- Garage page
+- Cart page
+- Login page
+- Header/navigation
 
 ---
 
-# Phase 2: Technical Setup (COMPLETED)
+# Current Session / Latest Progress
 
-Date: 2026-05-06
+## 1. UX Direction Decision
+- Option A and Option B were reviewed
+- Option B was selected as the preferred long-term UX direction
+- Full UX refactor was intentionally postponed
+- Reason: backend/data progress was more urgent than visual rearrangement
 
-Completed Tasks:
-- Created folder structure (apps/, packages/, docs/)
-- Connected Vercel to GitHub
-- Set Vercel root directory to apps/storefront
-- Configured Next.js 14
-- Configured Tailwind CSS with Autopro colors
-- Created package.json with dependencies
-- Created tsconfig.json
-- Created tailwind.config.ts
-- Created globals.css with design tokens
-- First successful deployment
+## 2. Dashboard Phase
+- Dashboard direction was reviewed and iterated
+- Dashboard became part of the working product discussion
+- After dashboard planning, the priority shifted to backend foundation and live data preparation
 
----
+## 3. Supabase Connection Phase
+Completed:
+- Supabase project URL confirmed
+- Publishable key confirmed as the correct frontend/public key
+- Frontend Supabase helper created at `src/lib/supabase.ts`
+- Live connection checking logic added in the app layer
 
-# Phase 3: Storefront Build (IN PROGRESS)
+## 4. Schema Creation Phase
+Completed:
+- Starter schema file created at `supabase/schema.sql`
+- Starter tables defined:
+  - `profiles`
+  - `vehicles`
+  - `products`
+  - `services`
+  - `orders`
+  - `order_items`
+- Starter indexes added
+- updated_at trigger function added
+- starter RLS policies added
 
-Date: 2026-05-06
+## 5. Phone-Friendly Setup Support
+Completed:
+- `public/sql-full.txt` created
+- `public/sql-part1.txt` created
+- `public/sql-part2.txt` created
+- `public/sql-part3.txt` created
+- `public/setup.html` created for easier phone-based access
 
-## Completed Pages
+## 6. SQL Fixes
+Completed:
+- SQL policy syntax issue identified during Supabase execution
+- Policy logic was simplified and corrected
+- Part-based SQL files were updated to the corrected version
 
-### Homepage (page.tsx)
-- Hero section with gradient
-- Welcome to Autopro heading
-- Search bar placeholder
-- 3 feature cards (Parts, Services, Vehicle History)
-- Footer with copyright
-- Status: LIVE
+## 7. Supabase SQL Execution
+Confirmed:
+- User successfully ran the SQL in Supabase SQL Editor
+- Final responses indicated successful execution
+- Database changes should now be applied in the Supabase project
 
-### Layout (layout.tsx)
-- HTML structure
-- Inter font loaded
-- Header component imported
-- Global styles applied
-- Status: LIVE
-
-### Header Component (components/Header.tsx)
-- Autopro logo
-- Desktop navigation (Parts, Services, My Garage)
-- Search bar
-- Cart icon with badge
-- Sign In button
-- Mobile hamburger menu
-- Mobile dropdown navigation
-- Status: LIVE
-
-### Search/Parts Page (search/page.tsx)
-- Page header with title
-- Vehicle selector dropdowns (Make, Model, Year)
-- Search button
-- Category filter sidebar
-- Price range slider
-- Brand checkboxes
-- 6 demo parts with:
-  - Image placeholder
-  - Brand name
-  - Part name
-  - Compatibility badge
-  - Star rating
-  - Price in DZD
-  - Add to cart button
-- Sort dropdown
-- Load more button
-- Mobile filter button
-- Status: LIVE
-
-### Services Page (services/page.tsx)
-- Page header with title
-- Location input field
-- Vehicle selector dropdown
-- Find Services button
-- Category pills (scrollable)
-- 6 demo services with:
-  - Icon placeholder
-  - Service name
-  - Provider name
-  - Price in DZD
-  - Rating and reviews
-  - Duration estimate
-  - Category badge
-  - Book Now button (mobile)
-- Emergency services banner
-- Status: LIVE
-
-### My Garage Page (garage/page.tsx)
-- Page header with Add Vehicle button
-- Vehicle selector cards
-- Add another vehicle card
-- Selected vehicle display with:
-  - Large icon
-  - Year, Make, Model
-  - License plate
-  - VIN number
-- 4 tabs: Overview, History, Parts, Documents
-- Overview tab:
-  - Mileage card with update button
-  - Last service card with book link
-  - Status card (Good/Warning)
-  - Quick action buttons (Find Parts, Book Service, Documents, Full Report)
-- History tab:
-  - Service history list
-  - Provider names
-  - Costs in DZD
-- Parts tab:
-  - Placeholder text
-  - Find Compatible Parts link
-- Documents tab:
-  - Registration upload
-  - Insurance upload
-- Status: LIVE
-
-### Cart Page (cart/page.tsx)
-- Page header with item count
-- Cart items list with:
-  - Item image placeholder
-  - Brand and name
-  - Compatibility badge
-  - Remove button
-  - Quantity controls (- and +)
-  - Line total
-- Continue shopping link
-- Order summary sidebar:
-  - Promo code input
-  - Apply button
-  - Subtotal
-  - Shipping (free over 10,000 DZD)
-  - Total in DZD
-  - Checkout button
-  - Trust badges (Secure, Fast Delivery, Easy Returns)
-- Empty cart state with Browse Parts link
-- Status: LIVE
-
-### Login Page (login/page.tsx)
-- Autopro logo
-- Toggle tabs (Sign In / Register)
-- Sign In form:
-  - Email input
-  - Password input
-  - Forgot password link
-  - Sign In button
-- Register form:
-  - Full name input
-  - Email input
-  - Password input
-  - Confirm password input
-  - Create Account button
-  - Business account info box
-- Social login divider
-- Google button
-- Facebook button
-- Switch form link
-- Status: LIVE
+## 8. Verification Layer
+Completed:
+- App updated to include live verification logic for:
+  - Supabase connection
+  - frontend table access testing
 
 ---
 
-# Next Steps (Planned)
+# Current Project State
 
-## Phase 3 Continued: More Pages
-- Product detail page (/part/[id])
-- Service detail page (/service/[id])
-- Checkout page (/checkout)
-- User dashboard (/dashboard)
-- Order history page
-- Order detail page
+Autopro has now moved into a more real backend-enabled phase.
 
-## Phase 4: Database Connection
-- Create Supabase account (free tier)
-- Create database tables
-- Connect to storefront
-- Replace demo data with real data
-
-## Phase 5: Authentication
-- Set up Supabase Auth
-- Real login/register
-- Protected routes
-- User sessions
-
-## Phase 6: Design Polish
-- Replace emoji icons with Lucide icons
-- Add loading animations
-- Add page transitions
-- Implement 3D car hero (homepage)
-- Mobile optimization review
-
-## Phase 7: Admin Dashboard
-- Build apps/admin
-- Supplier management
-- Order management
-- Service provider management
-- Analytics dashboard
+Current state includes:
+- UI/storefront planning base
+- dashboard progress
+- Supabase connected
+- schema prepared and executed
+- phone-friendly setup workflow added
+- verification utilities added
 
 ---
 
-# Technical Notes
+# Next Planned Tasks
 
-## Vercel Deployment
-- Auto-deploys on every GitHub commit
-- Takes 1-2 minutes to build
-- Root directory: apps/storefront
+## Immediate
+1. Enable Email authentication in Supabase
+2. Create one test user account
+3. Add sample rows to `products`
+4. Add sample rows to `services`
+5. Start fetching real Supabase data in the UI
 
-## File Naming
-- Pages must be named page.tsx
-- Folders become URL routes
-- Components go in components/ folder
-
-## Import Path Fix
-- Header is at: apps/storefront/src/app/components/Header.tsx
-- Import in layout.tsx: import Header from "./components/Header"
-
----
-
-# Issues Encountered and Resolved
-
-## Issue 1: Build Failed After Adding Header
-- Cause: Wrong import path for Header component
-- Fix: Changed import from "@/components/Header" to "./components/Header"
-- Status: RESOLVED
-
-## Issue 2: "Page could not be found" Error
-- Cause: Vercel root directory not set
-- Fix: Set root directory to apps/storefront in Vercel settings
-- Status: RESOLVED
+## After That
+6. Build Product Detail page `/part/[id]`
+7. Build Service Detail page `/service/[id]`
+8. Build Checkout page `/checkout`
+9. Replace more demo content with real data
 
 ---
 
-# Owner Workflow Reminder
+# Important Technical Files Added / Used Recently
 
-Creating new pages:
-1. Go to GitHub → apps/storefront/src/app/
-2. Add file → Create new file
-3. Type: foldername/page.tsx
-4. Paste code from AI
-5. Commit changes
-6. Wait 1-2 minutes
-7. Test live URL
+| File | Purpose |
+|---|---|
+| `src/lib/supabase.ts` | Supabase client helper |
+| `supabase/schema.sql` | Starter database schema |
+| `public/sql-full.txt` | Full SQL for phone copy-paste |
+| `public/sql-part1.txt` | SQL split part 1 |
+| `public/sql-part2.txt` | SQL split part 2 |
+| `public/sql-part3.txt` | SQL split part 3 |
+| `public/setup.html` | Mobile setup helper page |
+| `src/App.tsx` | Current in-app guidance / verification screen |
 
-Editing existing files:
-1. Navigate to file in GitHub
-2. Click pencil icon
-3. Delete all old content
-4. Paste new code
-5. Commit changes
+---
+
+# Notes
+
+- Option B remains the preferred UX direction for future refinement
+- UX polish is deferred, not cancelled
+- Current priority is backend usability and live data
+- The next meaningful milestone is turning the app from demo arrays into real Supabase-backed content
