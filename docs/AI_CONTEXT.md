@@ -221,3 +221,200 @@ Autopro will include:
 - Admin monetization dashboard
 
 Full specifications are in the docs/ folder.
+# 🧠 AI_CONTEXT.md — Autopro Core Logic
+
+> **Purpose**: This file defines the immutable core logic of the Autopro ecosystem. All AI agents, developers, and future iterations must align with these rules.  
+> **Last Updated**: `{{TODAY}}` | **Owner**: Autopro Core Team  
+> **Status**: ✅ LOCKED — Changes require consensus review
+
+---
+
+## 🎯 1. System Purpose & Scope
+
+Autopro is a mobile-first, AI-powered automotive ecosystem for Algeria & Nigeria that enables:
+- 🔍 **Precision part discovery** via TecDoc-style vehicle matching
+- 🛒 **Seamless purchasing** with multi-payment, multi-language support
+- 🚚 **Transparent logistics** with real-time order tracking
+- 🤝 **Verified supplier network** with Chinese manufacturing standards
+
+**Primary User Journeys**:
+```mermaid
+graph LR
+    A[New User] --> B[Select Vehicle: VIN/Make-Model+Year + Engine + Production Date]
+    B --> C[Browse Parts by Category OR Search by OEM Number]
+    C --> D[View Verified Suppliers + Price + Delivery Estimate]
+    D --> E[Checkout: COD/CIB/Flutterwave + Escrow]
+    
+    F[Returning User] --> G[Open My Garage: Saved Vehicles]
+    G --> H[Track Orders + Reorder + Follow Suppliers]
+    H --> I[Personalized Recommendations Based on History]
+```
+
+---
+
+## 🔑 2. Core Entities & Data Model
+
+### 2.1 Non-Negotiable Vehicle Matching Triad
+To guarantee **right part, right car, zero errors**, every part query MUST include:
+
+| Field | Source | Validation Rule |
+|-------|--------|----------------|
+| **VIN** OR **(Make + Model + Year)** | User input / OCR scan | VIN: 17-char ISO 3779; Make/Model: TecAlliance master list |
+| **Engine Type/Code** | TecDoc API / User selection | Must match engine family code (e.g., `1NZ-FE`) |
+| **Production Date Range** ⭐ | Vehicle metadata | Critical: Same model/year can have mid-year part changes (e.g., brake caliper redesign Q3 2015) [[2]] |
+
+> 💡 **Why Production Date?** TecDoc uses K-Type numbers to differentiate vehicle variants [[2]]. Production date is the user-friendly proxy for K-Type resolution.
+
+### 2.2 Core Entity Schema (Simplified)
+```json
+{
+  "User": {
+    "id": "uuid",
+    "garage": ["vehicle_id"],
+    "preferences": {"language": "en|fr|ar|ha", "payment": ["cod", "cib", "flutterwave"]},
+    "memory": ["search_history", "order_history", "saved_suppliers"]
+  },
+  "Vehicle": {
+    "id": "uuid",
+    "vin": "string?",
+    "make": "string",
+    "model": "string",
+    "year": "int",
+    "engine_code": "string",
+    "production_start": "YYYY-MM",
+    "production_end": "YYYY-MM?",
+    "region": "DZ|NG|GLOBAL"
+  },
+  "Part": {
+    "id": "uuid",
+    "oem_number": "string",
+    "tecdoc_id": "string?",
+    "compatible_vehicles": ["vehicle_id"],
+    "suppliers": [{
+      "id": "uuid",
+      "certifications": ["CCC", "IATF_16949", "ISO_9001"],
+      "verification_status": "pending|verified|flagged"
+    }]
+  }
+}
+```
+
+---
+
+## 🛡️ 3. Supplier Verification Protocol (China Focus)
+
+### 3.1 Mandatory Certifications for Chinese Suppliers
+| Certification | Purpose | Verification Method |
+|--------------|---------|-------------------|
+| **CCC (China Compulsory Certification)** | Mandatory for parts sold in China [[14]] | Cross-check certificate number on [CNCA official portal](http://www.cnca.cn) |
+| **IATF 16949:2016** | Global automotive QMS standard; replaced ISO/TS 16949 in 2016 [[19]] | Validate via IATF Global Oversight database; confirm audit body is IATF-recognized [[15]] |
+| **ISO 9001** | Baseline quality management (for non-critical parts) | Verify via accredited registrar (e.g., SGS, TÜV) |
+
+### 3.2 Alibaba-Style Verification Workflow
+```mermaid
+graph TD
+    A[Supplier Applies] --> B[Upload: Business License + Certificates + Factory Photos]
+    B --> C[Automated Checks: Document OCR + Certificate Number Validation]
+    C --> D{Pass?}
+    D -->|Yes| E[Third-Party On-Site Audit (via SGS/TÜV)]
+    D -->|No| F[Auto-Reject + Feedback]
+    E --> G{Audit Pass?}
+    G -->|Yes| H[Grant 'Verified Supplier' Badge + Trade Assurance Eligibility]
+    G -->|No| I[Require Remediation + Re-Audit]
+    H --> J[Continuous Monitoring: Annual Surveillance Audits [[15]]]
+```
+
+> 🔐 **Critical**: Never trust PDF certificates alone. Always validate certificate numbers against issuing authority databases [[11]][[21]].
+
+---
+
+## 💳 4. Payment & Trust Architecture
+
+### 4.1 Day-1 Payment Methods (Algeria + Nigeria)
+| Method | Region | Fallback Strategy |
+|--------|--------|------------------|
+| **Cash on Delivery (COD)** | NG + DZ | Default; require SMS confirmation before dispatch |
+| **CIB / BaridiMob** | DZ | Integrate via Algérie Poste API; fallback to COD if API down |
+| **Flutterwave / Paystack** | NG + DZ | Support cards + bank transfer; auto-switch to COD on failure |
+| **Escrow Hold** | All | Funds held until delivery confirmation + 24h dispute window |
+
+### 4.2 Error Handling Protocol
+```python
+# Pseudo-code: Payment fallback logic
+def process_payment(user, amount, method):
+    try:
+        if method == "cib" and not cib_api_available():
+            raise ServiceUnavailable
+        return payment_gateway.charge(method, amount)
+    except ServiceUnavailable:
+        log.fallback(method)
+        return suggest_fallback(user)  # e.g., "Switch to COD?"
+    except FraudDetected:
+        block_user(user.id)
+        notify_security_team()
+```
+
+---
+
+## 🧠 5. AI Memory & Personalization Rules
+
+### 5.1 What the AI MUST Remember (Cross-Session)
+| Memory Type | Data Stored | Purpose |
+|-------------|------------|---------|
+| **Garage** | User's saved vehicles (VIN/Make-Model+Engine+ProductionDate) | Instant part matching on return |
+| **Behavioral** | Last 10 searches, clicked parts, abandoned carts | Personalize homepage & recommendations |
+| **Transactional** | Order history, preferred suppliers, payment methods | One-click reorder; supplier trust scoring |
+| **Contextual** | Language, region, device type | Auto-localize UI, pricing, delivery estimates |
+
+### 5.2 Context Assembly Pipeline for AI Agents
+```
+User Query → Retrieve Garage + History → Filter by Region/Language → 
+Compress to <12K tokens → Inject into Agent Prompt → Generate Response
+```
+
+> ⚠️ **Privacy Rule**: All memory is user-owned. Provide "Clear Memory" button in settings. Comply with Algeria's Law 18-05 on e-commerce data [[38]].
+
+---
+
+## 🔄 6. Data Flow Diagram (End-to-End)
+```mermaid
+sequenceDiagram
+    participant U as User (Mobile)
+    participant A as AI Agent (Qwen)
+    participant T as TecDoc API
+    participant S as Supplier DB
+    participant P as Payment Gateway
+    
+    U->>A: "Find brake pads for 2015 Corolla"
+    A->>T: Query: Make=Toyota, Model=Corolla, Year=2015, Engine=1NZ-FE, ProdDate=2015-01..2015-12
+    T-->>A: Return compatible part IDs + OEM numbers
+    A->>S: Fetch verified suppliers for part IDs + region=NG
+    S-->>A: Return suppliers with certifications + prices
+    A->>P: Check payment method availability for user.region
+    A->>U: Render: Parts list + supplier cards + payment options
+```
+
+---
+
+## 🚨 7. Error Prevention & Rollback Rules
+
+| Risk | Mitigation | Rollback Trigger |
+|------|-----------|-----------------|
+| Wrong part match | Require ALL 3 vehicle identifiers + show "Confirm Your Vehicle" step | User reports mismatch → auto-flag vehicle-part pair for review |
+| Fake supplier certificate | Dual-validation: OCR + official database check [[21]] | Certificate validation fails → auto-suspend supplier |
+| Payment failure | Fallback chain: Primary → Secondary → COD | 3 consecutive failures → pause account + notify support |
+| AI hallucination | Constrain agent to tool outputs only; log all context used | Response contains unverified claim → auto-reject + alert |
+
+---
+
+## 📬 8. Commit Protocol for This File
+
+✅ **To update `AI_CONTEXT.md`**:
+1. Discuss changes in GitHub Issue or this chat
+2. Get consensus from core team (even if it's just you + Qwen)
+3. Update this file with exact diff
+4. Commit message format:  
+   `docs(AI_CONTEXT): [brief description] — [impact]`  
+   Example: `docs(AI_CONTEXT): add production date to vehicle matching triad — prevents mid-year part errors`
+
+❌ **Never edit this file ad-hoc**. It is the source of truth for all Autopro logic.
