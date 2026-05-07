@@ -1,142 +1,136 @@
 # Autopro Systems Index
 
-**Last Updated:** 2026-05-06
-
-This file lists all systems, pages, and documentation for the Autopro project.
+**Last Updated:** 2026-05-07
 
 ---
 
-# Live Website
+# Project Overview
 
-URL: https://autopro-i38e.vercel.app/
+Autopro is an automotive marketplace platform serving:
+- Algeria
+- Nigeria
 
----
-
-# Live Pages
-
-| Page | URL | File Path | Status |
-|------|-----|-----------|--------|
-| Homepage | / | apps/storefront/src/app/page.tsx | LIVE |
-| Search/Parts | /search | apps/storefront/src/app/search/page.tsx | LIVE |
-| Services | /services | apps/storefront/src/app/services/page.tsx | LIVE |
-| My Garage | /garage | apps/storefront/src/app/garage/page.tsx | LIVE |
-| Cart | /cart | apps/storefront/src/app/cart/page.tsx | LIVE |
-| Login | /login | apps/storefront/src/app/login/page.tsx | LIVE |
+This index tracks the most important current systems, files, and next-priority modules.
 
 ---
 
-# Components
+# Current Major Systems
 
-| Component | File Path | Used In |
-|-----------|-----------|---------|
-| Header | apps/storefront/src/app/components/Header.tsx | All pages |
+## 1. Storefront Foundation
+Previously completed in project memory:
+- Homepage
+- Search / Parts
+- Services
+- Garage
+- Cart
+- Login
+- Header/navigation
 
----
+## 2. Dashboard / Account Direction
+- Dashboard phase reviewed and advanced
+- Used as part of user context and logged-in product planning
 
-# Configuration Files
-
-| File | Path | Purpose |
-|------|------|---------|
-| package.json | apps/storefront/package.json | Dependencies |
-| tailwind.config.ts | apps/storefront/tailwind.config.ts | Styling/Colors |
-| tsconfig.json | apps/storefront/tsconfig.json | TypeScript |
-| next.config.mjs | apps/storefront/next.config.mjs | Next.js settings |
-| postcss.config.mjs | apps/storefront/postcss.config.mjs | PostCSS |
-| globals.css | apps/storefront/src/app/globals.css | Global styles |
-| layout.tsx | apps/storefront/src/app/layout.tsx | Page wrapper |
-
----
-
-# Pages To Build Next
-
-| Page | URL | Priority |
-|------|-----|----------|
-| Product Detail | /part/[id] | HIGH |
-| Service Detail | /service/[id] | HIGH |
-| Checkout | /checkout | HIGH |
-| User Dashboard | /dashboard | MEDIUM |
-| Order History | /orders | MEDIUM |
-| Order Detail | /order/[id] | MEDIUM |
-| Settings | /settings | LOW |
-| Help/Support | /help | LOW |
+## 3. Supabase Backend Foundation
+Current active system:
+- Supabase project connected
+- publishable key confirmed
+- frontend client helper created
+- starter schema created and executed
+- verification workflow added
 
 ---
 
-# Project Memory Files
+# Core Database Tables
 
-These 4 files must be updated after major progress:
+These tables are now part of the active backend foundation:
 
+| Table | Purpose |
+|---|---|
+| `profiles` | User profile and role information |
+| `vehicles` | User garage / saved vehicle data |
+| `products` | Parts marketplace data |
+| `services` | Service provider listings |
+| `orders` | Customer order records |
+| `order_items` | Items inside each order |
+
+---
+
+# Important Current Files
+
+## Supabase / Backend Files
 | File | Purpose |
-|------|---------|
-| docs/AI_CONTEXT.md | AI recovery and continuation |
-| docs/CURRENT_STATUS.md | Current project state |
-| docs/PROJECT_LOG.md | History of all work done |
-| docs/SYSTEMS_INDEX.md | Index of all systems and files |
+|---|---|
+| `src/lib/supabase.ts` | Frontend Supabase client helper |
+| `supabase/schema.sql` | Starter schema file |
+| `public/sql-full.txt` | Full SQL for browser access |
+| `public/sql-part1.txt` | SQL split part 1 |
+| `public/sql-part2.txt` | SQL split part 2 |
+| `public/sql-part3.txt` | SQL split part 3 |
+| `public/setup.html` | Mobile setup guide |
+
+## App Entry
+| File | Purpose |
+|---|---|
+| `src/App.tsx` | Current setup/verification app screen |
+| `src/main.tsx` | App bootstrap |
+| `src/index.css` | Global styling |
+| `index.html` | Main page shell |
+
+## Project Memory Files
+| File | Purpose |
+|---|---|
+| `docs/AI_CONTEXT.MD` | Recovery context |
+| `docs/PROJECT_LOG.MD` | Progress history |
+| `docs/CURRENT_STATUS.MD` | Current state summary |
+| `docs/SYSTEMS_INDEX.MD` | This index |
 
 ---
 
-# Specification Documents (Completed)
+# Active Workflow Helpers
 
-All planning documents in docs/ folder:
+## Phone-Friendly Setup Helpers
+Use these when working from mobile:
+- `/setup.html`
+- `/sql-full.txt`
+- `/sql-part1.txt`
+- `/sql-part2.txt`
+- `/sql-part3.txt`
 
-## Core Architecture
-| File | Status |
-|------|--------|
-| PLATFORM_BLUEPRINT.md | DONE |
-| REUSABLE_PLATFORM_CORE_AND_ID_SYSTEM.md | DONE |
-| DATA_MODEL_NOTES.md | DONE |
-| ECOSYSTEM_INTEGRATION_PLAN.md | DONE |
-
-## User Systems
-| File | Status |
-|------|--------|
-| USER_ROLES_AND_FLOWS.md | DONE |
-| STAFF_PERMISSIONS_AND_ROLES.md | DONE |
-| BUSINESS_PROFILES.md | DONE |
-
-## Commerce Systems
-| File | Status |
-|------|--------|
-| SUPPLIER_PRODUCT_DATA.md | DONE |
-| SHIPPING_AND_LOGISTICS.md | DONE |
-| PAYMENTS_REFUNDS_RETURNS_CLEAN.md | DONE |
-| INVOICING_AND_BILLING.md | DONE |
-| MONETIZATION_STRATEGY.md | DONE |
-| CREDIT_WALLET_AND_CLIENT_TRUST.md | DONE |
-
-## Technical Systems
-| File | Status |
-|------|--------|
-| COMPATIBILITY_ENGINE.md | DONE |
-| COMPATIBILITY_ENGINE_ADMIN_RULES.md | DONE |
-| SERVICE_BOOKING_SYSTEM.md | DONE |
-| VEHICLE_ID_AND_HISTORY.md | DONE |
-| QR_CONFIRMATION_AND_REUSABLE_CORE.md | DONE |
-| TECHNICAL_CATALOG_STRUCTURE.md | DONE |
-
-## Business Systems
-| File | Status |
-|------|--------|
-| B2B_FLEET_COMPATIBILITY.md | DONE |
-
-## Launch Planning
-| File | Status |
-|------|--------|
-| MVP_SCOPE.md | DONE |
-| ADMIN_DASHBOARD_REQUIREMENTS.md | DONE |
-| HOMEPAGE_REQUIREMENTS.md | DONE |
-| DESIGN_SYSTEM.md | DONE |
-| DESIGN_DISCOVERY.md | DONE |
-| WEBSITE_REQUIREMENTS.md | DONE |
-
-## Rules and Decisions
-| File | Status |
-|------|--------|
-| DECISION_RULES.md | DONE |
-| DECISION_LOG.md | DONE |
-| CONCERNS_AND_SOLUTIONS.md | DONE |
-| MASTER_WORKFLOW.md | DONE |
+Purpose:
+- easier copy-paste SQL access
+- easier Supabase SQL Editor execution
+- simpler onboarding without needing file-tree navigation
 
 ---
 
-# Folder Structure
+# Next Priority Systems
+
+## Immediate
+1. Supabase Authentication
+2. Test user creation
+3. Sample product data
+4. Sample service data
+5. Frontend live data queries
+
+## Next Product Pages
+6. Product Detail page `/part/[id]`
+7. Service Detail page `/service/[id]`
+8. Checkout page `/checkout`
+
+---
+
+# Deferred But Confirmed Direction
+
+## UX / Design
+- Option B is the preferred future UX direction
+- Major layout polish is deferred until backend/data milestones are stable
+
+This means the project direction is:
+- real functionality first
+- full UI refinement after data foundation is secure
+
+---
+
+# Short Index Summary
+
+**Autopro now has a storefront base, dashboard direction, Supabase connection, starter schema, and phone-friendly setup helpers. The next active system is Authentication + sample data + live queries.**
