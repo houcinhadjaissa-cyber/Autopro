@@ -1,4 +1,5 @@
 // apps/admin/app/layout.tsx
+import './globals.css';
 // Root layout for Autopro 2.0
 // Includes basic meta tags and font loading
 
