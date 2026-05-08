@@ -4,128 +4,65 @@
 
 ---
 
-# Current Phase
+# Current Phase: UX POLISH
 
-## Supabase Foundation Phase
-
-The project has moved beyond static planning and demo-only UI work.
-
-Current focus:
-- backend foundation
-- authentication setup
-- sample data seeding
-- connecting live Supabase queries to the website
+Preview: https://019e034c-94e8-7734-82a8-06ffeef42197.arena.site/
 
 ---
 
-# Current Summary
+# What Works RIGHT NOW
 
-## Confirmed Done
-- Storefront foundation exists in project context
-- Dashboard phase reviewed and advanced
-- Supabase project URL confirmed
-- Publishable key confirmed
-- Supabase client helper created
-- Starter database schema created
-- Schema execution completed in Supabase SQL Editor
-- Browser-friendly SQL helper files created for phone workflow
-- Setup helper page created for easier mobile setup
-- Verification screen created in app
-
-## In Progress
-- validating live database access from the app
-- moving from demo content to real data
-
-## Next Immediate Step
-1. Enable Email authentication in Supabase
-2. Create one test user account
-3. Insert sample products
-4. Insert sample services
-5. Replace demo arrays with live Supabase queries
+| Feature | Status |
+|---------|--------|
+| User signup/login/logout | REAL (Supabase Auth) |
+| Session persistence | REAL |
+| Products from database | REAL (8 products) |
+| Services from database | REAL (6 services) |
+| Reviews from database | REAL (9 reviews) |
+| Global cart state | WORKING |
+| Floating cart island | WORKING |
+| Toast notifications | WORKING |
+| Mobile bottom nav | WORKING |
+| Checkout flow | UI ONLY |
+| Service booking | UI ONLY |
+| Garage vehicles | UI ONLY (demo data) |
 
 ---
 
-# Current Backend Structure
+# Database (Supabase)
 
-Starter schema includes these tables:
-- `profiles`
-- `vehicles`
-- `products`
-- `services`
-- `orders`
-- `order_items`
-
-Included database features:
-- starter indexes
-- updated_at triggers
-- starter RLS policies
+URL: https://ornbjhcsgxjvloeepojj.supabase.co
+Tables: products(8), services(6), reviews(9), profiles, vehicles, orders, order_items, bookings, addresses
 
 ---
 
-# Current Product Direction
+# Design System
 
-## UX Direction
-- Option B is the preferred long-term UX direction
-- major UX refinement is postponed until backend and live-data steps are more mature
-
-## Functional Direction
-- prioritize real auth and data now
-- then continue commerce flow pages:
-  - product detail
-  - service detail
-  - checkout
+Primary: #00D084 (gradient to #00B894)
+Theme: Light (#FAFAFA bg, #FFFFFF cards)
+Style: Apple + Alipay + Binance
 
 ---
 
-# What Needs To Happen Next
+# Pages (10)
 
-## Immediate
-- Authentication → enable Email provider
-- Authentication → create one test user
-- seed `products`
-- seed `services`
-- verify the app can fetch live rows
-
-## Then
-- connect real product data to storefront
-- connect real service data to storefront
-- build `/part/[id]`
-- build `/service/[id]`
-- build `/checkout`
+1. Homepage /
+2. Search /search
+3. Services /services
+4. Garage /garage
+5. Cart /cart
+6. Login /login
+7. Part Detail /part/:id
+8. Service Detail /service/:id
+9. Checkout /checkout
+10. Dashboard /dashboard
 
 ---
 
-# Key Files In Use Right Now
+# Next Steps
 
-| File | Purpose |
-|---|---|
-| `src/lib/supabase.ts` | Frontend Supabase client |
-| `supabase/schema.sql` | Main schema file |
-| `public/sql-full.txt` | Full copy-paste SQL |
-| `public/sql-part1.txt` | Split SQL for phone workflow |
-| `public/sql-part2.txt` | Split SQL for phone workflow |
-| `public/sql-part3.txt` | Split SQL for phone workflow |
-| `public/setup.html` | Mobile helper page |
-| `src/App.tsx` | Current verification/status screen |
-
----
-
-# Current Risk Level
-
-## Low to Medium
-
-Why:
-- Supabase is connected
-- schema exists
-- SQL has been run successfully
-
-Remaining risks:
-- auth still needs to be enabled/tested
-- sample data still needs to be inserted
-- frontend still needs live queries wired in
-
----
-
-# Short Status Line
-
-**Autopro is currently in Supabase setup completion mode: schema done, auth and sample data next.**
+1. Continue UX polish
+2. Admin Dashboard
+3. Real checkout
+4. Real bookings
+5. Payment integration
