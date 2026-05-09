@@ -605,3 +605,85 @@ Constraints to always include:
 ---
 
 ### ─── MOBILE-ONLY WORKFLOW PIPELINE ───
+
+All tools work fully in mobile browsers. No desktop required.
+
+---
+
+### ─── TOOLS REFERENCE (Free Tier Compatible) ───
+
+| Category | Tools |
+|----------|-------|
+| Auth | Supabase Auth, Clerk.dev |
+| Database | Supabase (PostgreSQL), Baserow, NocoDB |
+| UI Builder | WeWeb, FlutterFlow, Glide |
+| Automation | Make.com, Activepieces, Zapier |
+| Payments | Stripe Connect, Apideck |
+| Events | Upstash Redis, Supabase Realtime |
+| Permissions | Ory Keto |
+| Analytics | Plausible, Umami |
+| Icons | Lucide, Heroicons |
+| Animations | LottieFiles, Rive, Animista |
+| Design | Figma, Penpot, Canva, Khroma |
+| Monitoring | UptimeRobot |
+| CDN | Cloudflare |
+
+---
+
+## ═══════════════════════════════════════════
+## D — CURRENT STATUS & NEXT STEP
+## ═══════════════════════════════════════════
+
+### Current Phase: PHASE 1 — Foundation
+### Current Task: File-by-file audit of 30+ legacy docs
+### Audit Progress: 4 / 38 files done
+### Build Status: ✅ GREEN
+
+### Next Files to Audit:
+1. AI_CONTEXT.md
+2. SYSTEMS_INDEX.md
+3. PLATFORM_BLUEPRINT.md
+4. PROJECT_PLAN.md
+5. USER_ROLES_AND_FLOWS.md
+
+### What Happens During Audit:
+- Read each file
+- Categorize by pillar
+- Verdict: 🟢 exists / 🟡 partial / 🔴 missing / ⚫ obsolete
+- Extract new features → add to this MASTER_PLAN
+- Integrate into codebase where applicable
+- Update ARCHITECTURE.md + PROGRESS.md
+- Build and verify green
+
+### After Audit Completes:
+- All legacy knowledge absorbed into 6 pillars
+- Begin systematic implementation in pillar order
+- Phase 1 → 2 → 3 → 4 → 5 progression
+
+---
+
+## ═══════════════════════════════════════════
+## COMPLETED LOG (Append Only — Never Delete)
+## ═══════════════════════════════════════════
+
+### [2025-01-XX] MASTER_PLAN.md Created (v1.0)
+- Analyzed 4 master lists (database, pillars, UX/security, AI commands)
+- Unified into 6 pillars with full feature registry
+- Mapped all ~160+ features with status tracking
+- Locked design system, constraints, methodology
+- Created single source of truth — no need to re-paste lists
+
+### [Conv #37] Toast + Checkout + Ecosystem Lock
+- Toast: small solid green pill
+- Checkout: auto-fill from saved payment + address
+- Floating cart bar persistent island
+- Ecosystem master plan confirmed
+
+### [Conv #36 and earlier] Core Build
+- 16 pages built
+- 7 Zustand stores (all persisted)
+- 44 countries, 30 currencies
+- Mock data system
+- Supabase backend discovered (8 products, 6 services, 9 reviews)
+
+- 
