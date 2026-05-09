@@ -1,6 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { useGarageStore } from "@/stores/garageStore";
+import { getCarImageUrl } from "@/lib/carImages";
+import CarFallback from "@/components/CarFallback";
 import {
   Car,
   Search,
@@ -9,7 +12,6 @@ import {
   Shield,
   Zap,
   CheckCircle,
-  Image as ImageIcon,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -28,7 +30,8 @@ export default function Home() {
             Welcome to <span className="text-primary">Autopro</span>
           </h1>
           <p className="text-xl text-gray-300 mb-8">
-            Your complete automotive ecosystem - Parts, Services & Vehicle History
+            Your complete automotive ecosystem - Parts, Services & Vehicle
+            History
           </p>
 
           {/* Search Bar Placeholder */}
@@ -61,36 +64,27 @@ export default function Home() {
           </div>
 
           {/* Vehicle Card or Empty State */}
-          {hasVehicles ? (
+          {hasVehicles && primaryVehicle ? (
             <div className="bg-canvas rounded-xl p-4 mb-6 border border-surface-2">
               <div className="flex items-center gap-4">
-                {/* ─── Car Image Area ─── */}
-                <div className="w-24 h-16 rounded-lg bg-gray-100 border border-surface-2 flex items-center justify-center overflow-hidden flex-shrink-0">
-                  {primaryVehicle?.imageUrl ? (
-                    <img
-                      src={primaryVehicle.imageUrl}
-                      alt={`${primaryVehicle.make} ${primaryVehicle.model}`}
-                      className="w-full h-full object-contain"
-                    />
-                  ) : (
-                    <ImageIcon className="w-6 h-6 text-gray-400" />
-                  )}
-                </div>
+                {/* ─── Car Image (Catalog or Fallback) ─── */}
+                <HomepageCarImage vehicle={primaryVehicle} />
 
                 {/* ─── Vehicle Info ─── */}
                 <div className="flex-1 min-w-0">
                   <p className="font-semibold truncate">
-                    {primaryVehicle?.make} {primaryVehicle?.model}{" "}
-                    {primaryVehicle?.year}
+                    {primaryVehicle.make} {primaryVehicle.model}{" "}
+                    {primaryVehicle.year}
                   </p>
-                  {primaryVehicle?.vin && (
+                  {primaryVehicle.vin && (
                     <p className="text-xs text-gray-500 font-mono truncate">
                       VIN: {primaryVehicle.vin.slice(0, 8)}...
                     </p>
                   )}
-                  {primaryVehicle?.engine && (
+                  {primaryVehicle.engine && (
                     <p className="text-xs text-gray-500">
-                      {primaryVehicle.engine} • {primaryVehicle.fuelType || "—"} •{" "}
+                      {primaryVehicle.engine} •{" "}
+                      {primaryVehicle.fuelType || "—"} •{" "}
                       {primaryVehicle.transmission || "—"}
                     </p>
                   )}
@@ -124,7 +118,7 @@ export default function Home() {
             </div>
           )}
 
-          {/* CTA Button — routes to search filtered by vehicle */}
+          {/* CTA Button */}
           <Link
             href={
               hasVehicles && primaryVehicle
@@ -162,7 +156,6 @@ export default function Home() {
         <h2 className="text-3xl font-bold text-center mb-12">What We Offer</h2>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {/* Feature 1 */}
           <div className="bg-surface-1 rounded-lg p-6 border border-surface-2 hover:border-primary/50 transition-all">
             <div className="text-4xl mb-4">🔧</div>
             <h3 className="text-xl font-semibold mb-2 text-primary">
@@ -174,7 +167,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Feature 2 */}
           <div className="bg-surface-1 rounded-lg p-6 border border-surface-2 hover:border-primary/50 transition-all">
             <div className="text-4xl mb-4">🛠️</div>
             <h3 className="text-xl font-semibold mb-2 text-primary">
@@ -185,7 +177,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Feature 3 */}
           <div className="bg-surface-1 rounded-lg p-6 border border-surface-2 hover:border-primary/50 transition-all">
             <div className="text-4xl mb-4">📊</div>
             <h3 className="text-xl font-semibold mb-2 text-primary">
@@ -207,4 +198,36 @@ export default function Home() {
       </footer>
     </main>
   );
-                  }
+}
+
+/* ════════════════════════════════════════════════════════════════ */
+/* 🚗 HOMEPAGE CAR IMAGE — small card image with fallback          */
+/* ════════════════════════════════════════════════════════════════ */
+function HomepageCarImage({
+  vehicle,
+}: {
+  vehicle: { make: string; model: string; year: number; imageUrl?: string };
+}) {
+  const [imgError, setImgError] = useState(false);
+  const catalogUrl = getCarImageUrl(vehicle.make, vehicle.model, vehicle.year);
+  const imageUrl = vehicle.imageUrl || catalogUrl;
+
+  if (imgError) {
+    return (
+      <div className="w-24 h-16 rounded-lg bg-gray-100 border border-surface-2 flex items-center justify-center flex-shrink-0">
+        <CarFallback make={vehicle.make} className="w-full h-full" />
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-24 h-16 rounded-lg bg-gray-100 border border-surface-2 flex items-center justify-center overflow-hidden flex-shrink-0">
+      <img
+        src={imageUrl}
+        alt={`${vehicle.make} ${vehicle.model}`}
+        className="w-full h-full object-contain"
+        onError={() => setImgError(true)}
+      />
+    </div>
+  );
+                }
