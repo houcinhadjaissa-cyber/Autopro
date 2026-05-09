@@ -80,3 +80,8 @@ https://019e0a42-c9fa-7719-8602-037f5abb90c0.arena.site/
 ## 📋 HOW TO RESUME A CONVERSATION
 
 Paste this at the start of any new AI chat:
+### ✅ Latest Build Status (Conv #38 — Session 1)
+- Theme: Day mode default + Night toggle (#6FB81A green)
+- Stores: 7 Zustand (all persisted) — Built
+- Supabase: Connected (client created, not yet tested)
+- Next: Homepage rebuild with quick wins
