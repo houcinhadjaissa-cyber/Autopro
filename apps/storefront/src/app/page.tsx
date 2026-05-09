@@ -1,7 +1,16 @@
 "use client";
 
 import { useGarageStore } from "@/stores/garageStore";
-import { Car, Search, ChevronRight, Plus, Shield, Zap, CheckCircle } from "lucide-react";
+import {
+  Car,
+  Search,
+  ChevronRight,
+  Plus,
+  Shield,
+  Zap,
+  CheckCircle,
+  Image as ImageIcon,
+} from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -42,9 +51,7 @@ export default function Home() {
               <Car className="w-6 h-6 text-primary" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold">
-                Find Parts for Your Car
-              </h2>
+              <h2 className="text-2xl font-bold">Find Parts for Your Car</h2>
               <p className="text-sm text-gray-500">
                 {hasVehicles
                   ? "Your garage is ready — search compatible parts instantly"
@@ -56,28 +63,44 @@ export default function Home() {
           {/* Vehicle Card or Empty State */}
           {hasVehicles ? (
             <div className="bg-canvas rounded-xl p-4 mb-6 border border-surface-2">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Car className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-semibold">
-                      {primaryVehicle?.make} {primaryVehicle?.model}{" "}
-                      {primaryVehicle?.year}
-                    </p>
-                    {primaryVehicle?.vin && (
-                      <p className="text-xs text-gray-500 font-mono">
-                        VIN: {primaryVehicle.vin.slice(0, 8)}...
-                      </p>
-                    )}
-                  </div>
+              <div className="flex items-center gap-4">
+                {/* ─── Car Image Area ─── */}
+                <div className="w-24 h-16 rounded-lg bg-gray-100 border border-surface-2 flex items-center justify-center overflow-hidden flex-shrink-0">
+                  {primaryVehicle?.imageUrl ? (
+                    <img
+                      src={primaryVehicle.imageUrl}
+                      alt={`${primaryVehicle.make} ${primaryVehicle.model}`}
+                      className="w-full h-full object-contain"
+                    />
+                  ) : (
+                    <ImageIcon className="w-6 h-6 text-gray-400" />
+                  )}
                 </div>
 
+                {/* ─── Vehicle Info ─── */}
+                <div className="flex-1 min-w-0">
+                  <p className="font-semibold truncate">
+                    {primaryVehicle?.make} {primaryVehicle?.model}{" "}
+                    {primaryVehicle?.year}
+                  </p>
+                  {primaryVehicle?.vin && (
+                    <p className="text-xs text-gray-500 font-mono truncate">
+                      VIN: {primaryVehicle.vin.slice(0, 8)}...
+                    </p>
+                  )}
+                  {primaryVehicle?.engine && (
+                    <p className="text-xs text-gray-500">
+                      {primaryVehicle.engine} • {primaryVehicle.fuelType || "—"} •{" "}
+                      {primaryVehicle.transmission || "—"}
+                    </p>
+                  )}
+                </div>
+
+                {/* ─── Garage Link ─── */}
                 {extraCount > 0 && (
                   <Link
                     href="/garage"
-                    className="text-sm text-primary font-medium flex items-center gap-1 hover:underline"
+                    className="text-sm text-primary font-medium flex items-center gap-1 hover:underline flex-shrink-0"
                   >
                     +{extraCount} more vehicle{extraCount > 1 ? "s" : ""}
                     <ChevronRight className="w-4 h-4" />
@@ -101,13 +124,19 @@ export default function Home() {
             </div>
           )}
 
-          {/* CTA Button */}
+          {/* CTA Button — routes to search filtered by vehicle */}
           <Link
-            href={hasVehicles ? "/search" : "/garage"}
+            href={
+              hasVehicles && primaryVehicle
+                ? `/search?vehicle=${primaryVehicle.id}`
+                : "/garage"
+            }
             className="w-full flex items-center justify-center gap-3 py-4 bg-primary text-white rounded-xl font-semibold text-lg hover:bg-primary-dark transition-colors shadow-md hover:shadow-lg"
           >
             <Search className="w-5 h-5" />
-            {hasVehicles ? "Find Compatible Parts" : "Add Car & Start Shopping"}
+            {hasVehicles && primaryVehicle
+              ? `Browse Parts for ${primaryVehicle.make}`
+              : "Add Car & Start Shopping"}
           </Link>
 
           {/* Trust Microcopy */}
@@ -130,9 +159,7 @@ export default function Home() {
 
       {/* ─── Features Section ─── */}
       <div className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          What We Offer
-        </h2>
+        <h2 className="text-3xl font-bold text-center mb-12">What We Offer</h2>
 
         <div className="grid md:grid-cols-3 gap-8">
           {/* Feature 1 */}
@@ -180,4 +207,4 @@ export default function Home() {
       </footer>
     </main>
   );
-                      }
+                  }
