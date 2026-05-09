@@ -1,126 +1,15 @@
-```markdown
-# 🧠 AUTOPRO - MASTER WORKFLOW & CONTINUITY PROTOCOL
-*Last Updated: 2026-05-05 | Phase: Documentation Complete → Technical Setup Next*
+# Autopro Master Workflow
+# ⚠️ THIS FILE IS ARCHIVED (Conv #38 Audit)
+# Workflow is now managed by:
+# - START_HERE.md (entry point + resume prompt + rules)
+# - MASTER_PLAN.md (full plan + phases + next step)
+# - PROGRESS.md (session log + what changed)
+# - ARCHITECTURE.md (code structure)
+# Original content preserved in git history
 
----
-
-## 🔑 RESUME INSTRUCTIONS (PASTE THIS ENTIRE FILE IN ANY NEW CHAT)
-
-If conversation crashes:
-1. Copy this entire file from GitHub
-2. Paste in new chat
-3. Add: "RESUME AUTOPRO. Last action: [what you were doing]"
-4. I instantly continue from exact point
-
----
-
-## 📋 OUR AGREED WORKFLOW (STANDARD)
-
-✅ SPEC FIRST, CODE NEVER UNTIL APPROVED
-✅ QUESTIONNAIRE → ANSWER → TRANSLATE → COMMIT CYCLE
-✅ SINGLE SOURCE OF TRUTH = YOUR GITHUB REPO
-✅ MOBILE-FIRST, ZERO-BUDGET, BEGINNER-FRIENDLY
-✅ CONTINUITY: This file updated after EVERY session
-
----
-
-## 🔄 CURRENT STATUS
-
-**Phase**: ✅ Documentation Complete → 🔄 Ready for Technical Setup
-**Last Completed**: ECOSYSTEM_INTEGRATION_PLAN.md finalized and locked
-**Next Action**: Create folder structure (apps/, packages/) + setup GitHub Codespaces
-**Blockers**: None
-**Latest Commit**: [Update after each commit]
-
----
-
-## 🗂️ FILE STRUCTURE REFERENCE
-
-Autopro/
-├── README.md
-├── apps/ (to be created)
-│   ├── storefront/
-│   ├── admin/
-│   └── api/
-├── packages/ (to be created)
-│   └── shared/
-└── docs/
-    ├── MASTER_WORKFLOW.md ← YOU ARE HERE
-    ├── ECOSYSTEM_INTEGRATION_PLAN.md ← JUST COMPLETED
-    ├── [30+ other spec files...]
-
----
-
-## 🎯 IMMEDIATE NEXT ACTIONS
-
-1. [ ] Commit this MASTER_WORKFLOW.md file
-2. [ ] Update AI_CONTEXT.md (Step 2 below)
-3. [ ] Update CURRENT_STATUS.md (Step 3 below)
-4. [ ] Update PROJECT_LOG.md (Step 4 below)
-5. [ ] Update SYSTEMS_INDEX.md (Step 5 below)
-6. [ ] Reply: "✅ All docs updated. Ready for technical setup."
-
----
-
-## 📱 MOBILE COMMIT CHEAT SHEET
-
-HOW TO COMMIT A FILE:
+## Mobile Commit Cheat Sheet (Still Useful)
 1. Open repo → docs/ folder → tap file name
-2. Tap pencil icon (✏️) to edit
+2. Tap pencil icon to edit
 3. Scroll to BOTTOM → paste new content
 4. Scroll down → add commit message
 5. Tap green "Commit changes" button
-6. Copy short commit hash (e.g., a1b2c3d) for records
-
----
-
-## ✅ APPROVAL PROTOCOL
-
-For EVERY decision:
-- I generate → You review → You reply:
-  * "✅ Approved" → I proceed
-  * "Change: [section] → [correction]" → I fix
-  * "Hold: [reason]" → We pause
-- NOTHING moves forward without your explicit "✅ Approved"
-
----
-
-## 💰 BUDGET & TOOLS (ALWAYS FREE)
-
-✅ GitHub (private repo, web interface)
-✅ GitHub Codespaces (60h/month free)
-✅ Supabase (500MB DB + 1GB storage free)
-✅ Vercel (free hosting, one-click deploy)
-✅ Replit (alternative if Codespaces unavailable)
-
----
-
-## 🚀 SUCCESS METRICS
-
-Documentation Phase: ✅ 100% Complete
-Technical Setup Phase: ⏳ 0% (Next)
-Target: First working prototype in 2 weeks
-
----
-*Update this file after every session. This is your continuity anchor.*
----
-## 🔄 SESSION LOG (2026-05-06)
-
-### Phase Transition: Documentation → Technical Setup
-**Goal**: Lock all specs, create folder structure, prepare for browser-based coding
-**Completed**:
-- [x] 30+ specification files locked & approved
-- [x] DESIGN_SYSTEM.md finalized (NVIDIA+Binance+Alipay hybrid)
-- [x] Folder structure created: apps/{storefront,admin,api}, packages/shared
-- [x] Continuity files updated: AI_CONTEXT, CURRENT_STATUS, PROJECT_LOG, DECISION_LOG, CONCERNS_AND_SOLUTIONS
-**Next Immediate Action**: Launch GitHub Codespaces → Initialize Next.js projects → Apply design tokens
-**Blockers**: None
-**Files Changed**:
-- [x] docs/AI_CONTEXT.md (updated)
-- [x] docs/CURRENT_STATUS.md (updated)
-- [x] docs/PROJECT_LOG.md (updated)
-- [x] docs/MASTER_WORKFLOW.md (updated)
-- [x] apps/ folders (created)
-- [x] packages/shared/ (created)
-**Latest Commit Hash**: [Fill after committing]
-**Owner Approval**: ✅ Approved workflow & technical setup prep
