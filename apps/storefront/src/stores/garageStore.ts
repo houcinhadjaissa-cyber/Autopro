@@ -16,6 +16,7 @@ export interface Vehicle {
   bodyStyle?: string;
   driveType?: string;
   marketRegion?: string;
+  imageUrl?: string;
   lastServiceDate?: string;
   lastServiceMileage?: number;
   notes?: string;
@@ -31,6 +32,22 @@ interface GarageStore {
   primaryVehicle: () => Vehicle | undefined;
 }
 
+// 7zap-style default image by make
+const getDefaultImage = (make: string): string => {
+  const makeLower = make.toLowerCase();
+  const defaults: Record<string, string> = {
+    toyota: '/images/vehicles/default-toyota.png',
+    honda: '/images/vehicles/default-honda.png',
+    bmw: '/images/vehicles/default-bmw.png',
+    mercedes: '/images/vehicles/default-mercedes.png',
+    peugeot: '/images/vehicles/default-peugeot.png',
+    renault: '/images/vehicles/default-renault.png',
+    hyundai: '/images/vehicles/default-hyundai.png',
+    ford: '/images/vehicles/default-ford.png',
+  };
+  return defaults[makeLower] || '/images/vehicles/default-car.png';
+};
+
 export const useGarageStore = create<GarageStore>()(
   persist(
     (set, get) => ({
@@ -38,13 +55,21 @@ export const useGarageStore = create<GarageStore>()(
       
       addVehicle: (vehicle) => set((state) => {
         const id = `veh_${Date.now()}`;
-        const countryCode = 'DZ';
+        const countryCode = vehicle.marketRegion || 'DZ';
         const vinHash = vehicle.vin ? vehicle.vin.substring(0, 8) : 'no_vin';
         const ulid = id;
         const autoproVehicleId = `VEH_${countryCode}_${vinHash}_${ulid}`;
         
+        // Auto-set default image if user didn't upload one
+        const imageUrl = vehicle.imageUrl || getDefaultImage(vehicle.make);
+        
         return {
-          vehicles: [...state.vehicles, { ...vehicle, id, autoproVehicleId }],
+          vehicles: [...state.vehicles, { 
+            ...vehicle, 
+            id, 
+            autoproVehicleId, 
+            imageUrl 
+          }],
         };
       }),
       
