@@ -1,245 +1,281 @@
 "use client";
 
 import { useState } from "react";
+import { useGarageStore, Vehicle } from "@/stores/garageStore";
+import { getCarImageUrl } from "@/lib/carImages";
+import CarFallback from "@/components/CarFallback";
+import {
+  Car,
+  Plus,
+  Trash2,
+  Search,
+  Star,
+  StarOff,
+  Wrench,
+  ChevronDown,
+  ChevronUp,
+  Gauge,
+  Fuel,
+  Cog,
+  Palette,
+  Calendar,
+} from "lucide-react";
 import Link from "next/link";
 
-const demoVehicles = [
-  { 
-    id: 1, 
-    make: "Toyota", 
-    model: "Corolla", 
-    year: 2019, 
-    plate: "12345-100-16", 
-    vin: "JTDKN3DU5A0123456",
-    mileage: 45000,
-    lastService: "2026-03-15",
-    image: "🚗"
-  },
-  { 
-    id: 2, 
-    make: "Peugeot", 
-    model: "308", 
-    year: 2021, 
-    plate: "67890-200-16",
-    vin: "VF3LBHZTXJS234567",
-    mileage: 28000,
-    lastService: "2026-04-20",
-    image: "🚙"
-  },
-];
-
-const serviceHistory = [
-  { id: 1, vehicleId: 1, service: "Oil Change", date: "2026-03-15", provider: "QuickLube Center", cost: 2500 },
-  { id: 2, vehicleId: 1, service: "Brake Inspection", date: "2026-02-10", provider: "BrakeMax Pro", cost: 1500 },
-  { id: 3, vehicleId: 2, service: "Full Service", date: "2026-04-20", provider: "AutoCare Garage", cost: 8500 },
-];
-
 export default function GaragePage() {
-  const [selectedVehicle, setSelectedVehicle] = useState(demoVehicles[0]);
-  const [activeTab, setActiveTab] = useState("overview");
+  const { vehicles, vehicleCount, removeVehicle, updateVehicle } =
+    useGarageStore();
+  const [expandedId, setExpandedId] = useState<string | null>(null);
 
-  const vehicleHistory = serviceHistory.filter(s => s.vehicleId === selectedVehicle.id);
+  const toggleExpand = (id: string) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
 
   return (
     <main className="min-h-screen bg-canvas">
-      {/* Page Header */}
-      <div className="bg-surface-1 border-b border-surface-2 py-6 px-4">
-        <div className="max-w-7xl mx-auto">
+      {/* ─── Header ─── */}
+      <div className="bg-gradient-to-b from-primary-900 to-canvas py-12 px-4">
+        <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl md:text-3xl font-bold text-white">
-              My Garage
-            </h1>
-            <button className="bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2">
-              <span>+</span>
-              <span>Add Vehicle</span>
+            <div>
+              <h1 className="text-3xl font-bold text-white flex items-center gap-3">
+                <Car className="w-8 h-8 text-primary" />
+                My Garage
+              </h1>
+              <p className="text-gray-400 mt-1">
+                {vehicleCount()} vehicle{vehicleCount() !== 1 ? "s" : ""} saved
+              </p>
+            </div>
+
+            <button className="flex items-center gap-2 px-5 py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary-dark transition-colors shadow-md">
+              <Plus className="w-5 h-5" />
+              Add Vehicle
             </button>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-6">
-        {/* Vehicle Selector Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-          {demoVehicles.map((vehicle) => (
-            <button
-              key={vehicle.id}
-              onClick={() => setSelectedVehicle(vehicle)}
-              className={`text-left bg-surface-1 rounded-lg border p-4 transition-all ${
-                selectedVehicle.id === vehicle.id
-                  ? "border-primary shadow-lg shadow-primary/10"
-                  : "border-surface-2 hover:border-primary/50"
-              }`}
-            >
-              <div className="flex items-center gap-4">
-                <div className="text-4xl">{vehicle.image}</div>
-                <div>
-                  <h3 className="font-semibold text-white">
-                    {vehicle.year} {vehicle.make} {vehicle.model}
-                  </h3>
-                  <p className="text-gray-400 text-sm">{vehicle.plate}</p>
-                </div>
-              </div>
+      {/* ─── Vehicle List ─── */}
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        {vehicleCount() === 0 ? (
+          /* Empty State */
+          <div className="bg-surface-1 rounded-2xl border border-dashed border-surface-2 p-12 text-center">
+            <Car className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+            <h2 className="text-xl font-semibold mb-2">Your garage is empty</h2>
+            <p className="text-gray-500 mb-6 max-w-md mx-auto">
+              Add your first vehicle to start finding compatible parts, booking
+              services, and tracking maintenance history.
+            </p>
+            <button className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary-dark transition-colors">
+              <Plus className="w-5 h-5" />
+              Add Your First Car
             </button>
-          ))}
-          
-          {/* Add Vehicle Card */}
-          <button className="bg-surface-1 rounded-lg border border-dashed border-surface-2 p-4 hover:border-primary/50 transition-all flex items-center justify-center min-h-[100px]">
-            <div className="text-center">
-              <span className="text-3xl text-gray-500">+</span>
-              <p className="text-gray-400 text-sm mt-1">Add Another Vehicle</p>
-            </div>
-          </button>
-        </div>
-
-        {/* Selected Vehicle Details */}
-        <div className="bg-surface-1 rounded-xl border border-surface-2 overflow-hidden">
-          {/* Vehicle Header */}
-          <div className="bg-gradient-to-r from-primary-900 to-surface-1 p-6">
-            <div className="flex items-center gap-4">
-              <div className="text-6xl">{selectedVehicle.image}</div>
-              <div>
-                <h2 className="text-2xl font-bold text-white">
-                  {selectedVehicle.year} {selectedVehicle.make} {selectedVehicle.model}
-                </h2>
-                <p className="text-gray-300">{selectedVehicle.plate}</p>
-                <p className="text-gray-400 text-sm mt-1">VIN: {selectedVehicle.vin}</p>
-              </div>
-            </div>
           </div>
-
-          {/* Tabs */}
-          <div className="flex border-b border-surface-2">
-            {["overview", "history", "parts", "documents"].map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-6 py-3 font-medium capitalize transition-colors ${
-                  activeTab === tab
-                    ? "text-primary border-b-2 border-primary"
-                    : "text-gray-400 hover:text-white"
-                }`}
-              >
-                {tab}
-              </button>
+        ) : (
+          /* Vehicle Cards */
+          <div className="grid md:grid-cols-2 gap-6">
+            {vehicles.map((vehicle) => (
+              <VehicleCard
+                key={vehicle.id}
+                vehicle={vehicle}
+                isExpanded={expandedId === vehicle.id}
+                onToggle={() => toggleExpand(vehicle.id)}
+                onDelete={() => removeVehicle(vehicle.id)}
+                onSetPrimary={() =>
+                  updateVehicle(vehicle.id, { marketRegion: "DZ" })
+                }
+              />
             ))}
           </div>
-
-          {/* Tab Content */}
-          <div className="p-6">
-            {activeTab === "overview" && (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* Mileage Card */}
-                <div className="bg-canvas rounded-lg p-4 border border-surface-2">
-                  <p className="text-gray-400 text-sm mb-1">Current Mileage</p>
-                  <p className="text-2xl font-bold text-white">
-                    {selectedVehicle.mileage.toLocaleString()} km
-                  </p>
-                  <button className="text-primary text-sm mt-2 hover:underline">
-                    Update Mileage
-                  </button>
-                </div>
-
-                {/* Last Service Card */}
-                <div className="bg-canvas rounded-lg p-4 border border-surface-2">
-                  <p className="text-gray-400 text-sm mb-1">Last Service</p>
-                  <p className="text-2xl font-bold text-white">
-                    {selectedVehicle.lastService}
-                  </p>
-                  <Link href="/services" className="text-primary text-sm mt-2 hover:underline block">
-                    Book Next Service
-                  </Link>
-                </div>
-
-                {/* Status Card */}
-                <div className="bg-canvas rounded-lg p-4 border border-surface-2">
-                  <p className="text-gray-400 text-sm mb-1">Vehicle Status</p>
-                  <div className="flex items-center gap-2">
-                    <span className="w-3 h-3 bg-green-500 rounded-full"></span>
-                    <span className="text-xl font-bold text-green-500">Good</span>
-                  </div>
-                  <p className="text-gray-500 text-sm mt-2">No issues detected</p>
-                </div>
-
-                {/* Quick Actions */}
-                <div className="md:col-span-3 mt-4">
-                  <h3 className="font-semibold text-white mb-4">Quick Actions</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                    <Link href="/search" className="bg-canvas hover:bg-surface-2 rounded-lg p-4 text-center transition-colors border border-surface-2">
-                      <span className="text-2xl block mb-2">🔧</span>
-                      <span className="text-gray-300 text-sm">Find Parts</span>
-                    </Link>
-                    <Link href="/services" className="bg-canvas hover:bg-surface-2 rounded-lg p-4 text-center transition-colors border border-surface-2">
-                      <span className="text-2xl block mb-2">🛠️</span>
-                      <span className="text-gray-300 text-sm">Book Service</span>
-                    </Link>
-                    <button className="bg-canvas hover:bg-surface-2 rounded-lg p-4 text-center transition-colors border border-surface-2">
-                      <span className="text-2xl block mb-2">📄</span>
-                      <span className="text-gray-300 text-sm">Documents</span>
-                    </button>
-                    <button className="bg-canvas hover:bg-surface-2 rounded-lg p-4 text-center transition-colors border border-surface-2">
-                      <span className="text-2xl block mb-2">📊</span>
-                      <span className="text-gray-300 text-sm">Full Report</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {activeTab === "history" && (
-              <div>
-                <h3 className="font-semibold text-white mb-4">Service History</h3>
-                {vehicleHistory.length > 0 ? (
-                  <div className="space-y-3">
-                    {vehicleHistory.map((record) => (
-                      <div key={record.id} className="bg-canvas rounded-lg p-4 border border-surface-2 flex items-center justify-between">
-                        <div>
-                          <p className="font-medium text-white">{record.service}</p>
-                          <p className="text-gray-400 text-sm">{record.provider}</p>
-                          <p className="text-gray-500 text-sm">{record.date}</p>
-                        </div>
-                        <div className="text-right">
-                          <p className="font-bold text-primary">{record.cost.toLocaleString()} DZD</p>
-                          <button className="text-gray-400 text-sm hover:text-white">View Details</button>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="text-gray-400">No service history yet.</p>
-                )}
-              </div>
-            )}
-
-            {activeTab === "parts" && (
-              <div>
-                <h3 className="font-semibold text-white mb-4">Parts Replaced</h3>
-                <p className="text-gray-400">Parts history will appear here after services are completed.</p>
-                <Link href="/search" className="inline-block mt-4 bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-lg transition-colors">
-                  Find Compatible Parts
-                </Link>
-              </div>
-            )}
-
-            {activeTab === "documents" && (
-              <div>
-                <h3 className="font-semibold text-white mb-4">Vehicle Documents</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-canvas rounded-lg p-4 border border-surface-2">
-                    <p className="text-gray-400 text-sm">Registration</p>
-                    <p className="text-white">No document uploaded</p>
-                    <button className="text-primary text-sm mt-2 hover:underline">Upload</button>
-                  </div>
-                  <div className="bg-canvas rounded-lg p-4 border border-surface-2">
-                    <p className="text-gray-400 text-sm">Insurance</p>
-                    <p className="text-white">No document uploaded</p>
-                    <button className="text-primary text-sm mt-2 hover:underline">Upload</button>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
+        )}
       </div>
     </main>
   );
-      }
+}
+
+/* ════════════════════════════════════════════════════════════════ */
+/* 🚗 VEHICLE CARD — 7zap-style layout with catalog image          */
+/* ════════════════════════════════════════════════════════════════ */
+function VehicleCard({
+  vehicle,
+  isExpanded,
+  onToggle,
+  onDelete,
+  onSetPrimary,
+}: {
+  vehicle: Vehicle;
+  isExpanded: boolean;
+  onToggle: () => void;
+  onDelete: () => void;
+  onSetPrimary: () => void;
+}) {
+  const [imgError, setImgError] = useState(false);
+
+  // Image source priority:
+  // 1. User-uploaded photo (vehicle.imageUrl)
+  // 2. Car Imagin API (auto-fetch by make/model/year)
+  // 3. CSS fallback (car silhouette SVG)
+  const catalogUrl = getCarImageUrl(vehicle.make, vehicle.model, vehicle.year);
+  const imageUrl = vehicle.imageUrl || catalogUrl;
+
+  return (
+    <div className="bg-surface-1 rounded-2xl border border-surface-2 overflow-hidden hover:border-primary/30 transition-colors">
+      {/* ─── Image Area (7zap-style) ─── */}
+      <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 h-48 flex items-center justify-center overflow-hidden">
+        {!imgError ? (
+          <img
+            src={imageUrl}
+            alt={`${vehicle.make} ${vehicle.model} ${vehicle.year}`}
+            className="w-full h-full object-contain p-4"
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          /* CSS Fallback — SVG car silhouette */
+          <CarFallback make={vehicle.make} className="w-full h-full" />
+        )}
+
+        {/* Primary Badge */}
+        {vehicle.id === useGarageStore.getState().vehicles[0]?.id && (
+          <div className="absolute top-3 left-3 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
+            <Star className="w-3 h-3 fill-current" />
+            Primary
+          </div>
+        )}
+
+        {/* VIN Badge */}
+        {vehicle.vin && (
+          <div className="absolute top-3 right-3 bg-white/90 backdrop-blur text-xs font-mono text-gray-600 px-2 py-1 rounded">
+            {vehicle.vin.slice(0, 8)}...
+          </div>
+        )}
+      </div>
+
+      {/* ─── Vehicle Info ─── */}
+      <div className="p-5">
+        <div className="flex items-start justify-between mb-3">
+          <div>
+            <h3 className="text-lg font-bold">
+              {vehicle.make} {vehicle.model}
+            </h3>
+            <p className="text-sm text-gray-500">{vehicle.year}</p>
+          </div>
+
+          <button
+            onClick={onToggle}
+            className="text-gray-400 hover:text-primary transition-colors p-1"
+          >
+            {isExpanded ? (
+              <ChevronUp className="w-5 h-5" />
+            ) : (
+              <ChevronDown className="w-5 h-5" />
+            )}
+          </button>
+        </div>
+
+        {/* ─── Quick Specs Row ─── */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {vehicle.engine && (
+            <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full flex items-center gap-1">
+              <Cog className="w-3 h-3" />
+              {vehicle.engine}
+            </span>
+          )}
+          {vehicle.fuelType && (
+            <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full flex items-center gap-1">
+              <Fuel className="w-3 h-3" />
+              {vehicle.fuelType}
+            </span>
+          )}
+          {vehicle.transmission && (
+            <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full flex items-center gap-1">
+              <Gauge className="w-3 h-3" />
+              {vehicle.transmission}
+            </span>
+          )}
+          {vehicle.mileage && (
+            <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full flex items-center gap-1">
+              <Gauge className="w-3 h-3" />
+              {vehicle.mileage.toLocaleString()} km
+            </span>
+          )}
+        </div>
+
+        {/* ─── Expanded Details ─── */}
+        {isExpanded && (
+          <div className="border-t border-surface-2 pt-4 mb-4 space-y-2">
+            {vehicle.vin && (
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-500">VIN</span>
+                <span className="font-mono">{vehicle.vin}</span>
+              </div>
+            )}
+            {vehicle.color && (
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-500 flex items-center gap-1">
+                  <Palette className="w-3 h-3" />
+                  Color
+                </span>
+                <span>{vehicle.color}</span>
+              </div>
+            )}
+            {vehicle.bodyStyle && (
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-500">Body</span>
+                <span>{vehicle.bodyStyle}</span>
+              </div>
+            )}
+            {vehicle.driveType && (
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-500">Drive</span>
+                <span>{vehicle.driveType}</span>
+              </div>
+            )}
+            {vehicle.lastServiceDate && (
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-500 flex items-center gap-1">
+                  <Calendar className="w-3 h-3" />
+                  Last Service
+                </span>
+                <span>{vehicle.lastServiceDate}</span>
+              </div>
+            )}
+            {vehicle.autoproVehicleId && (
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-500">Autopro ID</span>
+                <span className="font-mono text-xs text-primary">
+                  {vehicle.autoproVehicleId}
+                </span>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* ─── Action Buttons ─── */}
+        <div className="flex gap-2">
+          <Link
+            href={`/search?vehicle=${vehicle.id}`}
+            className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-primary-dark transition-colors"
+          >
+            <Search className="w-4 h-4" />
+            Find Parts
+          </Link>
+
+          <button
+            onClick={onToggle}
+            className="flex items-center justify-center gap-2 px-4 py-2.5 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors"
+          >
+            <Wrench className="w-4 h-4" />
+            <span className="hidden sm:inline">History</span>
+          </button>
+
+          <button
+            onClick={onDelete}
+            className="flex items-center justify-center px-3 py-2.5 bg-red-50 text-red-500 rounded-lg text-sm hover:bg-red-100 transition-colors"
+          >
+            <Trash2 className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+        }
