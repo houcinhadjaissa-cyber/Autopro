@@ -131,3 +131,19 @@
 - Start with quick wins (garage CTA, trust badges, search bar)
 - Then compatibility data model
 - Follow MASTER_PLAN.md Section D priority list
+### [Conv #38 — Build Session 1] Foundation Setup
+- Fixed color system: light theme default + #6FB81A green + CSS variables
+- Updated package.json: added zustand v4.5 + lucide-react v0.400
+- Created src/lib/supabase.ts (connected to ornbjhcsgxjvloeepojj.supabase.co)
+- Created all 7 Zustand stores (all persisted to localStorage):
+  ✅ cartStore — cart items with add/remove/quantity/total
+  ✅ authStore — mock login (alex@autopro.demo / demo1234)
+  ✅ garageStore — vehicles with full spec (VIN, fuel, transmission, mileage)
+  ✅ ordersStore — orders with 7 statuses + order numbers
+  ✅ settingsStore — country/currency/language/theme toggle
+  ✅ paymentStore — payment methods + addresses + defaults
+  ✅ toastStore — ephemeral notifications (3s auto-dismiss)
+- Vehicle ID format implemented: VEH_{country}_{vin_hash}_{ulid}
+- Global User ID format: auto_autopro_user_{ulid}
+- All stores use Zustand persist middleware (localStorage)
+- Build status: ✅ Files created, needs build verification
