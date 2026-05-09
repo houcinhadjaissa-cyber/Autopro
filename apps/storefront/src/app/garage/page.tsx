@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useState } from "react";
-import { useGarageStore, Vehicle } from "@/stores/garageStore";
+import { useGarageStore, type Vehicle } from "@/stores/garageStore";
 import { getCarImageUrl } from "@/lib/carImages";
 import CarFallback from "@/components/CarFallback";
 import {
@@ -10,7 +11,6 @@ import {
   Trash2,
   Search,
   Star,
-  StarOff,
   Wrench,
   ChevronDown,
   ChevronUp,
@@ -23,8 +23,7 @@ import {
 import Link from "next/link";
 
 export default function GaragePage() {
-  const { vehicles, vehicleCount, removeVehicle, updateVehicle } =
-    useGarageStore();
+  const { vehicles, vehicleCount, removeVehicle, updateVehicle } = useGarageStore();
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const toggleExpand = (id: string) => {
@@ -32,48 +31,45 @@ export default function GaragePage() {
   };
 
   return (
-    <main className="min-h-screen bg-canvas">
+    <main className="min-h-screen bg-canvas p-4 pb-24">
       {/* ─── Header ─── */}
-      <div className="bg-gradient-to-b from-primary-900 to-canvas py-12 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-3xl font-bold text-white flex items-center gap-3">
-                <Car className="w-8 h-8 text-primary" />
-                My Garage
-              </h1>
-              <p className="text-gray-400 mt-1">
-                {vehicleCount()} vehicle{vehicleCount() !== 1 ? "s" : ""} saved
-              </p>
-            </div>
-
-            <button className="flex items-center gap-2 px-5 py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary-dark transition-colors shadow-md">
-              <Plus className="w-5 h-5" />
-              Add Vehicle
-            </button>
+      <div className="bg-gradient-to-b from-primary-900 to-canvas p-6 rounded-2xl mb-6 text-white shadow-sm">
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl font-bold flex items-center gap-2">
+              <Car className="w-6 h-6 text-primary" />
+              My Garage
+            </h1>
+            <p className="text-xs text-gray-300 mt-1">
+              {vehicleCount()} vehicle{vehicleCount() !== 1 ? "s" : ""} saved
+            </p>
           </div>
+
+          <button className="flex items-center gap-1 px-4 py-2 bg-primary text-white rounded-xl text-xs font-semibold hover:bg-primary-dark transition-colors shadow-md">
+            <Plus className="w-4 h-4" />
+            Add Car
+          </button>
         </div>
       </div>
 
       {/* ─── Vehicle List ─── */}
-      <div className="max-w-6xl mx-auto px-4 py-8">
+      <div>
         {vehicleCount() === 0 ? (
           /* Empty State */
-          <div className="bg-surface-1 rounded-2xl border border-dashed border-surface-2 p-12 text-center">
-            <Car className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-            <h2 className="text-xl font-semibold mb-2">Your garage is empty</h2>
-            <p className="text-gray-500 mb-6 max-w-md mx-auto">
-              Add your first vehicle to start finding compatible parts, booking
-              services, and tracking maintenance history.
+          <div className="bg-surface-1 rounded-2xl border border-dashed border-surface-2 p-8 text-center">
+            <Car className="w-12 h-12 text-gray-300 mx-auto mb-3" />
+            <h2 className="text-base font-semibold mb-1">Your garage is empty</h2>
+            <p className="text-xs text-gray-500 mb-4 max-w-xs mx-auto">
+              Add your vehicle to start finding compatible parts instantly.
             </p>
-            <button className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary-dark transition-colors">
-              <Plus className="w-5 h-5" />
+            <button className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-xl text-xs font-semibold hover:bg-primary-dark transition-colors">
+              <Plus className="w-4 h-4" />
               Add Your First Car
             </button>
           </div>
         ) : (
           /* Vehicle Cards */
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="space-y-4">
             {vehicles.map((vehicle) => (
               <VehicleCard
                 key={vehicle.id}
@@ -81,9 +77,7 @@ export default function GaragePage() {
                 isExpanded={expandedId === vehicle.id}
                 onToggle={() => toggleExpand(vehicle.id)}
                 onDelete={() => removeVehicle(vehicle.id)}
-                onSetPrimary={() =>
-                  updateVehicle(vehicle.id, { marketRegion: "DZ" })
-                }
+                onSetPrimary={() => updateVehicle(vehicle.id, { marketRegion: "DZ" })}
               />
             ))}
           </div>
@@ -93,15 +87,11 @@ export default function GaragePage() {
   );
 }
 
-/* ════════════════════════════════════════════════════════════════ */
-/* 🚗 VEHICLE CARD — 7zap-style layout with catalog image          */
-/* ════════════════════════════════════════════════════════════════ */
 function VehicleCard({
   vehicle,
   isExpanded,
   onToggle,
   onDelete,
-  onSetPrimary,
 }: {
   vehicle: Vehicle;
   isExpanded: boolean;
@@ -110,172 +100,131 @@ function VehicleCard({
   onSetPrimary: () => void;
 }) {
   const [imgError, setImgError] = useState(false);
-
-  // Image source priority:
-  // 1. User-uploaded photo (vehicle.imageUrl)
-  // 2. Car Imagin API (auto-fetch by make/model/year)
-  // 3. CSS fallback (car silhouette SVG)
   const catalogUrl = getCarImageUrl(vehicle.make, vehicle.model, vehicle.year);
   const imageUrl = vehicle.imageUrl || catalogUrl;
 
   return (
-    <div className="bg-surface-1 rounded-2xl border border-surface-2 overflow-hidden hover:border-primary/30 transition-colors">
+    <div className="bg-surface-1 rounded-2xl border border-surface-2 overflow-hidden shadow-sm hover:border-primary/30 transition-colors">
       {/* ─── Image Area (7zap-style) ─── */}
-      <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 h-48 flex items-center justify-center overflow-hidden">
+      <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 h-40 flex items-center justify-center overflow-hidden border-b border-surface-2">
         {!imgError ? (
           <img
             src={imageUrl}
-            alt={`${vehicle.make} ${vehicle.model} ${vehicle.year}`}
-            className="w-full h-full object-contain p-4"
+            alt={`${vehicle.make} ${vehicle.model}`}
+            className="w-full h-full object-contain p-2"
             onError={() => setImgError(true)}
           />
         ) : (
-          /* CSS Fallback — SVG car silhouette */
           <CarFallback make={vehicle.make} className="w-full h-full" />
         )}
 
         {/* Primary Badge */}
         {vehicle.id === useGarageStore.getState().vehicles[0]?.id && (
-          <div className="absolute top-3 left-3 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
-            <Star className="w-3 h-3 fill-current" />
+          <div className="absolute top-2 left-2 bg-primary text-white text-[10px] font-semibold px-2 py-0.5 rounded-full flex items-center gap-1">
+            <Star className="w-2.5 h-2.5 fill-current" />
             Primary
           </div>
         )}
 
         {/* VIN Badge */}
         {vehicle.vin && (
-          <div className="absolute top-3 right-3 bg-white/90 backdrop-blur text-xs font-mono text-gray-600 px-2 py-1 rounded">
+          <div className="absolute top-2 right-2 bg-white/90 backdrop-blur text-[10px] font-mono text-gray-600 px-2 py-0.5 rounded border border-gray-200">
             {vehicle.vin.slice(0, 8)}...
           </div>
         )}
       </div>
 
       {/* ─── Vehicle Info ─── */}
-      <div className="p-5">
-        <div className="flex items-start justify-between mb-3">
+      <div className="p-4">
+        <div className="flex items-start justify-between mb-2">
           <div>
-            <h3 className="text-lg font-bold">
+            <h3 className="text-base font-bold text-gray-900">
               {vehicle.make} {vehicle.model}
             </h3>
-            <p className="text-sm text-gray-500">{vehicle.year}</p>
+            <p className="text-xs text-gray-500">{vehicle.year}</p>
           </div>
 
-          <button
-            onClick={onToggle}
-            className="text-gray-400 hover:text-primary transition-colors p-1"
-          >
-            {isExpanded ? (
-              <ChevronUp className="w-5 h-5" />
-            ) : (
-              <ChevronDown className="w-5 h-5" />
-            )}
+          <button onClick={onToggle} className="text-gray-400 hover:text-primary p-1">
+            {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
           </button>
         </div>
 
-        {/* ─── Quick Specs Row ─── */}
-        <div className="flex flex-wrap gap-2 mb-4">
+        {/* Specs Row */}
+        <div className="flex flex-wrap gap-1.5 mb-3">
           {vehicle.engine && (
-            <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full flex items-center gap-1">
-              <Cog className="w-3 h-3" />
+            <span className="text-[10px] bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full flex items-center gap-1">
+              <Cog className="w-2.5 h-2.5" />
               {vehicle.engine}
             </span>
           )}
           {vehicle.fuelType && (
-            <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full flex items-center gap-1">
-              <Fuel className="w-3 h-3" />
+            <span className="text-[10px] bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full flex items-center gap-1">
+              <Fuel className="w-2.5 h-2.5" />
               {vehicle.fuelType}
             </span>
           )}
           {vehicle.transmission && (
-            <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full flex items-center gap-1">
-              <Gauge className="w-3 h-3" />
+            <span className="text-[10px] bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full flex items-center gap-1">
+              <Gauge className="w-2.5 h-2.5" />
               {vehicle.transmission}
-            </span>
-          )}
-          {vehicle.mileage && (
-            <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full flex items-center gap-1">
-              <Gauge className="w-3 h-3" />
-              {vehicle.mileage.toLocaleString()} km
             </span>
           )}
         </div>
 
-        {/* ─── Expanded Details ─── */}
+        {/* Expanded Details */}
         {isExpanded && (
-          <div className="border-t border-surface-2 pt-4 mb-4 space-y-2">
+          <div className="border-t border-surface-2 pt-3 mb-3 space-y-1.5 text-xs">
             {vehicle.vin && (
-              <div className="flex justify-between text-sm">
+              <div className="flex justify-between">
                 <span className="text-gray-500">VIN</span>
-                <span className="font-mono">{vehicle.vin}</span>
+                <span className="font-mono text-gray-700">{vehicle.vin}</span>
               </div>
             )}
             {vehicle.color && (
-              <div className="flex justify-between text-sm">
+              <div className="flex justify-between">
                 <span className="text-gray-500 flex items-center gap-1">
-                  <Palette className="w-3 h-3" />
-                  Color
+                  <Palette className="w-3 h-3" /> Color
                 </span>
-                <span>{vehicle.color}</span>
-              </div>
-            )}
-            {vehicle.bodyStyle && (
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Body</span>
-                <span>{vehicle.bodyStyle}</span>
-              </div>
-            )}
-            {vehicle.driveType && (
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Drive</span>
-                <span>{vehicle.driveType}</span>
+                <span className="text-gray-700">{vehicle.color}</span>
               </div>
             )}
             {vehicle.lastServiceDate && (
-              <div className="flex justify-between text-sm">
+              <div className="flex justify-between">
                 <span className="text-gray-500 flex items-center gap-1">
-                  <Calendar className="w-3 h-3" />
-                  Last Service
+                  <Calendar className="w-3 h-3" /> Last Service
                 </span>
-                <span>{vehicle.lastServiceDate}</span>
-              </div>
-            )}
-            {vehicle.autoproVehicleId && (
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Autopro ID</span>
-                <span className="font-mono text-xs text-primary">
-                  {vehicle.autoproVehicleId}
-                </span>
+                <span className="text-gray-700">{vehicle.lastServiceDate}</span>
               </div>
             )}
           </div>
         )}
 
-        {/* ─── Action Buttons ─── */}
-        <div className="flex gap-2">
+        {/* Action Buttons */}
+        <div className="flex gap-2 mt-2">
           <Link
             href={`/search?vehicle=${vehicle.id}`}
-            className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-primary-dark transition-colors"
+            className="flex-1 flex items-center justify-center gap-1 py-2 bg-primary text-white rounded-lg text-xs font-semibold hover:bg-primary-dark transition-colors shadow-sm"
           >
-            <Search className="w-4 h-4" />
+            <Search className="w-3.5 h-3.5" />
             Find Parts
           </Link>
 
           <button
             onClick={onToggle}
-            className="flex items-center justify-center gap-2 px-4 py-2.5 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors"
+            className="flex items-center justify-center gap-1 px-3 py-2 bg-gray-100 text-gray-700 rounded-lg text-xs font-medium hover:bg-gray-200 transition-colors"
           >
-            <Wrench className="w-4 h-4" />
-            <span className="hidden sm:inline">History</span>
+            <Wrench className="w-3.5 h-3.5" />
+            <span>Specs</span>
           </button>
 
           <button
             onClick={onDelete}
-            className="flex items-center justify-center px-3 py-2.5 bg-red-50 text-red-500 rounded-lg text-sm hover:bg-red-100 transition-colors"
+            className="flex items-center justify-center px-2.5 py-2 bg-red-50 text-red-500 rounded-lg text-xs hover:bg-red-100 transition-colors"
           >
-            <Trash2 className="w-4 h-4" />
+            <Trash2 className="w-3.5 h-3.5" />
           </button>
         </div>
       </div>
     </div>
   );
-        }
+}
