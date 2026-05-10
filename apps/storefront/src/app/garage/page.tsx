@@ -1,229 +1,61 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useState } from "react";
-import { useGarageStore, type Vehicle } from "@/stores/garageStore";
-import { getCarImageUrl } from "@/lib/carImages";
-import CarFallback from "@/components/CarFallback";
-import {
-  Car,
-  Plus,
-  Trash2,
-  Search,
-  Star,
-  Wrench,
-  ChevronDown,
-  ChevronUp,
-  Gauge,
-  Fuel,
-  Cog,
-  Palette,
-  Calendar,
-} from "lucide-react";
-import Link from "next/link";
+import React, { useState } from "react";
 
 export default function GaragePage() {
-  const { vehicles, vehicleCount, removeVehicle, updateVehicle } = useGarageStore();
-  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [vehicles, setVehicles] = useState([
+    { id: 1, name: "BMW 3 Series (G20)", year: "2021", vin: "WBA3B3C50FKXXXXXX", active: true }
+  ]);
+  const [make, setMake] = useState("");
 
-  const toggleExpand = (id: string) => {
-    setExpandedId(expandedId === id ? null : id);
+  const handleAdd = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!make) return;
+    setVehicles(prev => [...prev, { id: Date.now(), name: make, year: "2023", vin: "VIN-VERIFIED", active: false }]);
+    setMake("");
   };
 
   return (
-    <main className="min-h-screen bg-canvas p-4 pb-24">
-      {/* ─── Header ─── */}
-      <div className="bg-gradient-to-b from-primary-900 to-canvas p-6 rounded-2xl mb-6 text-white shadow-sm">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold flex items-center gap-2">
-              <Car className="w-6 h-6 text-primary" />
-              My Garage
-            </h1>
-            <p className="text-xs text-gray-300 mt-1">
-              {vehicleCount()} vehicle{vehicleCount() !== 1 ? "s" : ""} saved
-            </p>
-          </div>
-
-          <button className="flex items-center gap-1 px-4 py-2 bg-primary text-white rounded-xl text-xs font-semibold hover:bg-primary-dark transition-colors shadow-md">
-            <Plus className="w-4 h-4" />
-            Add Car
-          </button>
+    <div className="min-h-screen bg-gray-50 pb-24 px-4 pt-4">
+      <div className="flex justify-between items-center mb-4 bg-white rounded-2xl p-4 border border-gray-100 shadow-2xs">
+        <div>
+          <h1 className="text-xl font-bold text-gray-900">My Garage</h1>
+          <p className="text-xs text-gray-400 mt-0.5">{vehicles.length} vehicles saved</p>
         </div>
+        <span className="bg-green-50 text-green-700 font-bold text-[10px] px-2 py-1 rounded-lg border border-green-100">VIN Synchronized</span>
       </div>
 
-      {/* ─── Vehicle List ─── */}
-      <div>
-        {vehicleCount() === 0 ? (
-          /* Empty State */
-          <div className="bg-surface-1 rounded-2xl border border-dashed border-surface-2 p-8 text-center">
-            <Car className="w-12 h-12 text-gray-300 mx-auto mb-3" />
-            <h2 className="text-base font-semibold mb-1">Your garage is empty</h2>
-            <p className="text-xs text-gray-500 mb-4 max-w-xs mx-auto">
-              Add your vehicle to start finding compatible parts instantly.
-            </p>
-            <button className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-xl text-xs font-semibold hover:bg-primary-dark transition-colors">
-              <Plus className="w-4 h-4" />
-              Add Your First Car
-            </button>
+      {/* Vehicle List */}
+      <div className="space-y-3 mb-6">
+        {vehicles.map(v => (
+          <div key={v.id} className={`p-4 rounded-xl border transition-all ${v.active ? "bg-white border-[#65a30d] shadow-xs" : "bg-white border-gray-100 shadow-2xs"}`}>
+            <div className="flex justify-between items-start">
+              <div>
+                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Active Vehicle</span>
+                <h3 className="font-bold text-sm text-gray-900 mt-0.5">{v.name}</h3>
+                <p className="text-xs text-green-600 font-mono font-medium mt-1">VIN: {v.vin}</p>
+              </div>
+              <span className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs font-bold">✓</span>
+            </div>
           </div>
-        ) : (
-          /* Vehicle Cards */
-          <div className="space-y-4">
-            {vehicles.map((vehicle) => (
-              <VehicleCard
-                key={vehicle.id}
-                vehicle={vehicle}
-                isExpanded={expandedId === vehicle.id}
-                onToggle={() => toggleExpand(vehicle.id)}
-                onDelete={() => removeVehicle(vehicle.id)}
-                onSetPrimary={() => updateVehicle(vehicle.id, { marketRegion: "DZ" })}
-              />
-            ))}
-          </div>
-        )}
+        ))}
       </div>
-    </main>
-  );
-}
 
-function VehicleCard({
-  vehicle,
-  isExpanded,
-  onToggle,
-  onDelete,
-}: {
-  vehicle: Vehicle;
-  isExpanded: boolean;
-  onToggle: () => void;
-  onDelete: () => void;
-  onSetPrimary: () => void;
-}) {
-  const [imgError, setImgError] = useState(false);
-  const catalogUrl = getCarImageUrl(vehicle.make, vehicle.model, vehicle.year);
-  const imageUrl = vehicle.imageUrl || catalogUrl;
-
-  return (
-    <div className="bg-surface-1 rounded-2xl border border-surface-2 overflow-hidden shadow-sm hover:border-primary/30 transition-colors">
-      {/* ─── Image Area (7zap-style) ─── */}
-      <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 h-40 flex items-center justify-center overflow-hidden border-b border-surface-2">
-        {!imgError ? (
-          <img
-            src={imageUrl}
-            alt={`${vehicle.make} ${vehicle.model}`}
-            className="w-full h-full object-contain p-2"
-            onError={() => setImgError(true)}
+      {/* Add New Car Form */}
+      <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-2xs">
+        <h3 className="font-bold text-xs text-gray-900 mb-2">+ Add Another Vehicle</h3>
+        <form onSubmit={handleAdd} className="flex space-x-2">
+          <input
+            type="text"
+            value={make}
+            onChange={e => setMake(e.target.value)}
+            placeholder="e.g., Mercedes C-Class..."
+            className="flex-1 bg-gray-50 border border-gray-200 rounded-lg p-2 text-xs outline-none text-gray-900"
           />
-        ) : (
-          <CarFallback make={vehicle.make} className="w-full h-full" />
-        )}
-
-        {/* Primary Badge */}
-        {vehicle.id === useGarageStore.getState().vehicles[0]?.id && (
-          <div className="absolute top-2 left-2 bg-primary text-white text-[10px] font-semibold px-2 py-0.5 rounded-full flex items-center gap-1">
-            <Star className="w-2.5 h-2.5 fill-current" />
-            Primary
-          </div>
-        )}
-
-        {/* VIN Badge */}
-        {vehicle.vin && (
-          <div className="absolute top-2 right-2 bg-white/90 backdrop-blur text-[10px] font-mono text-gray-600 px-2 py-0.5 rounded border border-gray-200">
-            {vehicle.vin.slice(0, 8)}...
-          </div>
-        )}
-      </div>
-
-      {/* ─── Vehicle Info ─── */}
-      <div className="p-4">
-        <div className="flex items-start justify-between mb-2">
-          <div>
-            <h3 className="text-base font-bold text-gray-900">
-              {vehicle.make} {vehicle.model}
-            </h3>
-            <p className="text-xs text-gray-500">{vehicle.year}</p>
-          </div>
-
-          <button onClick={onToggle} className="text-gray-400 hover:text-primary p-1">
-            {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+          <button type="submit" className="bg-[#65a30d] text-white font-bold text-xs px-4 py-2 rounded-lg active:scale-95 shadow-2xs">
+            Save Car
           </button>
-        </div>
-
-        {/* Specs Row */}
-        <div className="flex flex-wrap gap-1.5 mb-3">
-          {vehicle.engine && (
-            <span className="text-[10px] bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full flex items-center gap-1">
-              <Cog className="w-2.5 h-2.5" />
-              {vehicle.engine}
-            </span>
-          )}
-          {vehicle.fuelType && (
-            <span className="text-[10px] bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full flex items-center gap-1">
-              <Fuel className="w-2.5 h-2.5" />
-              {vehicle.fuelType}
-            </span>
-          )}
-          {vehicle.transmission && (
-            <span className="text-[10px] bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full flex items-center gap-1">
-              <Gauge className="w-2.5 h-2.5" />
-              {vehicle.transmission}
-            </span>
-          )}
-        </div>
-
-        {/* Expanded Details */}
-        {isExpanded && (
-          <div className="border-t border-surface-2 pt-3 mb-3 space-y-1.5 text-xs">
-            {vehicle.vin && (
-              <div className="flex justify-between">
-                <span className="text-gray-500">VIN</span>
-                <span className="font-mono text-gray-700">{vehicle.vin}</span>
-              </div>
-            )}
-            {vehicle.color && (
-              <div className="flex justify-between">
-                <span className="text-gray-500 flex items-center gap-1">
-                  <Palette className="w-3 h-3" /> Color
-                </span>
-                <span className="text-gray-700">{vehicle.color}</span>
-              </div>
-            )}
-            {vehicle.lastServiceDate && (
-              <div className="flex justify-between">
-                <span className="text-gray-500 flex items-center gap-1">
-                  <Calendar className="w-3 h-3" /> Last Service
-                </span>
-                <span className="text-gray-700">{vehicle.lastServiceDate}</span>
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* Action Buttons */}
-        <div className="flex gap-2 mt-2">
-          <Link
-            href={`/search?vehicle=${vehicle.id}`}
-            className="flex-1 flex items-center justify-center gap-1 py-2 bg-primary text-white rounded-lg text-xs font-semibold hover:bg-primary-dark transition-colors shadow-sm"
-          >
-            <Search className="w-3.5 h-3.5" />
-            Find Parts
-          </Link>
-
-          <button
-            onClick={onToggle}
-            className="flex items-center justify-center gap-1 px-3 py-2 bg-gray-100 text-gray-700 rounded-lg text-xs font-medium hover:bg-gray-200 transition-colors"
-          >
-            <Wrench className="w-3.5 h-3.5" />
-            <span>Specs</span>
-          </button>
-
-          <button
-            onClick={onDelete}
-            className="flex items-center justify-center px-2.5 py-2 bg-red-50 text-red-500 rounded-lg text-xs hover:bg-red-100 transition-colors"
-          >
-            <Trash2 className="w-3.5 h-3.5" />
-          </button>
-        </div>
+        </form>
       </div>
     </div>
   );
