@@ -85,3 +85,10 @@ Paste this at the start of any new AI chat:
 - Stores: 7 Zustand (all persisted) — Built
 - Supabase: Connected (client created, not yet tested)
 - Next: Homepage rebuild with quick wins
+### [Session 1 — Current Status]
+- **Phase:** Frontend rebuild (Vite + React 19 + Tailwind v4 + Zustand)
+- **Checkpoint 1:** ✅ Pushed to main (Icon, Layout, App, CSS, tokens)
+- **Build:** ✅ GREEN
+- **Next:** Batch 4 — Zustand stores to replace hardcoded mock data
+- **Live arena:** https://019e1349-04b7-7bdb-9911-5f04a60c4932.arena.site/ (working now)
+- **Vercel:** https://autopro-b9kz.vercel.app/ (update after push)
