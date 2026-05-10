@@ -147,3 +147,11 @@
 - Global User ID format: auto_autopro_user_{ulid}
 - All stores use Zustand persist middleware (localStorage)
 - Build status: ✅ Files created, needs build verification
+### [Session 1 — Batches 1-3 Foundation]  IN PROGRESS
+**Checkpoint 1 pushed to main.**
+- ✅ Batch 1: Packages (zustand, lucide-react), index.html title, index.css design tokens (#6FB81A green, light theme)
+- ✅ Batch 2: Icon.tsx (55 typed icons), Layout.tsx (bottom nav 5 tabs + trust bar + safe-area)
+- ✅ Batch 3: App.tsx wired — 5 full pages (Home/Search/Cart/Chat/Profile) + 11 placeholders (Services/Garage/Categories/Mechanics/VIN/Track/Help/EPC/Pro/Returns/Notifications)
+- Build: ✅ 244KB, 2.55s, zero errors
+- Files: index.html, src/index.css, src/components/Icon.tsx, src/components/Layout.tsx, src/App.tsx
+- **NEXT:** Zustand stores (cart, auth, garage, settings, toast) → replace hardcoded mock data
