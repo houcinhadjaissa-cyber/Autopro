@@ -100,3 +100,9 @@ Paste this at the start of any new AI chat:
 - **Next:** Wire stores into App.tsx → replace hardcoded mock data with live state
 - **Live arena:** https://019e1349-04b7-7bdb-9911-5f04a60c4932.arena.site/
 - **Vercel:** https://autopro-b9kz.vercel.app/
+### [Batch 4 — Current Status]
+- ✅ 5 stores created + wired into App.tsx (cart, auth, garage, settings, toast)
+- ✅ Zero hardcoded mock data — all pages use live Zustand state
+- ✅ Theme toggle live, cart count live, garage status live
+- ✅ Build: GREEN 251KB
+- **Next:** Full Garage page (add vehicles, VIN, specs)
