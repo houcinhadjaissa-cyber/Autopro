@@ -155,3 +155,13 @@
 - Build: ✅ 244KB, 2.55s, zero errors
 - Files: index.html, src/index.css, src/components/Icon.tsx, src/components/Layout.tsx, src/App.tsx
 - **NEXT:** Zustand stores (cart, auth, garage, settings, toast) → replace hardcoded mock data
+### [Batch 3 — Zustand Stores] ✅ DONE
+- Created 5 stores (all persisted to localStorage):
+  • cartStore: add/remove/update qty/clear/total/count
+  • authStore: mock login (Alex Demo, trust 92)/logout
+  • garageStore: add/remove vehicles, primary vehicle getter
+  • settingsStore: theme toggle, country/currency/language
+  • toastStore: add/remove toasts, auto-dismiss 3s
+- Barrel export at `src/stores/index.ts`
+- Build: ✅ 244KB, 2.82s, zero errors
+- **NEXT:** Wire stores into App.tsx (replace hardcoded mock data in Cart, Profile, Garage placeholder)
