@@ -210,3 +210,12 @@
 - Identified critical gaps from Batch 1-8: no header/footer/products/checkout/roles
 - Previous 16 pages preserved — will extend, not rebuild
 - **Next:** Step 1 — Sticky Header + Footer + Product Card
+### [Step 1 — Header + Footer + ProductCard] ✅ DONE
+- Header.tsx: Sticky top bar with logo, role badge (Client/Provider/Supplier/Fleet/Shipping), cart count, profile avatar, search bar with VIN quick-access
+- Footer.tsx: Company/legal links, social icons, trust badges, copyright
+- ProductCard.tsx: Reusable component — image, brand/category, SKU+OEM, price in local currency, rating+reviews, stock status, compatibility badge ("Fits Your Car"), add-to-cart, wishlist, out-of-stock overlay, list variant
+- products.ts: 10 mock products with real SKU/OEM/partNumber data matching Supabase schema
+- Layout.tsx: Integrated Header + Footer, showFooter prop
+- HomePage: Removed duplicate header/search, added utility bar (notifications + theme toggle), added 4 featured ProductCards in 2-col grid, footer on home
+- Build: ✅ 328KB, 2.85s
+- **NEXT:** Step 2 — Multi-Role Account System (5 roles, different layouts)
