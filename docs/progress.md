@@ -165,3 +165,11 @@
 - Barrel export at `src/stores/index.ts`
 - Build: ✅ 244KB, 2.82s, zero errors
 - **NEXT:** Wire stores into App.tsx (replace hardcoded mock data in Cart, Profile, Garage placeholder)
+### [Batch 4 — Wire Stores] ✅ DONE
+- Replaced ALL hardcoded mock data with live Zustand state
+- CartPage: uses useCartStore (add/remove/updateQty/clear/total/count)
+- ProfilePage: shows real user from useAuthStore, live vehicle count from useGarageStore, theme toggle from useSettingsStore, region info
+- HomePage: shows primary vehicle if saved in garage, fires toast on quick action clicks
+- Global: cartCount badge on bottom nav, theme toggle in header, all nav buttons fire toasts
+- Build: ✅ 251KB, 2.67s
+- **NEXT:** Batch 5 — Full Garage page (add/remove vehicles, VIN entry, specs)
