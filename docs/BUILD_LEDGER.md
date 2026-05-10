@@ -93,3 +93,8 @@
 **Pages:** 16 routes (all rendering, but shallow)
 **Stores:** 5 Zustand (all persisted)
 **Next:** Step 1 — Header + Footer + ProductCard (deep rebuild of core features)
+### [Step 1 — Header + Footer + ProductCard]
+**New files:** src/components/Header.tsx, src/components/Footer.tsx, src/components/ProductCard.tsx, src/data/products.ts
+**Changed files:** src/components/Layout.tsx (integrated Header+Footer), src/App.tsx (HomePage rebuilt, added product cards + utility bar, footer on home)
+**Changes:** Sticky header replaces inline header, footer on home page, product cards with real SKU/OEM data, compatibility badges, theme toggle moved to utility bar
+**Build:** 328KB, 2.85s
