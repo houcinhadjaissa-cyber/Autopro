@@ -118,3 +118,17 @@ Paste this at the start of any new AI chat:
 - ✅ Services has 3-step booking flow, Mechanics has filters + call/navigate/book
 - ✅ Build: GREEN 271KB
 - **Next:** VIN Decoder + Track Order + Help pages
+### [Batch 7 — Current Status]
+- ✅ 11 real pages: Home, Search, Cart, Chat, Profile, Garage, Services, Mechanics, VIN, Track, Help
+- ✅ 5 placeholders: Categories, EPC, Pro, Returns, Notifications
+- ✅ VIN: decode + add-to-garage flow
+- ✅ Track: 5-step order progress + search
+- ✅ Help: FAQs + contact cards + quick links
+- ✅ Build: GREEN 286KB
+- **Next:** EPC/7Zap + Returns + Notifications pages
+- ### [Batch 8 — ALL PAGES COMPLETE]
+- ✅ ALL 16 pages live: Home, Search, Cart, Chat, Profile, Garage, Services, Mechanics, Categories, VIN, Track, Help, EPC, Pro, Returns, Notifications
+- ✅ Zero placeholders — every route renders a real page
+- ✅ 5 Zustand stores (cart, auth, garage, settings, toast) all wired
+- ✅ Build: GREEN 312KB
+- **Next:** Toast UI component, product catalog, checkout flow
