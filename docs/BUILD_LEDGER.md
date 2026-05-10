@@ -98,3 +98,8 @@
 **Changed files:** src/components/Layout.tsx (integrated Header+Footer), src/App.tsx (HomePage rebuilt, added product cards + utility bar, footer on home)
 **Changes:** Sticky header replaces inline header, footer on home page, product cards with real SKU/OEM data, compatibility badges, theme toggle moved to utility bar
 **Build:** 328KB, 2.85s
+### [Step 2 — Multi-Role Account System]
+**New files:** src/stores/roleStore.ts, src/components/RoleSelector.tsx
+**Changed files:** src/stores/authStore.ts (added activeRole), src/stores/index.ts (roleStore export), src/components/Header.tsx (role badge from store), src/App.tsx (ProfilePage with role selector + role-specific dashboard)
+**Changes:** 5 role types with unique configs, bottom-sheet role selector, role badge everywhere, role-specific quick actions
+**Build:** 334KB, 3.03s
