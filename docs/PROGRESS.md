@@ -219,3 +219,12 @@
 - HomePage: Removed duplicate header/search, added utility bar (notifications + theme toggle), added 4 featured ProductCards in 2-col grid, footer on home
 - Build: ✅ 328KB, 2.85s
 - **NEXT:** Step 2 — Multi-Role Account System (5 roles, different layouts)
+### [Step 2 — Multi-Role Account System] ✅ DONE
+- roleStore.ts: 5 roles (buyer/provider/supplier/fleet/shipping), each with label/icon/color/description/homeActions, persisted
+- RoleSelector.tsx: Bottom-sheet modal to switch roles, shows current badge, confirms switch with toast
+- authStore.ts: Updated User with activeRole field + setActiveRole()
+- Header: Role badge uses centralized roleConfig
+- ProfilePage: Role badge on user card, click to open selector, role-specific dashboard grid (4 actions per role)
+- Each role sees different home actions (Client: Garage/Services/Track/VIN vs Provider: Services/Quotes/Calendar/Earnings etc.)
+- Build: ✅ 334KB, 3.03s
+- **NEXT:** Step 3 — Product Detail + Compatibility Engine
