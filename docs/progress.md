@@ -181,3 +181,9 @@
 - Garage route switched from PlaceholderPage → real GaragePage
 - Build: ✅ 259KB, 2.47s
 - **NEXT:** Batch 6 — Services page + Mechanics page
+### [Batch 6 — Services + Mechanics] ✅ DONE
+- ServicesPage: 6 service cards with pricing/ratings/duration, 3-step booking flow (date/time → confirm → success with animation)
+- MechanicsPage: 5 mechanic cards with ratings/distance/open-status/service-tags, filter pills (All/Open/Top Rated/Nearest), Call/Navigate/Book actions
+- Build: ✅ 271KB, 2.85s
+- 8 real pages now working, 8 placeholders remaining
+- **NEXT:** Batch 7 — VIN Decoder page + Track Order page + Help page
