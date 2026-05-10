@@ -92,3 +92,11 @@ Paste this at the start of any new AI chat:
 - **Next:** Batch 4 — Zustand stores to replace hardcoded mock data
 - **Live arena:** https://019e1349-04b7-7bdb-9911-5f04a60c4932.arena.site/ (working now)
 - **Vercel:** https://autopro-b9kz.vercel.app/ (update after push)
+### [Session 1 — Current Status]
+- **Phase:** Frontend rebuild (Vite + React 19 + Tailwind v4 + Zustand + lucide-react)
+- **Checkpoint 2:** ✅ Pushed to main (Stores created)
+- **Files:** Icon.tsx, Layout.tsx, App.tsx (5 pages + 11 placeholders), index.css, 5 stores
+- **Build:** ✅ GREEN — 244KB, 2.82s
+- **Next:** Wire stores into App.tsx → replace hardcoded mock data with live state
+- **Live arena:** https://019e1349-04b7-7bdb-9911-5f04a60c4932.arena.site/
+- **Vercel:** https://autopro-b9kz.vercel.app/
