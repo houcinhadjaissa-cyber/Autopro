@@ -173,3 +173,11 @@
 - Global: cartCount badge on bottom nav, theme toggle in header, all nav buttons fire toasts
 - Build: ✅ 251KB, 2.67s
 - **NEXT:** Batch 5 — Full Garage page (add/remove vehicles, VIN entry, specs)
+### [Batch 5 — Full Garage Page] ✅ DONE
+- Created GaragePage.tsx: add/remove vehicles, form with make/model/year/VIN/fuel/transmission/mileage
+- Vehicle list with primary badge, copy VIN, find-parts CTA, remove button
+- Empty state with "Add Your Car" button
+- Vehicle type expanded: fuelType + transmission fields
+- Garage route switched from PlaceholderPage → real GaragePage
+- Build: ✅ 259KB, 2.47s
+- **NEXT:** Batch 6 — Services page + Mechanics page
