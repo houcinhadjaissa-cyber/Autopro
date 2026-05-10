@@ -1,200 +1,83 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import React, { useState } from "react";
 
-const demoCartItems = [
-  { id: 1, name: "Brake Pad Set - Front", brand: "Bosch", price: 4500, quantity: 1, image: "🔧", compatibility: "Universal" },
-  { id: 2, name: "Oil Filter", brand: "Mann", price: 1200, quantity: 2, image: "⚙️", compatibility: "BMW 3 Series" },
-  { id: 3, name: "Spark Plugs (Set of 4)", brand: "NGK", price: 2800, quantity: 1, image: "⚡", compatibility: "Toyota Corolla" },
-];
+const LockIcon = () => (
+  <svg className="w-4 h-4 text-green-600 mr-1.5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+  </svg>
+);
 
 export default function CartPage() {
-  const [cartItems, setCartItems] = useState(demoCartItems);
-  const [promoCode, setPromoCode] = useState("");
+  const [quantity, setQuantity] = useState(1);
+  const [isCheckedOut, setIsCheckedOut] = useState(false);
 
-  const updateQuantity = (id: number, change: number) => {
-    setCartItems(items =>
-      items.map(item =>
-        item.id === id
-          ? { ...item, quantity: Math.max(1, item.quantity + change) }
-          : item
-      )
-    );
-  };
-
-  const removeItem = (id: number) => {
-    setCartItems(items => items.filter(item => item.id !== id));
-  };
-
-  const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const shipping = subtotal > 10000 ? 0 : 500;
+  const pricePerItem = 45.99;
+  const subtotal = pricePerItem * quantity;
+  const shipping = 0.00; // Free
   const total = subtotal + shipping;
 
+  if (isCheckedOut) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-6 pb-24 text-center">
+        <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-4">✓</div>
+        <h2 className="text-xl font-bold text-gray-900">Order Placed Successfully!</h2>
+        <p className="text-xs text-gray-500 mt-2 max-w-xs">Your parts are being processed for VIN-verified dispatch. A confirmation has been sent.</p>
+        <button onClick={() => setIsCheckedOut(false)} className="mt-6 text-xs font-bold text-[#65a30d] underline">Back to Cart</button>
+      </div>
+    );
+  }
+
   return (
-    <main className="min-h-screen bg-canvas">
-      {/* Page Header */}
-      <div className="bg-surface-1 border-b border-surface-2 py-6 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-2xl md:text-3xl font-bold text-white">
-            Shopping Cart
-          </h1>
-          <p className="text-gray-400 mt-1">
-            {cartItems.length} {cartItems.length === 1 ? "item" : "items"} in your cart
-          </p>
+    <div className="min-h-screen bg-gray-50 pb-24 px-4 pt-4">
+      <h1 className="text-xl font-bold text-gray-900 mb-4">Secure Checkout</h1>
+
+      {/* Cart Item */}
+      {quantity > 0 ? (
+        <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-2xs mb-4">
+          <div className="flex justify-between items-start">
+            <div>
+              <span className="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded">VIN Verified</span>
+              <h3 className="font-bold text-sm text-gray-900 mt-1">Premium Ceramic Brake Pads</h3>
+              <p className="text-xs text-gray-400 mt-0.5">OEM-74829</p>
+            </div>
+            <div className="text-right font-black text-sm text-gray-900">${pricePerItem}</div>
+          </div>
+
+          <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-50">
+            <button onClick={() => setQuantity(0)} className="text-xs font-semibold text-red-500">Remove</button>
+            <div className="flex items-center space-x-3 bg-gray-50 border border-gray-200 rounded-lg p-1">
+              <button onClick={() => setQuantity(q => Math.max(1, q - 1))} className="w-6 h-6 bg-white rounded shadow-2xs text-gray-600 font-bold">-</button>
+              <span className="text-xs font-bold text-gray-900 px-2">{quantity}</span>
+              <button onClick={() => setQuantity(q => q + 1)} className="w-6 h-6 bg-white rounded shadow-2xs text-gray-600 font-bold">+</button>
+            </div>
+          </div>
         </div>
+      ) : (
+        <div className="bg-white rounded-xl p-8 text-center border border-gray-100 shadow-2xs mb-4 text-xs text-gray-400 font-medium">
+          Your cart is empty.
+          <button onClick={() => setQuantity(1)} className="block mx-auto mt-2 text-[#65a30d] font-bold underline">Add Sample Item Back</button>
+        </div>
+      )}
+
+      {/* Order Summary */}
+      <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-2xs space-y-2 mb-4">
+        <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Summary</h3>
+        <div className="flex justify-between text-xs text-gray-600"><span>Subtotal</span><span>${subtotal.toFixed(2)}</span></div>
+        <div className="flex justify-between text-xs text-gray-600"><span>Shipping</span><span className="text-green-600 font-bold">FREE</span></div>
+        <div className="flex justify-between text-xs text-gray-600"><span>Taxes</span><span>$0.00</span></div>
+        <div className="flex justify-between text-sm font-black text-gray-900 pt-2 border-t border-gray-50"><span>Total</span><span>${total.toFixed(2)}</span></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-6">
-        {cartItems.length > 0 ? (
-          <div className="flex flex-col lg:flex-row gap-6">
-            {/* Cart Items */}
-            <div className="flex-1">
-              <div className="bg-surface-1 rounded-lg border border-surface-2 overflow-hidden">
-                {cartItems.map((item, index) => (
-                  <div
-                    key={item.id}
-                    className={`p-4 flex gap-4 ${
-                      index !== cartItems.length - 1 ? "border-b border-surface-2" : ""
-                    }`}
-                  >
-                    {/* Item Image */}
-                    <div className="bg-canvas rounded-lg w-20 h-20 flex items-center justify-center text-4xl flex-shrink-0">
-                      {item.image}
-                    </div>
-
-                    {/* Item Details */}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex justify-between gap-2">
-                        <div>
-                          <p className="text-xs text-primary font-medium">{item.brand}</p>
-                          <h3 className="font-semibold text-white">{item.name}</h3>
-                          <p className="text-gray-500 text-sm">🚗 {item.compatibility}</p>
-                        </div>
-                        <button
-                          onClick={() => removeItem(item.id)}
-                          className="text-gray-500 hover:text-red-500 transition-colors"
-                        >
-                          ✕
-                        </button>
-                      </div>
-
-                      {/* Price & Quantity */}
-                      <div className="flex items-center justify-between mt-3">
-                        {/* Quantity Controls */}
-                        <div className="flex items-center bg-canvas rounded-lg border border-surface-2">
-                          <button
-                            onClick={() => updateQuantity(item.id, -1)}
-                            className="px-3 py-1 text-gray-400 hover:text-white transition-colors"
-                          >
-                            −
-                          </button>
-                          <span className="px-3 py-1 text-white font-medium">
-                            {item.quantity}
-                          </span>
-                          <button
-                            onClick={() => updateQuantity(item.id, 1)}
-                            className="px-3 py-1 text-gray-400 hover:text-white transition-colors"
-                          >
-                            +
-                          </button>
-                        </div>
-
-                        {/* Price */}
-                        <span className="font-bold text-primary">
-                          {(item.price * item.quantity).toLocaleString()} DZD
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Continue Shopping */}
-              <Link
-                href="/search"
-                className="inline-flex items-center gap-2 text-gray-400 hover:text-primary mt-4 transition-colors"
-              >
-                ← Continue Shopping
-              </Link>
-            </div>
-
-            {/* Order Summary */}
-            <div className="lg:w-96">
-              <div className="bg-surface-1 rounded-lg border border-surface-2 p-6 sticky top-20">
-                <h2 className="text-xl font-bold text-white mb-4">Order Summary</h2>
-
-                {/* Promo Code */}
-                <div className="flex gap-2 mb-6">
-                  <input
-                    type="text"
-                    placeholder="Promo code"
-                    value={promoCode}
-                    onChange={(e) => setPromoCode(e.target.value)}
-                    className="flex-1 bg-canvas border border-surface-2 rounded-lg py-2 px-3 text-white placeholder-gray-500 focus:border-primary focus:outline-none"
-                  />
-                  <button className="bg-surface-2 hover:bg-primary text-white px-4 py-2 rounded-lg transition-colors">
-                    Apply
-                  </button>
-                </div>
-
-                {/* Price Breakdown */}
-                <div className="space-y-3 mb-6">
-                  <div className="flex justify-between text-gray-400">
-                    <span>Subtotal</span>
-                    <span>{subtotal.toLocaleString()} DZD</span>
-                  </div>
-                  <div className="flex justify-between text-gray-400">
-                    <span>Shipping</span>
-                    <span>
-                      {shipping === 0 ? (
-                        <span className="text-green-500">FREE</span>
-                      ) : (
-                        `${shipping.toLocaleString()} DZD`
-                      )}
-                    </span>
-                  </div>
-                  {shipping > 0 && (
-                    <p className="text-xs text-gray-500">
-                      Free shipping on orders over 10,000 DZD
-                    </p>
-                  )}
-                  <hr className="border-surface-2" />
-                  <div className="flex justify-between text-white font-bold text-lg">
-                    <span>Total</span>
-                    <span className="text-primary">{total.toLocaleString()} DZD</span>
-                  </div>
-                </div>
-
-                {/* Checkout Button */}
-                <button className="w-full bg-primary hover:bg-primary-hover text-white py-3 rounded-lg font-semibold transition-colors mb-3">
-                  Proceed to Checkout
-                </button>
-
-                {/* Trust Badges */}
-                <div className="flex justify-center gap-4 text-gray-500 text-sm">
-                  <span>🔒 Secure</span>
-                  <span>🚚 Fast Delivery</span>
-                  <span>↩️ Easy Returns</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        ) : (
-          /* Empty Cart */
-          <div className="text-center py-16">
-            <span className="text-6xl block mb-4">🛒</span>
-            <h2 className="text-2xl font-bold text-white mb-2">Your cart is empty</h2>
-            <p className="text-gray-400 mb-6">Add some parts to get started!</p>
-            <Link
-              href="/search"
-              className="inline-block bg-primary hover:bg-primary-hover text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-            >
-              Browse Parts
-            </Link>
-          </div>
-        )}
-      </div>
-    </main>
+      {/* Indestructible Checkout Button */}
+      <button
+        disabled={quantity === 0}
+        onClick={() => setIsCheckedOut(true)}
+        className="w-full bg-[#65a30d] disabled:bg-gray-300 text-white font-bold py-3.5 rounded-xl text-sm shadow-md active:scale-95 transition-all flex items-center justify-center"
+      >
+        <LockIcon /> Pay Securely (${total.toFixed(2)})
+      </button>
+      <p className="text-[10px] text-center text-gray-400 mt-2">🔒 256-Bit SSL Encryption • Instant Dispatch</p>
+    </div>
   );
-                    }
+}
