@@ -106,3 +106,9 @@ Paste this at the start of any new AI chat:
 - ✅ Theme toggle live, cart count live, garage status live
 - ✅ Build: GREEN 251KB
 - **Next:** Full Garage page (add vehicles, VIN, specs)
+### [Batch 5 — Current Status]
+- ✅ Garage page fully built (add/remove vehicles, VIN, specs, find-parts)
+- ✅ 5 stores (cart/auth/garage/settings/toast) all wired
+- ✅ 5 full pages (Home/Search/Cart/Chat/Profile) + 1 real utility page (Garage) + 10 placeholders
+- ✅ Build: GREEN 259KB
+- **Next:** Services + Mechanics pages
