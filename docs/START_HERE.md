@@ -112,3 +112,9 @@ Paste this at the start of any new AI chat:
 - ✅ 5 full pages (Home/Search/Cart/Chat/Profile) + 1 real utility page (Garage) + 10 placeholders
 - ✅ Build: GREEN 259KB
 - **Next:** Services + Mechanics pages
+### [Batch 6 — Current Status]
+- ✅ 8 real pages: Home, Search, Cart, Chat, Profile, Garage, Services, Mechanics
+- ✅ 8 placeholders: Categories, VIN, Track, Help, EPC, Pro, Returns, Notifications
+- ✅ Services has 3-step booking flow, Mechanics has filters + call/navigate/book
+- ✅ Build: GREEN 271KB
+- **Next:** VIN Decoder + Track Order + Help pages
