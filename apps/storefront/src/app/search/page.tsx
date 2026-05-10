@@ -1,196 +1,84 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import React, { useState } from "react";
 
-// Demo parts data (will come from database later)
-const demoParts = [
-  { id: 1, name: "Brake Pad Set - Front", brand: "Bosch", price: 4500, currency: "DZD", compatibility: "Universal", rating: 4.8, reviews: 124, image: "🔧" },
-  { id: 2, name: "Oil Filter", brand: "Mann", price: 1200, currency: "DZD", compatibility: "BMW 3 Series", rating: 4.9, reviews: 89, image: "⚙️" },
-  { id: 3, name: "Air Filter", brand: "K&N", price: 3200, currency: "DZD", compatibility: "Universal", rating: 4.7, reviews: 56, image: "🌀" },
-  { id: 4, name: "Spark Plugs (Set of 4)", brand: "NGK", price: 2800, currency: "DZD", compatibility: "Toyota Corolla", rating: 4.9, reviews: 201, image: "⚡" },
-  { id: 5, name: "Serpentine Belt", brand: "Gates", price: 1800, currency: "DZD", compatibility: "Universal", rating: 4.6, reviews: 34, image: "🔗" },
-  { id: 6, name: "Alternator", brand: "Denso", price: 18500, currency: "DZD", compatibility: "Honda Civic", rating: 4.8, reviews: 67, image: "🔋" },
-];
-
-const categories = ["All Parts", "Brakes", "Filters", "Engine", "Electrical", "Suspension", "Body Parts"];
+const SearchIcon = () => (
+  <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+  </svg>
+);
 
 export default function SearchPage() {
-  const [selectedCategory, setSelectedCategory] = useState("All Parts");
-  const [sortBy, setSortBy] = useState("popular");
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [added, setAdded] = useState<{ [key: number]: boolean }>({});
+  const [filter, setFilter] = useState("All");
+
+  const parts = [
+    { id: 1, brand: "Bosch", name: "Premium Ceramic Brake Pads", oem: "OEM-74829", price: "4,500 DZD", category: "Brakes" },
+    { id: 2, brand: "Mann", name: "Synthetic Oil Filter", oem: "OEM-11023", price: "1,200 DZD", category: "Filters" },
+    { id: 3, brand: "NGK", name: "Laser Iridium Spark Plugs", oem: "OEM-99382", price: "8,500 DZD", category: "Engine" },
+    { id: 4, brand: "Sachs", name: "Heavy Duty Shock Absorber", oem: "OEM-44021", price: "12,000 DZD", category: "Suspension" }
+  ];
+
+  const filtered = filter === "All" ? parts : parts.filter(p => p.category === filter);
+
+  const handleAdd = (id: number) => {
+    setAdded(prev => ({ ...prev, [id]: true }));
+    setTimeout(() => setAdded(prev => ({ ...prev, [id]: false })), 2000);
+  };
 
   return (
-    <main className="min-h-screen bg-canvas">
-      {/* Page Header */}
-      <div className="bg-surface-1 border-b border-surface-2 py-6 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Find Your Parts
-          </h1>
-          
-          {/* Vehicle Selector Bar */}
-          <div className="flex flex-wrap gap-3">
-            <select className="bg-canvas border border-surface-2 rounded-lg px-4 py-2 text-white focus:border-primary focus:outline-none">
-              <option>Select Make</option>
-              <option>Toyota</option>
-              <option>BMW</option>
-              <option>Honda</option>
-              <option>Peugeot</option>
-              <option>Renault</option>
-            </select>
-            <select className="bg-canvas border border-surface-2 rounded-lg px-4 py-2 text-white focus:border-primary focus:outline-none">
-              <option>Select Model</option>
-            </select>
-            <select className="bg-canvas border border-surface-2 rounded-lg px-4 py-2 text-white focus:border-primary focus:outline-none">
-              <option>Select Year</option>
-            </select>
-            <button className="bg-primary hover:bg-primary-hover text-white px-6 py-2 rounded-lg font-medium transition-colors">
-              Search
-            </button>
-          </div>
+    <div className="min-h-screen bg-gray-50 pb-24 px-4 pt-4">
+      {/* Search Header */}
+      <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-2xs mb-4">
+        <h1 className="text-xl font-bold text-gray-900 mb-3">Find Your Parts</h1>
+        
+        <div className="flex items-center bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 mb-3">
+          <SearchIcon />
+          <input type="text" placeholder="Search by OEM, Part, or Keyword..." className="bg-transparent pl-2 text-xs w-full outline-none text-gray-900" />
+        </div>
+
+        <div className="grid grid-cols-3 gap-2">
+          <select className="bg-gray-50 border border-gray-200 rounded-lg p-2 text-xs font-medium text-gray-700 outline-none"><option>Select Make</option><option>BMW</option><option>Audi</option></select>
+          <select className="bg-gray-50 border border-gray-200 rounded-lg p-2 text-xs font-medium text-gray-700 outline-none"><option>Model</option><option>3 Series</option></select>
+          <select className="bg-gray-50 border border-gray-200 rounded-lg p-2 text-xs font-medium text-gray-700 outline-none"><option>Year</option><option>2023</option></select>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-6">
-        <div className="flex gap-6">
-          
-          {/* Filters Sidebar - Desktop */}
-          <aside className="hidden md:block w-64 flex-shrink-0">
-            <div className="bg-surface-1 rounded-lg border border-surface-2 p-4 sticky top-20">
-              <h3 className="font-semibold text-white mb-4">Categories</h3>
-              <div className="space-y-2">
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
-                    className={`w-full text-left px-3 py-2 rounded-lg transition-colors ${
-                      selectedCategory === category
-                        ? "bg-primary text-white"
-                        : "text-gray-400 hover:text-white hover:bg-surface-2"
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
+      {/* Category Pills */}
+      <div className="flex space-x-2 overflow-x-auto no-scrollbar mb-4 pb-1">
+        {["All", "Brakes", "Filters", "Engine", "Suspension"].map(cat => (
+          <button
+            key={cat}
+            onClick={() => setFilter(cat)}
+            className={`px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all ${filter === cat ? "bg-[#65a30d] text-white shadow-xs" : "bg-white text-gray-600 border border-gray-200"}`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      {/* Parts List */}
+      <div className="space-y-3">
+        {filtered.map(p => (
+          <div key={p.id} className="bg-white rounded-xl p-4 border border-gray-100 shadow-2xs flex flex-col justify-between">
+            <div className="flex justify-between items-start">
+              <div>
+                <span className="text-[10px] font-black text-green-600 uppercase tracking-wider">{p.brand}</span>
+                <h3 className="font-bold text-sm text-gray-900 mt-0.5">{p.name}</h3>
+                <p className="text-[10px] text-gray-400 font-mono mt-0.5">{p.oem}</p>
               </div>
-
-              <hr className="border-surface-2 my-4" />
-
-              <h3 className="font-semibold text-white mb-4">Price Range</h3>
-              <div className="space-y-3">
-                <input
-                  type="range"
-                  min="0"
-                  max="50000"
-                  className="w-full accent-primary"
-                />
-                <div className="flex justify-between text-sm text-gray-400">
-                  <span>0 DZD</span>
-                  <span>50,000 DZD</span>
-                </div>
-              </div>
-
-              <hr className="border-surface-2 my-4" />
-
-              <h3 className="font-semibold text-white mb-4">Brand</h3>
-              <div className="space-y-2">
-                {["Bosch", "Mann", "NGK", "Denso", "Gates"].map((brand) => (
-                  <label key={brand} className="flex items-center space-x-2 text-gray-400 hover:text-white cursor-pointer">
-                    <input type="checkbox" className="accent-primary" />
-                    <span>{brand}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-          </aside>
-
-          {/* Main Content */}
-          <div className="flex-1">
-            {/* Mobile Filter Button & Sort */}
-            <div className="flex items-center justify-between mb-4">
-              <button
-                onClick={() => setIsFilterOpen(!isFilterOpen)}
-                className="md:hidden bg-surface-1 border border-surface-2 px-4 py-2 rounded-lg text-white"
-              >
-                ☰ Filters
-              </button>
-              
-              <div className="flex items-center space-x-2">
-                <span className="text-gray-400 text-sm">Sort:</span>
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="bg-surface-1 border border-surface-2 rounded-lg px-3 py-2 text-white text-sm focus:border-primary focus:outline-none"
-                >
-                  <option value="popular">Most Popular</option>
-                  <option value="price-low">Price: Low to High</option>
-                  <option value="price-high">Price: High to Low</option>
-                  <option value="rating">Highest Rated</option>
-                </select>
-              </div>
+              <span className="bg-green-50 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded border border-green-100">Guaranteed Fit</span>
             </div>
 
-            {/* Results Count */}
-            <p className="text-gray-400 mb-4">
-              Showing <span className="text-white font-medium">{demoParts.length}</span> parts
-            </p>
-
-            {/* Parts Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {demoParts.map((part) => (
-                <Link
-                  key={part.id}
-                  href={`/part/${part.id}`}
-                  className="bg-surface-1 rounded-lg border border-surface-2 p-4 hover:border-primary/50 transition-all group"
-                >
-                  {/* Part Image Placeholder */}
-                  <div className="bg-canvas rounded-lg h-40 flex items-center justify-center text-6xl mb-4 group-hover:scale-105 transition-transform">
-                    {part.image}
-                  </div>
-                  
-                  {/* Part Info */}
-                  <div>
-                    <p className="text-xs text-primary font-medium mb-1">{part.brand}</p>
-                    <h3 className="font-semibold text-white mb-2 group-hover:text-primary transition-colors">
-                      {part.name}
-                    </h3>
-                    
-                    {/* Compatibility Badge */}
-                    <div className="inline-flex items-center bg-canvas px-2 py-1 rounded text-xs text-gray-400 mb-3">
-                      🚗 {part.compatibility}
-                    </div>
-                    
-                    {/* Rating */}
-                    <div className="flex items-center space-x-1 mb-3">
-                      <span className="text-yellow-400">★</span>
-                      <span className="text-white text-sm">{part.rating}</span>
-                      <span className="text-gray-500 text-sm">({part.reviews})</span>
-                    </div>
-                    
-                    {/* Price & Add to Cart */}
-                    <div className="flex items-center justify-between">
-                      <span className="text-xl font-bold text-primary">
-                        {part.price.toLocaleString()} <span className="text-sm">{part.currency}</span>
-                      </span>
-                      <button className="bg-primary/20 hover:bg-primary text-primary hover:text-white p-2 rounded-lg transition-colors">
-                        🛒
-                      </button>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-
-            {/* Load More */}
-            <div className="text-center mt-8">
-              <button className="bg-surface-1 hover:bg-surface-2 border border-surface-2 text-white px-8 py-3 rounded-lg font-medium transition-colors">
-                Load More Parts
+            <div className="flex items-center justify-between mt-4 pt-2 border-t border-gray-50">
+              <div className="text-base font-black text-gray-900">{p.price}</div>
+              <button onClick={() => handleAdd(p.id)} className={`px-4 py-2 rounded-lg font-bold text-xs transition-all ${added[p.id] ? "bg-green-600 text-white" : "bg-[#65a30d] text-white active:scale-95"}`}>
+                {added[p.id] ? "✓ Added to Cart" : "+ Add to Cart"}
               </button>
             </div>
           </div>
-        </div>
+        ))}
       </div>
-    </main>
+    </div>
   );
-            }
+}
